@@ -21,13 +21,19 @@ menuCrose.addEventListener('click', () => {
 
 var swiper = new Swiper(".mySwiper", {
     spaceBetween: 30,
+    effect: "fade",
     centeredSlides: true,
     autoplay: {
-        delay: 2000,
+        delay: 1500,
         disableOnInteraction: false,
     },
 
 });
+
+
+
+
+
 
 var swiper1 = new Swiper(".mySwiper1", {
     slidesPerView: 1,

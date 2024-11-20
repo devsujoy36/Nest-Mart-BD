@@ -13,6 +13,7 @@
 
 
 </head>
+
 <body class="">
     <header class="rounded shadow-lg py-2 sticky blurNav top-0 ">
         <nav class=" lg:py-4 pr-6 flex justify-between lg:justify-around items-center gap-2 lg:flex-row relative">
@@ -62,21 +63,8 @@
 
     <main class=" lg:max-w-screen-2xl lg:px-20 px-8 mx-auto">
 
-        <!-- hero section  -->
-        <!-- <section id="" class="lg:p-20 hero-slide-1 p-10 rounded-3xl mt-8 flex flex-col items-start gap-8">
-            <h1 class="lg:text-7xl text-5xl font-semibold">Don't miss amazing <br> grocery deals</h1>
-            <p class="text-2xl lg:text-3xl text-gray-500">Save up to 50% off on your first order</p>
-            <div class="bg-white flex rounded-full justify-center items-center lg:gap-4 gap-1 mt-8 overflow-hidden">
-                <img class="pl-6" src="./src/assets/icon-plane.png" alt="">
-                <input class="focus:outline-none text-lg  w-4/6" type="email" placeholder="Your email address">
-                <button id="for-categories"
-                    class="bg-emerald-500 text-white lg:px-8 px-4 py-2 lg:py-4 rounded-full font-semibold hover:bg-emerald-400 active:scale-95 transition">Subscribe</button>
-            </div>
-        </section> -->
-
-
         <!-- hero section with slider  -->
-        <section id="hero-slider" class="py-10 rounded-2xl overflow-hidden">
+        <section id="hero-slider" class="py-5 rounded-2xl overflow-hidden">
             <!-- Swiper -->
             <div class="swiper mySwiper ">
                 <div class="swiper-wrapper">
@@ -85,12 +73,11 @@
                         <h1 class="lg:text-7xl text-5xl font-semibold">Don't miss amazing <br> grocery deals</h1>
                         <p class="text-2xl lg:text-3xl text-gray-500">Sign Up for Daily Newsletter</p>
                         <div
-                            class="bg-white flex rounded-full justify-center items-center lg:gap-4 gap-1 mt-8 overflow-hidden">
-                            <img class="pl-6" src="./src/assets/icon-plane.png" alt="">
-                            <input class="focus:outline-none text-lg  w-4/6" type="email"
+                            class="bg-white flex rounded-full justify-between items-center lg:gap-4 gap-1 mt-8 overflow-hidden">
+                            <img class="pl-3 lg:pl-6" src="./src/assets/icon-plane.png" alt="">
+                            <input class="focus:outline-none text-sm lg:text-lg  w-4/6" type="email"
                                 placeholder="Your email address">
                             <div>
-
                                 <button id="for-categories"
                                     class="bg-emerald-500 text-white lg:px-8 px-4 py-2 lg:py-4 rounded-full font-semibold hover:bg-emerald-400 active:scale-95 transition">Subscribe</button>
                             </div>
@@ -103,8 +90,8 @@
                         <p class="text-2xl lg:text-3xl text-gray-500">Save up to 50% off on your first order</p>
                         <div
                             class="bg-white flex rounded-full justify-center items-center lg:gap-4 gap-1 mt-8 overflow-hidden">
-                            <img class="pl-6" src="./src/assets/icon-plane.png" alt="">
-                            <input class="focus:outline-none text-lg  w-4/6" type="email"
+                            <img class="pl-3 lg:pl-6" src="./src/assets/icon-plane.png" alt="">
+                            <input class="focus:outline-none text-sm lg:text-lg  w-4/6" type="email"
                                 placeholder="Your email address">
                             <button id="for-categories"
                                 class="bg-emerald-500 text-white lg:px-8 px-4 py-2 lg:py-4 rounded-full font-semibold hover:bg-emerald-400 active:scale-95 transition">Subscribe</button>
@@ -617,8 +604,9 @@
                 </div>
             </div>
 
-            <div class="daily-best-sells lg:flex flex-col xl:grid  py-10 lg:gap-4 gap-2">
+            <div class="daily-best-sells lg:flex flex-col xl:grid  py-10 lg:gap-4 ">
 
+                <!-- Bring Nature Into  -->
                 <div class="bg-cover bgLeaf border rounded-xl p-10  ">
                     <h1 class="font-semibold text-5xl my-8  hover:-translate-y-1 transition-all">Bring <br> nature into
                         <br>
@@ -630,7 +618,7 @@
                 </div>
 
                 <!-- Swiper -->
-                <div class="swiper mySwiper1 rounded-2xl lg:mx-0 mx-9">
+                <div class="swiper mySwiper1 rounded-2xl lg:mx-0 mx-9 lg:pt-0 pt-10">
                     <div class="swiper-wrapper ">
 
                         <!-- product 1 -->
@@ -968,7 +956,8 @@
         </section>
 
         <!-- top selling section  -->
-        <section id="deals-of-the-day" class=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4  mx-6">
+        <section id="deals-of-the-day"
+            class=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-4 xl:grid-cols-4  xl:gap-4  lg:mx-4 mx-6">
 
             <div>
                 <h1 class="text-3xl font-semibold border-b-2 border-emerald-600 mb-6">Top Selling</h1>
@@ -1148,7 +1137,7 @@
                 </div>
             </div>
 
-            <div>
+            <div class="lg:hidden xl:block block">
                 <h1 class="text-3xl font-semibold border-b-2 border-emerald-600 mb-6">Top Rated</h1>
                 <div class="grid grid-rows-3  gap-4">
                     <div
@@ -1216,9 +1205,11 @@
                 <p class="lg:text-2xl text-lg text-gray-500">Start You'r Daily Shopping with <span
                         class="text-emerald-500">Nest
                         Mart</span> </p>
-                <div class="bg-white flex rounded-full justify-center items-center lg:gap-4 gap-1 mt-8 overflow-hidden">
-                    <img class="pl-6" src="./src/assets/icon-plane.png" alt="">
-                    <input class="focus:outline-none text-lg  w-5/6" type="email" placeholder="Your email address">
+                <div
+                    class="bg-white flex rounded-full justify-between items-center lg:gap-4 gap-1 mt-8 overflow-hidden">
+                    <img class="lg:pl-6 pl-3" src="./src/assets/icon-plane.png" alt="">
+                    <input class="focus:outline-none lg:text-lg text-sm w-full" type="email"
+                        placeholder="Your email address">
                     <button
                         class="bg-emerald-500 text-white lg:px-8 px-4 py-2 lg:py-4 rounded-full font-semibold hover:bg-emerald-400 active:scale-95 transition">Subscribe</button>
                 </div>
@@ -1320,72 +1311,107 @@
             <!-- Company  -->
             <div class="flex flex-col gap-2">
                 <h1 class="text-2xl font-semibold">Company</h1>
-                <a href="#" class="hover:text-emerald-500 hover:translate-x-2 transition">About Us</a>
-                <a href="#" class="hover:text-emerald-500 hover:translate-x-2 transition">Delivery Info</a>
-                <a href="#" class="hover:text-emerald-500 hover:translate-x-2 transition">Privacy Policy</a>
-                <a href="#" class="hover:text-emerald-500 hover:translate-x-2 transition">Terms & Conditions</a>
-                <a href="#" class="hover:text-emerald-500 hover:translate-x-2 transition">Contact Us</a>
-                <a href="#" class="hover:text-emerald-500 hover:translate-x-2 transition">Support Center</a>
-                <a href="#" class="hover:text-emerald-500 hover:translate-x-2 transition">Careers</a>
+                <a href="#none" class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">About
+                    Us</a>
+                <a href="#none" class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">Delivery
+                    Info</a>
+                <a href="#none" class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">Privacy
+                    Policy</a>
+                <a href="#none" class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">Terms &
+                    Conditions</a>
+                <a href="#none" class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">Contact
+                    Us</a>
+                <a href="#none" class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">Support
+                    Center</a>
+                <a href="#none"
+                    class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">Careers</a>
             </div>
 
             <!-- Account  -->
             <div class="flex flex-col gap-2">
                 <h1 class="text-2xl font-semibold">Account</h1>
-                <a href="#" class="hover:text-emerald-500 hover:translate-x-2 transition">Sign In</a>
-                <a href="#" class="hover:text-emerald-500 hover:translate-x-2 transition">View Cart</a>
-                <a href="#" class="hover:text-emerald-500 hover:translate-x-2 transition">My Wishlist</a>
-                <a href="#" class="hover:text-emerald-500 hover:translate-x-2 transition">Track My Order</a>
-                <a href="#" class="hover:text-emerald-500 hover:translate-x-2 transition">Help Ticket</a>
-                <a href="#" class="hover:text-emerald-500 hover:translate-x-2 transition">Help Ticket</a>
-                <a href="#" class="hover:text-emerald-500 hover:translate-x-2 transition">Shipping Details</a>
+                <a href="#code" class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">Sign
+                    In</a>
+                <a href="#code" class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">View
+                    Cart</a>
+                <a href="#code" class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">My
+                    Wishlist</a>
+                <a href="#code" class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">Track My
+                    Order</a>
+                <a href="#code" class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">Help
+                    Ticket</a>
+                <a href="#code" class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">Help
+                    Ticket</a>
+                <a href="#code" class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">Shipping
+                    Details</a>
             </div>
 
             <!-- Corporate  -->
             <div class="flex flex-col gap-2">
                 <h1 class="text-2xl font-semibold">Corporate</h1>
-                <a href="#" class="hover:text-emerald-500 hover:translate-x-2 transition">Become a Vendor</a>
-                <a href="#" class="hover:text-emerald-500 hover:translate-x-2 transition">Affiliate Program</a>
-                <a href="#" class="hover:text-emerald-500 hover:translate-x-2 transition">Farm Business</a>
-                <a href="#" class="hover:text-emerald-500 hover:translate-x-2 transition">Farm Careers</a>
-                <a href="#" class="hover:text-emerald-500 hover:translate-x-2 transition">Our Suppliers</a>
-                <a href="#" class="hover:text-emerald-500 hover:translate-x-2 transition">Accessibility</a>
-                <a href="#" class="hover:text-emerald-500 hover:translate-x-2 transition">Promotions</a>
+                <a href="#code" class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">Become a
+                    Vendor</a>
+                <a href="#code" class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">Affiliate
+                    Program</a>
+                <a href="#code" class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">Farm
+                    Business</a>
+                <a href="#code" class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">Farm
+                    Careers</a>
+                <a href="#code" class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">Our
+                    Suppliers</a>
+                <a href="#code"
+                    class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">Accessibility</a>
+                <a href="#code"
+                    class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">Promotions</a>
             </div>
 
             <!-- popular  -->
             <div class="flex flex-col gap-2">
                 <h1 class="text-2xl font-semibold">Popular</h1>
-                <a href="#" class="hover:text-emerald-500 hover:translate-x-2 transition">Milk & Flavoured Milk</a>
-                <a href="#" class="hover:text-emerald-500 hover:translate-x-2 transition">Butter and Margarine</a>
-                <a href="#" class="hover:text-emerald-500 hover:translate-x-2 transition">Eggs Substitutes</a>
-                <a href="#" class="hover:text-emerald-500 hover:translate-x-2 transition">Marmalades</a>
-                <a href="#" class="hover:text-emerald-500 hover:translate-x-2 transition">Sour Cream and Dips</a>
-                <a href="#" class="hover:text-emerald-500 hover:translate-x-2 transition">Tea & Kombucha</a>
-                <a href="#" class="hover:text-emerald-500 hover:translate-x-2 transition">Cheese</a>
+                <a href="#code" class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">Milk &
+                    Flavoured Milk</a>
+                <a href="#code" class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">Butter and
+                    Margarine</a>
+                <a href="#code" class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">Eggs
+                    Substitutes</a>
+                <a href="#code"
+                    class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">Marmalades</a>
+                <a href="#code" class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">Sour Cream
+                    and Dips</a>
+                <a href="#code" class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">Tea &
+                    Kombucha</a>
+                <a href="#code" class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">Cheese</a>
             </div>
 
             <!-- Install App -->
-            <div class="flex flex-col gap-2">
+            <div class="flex flex-col gap-1 lg:gap-2">
                 <h1 class="text-2xl font-semibold">Install App</h1>
-                <div class="flex flex-col gap-10">
-                    <div class="flex flex-col gap-4">
-                        <a href="#" class="hover:text-emerald-500 hover:translate-x-2 transition">From App Store or
+                <div class="flex flex-col gap-4">
+                    <div class="flex flex-col gap-3">
+                        <a href="#code"
+                            class="hover:text-emerald-500 hover:translate-x-1 transition active:scale-95">From App Store
+                            or
                             Google
                             Play</a>
                         <div class="flex gap-2 lg:flex-row flex-col">
-                            <img class="lg:w-1/2 w-5/6 hover:shadow-md hover:-translate-y-1 transition"
-                                src="./src/assets/app-store.jpg" alt="">
-                            <img class="lg:w-1/2 w-5/6 hover:shadow-md hover:-translate-y-1 transition"
-                                src="./src/assets/google-play.jpg" alt="">
+                            <a href="#ios-store">
+                                <img class="w-3/4 lg:w-full hover:shadow-md hover:-translate-y-1 transition"
+                                    src="./src/assets/app-store.jpg" alt="">
+                            </a>
+                            <a href="#play-store">
+                                <img class="w-3/4 lg:w-full hover:shadow-md hover:-translate-y-1 transition"
+                                    src="./src/assets/google-play.jpg" alt="">
+                            </a>
+
+
                         </div>
                     </div>
                     <div class="flex flex-col gap-4">
-                        <a href="#" class="hover:text-emerald-500 hover:translate-x-2 transition">Secured Payment
+                        <a href="#code" class="hover:text-emerald-500 hover:translate-x-1 transition">Secured Payment
                             Gateways</a>
                         <div class="flex gap-2">
                             <img class="w-full hover:shadow-md hover:-translate-y-1 transition"
-                                src="./src/assets/svgs/payment-method.png" alt="">
+                                src="./src/assets/payment-method.png" alt="">
                         </div>
                     </div>
                 </div>
@@ -1433,7 +1459,7 @@
                             <a href="#insta"><img
                                     class="bg-emerald-500 rounded-full p-1 w-6 hover:-translate-y-1 transition"
                                     src="/src/assets/svgs/icon-instagram-white.svg" alt=""></a>
-                            <a href="#Pinterest"><img
+                            <a href="#https://github.com/devsujoy36"><img
                                     class="bg-emerald-500 rounded-full p-1 w-6 hover:-translate-y-1 transition"
                                     src="/src/assets/svgs/icon-pinterest-white.svg" alt=""></a>
                             <a href="https://www.youtube.com/@xenonlivexone"><img
