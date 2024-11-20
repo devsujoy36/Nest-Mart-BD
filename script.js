@@ -18,3 +18,40 @@ menuCrose.addEventListener('click', () => {
 
     }
 })
+
+var swiper = new Swiper(".mySwiper", {
+    spaceBetween: 30,
+    centeredSlides: true,
+    autoplay: {
+        delay: 2000,
+        disableOnInteraction: false,
+    },
+
+});
+
+var swiper1 = new Swiper(".mySwiper1", {
+    slidesPerView: 1,
+    spaceBetween: 10,
+    autoplay: {
+        delay: 1000,
+        disableOnInteraction: false,
+    },
+    pagination: {
+        el: ".swiper-pagination1",
+        clickable: true,
+    },
+    breakpoints: {
+        640: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+        },
+        768: {
+            slidesPerView: 3,
+            spaceBetween: 10,
+        },
+        1024: {
+            slidesPerView: 4,
+            spaceBetween: 15,
+        },
+    },
+});
