@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
 </head>
 
@@ -62,7 +63,7 @@
     <main class=" lg:max-w-screen-2xl lg:px-20 px-8 mx-auto">
 
         <!-- hero section  -->
-        <section id="hero" class="lg:p-20 p-10  rounded-3xl mt-8 flex flex-col items-start gap-8">
+        <!-- <section id="" class="lg:p-20 hero-slide-1 p-10 rounded-3xl mt-8 flex flex-col items-start gap-8">
             <h1 class="lg:text-7xl text-5xl font-semibold">Don't miss amazing <br> grocery deals</h1>
             <p class="text-2xl lg:text-3xl text-gray-500">Save up to 50% off on your first order</p>
             <div class="bg-white flex rounded-full justify-center items-center lg:gap-4 gap-1 mt-8 overflow-hidden">
@@ -70,6 +71,48 @@
                 <input class="focus:outline-none text-lg  w-4/6" type="email" placeholder="Your email address">
                 <button id="for-categories"
                     class="bg-emerald-500 text-white lg:px-8 px-4 py-2 lg:py-4 rounded-full font-semibold hover:bg-emerald-400 active:scale-95 transition">Subscribe</button>
+            </div>
+        </section> -->
+
+
+        <!-- hero section with slider  -->
+        <section id="hero-slider" class="py-10 rounded-2xl overflow-hidden">
+            <!-- Swiper -->
+            <div class="swiper mySwiper ">
+                <div class="swiper-wrapper">
+                    <div
+                        class="swiper-slide lg:p-20 hero-slide-1 p-10 rounded-3xl mt-8 flex flex-col items-start gap-8 ">
+                        <h1 class="lg:text-7xl text-5xl font-semibold">Don't miss amazing <br> grocery deals</h1>
+                        <p class="text-2xl lg:text-3xl text-gray-500">Sign Up for Daily Newsletter</p>
+                        <div
+                            class="bg-white flex rounded-full justify-center items-center lg:gap-4 gap-1 mt-8 overflow-hidden">
+                            <img class="pl-6" src="./src/assets/icon-plane.png" alt="">
+                            <input class="focus:outline-none text-lg  w-4/6" type="email"
+                                placeholder="Your email address">
+                            <div>
+
+                                <button id="for-categories"
+                                    class="bg-emerald-500 text-white lg:px-8 px-4 py-2 lg:py-4 rounded-full font-semibold hover:bg-emerald-400 active:scale-95 transition">Subscribe</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="swiper-slide lg:p-20 hero-slide-2 p-10 rounded-3xl mt-8 flex flex-col items-start gap-8">
+                        <h1 class="lg:text-7xl text-5xl font-semibold">Fresh Vegetables <br> Big Discounts</h1>
+                        <p class="text-2xl lg:text-3xl text-gray-500">Save up to 50% off on your first order</p>
+                        <div
+                            class="bg-white flex rounded-full justify-center items-center lg:gap-4 gap-1 mt-8 overflow-hidden">
+                            <img class="pl-6" src="./src/assets/icon-plane.png" alt="">
+                            <input class="focus:outline-none text-lg  w-4/6" type="email"
+                                placeholder="Your email address">
+                            <button id="for-categories"
+                                class="bg-emerald-500 text-white lg:px-8 px-4 py-2 lg:py-4 rounded-full font-semibold hover:bg-emerald-400 active:scale-95 transition">Subscribe</button>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="swiper-pagination"></div>
             </div>
         </section>
 
@@ -572,10 +615,9 @@
                         class="text-black hover:-translate-y-1 hover:-translate-x-1 transition-all hover:text-emerald-400">New
                         Added</a>
                 </div>
-
             </div>
 
-            <div class="daily-best-sells lg:flex flex-col xl:grid  py-10 gap-2">
+            <div class="daily-best-sells lg:flex flex-col xl:grid  py-10 lg:gap-4    gap-2">
                 <div class="bg-cover bgLeaf border rounded-xl p-10  ">
                     <h1 class="font-semibold text-5xl my-8  hover:-translate-y-1 transition-all">Bring <br> nature into
                         <br>
@@ -585,14 +627,13 @@
                         class="bg-emerald-500 hover:bg-orange-400 hover:px-5 active:scale-95 transition-all  px-4 py-1 rounded-lg text-white font-semibold ">Shop
                         Now</button>
                 </div>
-                <!-- carousel div  -->
-                <div class="carousel w-full  ">
-                    <div id="slide1" class="carousel-item relative w-full">
-                        <div class="grid md:grid-cols-2 grid-cols-1 lg:grid-cols-4 xl:grid-cols-4 gap-4 p-4 mx-10">
+                <!-- Swiper -->
+                <div class="swiper mySwiper1 rounded-2xl lg:mx-0 mx-9">
+                    <div class="swiper-wrapper ">
 
-                            <!-- product 1 -->
-                            <div
-                                class="border relative overflow-hidden shadow-xl p-4 lg:p-6 rounded-2xl hover:shadow-2xl hover:-translate-x-1 hover:-translate-y-1 transition ">
+                        <!-- product 1 -->
+                        <div class="swiper-slide">
+                            <div class="border relative overflow-hidden shadow-xl p-4 lg:p-6 rounded-2xl  ">
                                 <span
                                     class="bg-pink-600 text-white text-sm px-4 py-1 rounded-ee-2xl absolute top-0 left-0">Hot</span>
                                 <div class="overflow-hidden flex justify-center items-center">
@@ -604,7 +645,7 @@
                                         class="text-gray-400 text-xs hover:text-emerald-400">Truffle</a>
                                     <a href="#popular-product"
                                         class="font-semibold my-1 leading-none hover:text-emerald-500 transition-colors">Talenti
-                                        Gelato Layers Salted Caramel Truffle </a>
+                                        Gelato Salted Caramel Truffle </a>
                                 </div>
                                 <div class="flex">
                                     <div class="flex ">
@@ -619,21 +660,22 @@
                                         class="text-emerald-500 hover:-translate-x-1 hover:-translate-y-1 hover:text-orange-400">NestFood</span></a>
                                 </h1>
 
-                                <div class=" mt-2">
+                                <div class=" mt-1">
                                     <h1 class="text-emerald-500 font-semibold text-xl">$24.49</h1>
                                     <progress class="progress progress-accent w-full" value="26" max="100"></progress>
                                     <p class="text-sm">Sold: 26/100</p>
                                     <button
-                                        class="bg-emerald-500 hover:bg-orange-500 text-white hover:text-white font-semibold w-full py-4 rounded-md flex justify-center items-center gap-1 hover:-translate-y-1 transition mt-4">
+                                        class="bg-emerald-500 active:bg-orange-500 active:scale-95 text-white hover:text-white font-semibold w-full py-4 rounded-md flex justify-center items-center gap-1 hover:-translate-y-1 transition mt-4">
                                         <img class="w-4 text " src="./src/assets/svgs/icon-cart.svg" alt="">
                                         <h1 class="text-xs">Add To Cart</h1>
                                     </button>
                                 </div>
                             </div>
+                        </div>
 
-                            <!-- product 2 -->
-                            <div
-                                class="border relative overflow-hidden shadow-xl p-4 lg:p-6 rounded-2xl hover:shadow-2xl hover:-translate-x-1 hover:-translate-y-1 transition ">
+                        <!-- product 2 -->
+                        <div class="swiper-slide">
+                            <div class="border relative overflow-hidden shadow-xl p-4 lg:p-6 rounded-2xl  ">
                                 <span
                                     class="bg-emerald-500 text-white text-sm px-4 py-1 rounded-ee-2xl absolute top-0 left-0">New</span>
                                 <div class="overflow-hidden flex justify-center items-center">
@@ -646,7 +688,7 @@
                                         class="text-gray-400 text-xs hover:text-emerald-400">Tarngerine</a>
                                     <a href="#popular-product"
                                         class="font-semibold my-1 leading-none hover:text-emerald-500 transition-colors">Porganic
-                                        TM Tangerine Lemonade 395ml</a>
+                                        Tangerine with Lemonade </a>
                                 </div>
                                 <div class="flex">
                                     <div class="flex ">
@@ -665,16 +707,17 @@
                                             max="100"></progress>
                                         <p class="text-sm">Sold: 65/100</p>
                                         <button
-                                            class="bg-emerald-500 hover:bg-orange-500 text-white hover:text-white font-semibold w-full py-4 rounded-md flex justify-center items-center gap-1 hover:-translate-y-1 transition mt-4">
+                                            class="bg-emerald-500 active:bg-orange-500 active:scale-95 text-white hover:text-white font-semibold w-full py-4 rounded-md flex justify-center items-center gap-1 hover:-translate-y-1 transition mt-4">
                                             <img class="w-4 text " src="./src/assets/svgs/icon-cart.svg" alt="">
                                             <h1 class="">Add To Cart</h1>
                                         </button>
                                     </div>
                             </div>
+                        </div>
 
-                            <!-- product 3 -->
-                            <div
-                                class="border relative overflow-hidden shadow-xl p-4 lg:p-6 rounded-2xl hover:shadow-2xl hover:-translate-x-1 hover:-translate-y-1 transition ">
+                        <!-- product 3 -->
+                        <div class="swiper-slide">
+                            <div class="border relative overflow-hidden shadow-xl p-4 lg:p-6 rounded-2xl  ">
                                 <span
                                     class="bg-blue-400 text-white text-sm px-4 py-1 rounded-ee-2xl absolute top-0 left-0">Sale</span>
                                 <div class="overflow-hidden flex justify-center items-center">
@@ -711,10 +754,11 @@
                                         </button>
                                     </div>
                             </div>
+                        </div>
 
-                            <!-- product 4 -->
-                            <div
-                                class="border relative overflow-hidden shadow-xl p-4 lg:p-6 rounded-2xl hover:shadow-2xl hover:-translate-x-1 hover:-translate-y-1 transition ">
+                        <!-- product 4 -->
+                        <div class="swiper-slide">
+                            <div class="border relative overflow-hidden shadow-xl p-4 lg:p-6 rounded-2xl  ">
                                 <div class="overflow-hidden flex justify-center items-center">
                                     <img class="hover:scale-110 transition-all rounded-full lg:w-full w-56"
                                         src="./src/assets/popular product/product-16-3.jpg" alt="">
@@ -743,26 +787,17 @@
                                             max="100"></progress>
                                         <p class="text-sm">Sold: 56/100</p>
                                         <button
-                                            class="bg-emerald-500 hover:bg-orange-500 text-white hover:text-white font-semibold w-full py-4 rounded-md flex justify-center items-center gap-1 hover:-translate-y-1 transition mt-4">
+                                            class="bg-emerald-500 active:bg-orange-500 active:scale-95 text-white hover:text-white font-semibold w-full py-4 rounded-md flex justify-center items-center gap-1 hover:-translate-y-1 transition mt-4">
                                             <img class="w-4 text " src="./src/assets/svgs/icon-cart.svg" alt="">
                                             <h1 class="">Add To Cart</h1>
                                         </button>
                                     </div>
                             </div>
-
                         </div>
-                        <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-                            <a href="#slide2" class="btn btn-circle">❮</a>
-                            <a href="#slide2" class="btn btn-circle">❯</a>
-                        </div>
-                    </div>
 
-                    <div id="slide2" class="carousel-item relative w-full">
-                        <div class="grid md:grid-cols-2 grid-cols-1 lg:grid-cols-4 xl:grid-cols-4 gap-4 p-4 mx-10">
-
-                            <!-- product 5 -->
-                            <div
-                                class="border relative overflow-hidden shadow-xl p-4 lg:p-6 rounded-2xl hover:shadow-2xl hover:-translate-x-1 hover:-translate-y-1 transition ">
+                        <!-- product 5 -->
+                        <div class="swiper-slide">
+                            <div class="border relative overflow-hidden shadow-xl p-4 lg:p-6 rounded-2xl  ">
                                 <span
                                     class="bg-orange-600 text-white text-sm px-4 py-1 rounded-ee-2xl absolute top-0 left-0">-14%</span>
                                 <div class="overflow-hidden flex justify-center items-center">
@@ -772,7 +807,8 @@
                                 <div class="flex flex-col mb-1">
 
                                     <a href="#popular-product"
-                                        class="text-gray-400 text-xs hover:text-emerald-400">Tasting Stevia</a>
+                                        class="text-gray-400 text-xs hover:text-emerald-400">Tasting
+                                        Stevia</a>
                                     <a href="#popular-product"
                                         class="font-semibold my-1 leading-none hover:text-emerald-500 transition-colors">SweetLeaf
                                         Tasting Stevia Sweetener</a>
@@ -794,16 +830,17 @@
                                             max="100"></progress>
                                         <p class="text-sm">Sold: 68/100</p>
                                         <button
-                                            class="bg-emerald-500 hover:bg-orange-500 text-white hover:text-white font-semibold w-full py-4 rounded-md flex justify-center items-center gap-1 hover:-translate-y-1 transition mt-4">
+                                            class="bg-emerald-500 active:bg-orange-500 active:scale-95 text-white hover:text-white font-semibold w-full py-4 rounded-md flex justify-center items-center gap-1 hover:-translate-y-1 transition mt-4">
                                             <img class="w-4 text " src="./src/assets/svgs/icon-cart.svg" alt="">
                                             <h1 class="">Add To Cart</h1>
                                         </button>
                                     </div>
                             </div>
+                        </div>
 
-                            <!-- product 6 -->
-                            <div
-                                class="border relative overflow-hidden shadow-xl p-4 lg:p-6 rounded-2xl hover:shadow-2xl hover:-translate-x-1 hover:-translate-y-1 transition ">
+                        <!-- product 6 -->
+                        <div class="swiper-slide">
+                            <div class="border relative overflow-hidden shadow-xl p-4 lg:p-6 rounded-2xl  ">
                                 <div class="overflow-hidden flex justify-center items-center">
                                     <img class="hover:scale-110 transition-all rounded-full lg:w-full w-56"
                                         src="./src/assets/popular product/product-16-1.jpg" alt="">
@@ -832,16 +869,18 @@
                                             max="100"></progress>
                                         <p class="text-sm">Sold: 76/100</p>
                                         <button
-                                            class="bg-emerald-500 hover:bg-orange-500 text-white hover:text-white font-semibold w-full py-4 rounded-md flex justify-center items-center gap-1 hover:-translate-y-1 transition mt-4">
+                                            class="bg-emerald-500 active:bg-orange-500 active:scale-95 text-white hover:text-white font-semibold w-full py-4 rounded-md flex justify-center items-center gap-1 hover:-translate-y-1 transition mt-4">
                                             <img class="w-4 text " src="/src/assets/svgs/icon-cart.svg" alt="">
                                             <h1 class="">Add To Cart</h1>
                                         </button>
                                     </div>
                             </div>
 
-                            <!-- product 7 -->
-                            <div
-                                class="border relative overflow-hidden shadow-xl p-4 lg:p-6 rounded-2xl hover:shadow-2xl hover:-translate-x-1 hover:-translate-y-1 transition ">
+                        </div>
+
+                        <!-- product 7 -->
+                        <div class="swiper-slide">
+                            <div class="border relative overflow-hidden shadow-xl p-4 lg:p-6 rounded-2xl  ">
                                 <span
                                     class="bg-blue-400 text-white text-sm px-4 py-1 rounded-ee-2xl absolute top-0 left-0">Sale</span>
                                 <div class="overflow-hidden flex justify-center items-center">
@@ -873,16 +912,17 @@
                                             max="100"></progress>
                                         <p class="text-sm">Sold: 50/100</p>
                                         <button
-                                            class="bg-emerald-500 hover:bg-orange-500 text-white hover:text-white font-semibold w-full py-4 rounded-md flex justify-center items-center gap-1 hover:-translate-y-1 transition mt-4">
+                                            class="bg-emerald-500 active:bg-orange-500 active:scale-95 text-white hover:text-white font-semibold w-full py-4 rounded-md flex justify-center items-center gap-1 hover:-translate-y-1 transition mt-4">
                                             <img class="w-4 text " src="./src/assets/svgs/icon-cart.svg" alt="">
                                             <h1 class="">Add To Cart</h1>
                                         </button>
                                     </div>
                             </div>
+                        </div>
 
-                            <!-- product 8 -->
-                            <div
-                                class="border relative overflow-hidden shadow-xl p-4 lg:p-6 rounded-2xl hover:shadow-2xl hover:-translate-x-1 hover:-translate-y-1 transition ">
+                        <!-- product 8 -->
+                        <div class="swiper-slide">
+                            <div class="border relative overflow-hidden shadow-xl p-4 lg:p-6 rounded-2xl  ">
                                 <div class="overflow-hidden flex justify-center items-center">
                                     <img class="hover:scale-110 transition-all rounded-full lg:w-full w-56"
                                         src="./src/assets/popular product/product-14-1.jpg" alt="">
@@ -911,20 +951,17 @@
                                             max="100"></progress>
                                         <p class="text-sm">Sold: 30/100</p>
                                         <button
-                                            class="bg-emerald-500 hover:bg-orange-500 text-white hover:text-white font-semibold w-full py-4 rounded-md flex justify-center items-center gap-1 hover:-translate-y-1 transition mt-4">
+                                            class="bg-emerald-500 active:bg-orange-500 active:scale-95 text-white hover:text-white font-semibold w-full py-4 rounded-md flex justify-center items-center gap-1 hover:-translate-y-1 transition mt-4">
                                             <img class="w-4 text " src="./src/assets/svgs/icon-cart.svg" alt="">
                                             <h1 class="">Add To Cart</h1>
                                         </button>
                                     </div>
                             </div>
+                        </div>
 
-                        </div>
-                        <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-                            <a href="#slide1" class="btn btn-circle">❮</a>
-                            <a href="#slide1" class="btn btn-circle">❯</a>
-                        </div>
                     </div>
                 </div>
+
             </div>
         </section>
 
@@ -1246,6 +1283,11 @@
         </section>
     </main>
 
+
+
+
+
+
     <footer class="mt-8 pt-10 ">
         <!-- footer  -->
         <div class="grid grid-cols-2 lg:grid-cols-6 gap-8 lg:gap-4 mx-auto lg:px-20 px-8 lg:max-w-screen-2xl  ">
@@ -1407,6 +1449,48 @@
 
         </div>
     </footer>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            spaceBetween: 30,
+            centeredSlides: true,
+            autoplay: {
+                delay: 2000,
+                disableOnInteraction: false,
+            },
+
+        });
+
+        var swiper1 = new Swiper(".mySwiper1", {
+            slidesPerView: 1,
+            spaceBetween: 10,
+            autoplay: {
+                delay: 1500,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination1",
+                clickable: true,
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                768: {
+                    slidesPerView: 3,
+                    spaceBetween: 10,
+                },
+                1024: {
+                    slidesPerView: 4,
+                    spaceBetween: 15,
+                },
+            },
+        });
+    </script>
 
     <script src="script.js"></script>
 </body>

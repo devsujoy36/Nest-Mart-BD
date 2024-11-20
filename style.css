@@ -3,8 +3,15 @@
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap');
-#hero{
+.hero-slide-1{
     background-image: url('./src/assets//slider/slider-1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+}
+.hero-slide-2{
+    background-image: url('./src/assets//slider/slider-2.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
