@@ -176,8 +176,8 @@
                     <input id="password-field" type="password" class="grow" placeholder="Password" />
                 </label>
             </div>
-            <div onclick="()=>{submitHandler()}" class="flex justify-center mt-4">
-                <button
+            <div class="flex justify-center mt-4">
+                <button id="submitBtn" onclick="submitDimu()"
                     class="bg-emerald-500 text-white px-4 py-2 rounded-lg hover:bg-amber-500 active:scale-95  hover:-translate-y-1 hover:-translate-x-1 transition-all">Submit</button>
             </div>
         </div>
@@ -1494,14 +1494,13 @@
     </pre>
     </div>
 
-    <script src="">
-        
+    <script>
+        const usernameField = document.getElementById('username-field');
+        const passwordField = document.getElementById('password-field');
+        const submitBtn = document.getElementById('submitBtn');
 
-
-
-        const submitHandler = () => {
-            console.log('hi');
+        const submitDimu = () => {
+            console.log('Hellow World');
         }
-        console.log('Hellow');
     </script>
 </body>
