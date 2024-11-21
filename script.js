@@ -1,23 +1,19 @@
-
-
-const menuCrose = document.getElementById('menu-crose')
+const menuCrose = document.getElementById('nav-swap-for-mobile')
 const navMenuForMobile = document.getElementById('nav-menu-for-moble')
-
 let toggle = true;
 
-const toggleHandler =  () => {
+
+
+const navMenuHandler = () => {
     if (toggle) {
-        menuCrose.innerHTML = `<img class="active:scale-95 w-10 transition-all border rounded-md" src="/src/assets/crose.svg" alt="">`
-        toggle = false;
         navMenuForMobile.style.display = 'flex'
-
+        toggle = false;
     } else {
-        menuCrose.innerHTML = `<img class="active:scale-95 w-10 transition-all border rounded-md" src="/src/assets/menu.svg" alt="">`
-        toggle = true;
         navMenuForMobile.style.display = 'none';
-
+        toggle = true;
     }
 }
+
 
 var swiper = new Swiper(".mySwiper", {
     spaceBetween: 30,
@@ -27,14 +23,7 @@ var swiper = new Swiper(".mySwiper", {
         delay: 1500,
         disableOnInteraction: false,
     },
-
 });
-
-
-
-
-
-
 var swiper1 = new Swiper(".mySwiper1", {
     slidesPerView: 1,
     spaceBetween: 10,
@@ -42,26 +31,11 @@ var swiper1 = new Swiper(".mySwiper1", {
         delay: 1000,
         disableOnInteraction: false,
     },
-    pagination: {
-        el: ".swiper-pagination1",
-        clickable: true,
-    },
     breakpoints: {
-        640: {
-            slidesPerView: 2,
-            spaceBetween: 20,
-        },
-        768: {
-            slidesPerView: 3,
-            spaceBetween: 10,
-        },
-        1024: {
-            slidesPerView: 4,
-            spaceBetween: 15,
-        },
+        640: { slidesPerView: 2, spaceBetween: 20, },
+        768: { slidesPerView: 3, spaceBetween: 10, },
+        1024: { slidesPerView: 4, spaceBetween: 15, },
     },
 });
-
-
 
 
