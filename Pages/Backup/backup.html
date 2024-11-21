@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,17 +13,18 @@
         @tailwind base;
         @tailwind components;
         @tailwind utilities;
+
         @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap');
 
         .hero-slide-1 {
-            background-image: url('./src/assets//slider/slider-1.png');
+            background-image: url('../../src/assets/slider/slider-1.png');
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center center;
         }
 
         .hero-slide-2 {
-            background-image: url('./src/assets//slider/slider-2.png');
+            background-image: url('../../src/assets/slider/slider-2.png');
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center center;
@@ -34,44 +34,36 @@
             background-color: rgb(1, 179, 1);
             color: white;
         }
-
         body {
             font-family: "Baloo 2", sans-serif;
             font-optical-sizing: auto;
             font-style: normal;
         }
-
         .blurNav {
-            background: white;
             z-index: 5;
         }
-
         .bgOnion {
-            background-image: url('./src/assets/banner/banner-1.png');
+            background-image: url('../../src/assets/banner/banner-1.png');
             background-position: center center;
         }
-
         .bgStroberry {
-            background-image: url('./src/assets/banner/banner-2.png');
+            background-image: url('../../src/assets/banner/banner-2.png');
             background-position: center center;
         }
-
         .bgVegetable {
-            background-image: url('./src/assets/banner/banner-3.png');
+            background-image: url('./../src/assets/banner/banner-3.png');
             background-position: center center;
         }
 
         .bgLeaf {
-            background-image: url('./src/assets/banner/banner-4.png');
+            background-image: url('../../src/assets/banner/banner-4.png');
             background-position: center;
         }
-
         #stay-home {
-            background-image: url('./src/assets/banner/banner-10.png');
+            background-image: url('../../src/assets/banner/banner-10.png');
             background-position: center center;
             background-size: contain;
         }
-
         .daily-best-sells {
             grid-template-columns: 1fr 3fr;
         }
@@ -79,18 +71,31 @@
 </head>
 
 <body class="relative">
-    <a href="./code.html"
-        class="fixed bottom-6 right-6 bg-emerald-400 p-2 rounded-full hover:bg-amber-400 hover:-translate-y-2 active:scale-95 transition-all z-10">
-        <img class="rounded-full w-6 h-6" src="./src/assets/svgs/edit.svg" alt="">
+    <a href="../../Pages/Team&Code/code.html"
+        class="theme-controller fixed bottom-6 right-6 bg-emerald-400 p-2 rounded-full hover:bg-amber-400 hover:-translate-y-2 active:scale-95 transition-all z-10">
+        <img class="rounded-full w-6 h-6" src="../../src/assets/svgs/edit.svg" alt="">
     </a>
-    <header class="rounded shadow-lg py-2 sticky blurNav top-0 ">
+
+    <header class=" rounded shadow-lg py-2 sticky blurNav top-0 ">
         <nav class=" lg:py-4 pr-6 flex justify-between lg:justify-around items-center gap-2 lg:flex-row relative">
             <a id="nav-logo" href="#" class=" active:scale-95 transition flex justify-center items-center"> <img
-                    class="w-8/12 " src="./src/assets/svgs/logo.svg" alt=""> </a>
+                    class="w-8/12 " src="../../src/assets/svgs/logo.svg" alt=""> </a>
+            <label class="btn btn-circle swap swap-rotate lg:hidden " id="">
+                <!-- this hidden checkbox controls the state -->
+                <input onclick="navMenuHandler()" type="checkbox" />
+                <!-- hamburger icon -->
+                <svg class="swap-off fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                    viewBox="0 0 512 512">
+                    <path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z" />
+                </svg>
 
-            <div id="menu-crose" class="flex lg:hidden relative ">
-                <img class="active:scale-95 w-10 transition-all " src="./src/assets/menu.svg" alt="">
-            </div>
+                <!-- close icon -->
+                <svg class="swap-on fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                    viewBox="0 0 512 512">
+                    <polygon
+                        points="400 145.49 366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49" />
+                </svg>
+            </label>
 
             <div id="nav-menu" class="lg:flex lg:flex-row flex-col hidden lg:gap-4 px-2">
                 <a href="#"
@@ -105,10 +110,25 @@
                 <a href="#contact-us"
                     class="lg:text-lg font-semibold lg:py-2 lg:px-4 px-2 py-1 text-emerald-400 hover:-translate-x-1 hover:-translate-y-1 active:scale-90 rounded transition">Contact
                     Us</a>
+                <label class="swap swap-rotate">
+                    <!-- this hidden checkbox controls the state -->
+                    <input type="checkbox" class="theme-controller" value="synthwave" />
+                    <!-- sun icon -->
+                    <svg class="swap-off h-10 w-10 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path
+                            d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z" />
+                    </svg>
+                    <!-- moon icon -->
+                    <svg class="swap-on h-10 w-10 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path
+                            d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
+                    </svg>
+                </label>
             </div>
         </nav>
+
         <div id="nav-menu-for-moble"
-            class="flex-col hidden p-4 absolute top-24 -mt-8 right-8 bg-white shadow-lg rounded-lg">
+            class="flex-col hidden p-4 absolute top-24 -mt-7  right-8 bg-white shadow-lg rounded-lg">
             <a href="#"
                 class="lg:text-lg font-semibold lg:py-2 lg:px-4 px-2 py-1 hover:bg-emerald-400 text-emerald-400 hover:text-white active:scale-90 rounded transition">Home</a>
             <a href="#for-categories"
@@ -121,6 +141,20 @@
             <a href="#contact-us"
                 class="lg:text-lg font-semibold lg:py-2 lg:px-4 px-2 py-1 hover:bg-emerald-400 text-emerald-400 hover:text-white active:scale-90 rounded transition">Contact
                 Us</a>
+            <label class="swap swap-rotate">
+                <!-- this hidden checkbox controls the state -->
+                <input type="checkbox" class="theme-controller" value="synthwave" />
+                <!-- sun icon -->
+                <svg class="swap-off h-10 w-10 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path
+                        d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z" />
+                </svg>
+                <!-- moon icon -->
+                <svg class="swap-on h-10 w-10 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path
+                        d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
+                </svg>
+            </label>
         </div>
     </header>
 
@@ -136,7 +170,7 @@
                         <p class="text-2xl lg:text-3xl text-gray-500">Sign Up for Daily Newsletter</p>
                         <div
                             class="bg-white flex rounded-full justify-between items-center lg:gap-4 gap-1 mt-8 overflow-hidden">
-                            <img class="pl-3 lg:pl-6" src="./src/assets/icon-plane.png" alt="">
+                            <img class="pl-3 lg:pl-6" src="../../src/assets/icon-plane.png" alt="">
                             <input class="focus:outline-none text-sm lg:text-lg  w-4/6" type="email"
                                 placeholder="Your email address">
                             <div>
@@ -151,7 +185,7 @@
                         <p class="text-2xl lg:text-3xl text-gray-500">Save up to 50% off on your first order</p>
                         <div
                             class="bg-white flex rounded-full justify-center items-center lg:gap-4 gap-1 mt-8 overflow-hidden">
-                            <img class="pl-3 lg:pl-6" src="./src/assets/icon-plane.png" alt="">
+                            <img class="pl-3 lg:pl-6" src="../../src/assets/icon-plane.png" alt="">
                             <input class="focus:outline-none text-sm lg:text-lg  w-4/6" type="email"
                                 placeholder="Your email address">
                             <button id="for-categories"
@@ -184,63 +218,63 @@
             <div class=" grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-9 gap-6">
                 <div id="card"
                     class="hover:-translate-x-2 hover:-translate-y-1 hover:shadow-xl hover:border transition-all bg-orange-100 p-4 rounded-lg flex justify-center items-center flex-col">
-                    <img class="w-8/12 hover:scale-110 transition" src="./src/assets/icons/cat-12.png" alt="">
+                    <img class="w-8/12 hover:scale-110 transition" src="../../src/assets/icons/cat-12.png" alt="">
                     <a href="#" class="font-semibold mt-4 hover:text-emerald-400">Oganic Kiwi</a>
                     <h1 class="text-gray-500">14 items</h1>
                 </div>
 
                 <div id="card"
                     class="hover:-translate-x-2 hover:-translate-y-1 hover:shadow-xl hover:border transition-all bg-green-100 p-4 rounded-lg flex justify-center items-center flex-col">
-                    <img class="w-8/12 hover:scale-110 transition" src="./src/assets/icons/cat-11.png" alt="">
+                    <img class="w-8/12 hover:scale-110 transition" src="../../src/assets/icons/cat-11.png" alt="">
                     <a href="#" class="font-semibold mt-4 hover:text-emerald-400">Peach</a>
                     <h1 class="text-gray-500">54 items</h1>
                 </div>
 
                 <div id="card"
                     class="hover:-translate-x-2 hover:-translate-y-1 hover:shadow-xl hover:border transition-all bg-red-100 p-4 rounded-lg flex justify-center items-center flex-col">
-                    <img class="w-8/12 hover:scale-110 transition" src="./src/assets/icons/cat-9.png" alt="">
+                    <img class="w-8/12 hover:scale-110 transition" src="../../src/assets/icons/cat-9.png" alt="">
                     <a href="#" class="font-semibold mt-4 hover:text-emerald-400">Red Apple</a>
                     <h1 class="text-gray-500">56 items</h1>
                 </div>
 
                 <div id="card"
                     class="hover:-translate-x-2 hover:-translate-y-1 hover:shadow-xl hover:border transition-all bg-orange-100 p-4 rounded-lg flex justify-center items-center flex-col">
-                    <img class="w-8/12 hover:scale-110 transition" src="./src/assets/icons/cat-3.png" alt="">
+                    <img class="w-8/12 hover:scale-110 transition" src="../../src/assets/icons/cat-3.png" alt="">
                     <a href="#" class="font-semibold mt-4 hover:text-emerald-400">Snack</a>
                     <h1 class="text-gray-500">72 items</h1>
                 </div>
 
                 <div id="card"
                     class="hover:-translate-x-2 hover:-translate-y-1 hover:shadow-xl hover:border transition-all bg-violet-100 p-4 rounded-lg flex justify-center items-center flex-col">
-                    <img class="w-8/12 hover:scale-110 transition" src="./src/assets/icons/cat-1.png" alt="">
+                    <img class="w-8/12 hover:scale-110 transition" src="../../src/assets/icons/cat-1.png" alt="">
                     <a href="#" class="font-semibold mt-4 hover:text-emerald-400">Vegetables</a>
                     <h1 class="text-gray-500">36 items</h1>
                 </div>
 
                 <div id="card"
                     class="hover:-translate-x-2 hover:-translate-y-1 hover:shadow-xl hover:border transition-all bg-green-200 p-4 rounded-lg flex justify-center items-center flex-col">
-                    <img class="w-8/12 hover:scale-110 transition" src="./src/assets/icons/cat-2.png" alt="">
+                    <img class="w-8/12 hover:scale-110 transition" src="../../src/assets/icons/cat-2.png" alt="">
                     <a href="#" class="font-semibold mt-4 hover:text-emerald-400">Strawberry</a>
                     <h1 class="text-gray-500">123 items</h1>
                 </div>
 
                 <div id="card"
                     class="hover:-translate-x-2 hover:-translate-y-1 hover:shadow-xl hover:border transition-all bg-red-200 p-4 rounded-lg flex justify-center items-center flex-col">
-                    <img class="w-8/12 hover:scale-110 transition" src="./src/assets/icons/cat-4.png" alt="">
+                    <img class="w-8/12 hover:scale-110 transition" src="../../src/assets/icons/cat-4.png" alt="">
                     <a href="#" class="font-semibold mt-4 hover:text-emerald-400">Black Plum</a>
                     <h1 class="text-gray-500">34 items</h1>
                 </div>
 
                 <div id="card"
                     class="hover:-translate-x-2 hover:-translate-y-1 hover:shadow-xl hover:border transition-all bg-gray-200 p-4 rounded-lg flex justify-center items-center flex-col">
-                    <img class="w-8/12 hover:scale-110 transition" src="./src/assets/icons/cat-3.png" alt="">
+                    <img class="w-8/12 hover:scale-110 transition" src="../../src/assets/icons/cat-3.png" alt="">
                     <a href="#" class="font-semibold mt-4 hover:text-emerald-400">Coffee & Tea</a>
                     <h1 class="text-gray-500">89 items</h1>
                 </div>
 
                 <div id="card"
                     class="hover:-translate-x-2 hover:-translate-y-1 hover:shadow-xl hover:border transition-all bg-orange-100 p-4 rounded-lg flex justify-center items-center flex-col">
-                    <img class="w-8/12 hover:scale-110 transition" src="./src/assets/icons/cat-15.png" alt="">
+                    <img class="w-8/12 hover:scale-110 transition" src="../../src/assets/icons/cat-15.png" alt="">
                     <a href="#" class="font-semibold mt-4 hover:text-emerald-400">Headphone</a>
                     <h1 class="text-gray-500">84 items</h1>
                 </div>
@@ -290,7 +324,7 @@
                         class="bg-pink-600 text-white text-sm px-4 py-1 rounded-ee-2xl absolute top-0 left-0">Hot</span>
                     <div class="overflow-hidden flex justify-center items-center">
                         <img class="hover:scale-110 transition-all rounded-full lg:w-full w-56"
-                            src="./src/assets/popular product/product-1-1.jpg" alt="">
+                            src="../../src/assets/popular product/product-1-1.jpg" alt="">
                     </div>
                     <div class="flex flex-col mb-1">
                         <a href="#popular-product" class="text-gray-400 text-xs hover:text-emerald-400">Coffee</a>
@@ -300,11 +334,11 @@
                     </div>
                     <div class="flex">
                         <div class="flex ">
-                            <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                            <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                            <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                            <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                            <img class="" src="./src/assets/popular product/black-rating-stars.png" alt="">
+                            <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                            <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                            <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                            <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                            <img class="" src="../../src/assets/popular product/black-rating-stars.png" alt="">
                         </div>
                     </div>
                     <h1 class="mt-2 text-xs">By <a href="#"
@@ -313,7 +347,7 @@
                             <h1 class="text-emerald-500 font-semibold text-xl">$54.85</h1>
                             <button
                                 class="bg-emerald-100 hover:bg-emerald-500 text-emerald-600 hover:text-white font-semibold px-3 lg:px-6 py-2 rounded-md flex justify-between items-center gap-1 hover:-translate-y-1 transition">
-                                <img class="w-4" src="./src/assets/svgs/icon-cart.svg" alt="">
+                                <img class="w-4" src="../../src/assets/svgs/icon-cart.svg" alt="">
                                 <h1 class="">Add</h1>
                             </button>
                         </div>
@@ -326,7 +360,7 @@
                         class="bg-blue-400 text-white text-sm px-4 py-1 rounded-ee-2xl absolute top-0 left-0">Sale</span>
                     <div class="overflow-hidden flex justify-center items-center">
                         <img class="hover:scale-110 transition-all rounded-full lg:w-full w-56"
-                            src="./src/assets/popular product/product-2-1.jpg" alt="">
+                            src="../../src/assets/popular product/product-2-1.jpg" alt="">
                     </div>
                     <div class="flex flex-col mb-1">
                         <a href="#popular-product" class="text-gray-400 text-xs hover:text-emerald-400">Snacks</a>
@@ -336,11 +370,11 @@
                     </div>
                     <div class="flex">
                         <div class="flex ">
-                            <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                            <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                            <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                            <img class="" src="./src/assets/popular product/black-rating-stars.png" alt="">
-                            <img class="" src="./src/assets/popular product/black-rating-stars.png" alt="">
+                            <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                            <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                            <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                            <img class="" src="../../src/assets/popular product/black-rating-stars.png" alt="">
+                            <img class="" src="../../src/assets/popular product/black-rating-stars.png" alt="">
                         </div>
                     </div>
                     <h1 class="mt-2 text-xs">By <a href="#"
@@ -349,7 +383,7 @@
                             <h1 class="text-emerald-500 font-semibold text-xl">$42.78</h1>
                             <button
                                 class="bg-emerald-100 hover:bg-emerald-500 text-emerald-600 hover:text-white font-semibold px-3 lg:px-6 py-2 rounded-md flex justify-between items-center gap-1 hover:-translate-y-1 transition">
-                                <img class="w-4" src="./src/assets/svgs/icon-cart.svg" alt="">
+                                <img class="w-4" src="../../src/assets/svgs/icon-cart.svg" alt="">
                                 <h1 class="">Add</h1>
                             </button>
                         </div>
@@ -362,7 +396,7 @@
                         class="bg-emerald-500 text-white text-sm px-4 py-1 rounded-ee-2xl absolute top-0 left-0">New</span>
                     <div class="overflow-hidden flex justify-center items-center">
                         <img class="hover:scale-110 transition-all rounded-full lg:w-full w-56"
-                            src="./src/assets/popular product/product-3-1.jpg" alt="">
+                            src="../../src/assets/popular product/product-3-1.jpg" alt="">
                     </div>
                     <div class="flex flex-col mb-1">
                         <a href="#popular-product" class="text-gray-400 text-xs hover:text-emerald-400">Snacks</a>
@@ -372,11 +406,11 @@
                     </div>
                     <div class="flex">
                         <div class="flex ">
-                            <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                            <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                            <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                            <img class="" src="./src/assets/popular product/black-rating-stars.png" alt="">
-                            <img class="" src="./src/assets/popular product/black-rating-stars.png" alt="">
+                            <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                            <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                            <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                            <img class="" src="../../src/assets/popular product/black-rating-stars.png" alt="">
+                            <img class="" src="../../src/assets/popular product/black-rating-stars.png" alt="">
                         </div>
                     </div>
                     <h1 class="mt-2 text-xs">By <a href="#"
@@ -385,7 +419,7 @@
                             <h1 class="text-emerald-500 font-semibold text-xl">$48.88</h1>
                             <button
                                 class="bg-emerald-100 hover:bg-emerald-500 text-emerald-600 hover:text-white font-semibold px-3 lg:px-6 py-2 rounded-md flex justify-between items-center gap-1 hover:-translate-y-1 transition">
-                                <img class="w-4" src="./src/assets/svgs/icon-cart.svg" alt="">
+                                <img class="w-4" src="../../src/assets/svgs/icon-cart.svg" alt="">
                                 <h1 class="">Add</h1>
                             </button>
                         </div>
@@ -396,7 +430,7 @@
                     class="border relative overflow-hidden shadow-xl p-4 lg:p-6 rounded-2xl hover:shadow-2xl hover:-translate-x-1 hover:-translate-y-1 transition ">
                     <div class="overflow-hidden flex justify-center items-center">
                         <img class="hover:scale-110 transition-all rounded-full lg:w-full w-56"
-                            src="./src/assets/popular product/product-4-1.jpg" alt="">
+                            src="../../src/assets/popular product/product-4-1.jpg" alt="">
                     </div>
                     <div class="flex flex-col mb-1">
                         <a href="#popular-product" class="text-gray-400 text-xs hover:text-emerald-400">Snacks</a>
@@ -406,11 +440,11 @@
                     </div>
                     <div class="flex">
                         <div class="flex ">
-                            <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                            <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                            <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                            <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                            <img class="" src="./src/assets/popular product/black-rating-stars.png" alt="">
+                            <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                            <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                            <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                            <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                            <img class="" src="../../src/assets/popular product/black-rating-stars.png" alt="">
                         </div>
                     </div>
                     <h1 class="mt-2 text-xs">By <a href="#"
@@ -419,7 +453,7 @@
                             <h1 class="text-emerald-500 font-semibold text-xl">$17.85</h1>
                             <button
                                 class="bg-emerald-100 hover:bg-emerald-500 text-emerald-600 hover:text-white font-semibold px-3 lg:px-6 py-2 rounded-md flex justify-between items-center gap-1 hover:-translate-y-1 transition">
-                                <img class="w-4" src="./src/assets/svgs/icon-cart.svg" alt="">
+                                <img class="w-4" src="../../src/assets/svgs/icon-cart.svg" alt="">
                                 <h1 class="">Add</h1>
                             </button>
                         </div>
@@ -432,7 +466,7 @@
                         class="bg-orange-600 text-white text-sm px-4 py-1 rounded-ee-2xl absolute top-0 left-0">-14%</span>
                     <div class="overflow-hidden flex justify-center items-center">
                         <img class="hover:scale-110 transition-all rounded-full lg:w-full w-56"
-                            src="./src/assets/popular product/product-5-1.jpg" alt="">
+                            src="../../src/assets/popular product/product-5-1.jpg" alt="">
                     </div>
                     <div class="flex flex-col mb-1">
                         <a href="#popular-product" class="text-gray-400 text-xs hover:text-emerald-400">Flacks</a>
@@ -442,11 +476,11 @@
                     </div>
                     <div class="flex">
                         <div class="flex ">
-                            <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                            <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                            <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                            <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                            <img class="" src="./src/assets/popular product/black-rating-stars.png" alt="">
+                            <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                            <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                            <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                            <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                            <img class="" src="../../src/assets/popular product/black-rating-stars.png" alt="">
                         </div>
                     </div>
                     <h1 class="mt-2 text-xs">By <a href="#"
@@ -455,7 +489,7 @@
                             <h1 class="text-emerald-500 font-semibold text-xl">$38.85</h1>
                             <button
                                 class="bg-emerald-100 hover:bg-emerald-500 text-emerald-600 hover:text-white font-semibold px-3 lg:px-6 py-2 rounded-md flex justify-between items-center gap-1 hover:-translate-y-1 transition">
-                                <img class="w-4" src="./src/assets/svgs/icon-cart.svg" alt="">
+                                <img class="w-4" src="../../src/assets/svgs/icon-cart.svg" alt="">
                                 <h1 class="">Add</h1>
                             </button>
                         </div>
@@ -466,7 +500,7 @@
                     class="border relative overflow-hidden shadow-xl p-4 lg:p-6 rounded-2xl hover:shadow-2xl hover:-translate-x-1 hover:-translate-y-1 transition ">
                     <div class="overflow-hidden flex justify-center items-center">
                         <img class="hover:scale-110 transition-all rounded-full lg:w-full w-56"
-                            src="./src/assets/popular product/product-6-1.jpg" alt="">
+                            src="../../src/assets/popular product/product-6-1.jpg" alt="">
                     </div>
                     <div class="flex flex-col mb-1">
                         <a href="#popular-product" class="text-gray-400 text-xs hover:text-emerald-400">Chocolate</a>
@@ -476,11 +510,11 @@
                     </div>
                     <div class="flex">
                         <div class="flex ">
-                            <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                            <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                            <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                            <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                            <img class="" src="./src/assets/popular product/black-rating-stars.png" alt="">
+                            <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                            <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                            <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                            <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                            <img class="" src="../../src/assets/popular product/black-rating-stars.png" alt="">
                         </div>
                     </div>
                     <h1 class="mt-2 text-xs">By <a href="#"
@@ -489,7 +523,7 @@
                             <h1 class="text-emerald-500 font-semibold text-xl">$54.85</h1>
                             <button
                                 class="bg-emerald-100 hover:bg-emerald-500 text-emerald-600 hover:text-white font-semibold px-3 lg:px-6 py-2 rounded-md flex justify-between items-center gap-1 hover:-translate-y-1 transition">
-                                <img class="w-4" src="./src/assets/svgs/icon-cart.svg" alt="">
+                                <img class="w-4" src="../../src/assets/svgs/icon-cart.svg" alt="">
                                 <h1 class="">Add</h1>
                             </button>
                         </div>
@@ -500,7 +534,7 @@
                     class="border relative overflow-hidden shadow-xl p-4 lg:p-6 rounded-2xl hover:shadow-2xl hover:-translate-x-1 hover:-translate-y-1 transition ">
                     <div class="overflow-hidden flex justify-center items-center">
                         <img class="hover:scale-110 transition-all rounded-full lg:w-full w-56"
-                            src="./src/assets/popular product/product-7-1.jpg" alt="">
+                            src="../../src/assets/popular product/product-7-1.jpg" alt="">
                     </div>
                     <div class="flex flex-col mb-1">
                         <a href="#popular-product" class="text-gray-400 text-xs hover:text-emerald-400">Butter</a>
@@ -510,11 +544,11 @@
                     </div>
                     <div class="flex">
                         <div class="flex ">
-                            <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                            <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                            <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                            <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                            <img class="" src="./src/assets/popular product/black-rating-stars.png" alt="">
+                            <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                            <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                            <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                            <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                            <img class="" src="../../src/assets/popular product/black-rating-stars.png" alt="">
                         </div>
                     </div>
                     <h1 class="mt-2 text-xs">By <a href="#"
@@ -523,7 +557,7 @@
                             <h1 class="text-emerald-500 font-semibold text-xl">$30.55</h1>
                             <button
                                 class="bg-emerald-100 hover:bg-emerald-500 text-emerald-600 hover:text-white font-semibold px-3 lg:px-6 py-2 rounded-md flex justify-between items-center gap-1 hover:-translate-y-1 transition">
-                                <img class="w-4" src="./src/assets/svgs/icon-cart.svg" alt="">
+                                <img class="w-4" src="../../src/assets/svgs/icon-cart.svg" alt="">
                                 <h1 class="">Add</h1>
                             </button>
                         </div>
@@ -536,7 +570,7 @@
                         class="bg-blue-400 text-white text-sm px-4 py-1 rounded-ee-2xl absolute top-0 left-0">Sale</span>
                     <div class="overflow-hidden flex justify-center items-center">
                         <img class="hover:scale-110 transition-all rounded-full lg:w-full w-56"
-                            src="./src/assets/popular product/product-8-1.jpg" alt="">
+                            src="../../src/assets/popular product/product-8-1.jpg" alt="">
                     </div>
                     <div class="flex flex-col mb-1">
                         <a href="#popular-product" class="text-gray-400 text-xs hover:text-emerald-400">Gel Cream</a>
@@ -546,11 +580,11 @@
                     </div>
                     <div class="flex">
                         <div class="flex ">
-                            <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                            <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                            <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                            <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                            <img class="" src="./src/assets/popular product/black-rating-stars.png" alt="">
+                            <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                            <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                            <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                            <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                            <img class="" src="../../src/assets/popular product/black-rating-stars.png" alt="">
                         </div>
                     </div>
                     <h1 class="mt-2 text-xs">By <a href="#"
@@ -559,7 +593,7 @@
                             <h1 class="text-emerald-500 font-semibold text-xl">$54.85</h1>
                             <button
                                 class="bg-emerald-100 hover:bg-emerald-500 text-emerald-600 hover:text-white font-semibold px-3 lg:px-6 py-2 rounded-md flex justify-between items-center gap-1 hover:-translate-y-1 transition">
-                                <img class="w-4" src="./src/assets/svgs/icon-cart.svg" alt="">
+                                <img class="w-4" src="../../src/assets/svgs/icon-cart.svg" alt="">
                                 <h1 class="">Add</h1>
                             </button>
                         </div>
@@ -572,7 +606,7 @@
                         class="bg-pink-600 text-white text-sm px-4 py-1 rounded-ee-2xl absolute top-0 left-0">Hot</span>
                     <div class="overflow-hidden flex justify-center items-center">
                         <img class="hover:scale-110 transition-all rounded-full lg:w-full w-56"
-                            src="./src/assets/popular product/product-9-1.jpg" alt="">
+                            src="../../src/assets/popular product/product-9-1.jpg" alt="">
                     </div>
                     <div class="flex flex-col mb-1">
                         <a href="#popular-product" class="text-gray-400 text-xs hover:text-emerald-400">Coffee</a>
@@ -582,11 +616,11 @@
                     </div>
                     <div class="flex">
                         <div class="flex ">
-                            <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                            <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                            <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                            <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                            <img class="" src="./src/assets/popular product/black-rating-stars.png" alt="">
+                            <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                            <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                            <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                            <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                            <img class="" src="../../src/assets/popular product/black-rating-stars.png" alt="">
                         </div>
                     </div>
                     <h1 class="mt-2 text-xs">By <a href="#"
@@ -596,7 +630,7 @@
                             <h1 class="text-emerald-500 font-semibold text-xl">$23.85</h1>
                             <button
                                 class="bg-emerald-100 hover:bg-emerald-500 text-emerald-600 hover:text-white font-semibold px-3 lg:px-6 py-2 rounded-md flex justify-between items-center gap-1 hover:-translate-y-1 transition">
-                                <img class="w-4" src="./src/assets/svgs/icon-cart.svg" alt="">
+                                <img class="w-4" src="../../src/assets/svgs/icon-cart.svg" alt="">
                                 <h1 class="">Add</h1>
                             </button>
                         </div>
@@ -607,7 +641,7 @@
                     class="border relative overflow-hidden shadow-xl p-4 lg:p-6 rounded-2xl hover:shadow-2xl hover:-translate-x-1 hover:-translate-y-1 transition ">
                     <div class="overflow-hidden flex justify-center items-center">
                         <img class="hover:scale-110 transition-all rounded-full lg:w-full w-56"
-                            src="./src/assets/popular product/product-10-1.jpg" alt="">
+                            src="../../src/assets/popular product/product-10-1.jpg" alt="">
                     </div>
                     <div class="flex flex-col mb-1">
                         <a href="#popular-product" class="text-gray-400 text-xs hover:text-emerald-400">Drinks</a>
@@ -617,11 +651,11 @@
                     </div>
                     <div class="flex">
                         <div class="flex ">
-                            <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                            <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                            <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                            <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                            <img class="" src="./src/assets/popular product/black-rating-stars.png" alt="">
+                            <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                            <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                            <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                            <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                            <img class="" src="../../src/assets/popular product/black-rating-stars.png" alt="">
                         </div>
                     </div>
                     <h1 class="mt-2 text-xs">By <a href="#"
@@ -630,7 +664,7 @@
                             <h1 class="text-emerald-500 font-semibold text-xl">$24.99</h1>
                             <button id="nav-for-daily-best-sell"
                                 class="bg-emerald-100 hover:bg-emerald-500 text-emerald-600 hover:text-white font-semibold px-3 lg:px-6 py-2 rounded-md flex justify-between items-center gap-1 hover:-translate-y-1 transition">
-                                <img class="w-4" src="./src/assets/svgs/icon-cart.svg" alt="">
+                                <img class="w-4" src="../../src/assets/svgs/icon-cart.svg" alt="">
                                 <h1 class="">Add</h1>
                             </button>
                         </div>
@@ -654,7 +688,6 @@
             </div>
 
             <div class="daily-best-sells lg:flex flex-col xl:grid  py-10 lg:gap-4 ">
-
                 <!-- Bring Nature Into  -->
                 <div class="bg-cover bgLeaf border rounded-xl p-10  ">
                     <h1 class="font-semibold text-5xl my-8  hover:-translate-y-1 transition-all">Bring <br> nature into
@@ -675,7 +708,7 @@
                                     class="bg-pink-600 text-white text-sm px-4 py-1 rounded-ee-2xl absolute top-0 left-0">Hot</span>
                                 <div class="overflow-hidden flex justify-center items-center">
                                     <img class="hover:scale-110 transition-all rounded-full lg:w-full w-56"
-                                        src="./src/assets/popular product/product-11-1.jpg" alt="">
+                                        src="../../src/assets/popular product/product-11-1.jpg" alt="">
                                 </div>
                                 <div class="flex flex-col mb-1">
                                     <a href="#popular-product"
@@ -686,11 +719,16 @@
                                 </div>
                                 <div class="flex">
                                     <div class="flex ">
-                                        <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                                        <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                                        <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                                        <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                                        <img class="" src="./src/assets/popular product/black-rating-stars.png" alt="">
+                                        <img class="" src="../../src/assets/popular product/gold-rating-stars.png"
+                                            alt="">
+                                        <img class="" src="../../src/assets/popular product/gold-rating-stars.png"
+                                            alt="">
+                                        <img class="" src="../../src/assets/popular product/gold-rating-stars.png"
+                                            alt="">
+                                        <img class="" src="../../src/assets/popular product/gold-rating-stars.png"
+                                            alt="">
+                                        <img class="" src="../../src/assets/popular product/black-rating-stars.png"
+                                            alt="">
                                     </div>
                                 </div>
                                 <h1 class="mt-2 text-xs">By <a href="#"
@@ -702,7 +740,7 @@
                                     <p class="text-sm">Sold: 26/100</p>
                                     <button
                                         class="bg-emerald-500 active:bg-orange-500 active:scale-95 text-white hover:text-white font-semibold w-full py-4 rounded-md flex justify-center items-center gap-1 hover:-translate-y-1 transition mt-4">
-                                        <img class="w-4 text " src="./src/assets/svgs/icon-cart.svg" alt="">
+                                        <img class="w-4 text " src="../../src/assets/svgs/icon-cart.svg" alt="">
                                         <h1 class="text-xs">Add To Cart</h1>
                                     </button>
                                 </div>
@@ -716,7 +754,7 @@
                                     class="bg-emerald-500 text-white text-sm px-4 py-1 rounded-ee-2xl absolute top-0 left-0">New</span>
                                 <div class="overflow-hidden flex justify-center items-center">
                                     <img class="hover:scale-110 transition-all rounded-full lg:w-full w-56"
-                                        src="./src/assets/popular product/product-13-1.jpg" alt="">
+                                        src="../../src/assets/popular product/product-13-1.jpg" alt="">
                                 </div>
                                 <div class="flex flex-col mb-1">
                                     <a href="#popular-product"
@@ -727,11 +765,16 @@
                                 </div>
                                 <div class="flex">
                                     <div class="flex ">
-                                        <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                                        <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                                        <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                                        <img class="" src="./src/assets/popular product/black-rating-stars.png" alt="">
-                                        <img class="" src="./src/assets/popular product/black-rating-stars.png" alt="">
+                                        <img class="" src="../../src/assets/popular product/gold-rating-stars.png"
+                                            alt="">
+                                        <img class="" src="../../src/assets/popular product/gold-rating-stars.png"
+                                            alt="">
+                                        <img class="" src="../../src/assets/popular product/gold-rating-stars.png"
+                                            alt="">
+                                        <img class="" src="../../src/assets/popular product/black-rating-stars.png"
+                                            alt="">
+                                        <img class="" src="../../src/assets/popular product/black-rating-stars.png"
+                                            alt="">
                                     </div>
                                 </div>
                                 <h1 class="mt-2 text-xs">By <a href="#"
@@ -743,7 +786,7 @@
                                         <p class="text-sm">Sold: 65/100</p>
                                         <button
                                             class="bg-emerald-500 active:bg-orange-500 active:scale-95 text-white hover:text-white font-semibold w-full py-4 rounded-md flex justify-center items-center gap-1 hover:-translate-y-1 transition mt-4">
-                                            <img class="w-4 text " src="./src/assets/svgs/icon-cart.svg" alt="">
+                                            <img class="w-4 text " src="../../src/assets/svgs/icon-cart.svg" alt="">
                                             <h1 class="">Add To Cart</h1>
                                         </button>
                                     </div>
@@ -757,7 +800,7 @@
                                     class="bg-blue-400 text-white text-sm px-4 py-1 rounded-ee-2xl absolute top-0 left-0">Sale</span>
                                 <div class="overflow-hidden flex justify-center items-center">
                                     <img class="hover:scale-110 transition-all rounded-full lg:w-full w-56"
-                                        src="./src/assets/popular product/product-16-4.jpg" alt="">
+                                        src="../../src/assets/popular product/product-16-4.jpg" alt="">
                                 </div>
                                 <div class="flex flex-col mb-1">
                                     <a href="#popular-product"
@@ -768,11 +811,16 @@
                                 </div>
                                 <div class="flex">
                                     <div class="flex ">
-                                        <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                                        <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                                        <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                                        <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                                        <img class="" src="./src/assets/popular product/black-rating-stars.png" alt="">
+                                        <img class="" src="../../src/assets/popular product/gold-rating-stars.png"
+                                            alt="">
+                                        <img class="" src="../../src/assets/popular product/gold-rating-stars.png"
+                                            alt="">
+                                        <img class="" src="../../src/assets/popular product/gold-rating-stars.png"
+                                            alt="">
+                                        <img class="" src="../../src/assets/popular product/gold-rating-stars.png"
+                                            alt="">
+                                        <img class="" src="../../src/assets/popular product/black-rating-stars.png"
+                                            alt="">
                                     </div>
                                 </div>
                                 <h1 class="mt-2 text-xs">By <a href="#"
@@ -784,7 +832,7 @@
                                         <p class="text-sm">Sold: 48/100</p>
                                         <button
                                             class="bg-emerald-500 active:bg-orange-500 text-white active:scale-95 font-semibold w-full py-4 rounded-md flex justify-center items-center gap-1 hover:-translate-y-1 transition mt-4">
-                                            <img class="w-4 text " src="./src/assets/svgs/icon-cart.svg" alt="">
+                                            <img class="w-4 text " src="../../src/assets/svgs/icon-cart.svg" alt="">
                                             <h1 class="">Add To Cart</h1>
                                         </button>
                                     </div>
@@ -796,7 +844,7 @@
                             <div class="border relative overflow-hidden p-4 lg:p-6 rounded-2xl  ">
                                 <div class="overflow-hidden flex justify-center items-center">
                                     <img class="hover:scale-110 transition-all rounded-full lg:w-full w-56"
-                                        src="./src/assets/popular product/product-16-3.jpg" alt="">
+                                        src="../../src/assets/popular product/product-16-3.jpg" alt="">
                                 </div>
                                 <div class="flex flex-col mb-1">
                                     <a href="#popular-product"
@@ -807,11 +855,16 @@
                                 </div>
                                 <div class="flex">
                                     <div class="flex ">
-                                        <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                                        <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                                        <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                                        <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                                        <img class="" src="./src/assets/popular product/black-rating-stars.png" alt="">
+                                        <img class="" src="../../src/assets/popular product/gold-rating-stars.png"
+                                            alt="">
+                                        <img class="" src="../../src/assets/popular product/gold-rating-stars.png"
+                                            alt="">
+                                        <img class="" src="../../src/assets/popular product/gold-rating-stars.png"
+                                            alt="">
+                                        <img class="" src="../../src/assets/popular product/gold-rating-stars.png"
+                                            alt="">
+                                        <img class="" src="../../src/assets/popular product/black-rating-stars.png"
+                                            alt="">
                                     </div>
                                 </div>
                                 <h1 class="mt-2 text-xs">By <a href="#"
@@ -823,7 +876,7 @@
                                         <p class="text-sm">Sold: 56/100</p>
                                         <button
                                             class="bg-emerald-500 active:bg-orange-500 active:scale-95 text-white hover:text-white font-semibold w-full py-4 rounded-md flex justify-center items-center gap-1 hover:-translate-y-1 transition mt-4">
-                                            <img class="w-4 text " src="./src/assets/svgs/icon-cart.svg" alt="">
+                                            <img class="w-4 text " src="../../src/assets/svgs/icon-cart.svg" alt="">
                                             <h1 class="">Add To Cart</h1>
                                         </button>
                                     </div>
@@ -837,7 +890,7 @@
                                     class="bg-orange-600 text-white text-sm px-4 py-1 rounded-ee-2xl absolute top-0 left-0">-14%</span>
                                 <div class="overflow-hidden flex justify-center items-center">
                                     <img class="hover:scale-110 transition-all rounded-full lg:w-full w-56"
-                                        src="./src/assets/popular product/product-15-1.jpg" alt="">
+                                        src="../../src/assets/popular product/product-15-1.jpg" alt="">
                                 </div>
                                 <div class="flex flex-col mb-1">
                                     <a href="#popular-product"
@@ -848,11 +901,16 @@
                                 </div>
                                 <div class="flex">
                                     <div class="flex ">
-                                        <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                                        <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                                        <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                                        <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                                        <img class="" src="./src/assets/popular product/black-rating-stars.png" alt="">
+                                        <img class="" src="../../src/assets/popular product/gold-rating-stars.png"
+                                            alt="">
+                                        <img class="" src="../../src/assets/popular product/gold-rating-stars.png"
+                                            alt="">
+                                        <img class="" src="../../src/assets/popular product/gold-rating-stars.png"
+                                            alt="">
+                                        <img class="" src="../../src/assets/popular product/gold-rating-stars.png"
+                                            alt="">
+                                        <img class="" src="../../src/assets/popular product/black-rating-stars.png"
+                                            alt="">
                                     </div>
                                 </div>
                                 <h1 class="mt-2 text-xs">By <a href="#"
@@ -864,7 +922,7 @@
                                         <p class="text-sm">Sold: 68/100</p>
                                         <button
                                             class="bg-emerald-500 active:bg-orange-500 active:scale-95 text-white hover:text-white font-semibold w-full py-4 rounded-md flex justify-center items-center gap-1 hover:-translate-y-1 transition mt-4">
-                                            <img class="w-4 text " src="./src/assets/svgs/icon-cart.svg" alt="">
+                                            <img class="w-4 text " src="../../src/assets/svgs/icon-cart.svg" alt="">
                                             <h1 class="">Add To Cart</h1>
                                         </button>
                                     </div>
@@ -876,7 +934,7 @@
                             <div class="border relative overflow-hidden p-4 lg:p-6 rounded-2xl  ">
                                 <div class="overflow-hidden flex justify-center items-center">
                                     <img class="hover:scale-110 transition-all rounded-full lg:w-full w-56"
-                                        src="./src/assets/popular product/product-16-1.jpg" alt="">
+                                        src="../../src/assets/popular product/product-16-1.jpg" alt="">
                                 </div>
                                 <div class="flex flex-col mb-1">
                                     <a href="#popular-product"
@@ -887,11 +945,16 @@
                                 </div>
                                 <div class="flex">
                                     <div class="flex ">
-                                        <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                                        <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                                        <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                                        <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                                        <img class="" src="./src/assets/popular product/black-rating-stars.png" alt="">
+                                        <img class="" src="../../src/assets/popular product/gold-rating-stars.png"
+                                            alt="">
+                                        <img class="" src="../../src/assets/popular product/gold-rating-stars.png"
+                                            alt="">
+                                        <img class="" src="../../src/assets/popular product/gold-rating-stars.png"
+                                            alt="">
+                                        <img class="" src="../../src/assets/popular product/gold-rating-stars.png"
+                                            alt="">
+                                        <img class="" src="../../src/assets/popular product/black-rating-stars.png"
+                                            alt="">
                                     </div>
                                 </div>
                                 <h1 class="mt-2 text-xs">By <a href="#"
@@ -903,7 +966,7 @@
                                         <p class="text-sm">Sold: 76/100</p>
                                         <button
                                             class="bg-emerald-500 active:bg-orange-500 active:scale-95 text-white hover:text-white font-semibold w-full py-4 rounded-md flex justify-center items-center gap-1 hover:-translate-y-1 transition mt-4">
-                                            <img class="w-4 text " src="/src/assets/svgs/icon-cart.svg" alt="">
+                                            <img class="w-4 text " src="../../src/assets/svgs/icon-cart.svg" alt="">
                                             <h1 class="">Add To Cart</h1>
                                         </button>
                                     </div>
@@ -918,7 +981,7 @@
                                     class="bg-blue-400 text-white text-sm px-4 py-1 rounded-ee-2xl absolute top-0 left-0">Sale</span>
                                 <div class="overflow-hidden flex justify-center items-center">
                                     <img class="hover:scale-110 transition-all rounded-full lg:w-full w-56"
-                                        src="./src/assets/popular product/product-12-1.jpg" alt="">
+                                        src="../../src/assets/popular product/product-12-1.jpg" alt="">
                                 </div>
                                 <div class="flex flex-col mb-1">
                                     <a href="#popular-product"
@@ -929,11 +992,16 @@
                                 </div>
                                 <div class="flex">
                                     <div class="flex ">
-                                        <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                                        <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                                        <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                                        <img class="" src="./src/assets/popular product/black-rating-stars.png" alt="">
-                                        <img class="" src="./src/assets/popular product/black-rating-stars.png" alt="">
+                                        <img class="" src="../../src/assets/popular product/gold-rating-stars.png"
+                                            alt="">
+                                        <img class="" src="../../src/assets/popular product/gold-rating-stars.png"
+                                            alt="">
+                                        <img class="" src="../../src/assets/popular product/gold-rating-stars.png"
+                                            alt="">
+                                        <img class="" src="../../src/assets/popular product/black-rating-stars.png"
+                                            alt="">
+                                        <img class="" src="../../src/assets/popular product/black-rating-stars.png"
+                                            alt="">
                                     </div>
                                 </div>
                                 <h1 class="mt-2 text-xs">By <a href="#"
@@ -945,7 +1013,7 @@
                                         <p class="text-sm">Sold: 50/100</p>
                                         <button
                                             class="bg-emerald-500 active:bg-orange-500 active:scale-95 text-white hover:text-white font-semibold w-full py-4 rounded-md flex justify-center items-center gap-1 hover:-translate-y-1 transition mt-4">
-                                            <img class="w-4 text " src="./src/assets/svgs/icon-cart.svg" alt="">
+                                            <img class="w-4 text " src="../../src/assets/svgs/icon-cart.svg" alt="">
                                             <h1 class="">Add To Cart</h1>
                                         </button>
                                     </div>
@@ -957,7 +1025,7 @@
                             <div class="border relative overflow-hidden p-4 lg:p-6 rounded-2xl  ">
                                 <div class="overflow-hidden flex justify-center items-center">
                                     <img class="hover:scale-110 transition-all rounded-full lg:w-full w-56"
-                                        src="./src/assets/popular product/product-14-1.jpg" alt="">
+                                        src="../../src/assets/popular product/product-14-1.jpg" alt="">
                                 </div>
                                 <div class="flex flex-col mb-1">
                                     <a href="#popular-product"
@@ -968,11 +1036,16 @@
                                 </div>
                                 <div class="flex">
                                     <div class="flex ">
-                                        <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                                        <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                                        <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                                        <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                                        <img class="" src="./src/assets/popular product/black-rating-stars.png" alt="">
+                                        <img class="" src="../../src/assets/popular product/gold-rating-stars.png"
+                                            alt="">
+                                        <img class="" src="../../src/assets/popular product/gold-rating-stars.png"
+                                            alt="">
+                                        <img class="" src="../../src/assets/popular product/gold-rating-stars.png"
+                                            alt="">
+                                        <img class="" src="../../src/assets/popular product/gold-rating-stars.png"
+                                            alt="">
+                                        <img class="" src="../../src/assets/popular product/black-rating-stars.png"
+                                            alt="">
                                     </div>
                                 </div>
                                 <h1 class="mt-2 text-xs">By <a href="#"
@@ -984,7 +1057,7 @@
                                         <p class="text-sm">Sold: 30/100</p>
                                         <button
                                             class="bg-emerald-500 active:bg-orange-500 active:scale-95 text-white hover:text-white font-semibold w-full py-4 rounded-md flex justify-center items-center gap-1 hover:-translate-y-1 transition mt-4">
-                                            <img class="w-4 text " src="./src/assets/svgs/icon-cart.svg" alt="">
+                                            <img class="w-4 text " src="../../src/assets/svgs/icon-cart.svg" alt="">
                                             <h1 class="">Add To Cart</h1>
                                         </button>
                                     </div>
@@ -993,7 +1066,6 @@
 
                     </div>
                 </div>
-
             </div>
         </section>
 
@@ -1005,15 +1077,15 @@
                 <div class="grid grid-rows-3 gap-4">
                     <div
                         class="flex items-center gap-4 rounded-lg hover:shadow-lg hover:-translate-x-1 hover:-translate-y-1 transition p-3">
-                        <img class="w-24 rounded-lg" src="./src/assets/top selling/thumbnail-1.jpg" alt="">
+                        <img class="w-24 rounded-lg" src="../../src/assets/top selling/thumbnail-1.jpg" alt="">
                         <div>
                             <h1>Carrot Nurtition and Health Benifit</h1>
                             <div class="flex ">
-                                <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="./src/assets/popular product/black-rating-stars.png" alt="">
+                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                                <img class="" src="../../src/assets/popular product/black-rating-stars.png" alt="">
                             </div>
                             <div class="flex justify-between items-center mt-2">
                                 <h1 class="text-emerald-500 font-semibold text-xl">$8.58</h1>
@@ -1023,15 +1095,15 @@
 
                     <div
                         class="flex items-center gap-4 rounded-lg hover:shadow-lg hover:-translate-x-1 hover:-translate-y-1 transition p-3">
-                        <img class="w-24 rounded-lg" src="./src/assets/top selling/thumbnail-2.jpg" alt="">
+                        <img class="w-24 rounded-lg" src="../../src/assets/top selling/thumbnail-2.jpg" alt="">
                         <div>
                             <h1>Capsicum Red Green Yellow</h1>
                             <div class="flex ">
-                                <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="./src/assets/popular product/black-rating-stars.png" alt="">
+                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                                <img class="" src="../../src/assets/popular product/black-rating-stars.png" alt="">
                             </div>
                             <div class="flex justify-between items-center mt-2">
                                 <h1 class="text-emerald-500 font-semibold text-xl">$6.85</h1>
@@ -1041,15 +1113,15 @@
 
                     <div
                         class="flex items-center gap-4 rounded-lg hover:shadow-lg hover:-translate-x-1 hover:-translate-y-1 transition p-3">
-                        <img class="w-24 rounded-lg" src="./src/assets/top selling/thumbnail-3.jpg" alt="">
+                        <img class="w-24 rounded-lg" src="../../src/assets/top selling/thumbnail-3.jpg" alt="">
                         <div>
                             <h1>Mango Juice & Mango Slices</h1>
                             <div class="flex ">
-                                <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="./src/assets/popular product/black-rating-stars.png" alt="">
+                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                                <img class="" src="../../src/assets/popular product/black-rating-stars.png" alt="">
                             </div>
                             <div class="flex justify-between items-center mt-2">
                                 <h1 class="text-emerald-500 font-semibold text-xl">$4.99</h1>
@@ -1064,15 +1136,15 @@
                 <div class="grid grid-rows-3  gap-4">
                     <div
                         class="flex items-center gap-4 rounded-lg hover:shadow-lg hover:-translate-x-1 hover:-translate-y-1 transition p-3">
-                        <img class="w-24 rounded-lg" src="./src/assets/top selling/thumbnail-4.jpg" alt="">
+                        <img class="w-24 rounded-lg" src="../../src/assets/top selling/thumbnail-4.jpg" alt="">
                         <div>
                             <h1>Cavendish Banana with Banana Slices</h1>
                             <div class="flex ">
-                                <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="./src/assets/popular product/black-rating-stars.png" alt="">
+                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                                <img class="" src="../../src/assets/popular product/black-rating-stars.png" alt="">
                             </div>
                             <div class="flex justify-between items-center mt-2">
                                 <h1 class="text-emerald-500 font-semibold text-xl">$3.55</h1>
@@ -1082,15 +1154,15 @@
 
                     <div
                         class="flex items-center gap-4 rounded-lg hover:shadow-lg hover:-translate-x-1 hover:-translate-y-1 transition p-3">
-                        <img class="w-24 rounded-lg" src="./src/assets/top selling/thumbnail-5.jpg" alt="">
+                        <img class="w-24 rounded-lg" src="../../src/assets/top selling/thumbnail-5.jpg" alt="">
                         <div>
                             <h1>Watermelon Crimson Sweet Slices</h1>
                             <div class="flex ">
-                                <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="./src/assets/popular product/black-rating-stars.png" alt="">
+                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                                <img class="" src="../../src/assets/popular product/black-rating-stars.png" alt="">
                             </div>
                             <div class="flex justify-between items-center mt-2">
                                 <h1 class="text-emerald-500 font-semibold text-xl">$8.00</h1>
@@ -1100,15 +1172,15 @@
 
                     <div
                         class="flex items-center gap-4 rounded-lg hover:shadow-lg hover:-translate-x-1 hover:-translate-y-1 transition p-3">
-                        <img class="w-24 rounded-lg" src="./src/assets/top selling/thumbnail-6.jpg" alt="">
+                        <img class="w-24 rounded-lg" src="../../src/assets/top selling/thumbnail-6.jpg" alt="">
                         <div>
                             <h1>Green Lychee Monotopic Taxon </h1>
                             <div class="flex ">
-                                <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="./src/assets/popular product/black-rating-stars.png" alt="">
+                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                                <img class="" src="../../src/assets/popular product/black-rating-stars.png" alt="">
                             </div>
                             <div class="flex justify-between items-center mt-2">
                                 <h1 class="text-emerald-500 font-semibold text-xl">$6.80</h1>
@@ -1123,15 +1195,15 @@
                 <div class="grid grid-rows-3 gap-4">
                     <div
                         class="flex items-center gap-4 rounded-lg hover:shadow-lg hover:-translate-x-1 hover:-translate-y-1 transition p-3">
-                        <img class="w-24 rounded-lg" src="./src/assets/top selling/thumbnail-7.jpg" alt="">
+                        <img class="w-24 rounded-lg" src="../../src/assets/top selling/thumbnail-7.jpg" alt="">
                         <div>
                             <h1>Alphoso Mango Warm Sweet Taste </h1>
                             <div class="flex ">
-                                <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="./src/assets/popular product/black-rating-stars.png" alt="">
+                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                                <img class="" src="../../src/assets/popular product/black-rating-stars.png" alt="">
                             </div>
                             <div class="flex justify-between items-center mt-2">
                                 <h1 class="text-emerald-500 font-semibold text-xl">$6.45</h1>
@@ -1141,15 +1213,15 @@
 
                     <div
                         class="flex items-center gap-4 rounded-lg hover:shadow-lg hover:-translate-x-1 hover:-translate-y-1 transition p-3">
-                        <img class="w-24 rounded-lg" src="./src/assets/top selling/thumbnail-8.jpg" alt="">
+                        <img class="w-24 rounded-lg" src="../../src/assets/top selling/thumbnail-8.jpg" alt="">
                         <div>
                             <h1>Mango Chips Packet Premium Quality </h1>
                             <div class="flex ">
-                                <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="./src/assets/popular product/black-rating-stars.png" alt="">
+                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                                <img class="" src="../../src/assets/popular product/black-rating-stars.png" alt="">
                             </div>
                             <div class="flex justify-between items-center mt-2">
                                 <h1 class="text-emerald-500 font-semibold text-xl">$5.85</h1>
@@ -1159,15 +1231,15 @@
 
                     <div
                         class="flex items-center gap-4 rounded-lg hover:shadow-lg hover:-translate-x-1 hover:-translate-y-1 transition p-3">
-                        <img class="w-24 rounded-lg" src="./src/assets/top selling/thumbnail-9.jpg" alt="">
+                        <img class="w-24 rounded-lg" src="../../src/assets/top selling/thumbnail-9.jpg" alt="">
                         <div>
                             <h1>Corn Uplift Eye Health along Cattort</h1>
                             <div class="flex ">
-                                <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="./src/assets/popular product/black-rating-stars.png" alt="">
+                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                                <img class="" src="../../src/assets/popular product/black-rating-stars.png" alt="">
                             </div>
                             <div class="flex justify-between items-center mt-2">
                                 <h1 class="text-emerald-500 font-semibold text-xl">$4.85</h1>
@@ -1182,15 +1254,15 @@
                 <div class="grid grid-rows-3  gap-4">
                     <div
                         class="flex items-center gap-4 rounded-lg hover:shadow-lg hover:-translate-x-1 hover:-translate-y-1 transition p-3">
-                        <img class="w-24 rounded-lg" src="./src/assets/top selling/thumbnail-10.jpg" alt="">
+                        <img class="w-24 rounded-lg" src="../../src/assets/top selling/thumbnail-10.jpg" alt="">
                         <div>
                             <h1>Pomegranate Sweet and Tart Thick Skin</h1>
                             <div class="flex ">
-                                <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="./src/assets/popular product/black-rating-stars.png" alt="">
+                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                                <img class="" src="../../src/assets/popular product/black-rating-stars.png" alt="">
                             </div>
                             <div class="flex justify-between items-center mt-2">
                                 <h1 class="text-emerald-500 font-semibold text-xl">$6.85</h1>
@@ -1200,15 +1272,15 @@
 
                     <div
                         class="flex items-center gap-4 rounded-lg hover:shadow-lg hover:-translate-x-1 hover:-translate-y-1 transition p-3">
-                        <img class="w-24 rounded-lg" src="./src/assets/top selling/thumbnail-11.jpg" alt="">
+                        <img class="w-24 rounded-lg" src="../../src/assets/top selling/thumbnail-11.jpg" alt="">
                         <div>
                             <h1>Papaya Sweet Taste and Buttery</h1>
                             <div class="flex ">
-                                <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="./src/assets/popular product/black-rating-stars.png" alt="">
+                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                                <img class="" src="../../src/assets/popular product/black-rating-stars.png" alt="">
                             </div>
                             <div class="flex justify-between items-center mt-2">
                                 <h1 class="text-emerald-500 font-semibold text-xl">$8.85</h1>
@@ -1218,15 +1290,15 @@
 
                     <div
                         class="flex items-center gap-4 rounded-lg hover:shadow-lg hover:-translate-x-1 hover:-translate-y-1 transition p-3">
-                        <img class="w-24 rounded-lg" src="./src/assets/top selling/thumbnail-12.jpg" alt="">
+                        <img class="w-24 rounded-lg" src="../../src/assets/top selling/thumbnail-12.jpg" alt="">
                         <div>
                             <h1>Orange Tangy Juicy Sweet also Tart</h1>
                             <div class="flex ">
-                                <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="./src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="./src/assets/popular product/black-rating-stars.png" alt="">
+                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
+                                <img class="" src="../../src/assets/popular product/black-rating-stars.png" alt="">
                             </div>
                             <div class="flex justify-between items-center mt-2">
                                 <h1 class="text-emerald-500 font-semibold text-xl">$12.85</h1>
@@ -1245,7 +1317,7 @@
                         class="text-emerald-500">Nest Mart</span> </p>
                 <div
                     class="bg-white flex rounded-full justify-between items-center lg:gap-4 gap-1 mt-8 overflow-hidden">
-                    <img class="lg:pl-6 pl-3" src="./src/assets/icon-plane.png" alt="">
+                    <img class="lg:pl-6 pl-3" src="../../src/assets/icon-plane.png" alt="">
                     <input class="focus:outline-none lg:text-lg text-sm w-full" type="email"
                         placeholder="Your email address">
                     <button
@@ -1253,46 +1325,46 @@
                 </div>
             </div>
             <div class="flex justify-center overflow-hidden pt-3">
-                <img class="w-10/12 hover:scale-105 transition" src="./src/assets/banner/banner-9.png" alt="">
+                <img class="w-10/12 hover:scale-105 transition" src="../../src/assets/banner/banner-9.png" alt="">
             </div>
         </section>
 
         <!-- Services section  -->
         <section id="services" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-            <div class="hover:shadow-md flex gap-2 justify-center items-center bg-gray-100 p-5 rounded-lg">
-                <img class="hover:-translate-y-2 transition w-12" src="./src/assets/svgs/icon-1.svg" alt="">
+            <div class="hover:shadow-md flex gap-2 justify-center items-center border p-5 rounded-lg">
+                <img class="hover:-translate-y-2 transition w-12" src="../../src/assets/svgs/icon-1.svg" alt="">
                 <div>
                     <p class="font-bold text-lg">Best prices & offers</p>
                     <p class="text-gray-4500 ">Orders $50 or More</p>
                 </div>
             </div>
 
-            <div class="hover:shadow-md flex gap-2 justify-center items-center bg-gray-100 p-5 rounded-lg">
-                <img class="hover:-translate-y-2 transition w-12" src="./src/assets/svgs/icon-2.svg" alt="">
+            <div class="hover:shadow-md flex gap-2 justify-center items-center border p-5 rounded-lg">
+                <img class="hover:-translate-y-2 transition w-12" src="../../src/assets/svgs/icon-2.svg" alt="">
                 <div>
                     <p class="font-bold text-lg">Free delivery</p>
                     <p class="text-gray-4500 ">24/7 amazing services</p>
                 </div>
             </div>
 
-            <div class="hover:shadow-md lg:hidden flex gap-2 justify-center items-center bg-gray-100 p-5 rounded-lg">
-                <img class="hover:-translate-y-2 transition w-12" src="./src/assets/svgs/icon-3.svg" alt="">
+            <div class="hover:shadow-md lg:hidden flex gap-2 justify-center items-center border p-5 rounded-lg">
+                <img class="hover:-translate-y-2 transition w-12" src="../../src/assets/svgs/icon-3.svg" alt="">
                 <div>
                     <p class="font-bold text-lg">Great daily deal</p>
                     <p class="text-gray-4500 ">When you sign up</p>
                 </div>
             </div>
 
-            <div class="hover:shadow-md flex gap-2 justify-center items-center bg-gray-100 p-5 rounded-lg">
-                <img class="hover:-translate-y-2 transition w-12" src="./src/assets/svgs/icon-4.svg" alt="">
+            <div class="hover:shadow-md flex gap-2 justify-center items-center border p-5 rounded-lg">
+                <img class="hover:-translate-y-2 transition w-12" src="../../src/assets/svgs/icon-4.svg" alt="">
                 <div>
                     <p class="font-bold text-lg">Wide assortment</p>
                     <p class="text-gray-4500 ">Mega Discounts</p>
                 </div>
             </div>
 
-            <div class="hover:shadow-md flex gap-4 justify-center items-center bg-gray-100 p-5 rounded-lg">
-                <img class="hover:-translate-y-2 transition w-12" src="./src/assets/svgs/icon-5.svg" alt="">
+            <div class="hover:shadow-md flex gap-4 justify-center items-center border p-5 rounded-lg">
+                <img class="hover:-translate-y-2 transition w-12" src="../../src/assets/svgs/icon-5.svg" alt="">
                 <div>
                     <p class="font-bold text-lg">Easy returns</p>
                     <p class="text-gray-4500 ">Within 30 days</p>
@@ -1300,8 +1372,8 @@
             </div>
 
             <div id="footer"
-                class=" scroll-smooth hover:shadow-md flex gap-2 justify-center items-center bg-gray-100 p-5 rounded-lg">
-                <img class="hover:-translate-y-2 transition w-12" src="./src/assets/svgs/icon-6.svg" alt="">
+                class=" scroll-smooth hover:shadow-md flex gap-2 justify-center items-center border p-5 rounded-lg">
+                <img class="hover:-translate-y-2 transition w-12" src="../../src/assets/svgs/icon-6.svg" alt="">
                 <div>
                     <p class="font-bold text-lg">Safe delivery</p>
                     <p class="text-gray-4500 ">Within 30 days</p>
@@ -1321,26 +1393,26 @@
 
             <!-- NestStore  -->
             <div class="grid gap-4 text-sm">
-                <img src="./src/assets/svgs/logo.svg" alt="">
+                <img src="../../src/assets/svgs/logo.svg" alt="">
                 <p class="text-center lg:text-left -mt-4">Awesome grocery store</p>
                 <div class="grid lg:gap-2 gap-3">
                     <div
                         class="flex justify-center lg:text-left text-center lg:flex-row flex-col lg:items-start items-center lg:gap-2">
-                        <img class="" src="./src/assets/svgs/icon-location.svg" alt="">
+                        <img class="" src="../../src/assets/svgs/icon-location.svg" alt="">
                         <div class="flex flex-col lg:flex-row gap-1">
                             <p class="font-semibold">Address:</p><span>Chorpara, Maskanda, Mymensingh</span>
                         </div>
                     </div>
                     <div class="flex items-center lg:flex-row flex-col lg:gap-2">
-                        <img src="./src/assets/svgs/icon-contact.svg" alt="">
+                        <img src="../../src/assets/svgs/icon-contact.svg" alt="">
                         <p class="font-semibold">Call Us:</p><span>+880 1303436299</span>
                     </div>
                     <div class="flex items-center lg:flex-row flex-col lg:gap-2 flex-wrap">
-                        <img src="./src/assets/svgs/icon-email-2.svg" alt="">
+                        <img src="../../src/assets/svgs/icon-email-2.svg" alt="">
                         <p class="font-semibold">Email:</p><span>nestsujoy@gmail.com</span>
                     </div>
                     <div class="flex items-center  lg:flex-row flex-col lg:gap-2">
-                        <img src="./src/assets/svgs/icon-clock.svg" alt="">
+                        <img src="../../src/assets/svgs/icon-clock.svg" alt="">
                         <p class="font-semibold">Hours:</p><span> 10:00 - 18:00, Mon-Sat</span>
                     </div>
                 </div>
@@ -1430,11 +1502,11 @@
                         <div class="flex gap-2 lg:flex-row flex-col">
                             <a href="#ios-store">
                                 <img class="w-3/4 lg:w-full hover:shadow-md hover:-translate-y-1 transition"
-                                    src="./src/assets/app-store.jpg" alt="">
+                                    src="../../src/assets/app-store.jpg" alt="">
                             </a>
                             <a href="#play-store">
                                 <img class="w-3/4 lg:w-full hover:shadow-md hover:-translate-y-1 transition"
-                                    src="./src/assets/google-play.jpg" alt="">
+                                    src="../../src/assets/google-play.jpg" alt="">
                             </a>
                         </div>
                     </div>
@@ -1443,7 +1515,7 @@
                             Gateways</a>
                         <div class="flex gap-2">
                             <img class="w-full hover:shadow-md hover:-translate-y-1 transition"
-                                src="./src/assets/payment-method.png" alt="">
+                                src="../../src/assets/payment-method.png" alt="">
                         </div>
                     </div>
                 </div>
@@ -1461,15 +1533,15 @@
                 </div>
                 <div class="flex lg:flex-row flex-col gap-4">
                     <div class="flex gap-2 ">
-                        <img class="w-8" src="./src/assets/svgs/phone-call.svg" alt="">
-                        <div>
+                        <img class="w-8" src="../../src/assets/svgs/phone-call.svg" alt="">
+                        <div class="flex flex-col lg:items-start items-center">
                             <h1 class="text-2xl font-semibold text-emerald-500 ">+880 9638 831422</h1>
                             <h1 class="text-sm text-gray-500 -mt-2">Working 8:00 - 22:00</h1>
                         </div>
                     </div>
                     <div class="flex gap-2 ">
-                        <img class="w-8" src="./src/assets/svgs/phone-call.svg" alt="">
-                        <div>
+                        <img class="w-8" src="../../src/assets/svgs/phone-call.svg" alt="">
+                        <div class="flex flex-col lg:items-start items-center">
                             <h1 class="text-2xl font-semibold text-emerald-500">+880 1303-436299</h1>
                             <h1 class="text-sm text-gray-500 -mt-2">24/7 Support Center</h1>
                         </div>
@@ -1504,47 +1576,9 @@
         </div>
     </footer>
 
-
     <script src="tailwind.config.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script>
-        const menuCrose = document.getElementById('menu-crose')
-        const navMenuForMobile = document.getElementById('nav-menu-for-moble')
-        let toggle = true;
-        menuCrose.addEventListener('click', () => {
-            if (toggle) {
-                menuCrose.innerHTML = `<img class="active:scale-95 w-10 transition-all border rounded-md" src="/src/assets/crose.svg" alt="">`
-                toggle = false;
-                navMenuForMobile.style.display = 'flex'
-            } else {
-                menuCrose.innerHTML = `<img class="active:scale-95 w-10 transition-all border rounded-md" src="/src/assets/menu.svg" alt="">`
-                toggle = true;
-                navMenuForMobile.style.display = 'none';
-            }
-        })
-        var swiper = new Swiper(".mySwiper", {
-            spaceBetween: 30,
-            effect: "fade",
-            centeredSlides: true,
-            autoplay: {
-                delay: 1500,
-                disableOnInteraction: false,
-            },
-        });
-        var swiper1 = new Swiper(".mySwiper1", {
-            slidesPerView: 1,
-            spaceBetween: 10,
-            autoplay: {
-                delay: 1000,
-                disableOnInteraction: false,
-            },
-            breakpoints: {
-                640: { slidesPerView: 2, spaceBetween: 20, },
-                768: { slidesPerView: 3, spaceBetween: 10, },
-                1024: { slidesPerView: 4, spaceBetween: 15, },
-            },
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
