@@ -27,8 +27,8 @@
             <div
                 class="border p-8 flex flex-col gap-3 rounded-lg hover:shadow-xl hover:-translate-x-2 hover:-translate-y-2 transition-all">
                 <div class="flex justify-center items-center">
-                    <img class="rounded-full w-full hover:scale-105 transition"
-                        src="./src/assets/profile-pic/sujoy.png" alt="John Doe">
+                    <img class="rounded-full w-full hover:scale-105 transition" src="./src/assets/profile-pic/sujoy.png"
+                        alt="John Doe">
                 </div>
                 <div class="">
                     <h3 class="font-bold text-2xl text-black">Sujoy Das </h3>
@@ -47,8 +47,8 @@
             <div
                 class="border p-8 flex flex-col gap-3 rounded-lg hover:shadow-xl hover:-translate-x-2 hover:-translate-y-2 transition-all">
                 <div class="flex justify-center items-center">
-                    <img class="rounded-full w-full hover:scale-105 transition"
-                        src="./src/assets/profile-pic/rain.jpg" alt="John Doe">
+                    <img class="rounded-full w-full hover:scale-105 transition" src="./src/assets/profile-pic/rain.jpg"
+                        alt="John Doe">
                 </div>
                 <div class="">
                     <h3 class="font-bold text-2xl text-black">NAIMUL HASAN </h3>
@@ -150,7 +150,7 @@
                         src="https://i.pinimg.com/474x/2b/b8/e7/2bb8e76f773071cddea16d47e36a9b33.jpg" alt="John Doe">
                 </div>
                 <div class="">
-                    <h3 class="font-bold text-2xl text-black">IMRAN HOSSEN IFTY </h3>
+                    <h3 class="font-bold text-2xl text-black">IMRAN HOSSEN </h3>
                     <p class="font-semibold">Member</p>
                     <p>Roll No : 672733</p>
                     <p>Reg. No : </p>
@@ -167,11 +167,44 @@
     </div>
 
     <div class="flex justify-center items-center flex-col gap-2">
-        <h1 class="lg:text-6xl text-2xl mx-10 font-bold text-center">Full Code OF NEST MART GROCERY By Sujoy Das
+        <h1 class="lg:text-6xl text-2xl mx-12 lg:mx-40 font-bold text-center">Enter Your Valid Usename & Password to
+            Access Full Code OF NEST MART GROCERY By Sujoy Das
         </h1>
-        <h1 class="lg:text-6xl text-2xl mx-10 font-bold  text-center">All Rights are Reserved</h1>
+
+
+        <div class="border p-10 rounded-lg">
+            <div class="flex flex-col gap-3">
+                <label class="input input-bordered flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                        class="h-4 w-4 opacity-70">
+                        <path
+                            d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM12.735 14c.618 0 1.093-.561.872-1.139a6.002 6.002 0 0 0-11.215 0c-.22.578.254 1.139.872 1.139h9.47Z" />
+                    </svg>
+                    <input id="username-field" type="text" class="grow" placeholder="Username" />
+                </label>
+
+                <label class="input input-bordered flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                        class="h-4 w-4 opacity-70">
+                        <path fill-rule="evenodd"
+                            d="M14 6a4 4 0 0 1-4.899 3.899l-1.955 1.955a.5.5 0 0 1-.353.146H5v1.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-2.293a.5.5 0 0 1 .146-.353l3.955-3.955A4 4 0 1 1 14 6Zm-4-2a.75.75 0 0 0 0 1.5.5.5 0 0 1 .5.5.75.75 0 0 0 1.5 0 2 2 0 0 0-2-2Z"
+                            clip-rule="evenodd" />
+                    </svg>
+                    <input id="password-field" type="password" class="grow" placeholder="Password" />
+                </label>
+            </div>
+            <div onclick="()=>{submitHandler()}" class="flex justify-center mt-4">
+                <button
+                    class="bg-emerald-500 text-white px-4 py-2 rounded-lg hover:bg-amber-500 active:scale-95  hover:-translate-y-1 hover:-translate-x-1 transition-all">Submit</button>
+            </div>
+        </div>
+
+
+        <h1 class="lg:text-6xl text-2xl pb-10 mx-10 font-bold  text-center">All Rights are Reserved</h1>
     </div>
-    <div class="mockup-code m-10">
+
+
+    <div id="code-container" class="hidden  mockup-code m-10">
         <pre data-prefix="">
             <code class="text-xs text-wrap">
             "&lt;!DOCTYPE html&gt;
@@ -1479,4 +1512,20 @@
         </code>
     </pre>
     </div>
+
+    <script src="">
+        const codeContainer = document.getElementById('code-container');
+        const submitBtn = document.getElementById('submit-btn-for-code');
+        const usernameField = document.getElementById('username-field');
+        const passwordField = document.getElementById('password-field');
+        const username = usernameField.value;
+        const password = passwordField.value;
+
+
+
+        const submitHandler = () => {
+            console.log('hi');
+        }
+        console.log('Hellow');
+    </script>
 </body>

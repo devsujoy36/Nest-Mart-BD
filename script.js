@@ -5,7 +5,7 @@ const navMenuForMobile = document.getElementById('nav-menu-for-moble')
 
 let toggle = true;
 
-menuCrose.addEventListener('click', () => {
+const toggleHandler =  () => {
     if (toggle) {
         menuCrose.innerHTML = `<img class="active:scale-95 w-10 transition-all border rounded-md" src="/src/assets/crose.svg" alt="">`
         toggle = false;
@@ -17,7 +17,7 @@ menuCrose.addEventListener('click', () => {
         navMenuForMobile.style.display = 'none';
 
     }
-})
+}
 
 var swiper = new Swiper(".mySwiper", {
     spaceBetween: 30,
@@ -61,3 +61,7 @@ var swiper1 = new Swiper(".mySwiper1", {
         },
     },
 });
+
+
+
+
