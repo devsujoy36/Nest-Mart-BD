@@ -16,7 +16,7 @@ submitBtnel.addEventListener('click', () => {
     console.log(password);
     if (username == 'devsujoy36') {
         console.log('Clicked'); 
-        codeContainer.style.display = "flex"; 
+        codeContainer.style.display = "block"; 
         logInContainer.style.display = "none"; 
         
         

@@ -9,6 +9,15 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap');
+
+        body {
+            font-family: "Baloo 2", sans-serif;
+            font-optical-sizing: auto;
+            font-style: normal;
+        }
+    </style>
 </head>
 
 <body class="relative">
@@ -17,173 +26,280 @@
         <img class="rounded-full w-6 h-6" src="../../src/assets/svgs/edit.svg" alt="">
     </a>
 
-    <!-- team section  -->
-    <section id="team" class="p-10 max-w-screen-2xl mx-auto">
-        <h2 id="team-section-title" class="font-semibold text-3xl ">Meet My Team</h2>
-        <!-- team member info  -->
-        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 p-10 gap-4">
-            <!-- SUJOY DAS -->
-            <div
-                class="border p-8 flex flex-col gap-3 rounded-lg hover:shadow-xl hover:-translate-x-2 hover:-translate-y-2 transition-all">
-                <div class="flex justify-center items-center">
-                    <img class="rounded-full w-full hover:scale-105 transition"
-                        src="../../src/assets/profile-pic/sujoy.png" alt="Sujoy Das">
-                </div>
-                <div class="">
-                    <h3 class="font-bold text-2xl text-black">Sujoy Das </h3>
-                    <p class="font-semibold">Team Leader</p>
-                    <p class="font-semibold">Roll No : 672736</p>
-                    <p>Reg. No : 1502218235</p>
-                    <p>Dept. : CST</p>
-                    <p>Semester : 6th</p>
-                    <p>Shift : 2nd</p>
-                    <p>Group : B</p>
-                </div>
-            </div>
-
-            <!-- NAIMUL HASAN -->
-            <div
-                class="border p-8 flex flex-col gap-3 rounded-lg hover:shadow-xl hover:-translate-x-2 hover:-translate-y-2 transition-all">
-                <div class="flex justify-center items-center">
-                    <img class="rounded-full w-full hover:scale-105 transition"
-                        src="../../src/assets/profile-pic/rain.jpg" alt="John Doe">
-                </div>
-                <div class="">
-                    <h3 class="font-bold text-2xl text-black">NAIMUL HASAN </h3>
-                    <p class="font-semibold">Co - Team Leader</p>
-                    <p class="font-semibold">Roll No : 672737</p>
-                    <p>Reg. No : 1502218234</p>
-                    <p>Dept. : CST</p>
-                    <p>Semester : 6th</p>
-                    <p>Shift : 2nd</p>
-                    <p>Group : B</p>
-                </div>
-            </div>
-            <!-- SHAFIKUL ISLAM -->
-            <div
-                class="border p-8 flex flex-col gap-3 rounded-lg hover:shadow-xl hover:-translate-x-2 hover:-translate-y-2 transition-all">
-                <div class="flex justify-center items-center">
-                    <img class="rounded-full w-full hover:scale-105 transition"
-                        src="../../src/assets/profile-pic/shofiqul.jpg" alt="John Doe">
-                </div>
-                <div class="">
-                    <h3 class="font-bold text-2xl text-black">SHAFIKUL ISLAM </h3>
-                    <p class="font-semibold">Member</p>
-                    <p class="font-semibold">Roll No : 672732</p>
-                    <p>Reg. No : 1502218239</p>
-                    <p>Dept. : CST</p>
-                    <p>Semester : 6th</p>
-                    <p>Shift : 2nd</p>
-                    <p>Group : B</p>
-                </div>
-            </div>
-
-            <!-- MD. RIFAT ISLAM -->
-            <div
-                class="border p-8 flex flex-col gap-3 rounded-lg hover:shadow-xl hover:-translate-x-2 hover:-translate-y-2 transition-all">
-                <div class="flex justify-center items-center">
-                    <img class="rounded-full w-full hover:scale-105 transition"
-                        src="../../src/assets/profile-pic/rifat.jpg" alt="John Doe">
-                </div>
-                <div class="">
-                    <h3 class="font-bold text-2xl text-black">MD. RIFAT ISLAM </h3>
-                    <p class="font-semibold">Member</p>
-                    <p class="font-semibold">Roll No : 672730</p>
-                    <p>Reg. No : 1502218241</p>
-                    <p>Dept. : CST</p>
-                    <p>Semester : 6th</p>
-                    <p>Shift : 2nd</p>
-                    <p>Group : B</p>
-                </div>
-            </div>
+    <header class=" rounded shadow-lg py-2 blurNav  ">
+        <div class="sticky top-0">
+            <nav class=" lg:py-4 pr-6 flex justify-between lg:justify-around items-center gap-2 lg:flex-row ">
+                <a id="nav-logo" href="#" class=" active:scale-95 transition flex justify-center items-center"> <img
+                        class="w-8/12 " src="../../src/assets/svgs/logo.svg" alt=""> </a>
 
 
-            <!-- MAFUJA AKTER -->
-            <div
-                class="border p-8 flex flex-col gap-3 rounded-lg hover:shadow-xl hover:-translate-x-2 hover:-translate-y-2 transition-all">
-                <div class="flex justify-center items-center">
-                    <img class="rounded-full w-full hover:scale-105 transition opacity-15"
-                        src="../../src/assets/profile-pic/chua.png" alt="Mahfuza">
-                </div>
-                <div class="">
-                    <h3 class="font-bold text-2xl text-black">MAFUJA AKTER </h3>
-                    <p class="font-semibold">Member</p>
-                    <p class="font-semibold">Roll No : 672734</p>
-                    <p>Reg. No : 1502218237</p>
-                    <p>Dept. : CST</p>
-                    <p>Semester : 6th</p>
-                    <p>Shift : 2nd</p>
-                    <p>Group : B</p>
-                </div>
-            </div>
 
 
-            <!-- CHUA AKTER -->
-            <div
-                class="border p-8 flex flex-col gap-3 rounded-lg hover:shadow-xl hover:-translate-x-2 hover:-translate-y-2 transition-all">
-                <div class="flex justify-center items-center">
-                    <img class="rounded-full w-full hover:scale-105 transition"
-                        src="../../src/assets/profile-pic/chua.png" alt="John Doe">
-                </div>
-                <div class="">
-                    <h3 class="font-bold text-2xl text-black">CHUA AKTER </h3>
-                    <p class="font-semibold">Member</p>
-                    <p>Roll No : 672735</p>
-                    <p>Reg. No : 1502218236</p>
-                    <p>Dept. : CST</p>
-                    <p>Semester : 6th</p>
-                    <p>Shift : 2nd</p>
-                    <p>Group : B</p>
-                </div>
-            </div>
+                <!-- <input type="checkbox" class="theme-controller" value="synthwave"> -->
 
-        </div>
-    </section>
+                <label class="btn btn-circle swap swap-rotate lg:hidden " id="">
+                    <!-- this hidden checkbox controls the state -->
+                    <input onclick="navMenuHandler()" type="checkbox" />
+                    <!-- hamburger icon -->
+                    <svg class="swap-off fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                        viewBox="0 0 512 512">
+                        <path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z" />
+                    </svg>
 
-    <div class="flex justify-center items-center flex-col gap-2">
+                    <!-- close icon -->
+                    <svg class="swap-on fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                        viewBox="0 0 512 512">
+                        <polygon
+                            points="400 145.49 366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49" />
+                    </svg>
+                </label>
 
-        <div id="log-in-container" class="flex justify-center items-center flex-col">
-            <h1 class="lg:text-6xl text-2xl mx-12 lg:mx-40 font-bold text-center">Enter Your Valid Usename & Password to
-                Access Full Code OF NEST MART GROCERY By Sujoy Das
-            </h1>
-
-            <!-- log in from  -->
-            <div id="" class="border p-10 rounded-lg">
-                <div class="flex flex-col gap-3">
-                    <!-- Usename  -->
-                    <label class="input input-bordered flex items-center gap-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
-                            class="h-4 w-4 opacity-70">
+                <div id="nav-menu" class="lg:flex lg:flex-row flex-col hidden lg:gap-4 px-2">
+                    <a href="#"
+                        class="lg:text-lg font-semibold lg:py-2 lg:px-4 px-2 py-1 text-emerald-400 hover:-translate-x-1 hover:-translate-y-1 active:scale-90 rounded transition ">Home</a>
+                    <a href="#our-team"
+                        class="lg:text-lg font-semibold lg:py-2 lg:px-4 px-2 py-1 text-emerald-400 hover:-translate-x-1 hover:-translate-y-1 active:scale-90 rounded transition">Our
+                        Team</a>
+                    <a href="#teachers"
+                        class="lg:text-lg font-semibold lg:py-2 lg:px-4 px-2 py-1 text-emerald-400 hover:-translate-x-1 hover:-translate-y-1 active:scale-90 rounded transition">Teachers</a>
+                    <a href="#login-for-code"
+                        class="lg:text-lg font-semibold lg:py-2 lg:px-4 px-2 py-1 text-emerald-400 hover:-translate-x-1 hover:-translate-y-1 active:scale-90 rounded transition">Codes
+                    </a>
+                    <label class="swap swap-rotate">
+                        <!-- this hidden checkbox controls the state -->
+                        <input type="checkbox" class="theme-controller" value="synthwave" />
+                        <!-- sun icon -->
+                        <svg class="swap-off h-10 w-10 fill-current" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24">
                             <path
-                                d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM12.735 14c.618 0 1.093-.561.872-1.139a6.002 6.002 0 0 0-11.215 0c-.22.578.254 1.139.872 1.139h9.47Z" />
+                                d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z" />
                         </svg>
-                        <input id="username-field" type="text" class="" placeholder="Username" />
-                    </label>
-                    <!-- Password -->
-                    <label class="input input-bordered flex items-center gap-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
-                            class="h-4 w-4 opacity-70">
-                            <path fill-rule="evenodd"
-                                d="M14 6a4 4 0 0 1-4.899 3.899l-1.955 1.955a.5.5 0 0 1-.353.146H5v1.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-2.293a.5.5 0 0 1 .146-.353l3.955-3.955A4 4 0 1 1 14 6Zm-4-2a.75.75 0 0 0 0 1.5.5.5 0 0 1 .5.5.75.75 0 0 0 1.5 0 2 2 0 0 0-2-2Z"
-                                clip-rule="evenodd" />
+                        <!-- moon icon -->
+                        <svg class="swap-on h-10 w-10 fill-current" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24">
+                            <path
+                                d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
                         </svg>
-                        <input id="password-field" type="password" class="grow" placeholder="Password" />
                     </label>
                 </div>
-                <div class="flex justify-center mt-4">
-                    <button id="submit-btn"
-                        class="bg-emerald-500 text-white px-4 py-2 rounded-lg hover:bg-amber-500 active:scale-95  hover:-translate-y-1 hover:-translate-x-1 transition-all">Submit</button>
-                </div>
+            </nav>
+
+            <div id="nav-menu-for-moble"
+                class="flex-col hidden p-4 absolute top-24 -mt-7  right-8 bg-white shadow-lg rounded-lg">
+                <a href="#"
+                    class="lg:text-lg font-semibold lg:py-2 lg:px-4 px-2 py-1 hover:bg-emerald-400 text-emerald-400 hover:text-white active:scale-90 rounded transition">Home</a>
+                <a href="#for-categories"
+                    class="lg:text-lg font-semibold lg:py-2 lg:px-4 px-2 py-1 hover:bg-emerald-400 text-emerald-400 hover:text-white active:scale-90 rounded transition">Categories</a>
+                <a href="#nav-for-products"
+                    class="lg:text-lg font-semibold lg:py-2 lg:px-4 px-2 py-1 hover:bg-emerald-400 text-emerald-400 hover:text-white active:scale-90 rounded transition">Product</a>
+                <a href="#nav-for-daily-best-sell"
+                    class="lg:text-lg font-semibold lg:py-2 lg:px-4 px-2 py-1 hover:bg-emerald-400 text-emerald-400 hover:text-white active:scale-90 rounded transition">Best
+                    Sell </a>
+                <a href="#contact-us"
+                    class="lg:text-lg font-semibold lg:py-2 lg:px-4 px-2 py-1 hover:bg-emerald-400 text-emerald-400 hover:text-white active:scale-90 rounded transition">Contact
+                    Us</a>
+                <label class="swap swap-rotate">
+                    <!-- this hidden checkbox controls the state -->
+                    <input type="checkbox" class="theme-controller" value="synthwave" />
+                    <!-- sun icon -->
+                    <svg class="swap-off h-10 w-10 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path
+                            d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z" />
+                    </svg>
+                    <!-- moon icon -->
+                    <svg class="swap-on h-10 w-10 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path
+                            d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
+                    </svg>
+                </label>
             </div>
+        </div>
+    </header>
+    
+
+    <main class="max-w-screen-2xl mx-auto">
+        <!-- team section  -->
+        <section id="our-team" class="p-10">
+            <h2 id="team-section-title" class="font-semibold text-3xl ">Meet My Team</h2>
+            <!-- team member info  -->
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 p-10 gap-4">
+                <!-- SUJOY DAS -->
+                <div
+                    class="border p-8 flex flex-col gap-3 rounded-lg hover:shadow-xl hover:-translate-x-2 hover:-translate-y-2 transition-all">
+                    <div class="flex justify-center items-center">
+                        <img class="rounded-full w-full hover:scale-105 transition"
+                            src="../../src/assets/profile-pic/sujoy.png" alt="Sujoy Das">
+                    </div>
+                    <div class="">
+                        <h3 class="font-bold text-2xl text-black">Sujoy Das </h3>
+                        <p class="font-semibold">Team Leader</p>
+                        <p class="font-semibold">Roll No : 672736</p>
+                        <p>Reg. No : 1502218235</p>
+                        <p>Dept. : CST</p>
+                        <p>Semester : 6th</p>
+                        <p>Shift : 2nd</p>
+                        <p>Group : B</p>
+                    </div>
+                </div>
+
+                <!-- NAIMUL HASAN -->
+                <div
+                    class="border p-8 flex flex-col gap-3 rounded-lg hover:shadow-xl hover:-translate-x-2 hover:-translate-y-2 transition-all">
+                    <div class="flex justify-center items-center">
+                        <img class="rounded-full w-full hover:scale-105 transition"
+                            src="../../src/assets/profile-pic/rain.jpg" alt="John Doe">
+                    </div>
+                    <div class="">
+                        <h3 class="font-bold text-2xl text-black">NAIMUL HASAN </h3>
+                        <p class="font-semibold">Co - Team Leader</p>
+                        <p class="font-semibold">Roll No : 672737</p>
+                        <p>Reg. No : 1502218234</p>
+                        <p>Dept. : CST</p>
+                        <p>Semester : 6th</p>
+                        <p>Shift : 2nd</p>
+                        <p>Group : B</p>
+                    </div>
+                </div>
+                <!-- SHAFIKUL ISLAM -->
+                <div
+                    class="border p-8 flex flex-col gap-3 rounded-lg hover:shadow-xl hover:-translate-x-2 hover:-translate-y-2 transition-all">
+                    <div class="flex justify-center items-center">
+                        <img class="rounded-full w-full hover:scale-105 transition"
+                            src="../../src/assets/profile-pic/shofiqul.jpg" alt="John Doe">
+                    </div>
+                    <div class="">
+                        <h3 class="font-bold text-2xl text-black">SHAFIKUL ISLAM </h3>
+                        <p class="font-semibold">Member</p>
+                        <p class="font-semibold">Roll No : 672732</p>
+                        <p>Reg. No : 1502218239</p>
+                        <p>Dept. : CST</p>
+                        <p>Semester : 6th</p>
+                        <p>Shift : 2nd</p>
+                        <p>Group : B</p>
+                    </div>
+                </div>
+
+                <!-- MD. RIFAT ISLAM -->
+                <div
+                    class="border p-8 flex flex-col gap-3 rounded-lg hover:shadow-xl hover:-translate-x-2 hover:-translate-y-2 transition-all">
+                    <div class="flex justify-center items-center">
+                        <img class="rounded-full w-full hover:scale-105 transition"
+                            src="../../src/assets/profile-pic/rifat.jpg" alt="John Doe">
+                    </div>
+                    <div class="">
+                        <h3 class="font-bold text-2xl text-black">MD. RIFAT ISLAM </h3>
+                        <p class="font-semibold">Member</p>
+                        <p class="font-semibold">Roll No : 672730</p>
+                        <p>Reg. No : 1502218241</p>
+                        <p>Dept. : CST</p>
+                        <p>Semester : 6th</p>
+                        <p>Shift : 2nd</p>
+                        <p>Group : B</p>
+                    </div>
+                </div>
+
+
+                <!-- MAFUJA AKTER -->
+                <div
+                    class="border p-8 flex flex-col gap-3 rounded-lg hover:shadow-xl hover:-translate-x-2 hover:-translate-y-2 transition-all">
+                    <div class="flex justify-center items-center">
+                        <img class="rounded-full w-full hover:scale-105 transition opacity-15"
+                            src="../../src/assets/profile-pic/chua.png" alt="Mahfuza">
+                    </div>
+                    <div class="">
+                        <h3 class="font-bold text-2xl text-black">MAFUJA AKTER </h3>
+                        <p class="font-semibold">Member</p>
+                        <p class="font-semibold">Roll No : 672734</p>
+                        <p>Reg. No : 1502218237</p>
+                        <p>Dept. : CST</p>
+                        <p>Semester : 6th</p>
+                        <p>Shift : 2nd</p>
+                        <p>Group : B</p>
+                    </div>
+                </div>
+
+
+                <!-- CHUA AKTER -->
+                <div
+                    class="border p-8 flex flex-col gap-3 rounded-lg hover:shadow-xl hover:-translate-x-2 hover:-translate-y-2 transition-all">
+                    <div class="flex justify-center items-center">
+                        <img class="rounded-full w-full hover:scale-105 transition"
+                            src="../../src/assets/profile-pic/chua.png" alt="John Doe">
+                    </div>
+                    <div class="">
+                        <h3 class="font-bold text-2xl text-black">CHUA AKTER </h3>
+                        <p class="font-semibold">Member</p>
+                        <p>Roll No : 672735</p>
+                        <p>Reg. No : 1502218236</p>
+                        <p>Dept. : CST</p>
+                        <p>Semester : 6th</p>
+                        <p>Shift : 2nd</p>
+                        <p>Group : B</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- log in from  -->
+        <div class="flex justify-center items-center flex-col gap-2">
+
+            <div id="log-in-container" class="flex justify-center items-center gap-3  flex-col">
+                <h1 class="lg:text-5xl text-xl mx-12 lg:mx-40 font-semibold text-center">Enter Your Valid Usename &
+                    Password
+                    to See Full Code OF</h1>
+                <div>
+                    <a class="lg:text-5xl font-semibold lg:py-2 lg:px-4 px-2 py-1 text-emerald-600 hover:-translate-x-1 hover:-translate-y-1 active:scale-90 rounded transition 5xl     "
+                        href="../../index.html">NEST MART GROCERY</a>
+                    <span class="font-semibold text-5xl">by</span>
+                    <a class="lg:text-5xl font-semibold lg:py-2 lg:px-4 px-2 py-1 text-emerald-600 hover:-translate-x-1 hover:-translate-y-1"
+                        active:scale-90 rounded transition 5xl href='#ff'>Sujoy Das</a>
+                </div>
+
+
+
+                <!-- log in from  -->
+                <div id="login-for-code" class="border p-10 rounded-lg">
+                    <div class="flex flex-col gap-3">
+                        <!-- Usename  -->
+                        <label class="input input-bordered flex items-center gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                                class="h-4 w-4 opacity-70">
+                                <path
+                                    d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM12.735 14c.618 0 1.093-.561.872-1.139a6.002 6.002 0 0 0-11.215 0c-.22.578.254 1.139.872 1.139h9.47Z" />
+                            </svg>
+                            <input id="username-field" type="text" class="" placeholder="Username" />
+                        </label>
+                        <!-- Password -->
+                        <label class="input input-bordered flex items-center gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                                class="h-4 w-4 opacity-70">
+                                <path fill-rule="evenodd"
+                                    d="M14 6a4 4 0 0 1-4.899 3.899l-1.955 1.955a.5.5 0 0 1-.353.146H5v1.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-2.293a.5.5 0 0 1 .146-.353l3.955-3.955A4 4 0 1 1 14 6Zm-4-2a.75.75 0 0 0 0 1.5.5.5 0 0 1 .5.5.75.75 0 0 0 1.5 0 2 2 0 0 0-2-2Z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                            <input id="password-field" type="password" class="grow" placeholder="Password" />
+                        </label>
+                    </div>
+                    <div class="flex justify-center mt-4">
+                        <button id="submit-btn"
+                            class="bg-emerald-500 text-white px-4 py-2 rounded-lg hover:bg-amber-500 active:scale-95  hover:-translate-y-1 hover:-translate-x-1 transition-all">Submit</button>
+                    </div>
+                </div>
+
+            </div>
+
 
         </div>
 
-        <h1 class="lg:text-6xl text-2xl pb-10 mx-10 font-bold  text-center">All Rights are Reserved</h1>
-    </div>
-
-
-    <div id="code-container" class="hidden  mockup-code m-10">
-        <pre data-prefix="">
+        <!-- code blocks section  -->
+        <div id="code-container" class="hidden">
+            <div>
+                <h1 class="lg:text-5xl text-xl mx-12 lg:mx-40 font-semibold text-center"> Usename & Password Are Valid
+                </h1>
+            </div>
+            <div class="mockup-code m-10">
+                <pre data-prefix="">
             <code class="text-xs text-wrap">
             "&lt;!DOCTYPE html&gt;
             &lt;html lang="en"&gt;
@@ -1489,7 +1605,68 @@
             &lt;/html&gt;"
         </code>
     </pre>
-    </div>
+            </div>
+        </div>
+        <h1 class="lg:text-4xl text-2xl p-10 mx-10 font-bold  text-center">All Rights are Reserved</h1>
+    </main>
+
+    <footer class="mt-8 ">
+        <!-- footer  -->
+
+        <!-- copyright  -->
+        <div class="mx-auto lg:px-20 px-8 lg:max-w-screen-2xl" id="contact-us">
+            <div
+                class="flex lg:flex-row flex-col-reverse gap-4 justify-between items-center max-w-screen-2xl mx-auto border-emerald-600 border-t py-8 mt-10  ">
+                <div class="flex flex-col text-center">
+                    <h1 class="text-sm">&copy; 2024, <span>Nest</span> - Ecommerce By <span
+                            class="text-emerald-500 font-semibold">Sujoy</span></h1>
+                    <h1 class="text-sm">All rights reserved</h1>
+                </div>
+                <div class="flex lg:flex-row flex-col gap-4">
+                    <div class="flex gap-2 ">
+                        <img class="w-8" src="./src/assets/svgs/phone-call.svg" alt="">
+                        <div class="flex flex-col lg:items-start items-center">
+                            <h1 class="text-2xl font-semibold text-emerald-500 ">+880 9638 831422</h1>
+                            <h1 class="text-sm text-gray-500 -mt-2">Working 8:00 - 22:00</h1>
+                        </div>
+                    </div>
+                    <div class="flex gap-2 ">
+                        <img class="w-8" src="./src/assets/svgs/phone-call.svg" alt="">
+                        <div class="flex flex-col lg:items-start items-center">
+                            <h1 class="text-2xl font-semibold text-emerald-500">+880 1303-436299</h1>
+                            <h1 class="text-sm text-gray-500 -mt-2">24/7 Support Center</h1>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="">
+                    <div class="flex gap-2">
+                        <h1>Follow Us</h1>
+                        <div class="flex gap-1">
+                            <a href="https://web.facebook.com/sujoydas36"><img
+                                    class="bg-emerald-500 rounded-full p-1 w-6 hover:-translate-y-1 transition"
+                                    src="/src/assets/svgs/icon-facebook-white.svg" alt=""></a>
+                            <a href="#twitter"><img
+                                    class="bg-emerald-500 rounded-full p-1 w-6 hover:-translate-y-1 transition"
+                                    src="/src/assets/svgs/icon-twitter-white.svg" alt=""></a>
+                            <a href="#insta"><img
+                                    class="bg-emerald-500 rounded-full p-1 w-6 hover:-translate-y-1 transition"
+                                    src="/src/assets/svgs/icon-instagram-white.svg" alt=""></a>
+                            <a href="#https://github.com/devsujoy36"><img
+                                    class="bg-emerald-500 rounded-full p-1 w-6 hover:-translate-y-1 transition"
+                                    src="/src/assets/svgs/icon-pinterest-white.svg" alt=""></a>
+                            <a href="https://www.youtube.com/@xenonlivexone"><img
+                                    class="bg-emerald-500 rounded-full p-1 w-6 hover:-translate-y-1 transition"
+                                    src="/src/assets/svgs/icon-youtube-white.svg" alt=""></a>
+                        </div>
+                    </div>
+                    <h1 class="text-xs">Up to 15% discount on your first subscribe</h1>
+                </div>
+            </div>
+
+        </div>
+    </footer>
 
     <script src="./code.js"></script>
+    <script src="./node_modules/preline/dist/preline.js"></script>
 </body>
