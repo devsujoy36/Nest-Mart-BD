@@ -10,10 +10,10 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
 </head>
 
 <body class="relative">
-
     <a href="./Pages/Team&Code/code.html"
         class="theme-controller fixed bottom-6 right-6 bg-emerald-400 p-2 rounded-full hover:bg-amber-400 hover:-translate-y-2 active:scale-95 transition-all z-10">
         <img class="rounded-full w-6 h-6" src="./src/assets/svgs/edit.svg" alt="">
@@ -21,14 +21,9 @@
 
     <header class=" rounded shadow-lg py-2 sticky blurNav top-0 ">
         <nav class=" lg:py-4 pr-6 flex justify-between lg:justify-around items-center gap-2 lg:flex-row relative">
-            <a id="nav-logo" href="#" class=" active:scale-95 transition flex justify-center items-center"> <img
+            <a id="nav-logo" href="" class=" active:scale-95 transition flex justify-center items-center"> <img
                     class="w-8/12 " src="./src/assets/svgs/logo.svg" alt=""> </a>
-
-
-            
-
             <!-- <input type="checkbox" class="theme-controller" value="synthwave"> -->
-
             <label class="btn btn-circle swap swap-rotate lg:hidden " id="">
                 <!-- this hidden checkbox controls the state -->
                 <input onclick="navMenuHandler()" type="checkbox" />
@@ -106,7 +101,7 @@
                 </label>
         </div>
     </header>
-
+    
     <main class=" lg:max-w-screen-2xl lg:px-20 px-8 mx-auto">
         <!-- hero section with slider  -->
         <section id="hero-slider" class="py-5 rounded-2xl overflow-hidden">
@@ -116,12 +111,12 @@
                 <div class="swiper-wrapper">
                     <div
                         class="swiper-slide lg:p-20 hero-slide-1 p-10 rounded-3xl mt-8 flex flex-col items-start gap-8 ">
-                        <h1 class="lg:text-7xl text-5xl font-semibold">Don't miss amazing <br> grocery deals</h1>
+                        <h1 class="lg:text-7xl text-5xl font-semibold text-black">Don't miss amazing <br> grocery deals</h1>
                         <p class="text-2xl lg:text-3xl text-gray-500">Sign Up for Daily Newsletter</p>
                         <div
                             class="bg-white flex rounded-full justify-between items-center lg:gap-4 gap-1 mt-8 overflow-hidden">
                             <img class="pl-3 lg:pl-6" src="./src/assets/icon-plane.png" alt="">
-                            <input class="focus:outline-none text-sm lg:text-lg  w-4/6" type="email"
+                            <input class="focus:outline-none text-sm lg:text-lg bg-white text-black  w-4/6" type="email"
                                 placeholder="Your email address">
                             <div>
                                 <button id="for-categories"
@@ -131,12 +126,12 @@
                     </div>
                     <div
                         class="swiper-slide lg:p-20 hero-slide-2 p-10 rounded-3xl mt-8 flex flex-col items-start gap-8">
-                        <h1 class="lg:text-7xl text-5xl font-semibold">Fresh Vegetables <br> Big Discounts</h1>
+                        <h1 class="lg:text-7xl text-5xl font-semibold text-black">Fresh Vegetables <br> Big Discounts</h1>
                         <p class="text-2xl lg:text-3xl text-gray-500">Save up to 50% off on your first order</p>
                         <div
                             class="bg-white flex rounded-full justify-center items-center lg:gap-4 gap-1 mt-8 overflow-hidden">
                             <img class="pl-3 lg:pl-6" src="./src/assets/icon-plane.png" alt="">
-                            <input class="focus:outline-none text-sm lg:text-lg  w-4/6" type="email"
+                            <input class="focus:outline-none text-sm lg:text-lg  bg-white text-black w-4/6" type="email"
                                 placeholder="Your email address">
                             <button id="for-categories"
                                 class="bg-emerald-500 text-white lg:px-8 px-4 py-2 lg:py-4 rounded-full font-semibold hover:bg-emerald-400 active:scale-95 transition">Subscribe</button>
@@ -167,63 +162,63 @@
 
             <div class=" grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-9 gap-6">
                 <div id="card"
-                    class="hover:-translate-x-2 hover:-translate-y-1 hover:shadow-xl hover:border transition-all bg-orange-100 p-4 rounded-lg flex justify-center items-center flex-col">
+                    class="hover:-translate-x-2 hover:-translate-y-1 hover:shadow-xl hover:border transition-all text-black  bg-orange-100 p-4 rounded-lg flex justify-center items-center flex-col">
                     <img class="w-8/12 hover:scale-110 transition" src="./src/assets/icons/cat-12.png" alt="">
                     <a href="#" class="font-semibold mt-4 hover:text-emerald-400">Oganic Kiwi</a>
                     <h1 class="text-gray-500">14 items</h1>
                 </div>
 
                 <div id="card"
-                    class="hover:-translate-x-2 hover:-translate-y-1 hover:shadow-xl hover:border transition-all bg-green-100 p-4 rounded-lg flex justify-center items-center flex-col">
+                    class="hover:-translate-x-2 hover:-translate-y-1 hover:shadow-xl hover:border transition-all text-black  bg-green-100 p-4 rounded-lg flex justify-center items-center flex-col">
                     <img class="w-8/12 hover:scale-110 transition" src="./src/assets/icons/cat-11.png" alt="">
                     <a href="#" class="font-semibold mt-4 hover:text-emerald-400">Peach</a>
                     <h1 class="text-gray-500">54 items</h1>
                 </div>
 
                 <div id="card"
-                    class="hover:-translate-x-2 hover:-translate-y-1 hover:shadow-xl hover:border transition-all bg-red-100 p-4 rounded-lg flex justify-center items-center flex-col">
+                    class="hover:-translate-x-2 hover:-translate-y-1 hover:shadow-xl hover:border transition-all text-black  bg-red-100 p-4 rounded-lg flex justify-center items-center flex-col">
                     <img class="w-8/12 hover:scale-110 transition" src="./src/assets/icons/cat-9.png" alt="">
                     <a href="#" class="font-semibold mt-4 hover:text-emerald-400">Red Apple</a>
                     <h1 class="text-gray-500">56 items</h1>
                 </div>
 
                 <div id="card"
-                    class="hover:-translate-x-2 hover:-translate-y-1 hover:shadow-xl hover:border transition-all bg-orange-100 p-4 rounded-lg flex justify-center items-center flex-col">
+                    class="hover:-translate-x-2 hover:-translate-y-1 hover:shadow-xl hover:border transition-all text-black  bg-orange-100 p-4 rounded-lg flex justify-center items-center flex-col">
                     <img class="w-8/12 hover:scale-110 transition" src="./src/assets/icons/cat-3.png" alt="">
                     <a href="#" class="font-semibold mt-4 hover:text-emerald-400">Snack</a>
                     <h1 class="text-gray-500">72 items</h1>
                 </div>
 
                 <div id="card"
-                    class="hover:-translate-x-2 hover:-translate-y-1 hover:shadow-xl hover:border transition-all bg-violet-100 p-4 rounded-lg flex justify-center items-center flex-col">
+                    class="hover:-translate-x-2 hover:-translate-y-1 hover:shadow-xl hover:border transition-all text-black  bg-violet-100 p-4 rounded-lg flex justify-center items-center flex-col">
                     <img class="w-8/12 hover:scale-110 transition" src="./src/assets/icons/cat-1.png" alt="">
                     <a href="#" class="font-semibold mt-4 hover:text-emerald-400">Vegetables</a>
                     <h1 class="text-gray-500">36 items</h1>
                 </div>
 
                 <div id="card"
-                    class="hover:-translate-x-2 hover:-translate-y-1 hover:shadow-xl hover:border transition-all bg-green-200 p-4 rounded-lg flex justify-center items-center flex-col">
+                    class="hover:-translate-x-2 hover:-translate-y-1 hover:shadow-xl hover:border transition-all text-black  bg-green-200 p-4 rounded-lg flex justify-center items-center flex-col">
                     <img class="w-8/12 hover:scale-110 transition" src="./src/assets/icons/cat-2.png" alt="">
                     <a href="#" class="font-semibold mt-4 hover:text-emerald-400">Strawberry</a>
                     <h1 class="text-gray-500">123 items</h1>
                 </div>
 
                 <div id="card"
-                    class="hover:-translate-x-2 hover:-translate-y-1 hover:shadow-xl hover:border transition-all bg-red-200 p-4 rounded-lg flex justify-center items-center flex-col">
+                    class="hover:-translate-x-2 hover:-translate-y-1 hover:shadow-xl hover:border transition-all text-black  bg-red-200 p-4 rounded-lg flex justify-center items-center flex-col">
                     <img class="w-8/12 hover:scale-110 transition" src="./src/assets/icons/cat-4.png" alt="">
                     <a href="#" class="font-semibold mt-4 hover:text-emerald-400">Black Plum</a>
                     <h1 class="text-gray-500">34 items</h1>
                 </div>
 
                 <div id="card"
-                    class="hover:-translate-x-2 hover:-translate-y-1 hover:shadow-xl hover:border transition-all bg-gray-200 p-4 rounded-lg flex justify-center items-center flex-col">
+                    class="hover:-translate-x-2 hover:-translate-y-1 hover:shadow-xl hover:border transition-all text-black  bg-gray-200 p-4 rounded-lg flex justify-center items-center flex-col">
                     <img class="w-8/12 hover:scale-110 transition" src="./src/assets/icons/cat-3.png" alt="">
                     <a href="#" class="font-semibold mt-4 hover:text-emerald-400">Coffee & Tea</a>
                     <h1 class="text-gray-500">89 items</h1>
                 </div>
 
                 <div id="card"
-                    class="hover:-translate-x-2 hover:-translate-y-1 hover:shadow-xl hover:border transition-all bg-orange-100 p-4 rounded-lg flex justify-center items-center flex-col">
+                    class="hover:-translate-x-2 hover:-translate-y-1 hover:shadow-xl hover:border transition-all text-black  bg-orange-100 p-4 rounded-lg flex justify-center items-center flex-col">
                     <img class="w-8/12 hover:scale-110 transition" src="./src/assets/icons/cat-15.png" alt="">
                     <a href="#" class="font-semibold mt-4 hover:text-emerald-400">Headphone</a>
                     <h1 class="text-gray-500">84 items</h1>
@@ -234,7 +229,7 @@
             <div class="pt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4">
                 <div
                     class="bg-cover bgOnion border rounded-xl p-10 hover:-translate-y-1 hover:-translate-x-1 hover:shadow-lg  transition-all">
-                    <h1 class="font-semibold text-2xl my-8  hover:-translate-y-1 transition-all">Everyday Fresh & <br>
+                    <h1 class="font-semibold text-2xl my-8 text-black hover:-translate-y-1 transition-all">Everyday Fresh & <br>
                         Clean with Our <br> Products</h1>
                     <button
                         class="bg-emerald-500 hover:bg-orange-400 hover:px-5 active:scale-95 transition-all  px-4 py-1 rounded-lg text-white font-semibold ">Shop
@@ -242,7 +237,7 @@
                 </div>
                 <div
                     class="bg-cover bgStroberry border rounded-xl p-10 hover:-translate-y-1 hover:-translate-x-1 hover:shadow-lg transition-all">
-                    <h1 class="font-semibold text-2xl my-8  hover:-translate-y-1 transition-all">Make your Breakfast
+                    <h1 class="font-semibold text-2xl my-8 text-black hover:-translate-y-1 transition-all">Make your Breakfast
                         <br> Healthy and Easy
                     </h1>
                     <button
@@ -251,7 +246,7 @@
                 </div>
                 <div
                     class="bg-cover bgVegetable border rounded-xl p-10 hover:-translate-y-1 hover:-translate-x-1 hover:shadow-lg transition-all">
-                    <h1 class="font-semibold text-2xl my-8  hover:-translate-y-1 transition-all">The best Organic <br>
+                    <h1 class="font-semibold text-2xl my-8 text-black hover:-translate-y-1 transition-all">The best Organic <br>
                         Products Online</h1>
                     <button id="nav-for-products"
                         class="bg-emerald-500 hover:bg-orange-400 hover:px-5 active:scale-95 transition-all  px-4 py-1 rounded-lg text-white font-semibold ">Shop
@@ -640,7 +635,7 @@
             <div class="daily-best-sells lg:flex flex-col xl:grid  py-10 lg:gap-4 ">
                 <!-- Bring Nature Into  -->
                 <div class="bg-cover bgLeaf border rounded-xl p-10  ">
-                    <h1 class="font-semibold text-5xl my-8  hover:-translate-y-1 transition-all">Bring <br> nature into
+                    <h1 class="font-semibold text-5xl my-8 text-black hover:-translate-y-1 transition-all">Bring <br> nature into
                     </h1>
                     <button
                         class="bg-emerald-500 hover:bg-orange-400 hover:px-5 active:scale-95 transition-all  px-4 py-1 rounded-lg text-white font-semibold ">Shop
@@ -1228,7 +1223,7 @@
                 <div
                     class="bg-white flex rounded-full justify-between items-center lg:gap-4 gap-1 mt-8 overflow-hidden">
                     <img class="lg:pl-6 pl-3" src="./src/assets/icon-plane.png" alt="">
-                    <input class="focus:outline-none lg:text-lg text-sm w-full" type="email"
+                    <input class="focus:outline-none lg:text-lg text-sm w-full bg-white text-black" type="email"
                         placeholder="Your email address">
                     <button
                         class="bg-emerald-500 text-white lg:px-8 px-4 py-2 lg:py-4 rounded-full font-semibold hover:bg-emerald-400 active:scale-95 transition">Subscribe</button>
@@ -1443,14 +1438,14 @@
                 </div>
                 <div class="flex lg:flex-row flex-col gap-4">
                     <div class="flex gap-2 ">
-                        <img class="w-8" src="./src/assets/svgs/phone-call.svg" alt="">
+                        <img class="w-8 " src="./src/assets/svgs/phone-call.svg" alt="">
                         <div class="flex flex-col lg:items-start items-center">
                             <h1 class="text-2xl font-semibold text-emerald-500 ">+880 9638 831422</h1>
                             <h1 class="text-sm text-gray-500 -mt-2">Working 8:00 - 22:00</h1>
                         </div>
                     </div>
                     <div class="flex gap-2 ">
-                        <img class="w-8" src="./src/assets/svgs/phone-call.svg" alt="">
+                        <img class="w-8 " src="./src/assets/svgs/phone-call.svg" alt="">
                         <div class="flex flex-col lg:items-start items-center">
                             <h1 class="text-2xl font-semibold text-emerald-500">+880 1303-436299</h1>
                             <h1 class="text-sm text-gray-500 -mt-2">24/7 Support Center</h1>
