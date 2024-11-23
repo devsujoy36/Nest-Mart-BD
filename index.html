@@ -11,7 +11,68 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://kit.fontawesome.com/52a5252143.js" crossorigin="anonymous"></script>
+    <style>
+        .toastmaker {
+            background: white;
+            padding: 10px;
+            transform: translateX(100%);
+            animation: moveleft .5s linear forwards;
+            border: 1px solid gray;
+            border-radius: 8px;  
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;  
+            margin-bottom: 8px;
+            color: black;
+            animation: moveleft .3s linear forwards;  
+        }
 
+        @keyframes moveleft {
+            100% {
+                transform: translateX(0%);
+            }
+        }
+
+        .toastmaker::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 5px;
+            background: green;
+            animation: anim 2s linear forwards;
+        }
+
+        @keyframes anim {
+            100% {
+                width: 0;
+            }
+        }
+
+        .toastmaker i {
+            margin: 0 5px;
+            font-size: 35px;
+            color: green;
+        }
+
+        .toastmaker.error i {
+            color: red;
+        }
+
+        .toastmaker.invalid i {
+            color: orange;
+        }
+
+        .toastmaker.error::after {
+            background-color: red;
+        }
+
+        .toastmaker.invalid::after {
+            background-color: orange;  
+        }
+    </style>
 </head>
 
 <body class="relative">
@@ -19,11 +80,6 @@
         class="fixed bottom-6 right-6 bg-emerald-400 p-2 rounded-full hover:bg-amber-400 hover:-translate-y-2 active:scale-95 transition-all z-10">
         <img class="rounded-full w-6 h-6" src="./src/assets/svgs/edit.svg" alt="">
     </a>
-
-    <div id="toastbox" class=""> </div>
-
-
-
 
     <header class=" rounded shadow-lg py-2 fixed blurNav top-0 w-full ">
         <nav class=" lg:py-4 pr-6 flex justify-between lg:justify-around items-center gap-2 lg:flex-row relative">
@@ -60,6 +116,7 @@
                 <a href="#contact-us"
                     class="lg:text-lg font-semibold lg:py-2 lg:px-4 px-2 py-1 text-emerald-400 hover:-translate-x-1 hover:-translate-y-1 active:scale-90 rounded transition">Contact
                     Us</a>
+                <a href="./Pages/Team&Code/code.html" class="lg:text-lg font-semibold lg:py-2 lg:px-4 px-2 py-1 text-emerald-400 hover:-translate-x-1 hover:-translate-y-1 active:scale-90 rounded transition">Our Team</a>
                 <label class="swap swap-rotate">
                     <!-- this hidden checkbox controls the state -->
                     <input type="checkbox" class="theme-controller" value="synthwave" />
@@ -110,6 +167,8 @@
         </div>
     </header>
 
+    <!-- toastify section -->
+    <div id="toast-container" class="z-50 fixed right-10  lg:top-[120px] "> </div>
 
     <main class=" lg:max-w-screen-2xl lg:px-20 mt-20 px-8 mx-auto">
         <!-- hero section with slider  -->
@@ -129,7 +188,7 @@
                             <input class="focus:outline-none text-sm lg:text-lg bg-white text-black  w-4/6" type="email"
                                 placeholder="Your email address">
                             <div>
-                                <button id="for-categories"
+                                <button id="for-categories" onclick="showToast(errorMsg)"
                                     class="bg-emerald-500 text-white lg:px-8 px-4 py-2 lg:py-4 rounded-full font-semibold hover:bg-emerald-400 active:scale-95 transition">Subscribe</button>
                             </div>
                         </div>
@@ -144,7 +203,7 @@
                             <img class="pl-3 lg:pl-6" src="./src/assets/icon-plane.png" alt="">
                             <input class="focus:outline-none text-sm lg:text-lg  bg-white text-black w-4/6" type="email"
                                 placeholder="Your email address">
-                            <button id="for-categories"
+                            <button id="for-categories" onclick="showToast(errorMsg)"  
                                 class="bg-emerald-500 text-white lg:px-8 px-4 py-2 lg:py-4 rounded-full font-semibold hover:bg-emerald-400 active:scale-95 transition">Subscribe</button>
                         </div>
                     </div>
@@ -244,7 +303,7 @@
                     <h1 class="font-semibold text-2xl my-8 text-black hover:-translate-y-1 transition-all">Everyday
                         Fresh & <br>
                         Clean with Our <br> Products</h1>
-                    <button onclick="showToast(successMsg)"
+                    <button onclick="showToast(invalidMsg)"
                         class="bg-emerald-500 hover:bg-orange-400 hover:px-5 active:scale-95 transition-all  px-4 py-1 rounded-lg text-white font-semibold ">Shop
                         Now</button>
                 </div>
@@ -254,10 +313,10 @@
                         Breakfast
                         <br> Healthy and Easy
                     </h1>
-                    <button onclick="showToast(errorMsg)" class=" bg-emerald-500 hover:bg-orange-400 hover:px-5 active:scale-95 transition-all px-4 py-1
+                    <button onclick="showToast(invalidMsg)" class=" bg-emerald-500 hover:bg-orange-400 hover:px-5 active:scale-95 transition-all px-4 py-1
                         rounded-lg text-white font-semibold ">Shop
                         Now</button>
-                </div>
+                </div>  
                 <div class=" bg-cover bgVegetable border rounded-xl p-10 hover:-translate-y-1 hover:-translate-x-1
                         hover:shadow-lg transition-all">
                     <h1 class="font-semibold text-2xl my-8 text-black hover:-translate-y-1 transition-all">The best
@@ -625,7 +684,7 @@
                             class="text-emerald-500 hover:-translate-x-1 hover:-translate-y-1 hover:text-orange-400">Pukka</span></a>
                         <div class="flex justify-between items-center mt-3">
                             <h1 class="text-emerald-500 font-semibold text-xl">$24.99</h1>
-                            <button id="nav-for-daily-best-sell"  onclick="showToast(successMsg)"
+                            <button id="nav-for-daily-best-sell" onclick="showToast(successMsg)"
                                 class="bg-emerald-100 hover:bg-emerald-500 text-emerald-600 hover:text-white font-semibold px-3 lg:px-6 py-2 rounded-md flex justify-between items-center gap-1 hover:-translate-y-1 transition">
                                 <img class="w-4" src="./src/assets/svgs/icon-cart.svg" alt="">
                                 <h1 class="">Add</h1>
@@ -656,12 +715,12 @@
                     <h1 class="font-semibold text-5xl my-8 text-black hover:-translate-y-1 transition-all">Bring <br>
                         nature into
                     </h1>
-                    <button
+                    <button onclick="showToast(invalidMsg)"
                         class="bg-emerald-500 hover:bg-orange-400 hover:px-5 active:scale-95 transition-all  px-4 py-1 rounded-lg text-white font-semibold ">Shop
                         Now</button>
                 </div>
 
-                <!-- Swiper -->
+                <!-- Swiper -->    
                 <div class="swiper mySwiper1 rounded-2xl lg:mx-0 mx-9 lg:pt-0 pt-10">
                     <div class="swiper-wrapper ">
 
@@ -1244,7 +1303,7 @@
                     <img class="lg:pl-6 pl-3" src="./src/assets/icon-plane.png" alt="">
                     <input class="focus:outline-none lg:text-lg text-sm w-full bg-white text-black" type="email"
                         placeholder="Your email address">
-                    <button
+                    <button onclick="showToast(errorMsg)"  
                         class="bg-emerald-500 text-white lg:px-8 px-4 py-2 lg:py-4 rounded-full font-semibold hover:bg-emerald-400 active:scale-95 transition">Subscribe</button>
                 </div>
             </div>

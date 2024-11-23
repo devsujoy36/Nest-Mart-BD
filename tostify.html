@@ -4,12 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tostify</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <title>Document</title>
     <script src="https://kit.fontawesome.com/52a5252143.js" crossorigin="anonymous"></script>
-    
     <style>
+        body {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .buttons button {
+            background: greenyellow;
+            padding: 8px;
+            border-radius: 10px;
+            transition: all .9ms;
+        }
+
+        button:active {
+            transform: scale(.8);
+        }
+
         #toastbox {
             position: absolute;
             bottom: 30px;
@@ -22,7 +38,6 @@
             background-color: white;
             font-weight: 500;
             margin: 15px 0;
-            border: 2px solid;
             border: 1px solid;
             display: flex;
             align-items: center;
@@ -33,9 +48,10 @@
 
         @keyframes moveleft {
             100% {
-                transform: translateX(0);
+                transform: translateX(0%);
             }
         }
+
         .toast i {
             margin: 0 20px;
             font-size: 35px;
@@ -52,18 +68,19 @@
 
         .toast::after {
             content: '';
-            height: 5px;
-            width: 100%;
-            background: green;
             position: absolute;
             left: 0;
             bottom: 0;
+            width: 100%;
+            height: 5px;
+            background: green;
             animation: anim 3s linear forwards;
+
         }
 
         @keyframes anim {
             100% {
-                width: 0%;
+                width: 0;
             }
         }
 
@@ -77,44 +94,40 @@
     </style>
 </head>
 
-<body class="relative w-full h-dvh overflow-hidden">
-    <div class=" flex justify-center items-center">
-        <button onclick="showToast(successMsg)"
-            class="border bg-emerald-600 text-white px-4 py-2 rounded-md hover:bg-emerald-500 active:scale-95 transition-all">Success</button>
-        <button onclick="showToast(errorMsg)"
-            class="border bg-emerald-600 text-white px-4 py-2 rounded-md hover:bg-emerald-500 active:scale-95 transition-all">Error</button>
-        <button onclick="showToast(invalidMsg)"
-            class="border bg-emerald-600 text-white px-4 py-2 rounded-md hover:bg-emerald-500 active:scale-95 transition-all">Invalid</button>
+<body>
+    <div class="buttons">
+        <button onclick="showToast(successMsg)">Success</button>
+        <button onclick="showToast(errorMsg)">Error</button>
+        <button onclick="showToast(invalidMsg)">invalid</button>
     </div>
-    <div id="toast-box" class=" absolute bottom-5 right-5">
+    <div id="toastbox"></div>
 
 
-    </div>
     <script>
-        let toastBox = document.getElementById('toast-box');
+        let toastBox = document.getElementById('toastbox')
 
         let successMsg = `<i class="fa-solid fa-circle-check"></i> Successfully Submitted`
         let errorMsg = `<i class="fa-solid fa-circle-xmark"></i> Please Fix the error`
         let invalidMsg = `<i class="fa-solid fa-circle-exclamation"></i> invalid input , check again`
 
         function showToast(msg) {
-            console.log('clicked');
-
             let toast = document.createElement('div');
-            toast.className = 'toast';
+            toast.classList.add('toast');
             toast.innerHTML = msg;
-            toastBox.appendChild(toast);
-            
-            if (msg.includes('Error')) {
+            toastBox.appendChild(toast)
+
+            if (msg.includes('error')) {
                 toast.classList.add('error')
             }
-            if (msg.includes('Invalid')) {
+            if (msg.includes('invalid')) {
                 toast.classList.add('invalid')
             }
+            setTimeout(() => {
+                toast.remove()
 
-            setTimeout(() => { toast.remove() }, 3000);
-
+            }, 3000);
         }
+
     </script>
 </body>
 

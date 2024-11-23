@@ -2,9 +2,6 @@
 const menuCrose = document.getElementById('nav-swap-for-mobile')
 const navMenuForMobile = document.getElementById('nav-menu-for-moble')
 let toggle = true;
-
-
-
 const navMenuHandler = () => {
     if (toggle) {
         navMenuForMobile.style.display = 'flex'
@@ -14,8 +11,6 @@ const navMenuHandler = () => {
         toggle = true;
     }
 }
-
-
 var swiper = new Swiper(".mySwiper", {
     spaceBetween: 30,
     effect: "fade",
@@ -39,31 +34,45 @@ var swiper1 = new Swiper(".mySwiper1", {
     },
 });
 
-{/* <div class="toast  mb-20 p-2 z-50 bg-white rounded flex flex-row justify-center items-center border font-semibold "><i class="fa-solid fa-circle-check"></i> <span>Added to Cart Successfully</span></div> */ }
-
-let toastBox = document.getElementById('toastbox')
-
+let toastContainer = document.getElementById('toast-container')
 let successMsg = `<i class="fa-solid fa-circle-check"></i> <span>Added to Cart Successfully</span>`
-let errorMsg = `<i class="fa-solid fa-circle-xmark"></i><span> Please Fix the error</h1>`
-let invalidMsg = `<i class="fa-solid fa-circle-exclamation"></i><span> If you want to shopping, please add item in cart</span>`
+let errorMsg = `<i class="fa-solid fa-circle-xmark"></i><span> Please Enter a valid Email</h1>`
+let invalidMsg = `<i class="fa-solid fa-circle-exclamation"></i><span>Add to Cart Any Item First</span>`
 
 function showToast(msg) {
-    // toastBox.innerHTML  = ''
-    let toast = document.createElement('div');
-    toast.className = 'toast flex-row border ';
-    toast.innerHTML = msg;
-    toastBox.appendChild(toast)
-
+    let div = document.createElement('div')
+    div.classList.add('toastmaker')
+    div.innerHTML = msg;
+    toastContainer.appendChild(div);
     if (msg.includes('error')) {
         toast.classList.add('error')
     }
     if (msg.includes('shopping')) {
-        toast.classList.add('invalid')
+        toast.classList.add('invalid');
     }
-    
-    // setTimeout(() => {
-    //     toast.remove()
 
-    // }, 3000);
+    setTimeout(() => {
+        div.remove();
+    }, 2000);
 }
-showToast(invalidMsg)
+
+// function showToast(msg) {
+//     // toastBox.innerHTML  = ''
+//     let toast = document.createElement('div');
+//     toast.className = 'toast flex-row border ';
+//     toast.innerHTML = msg;
+//     toastBox.appendChild(toast)
+
+//     if (msg.includes('error')) {
+//         toast.classList.add('error')
+//     }
+//     if (msg.includes('shopping')) {
+//         toast.classList.add('invalid')
+//     }
+
+//     // setTimeout(() => {
+//     //     toast.remove()
+
+//     // }, 3000);
+// }
+// showToast(invalidMsg)
