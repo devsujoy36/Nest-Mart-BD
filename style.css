@@ -10,6 +10,7 @@
   background-repeat: no-repeat;
   background-position: center center;
 
+
 }
 
 .hero-slide-2 {
@@ -29,6 +30,8 @@ body {
   font-family: "Baloo 2", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
+  scroll-behavior: smooth;
+
 }
 
 .blurNav {

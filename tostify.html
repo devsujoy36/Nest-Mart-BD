@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tostify</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <style>
+        #toast{
+            transform: translateX(100%);
+            animation: anim .5s infinite forwards;
+        }
+        @keyframes anim {
+            100%{
+                transform: translateX(0);
+            }
+        }
+         #toast::after{
+            content: '';
+            height: 5px;
+            background-color: green;
+            position: absolute;
+         }
+         
+    </style>
+</head>
+
+<body class="relative w-full h-dvh overflow-hidden">
+    <div class=" flex justify-center items-center">
+        <button class="border bg-emerald-600 text-white px-4 py-2 rounded-md hover:bg-emerald-500 active:scale-95 transition-all">Success</button>
+        <button class="border bg-emerald-600 text-white px-4 py-2 rounded-md hover:bg-emerald-500 active:scale-95 transition-all">Error</button>
+        <button class="border bg-emerald-600 text-white px-4 py-2 rounded-md hover:bg-emerald-500 active:scale-95 transition-all">Invalid</button>
+    </div>
+    <div id="toast-box" class=" absolute bottom-5 right-5">
+        <div id="toast" class="px-4 py-2 bg-white border border-black relative font-semibold">
+            Successfully Added
+        </div>
+
+    </div>
+</body>
+
+</html>

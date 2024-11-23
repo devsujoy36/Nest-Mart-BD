@@ -26,7 +26,7 @@ submitBtnel.addEventListener('click', () => {
     let password = passwordField.value;
     console.log(username);
     console.log(password);
-    if (username == 'devsujoy36' && password == 1234) {
+    if (username == 'devsujoy36' && password == 123) {
         console.log('Clicked'); 
         codeContainer.style.display = "block"; 
         logInContainer.style.display = "none"; 
