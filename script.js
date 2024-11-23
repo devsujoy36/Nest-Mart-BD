@@ -76,3 +76,12 @@ function showToast(msg) {
 //     // }, 3000);
 // }
 // showToast(invalidMsg)
+
+
+let loader = document.getElementById('preloader');
+window.addEventListener('load', function () {
+    setTimeout(() => {
+        // loader.remove()
+    }, 500);
+
+})
