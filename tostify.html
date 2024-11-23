@@ -7,6 +7,8 @@
     <title>Tostify</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://kit.fontawesome.com/52a5252143.js" crossorigin="anonymous"></script>
+    
     <style>
         #toastbox {
             position: absolute;
@@ -33,6 +35,19 @@
             100% {
                 transform: translateX(0);
             }
+        }
+        .toast i {
+            margin: 0 20px;
+            font-size: 35px;
+            color: green;
+        }
+
+        .toast.error i {
+            color: red;
+        }
+
+        .toast.invalid i {
+            color: orange;
         }
 
         .toast::after {
@@ -78,9 +93,9 @@
     <script>
         let toastBox = document.getElementById('toast-box');
 
-        let successMsg = `<h1>Sussessfully Submitted</h1>`
-        let errorMsg = `<h1>Please Fix The Error</h1>`
-        let invalidMsg = `<h1>Invalid Input, check again</h1>`
+        let successMsg = `<i class="fa-solid fa-circle-check"></i> Successfully Submitted`
+        let errorMsg = `<i class="fa-solid fa-circle-xmark"></i> Please Fix the error`
+        let invalidMsg = `<i class="fa-solid fa-circle-exclamation"></i> invalid input , check again`
 
         function showToast(msg) {
             console.log('clicked');
