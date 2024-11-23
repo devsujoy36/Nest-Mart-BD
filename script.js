@@ -81,7 +81,7 @@ function showToast(msg) {
 let loader = document.getElementById('preloader');
 window.addEventListener('load', function () {
     setTimeout(() => {
-        // loader.remove()
+        loader.remove()
     }, 500);
 
 })
