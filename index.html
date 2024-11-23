@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
     <meta charset="UTF-8">
@@ -11,87 +11,11 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://kit.fontawesome.com/52a5252143.js" crossorigin="anonymous"></script>
-    <style>
-        .toastmaker {
-            background: white;
-            padding: 10px;
-            transform: translateX(100%);
-            animation: moveleft .5s linear forwards;
-            border: 1px solid gray;
-            border-radius: 8px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-weight: bold;
-            margin-bottom: 8px;
-            color: black;
-            animation: moveleft .3s linear forwards;
-        }
-
-        @keyframes moveleft {
-            100% {
-                transform: translateX(0%);
-            }
-        }
-
-        .toastmaker::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            height: 5px;
-            background: green;
-            animation: anim 2s linear forwards;
-        }
-
-        @keyframes anim {
-            100% {
-                width: 0;
-            }
-        }
-
-        .toastmaker i {
-            margin: 0 5px;
-            font-size: 35px;
-            color: green;
-        }
-
-        .toastmaker.error i {
-            color: red;
-        }
-
-        .toastmaker.invalid i {
-            color: orange;
-        }
-
-        .toastmaker.error::after {
-            background-color: red;
-        }
-
-        .toastmaker.invalid::after {
-            background-color: orange;
-        }
-        #preloader{
-            background: black url('https://i.pinimg.com/originals/67/44/8a/67448a616be5f3a983140458289bfa14.gif') no-repeat center center;
-            background-size: 20%; 
-            height: 100vh; 
-            width: 100%;
-            position: fixed;
-            z-index: 10000;
-            top: 0;
-        }
-        @media screen and (max-width: 576px) {
-            #preloader{
-                background-size: 70%;
-            }
-        }
-    </style>
-</head>
+    </head>
 
 <body class="relative">
     <div id="preloader" class="">
-        
+
     </div>
 
     <a href="./Pages/Team&Code/code.html"
@@ -99,7 +23,7 @@
         <img class="rounded-full w-6 h-6" src="./src/assets/svgs/edit.svg" alt="">
     </a>
 
-    <header class=" rounded shadow-lg py-2 fixed blurNav top-0 w-full ">
+    <header class=" rounded shadow-lg py-2 bg-white dark:bg-transparent fixed blurNav top-0 w-full ">
         <nav class=" lg:py-4 pr-6 flex justify-between lg:justify-around items-center gap-2 lg:flex-row relative">
             <a id="nav-logo" href="" class=" active:scale-95 transition flex justify-center items-center"> <img
                     class="w-8/12 " src="./src/assets/svgs/logo.svg" alt=""> </a>
@@ -157,7 +81,7 @@
         </nav>
 
         <div id="nav-menu-for-moble"
-            class="flex-col hidden p-4 absolute top-24 -mt-7  right-8 border bg-white shadow-lg rounded-lg">
+            class="flex-col hidden p-4 absolute top-24 -mt-7  right-8 border bg-white dark:bg-black shadow-lg rounded-lg">
             <a href="#"
                 class="lg:text-lg font-semibold lg:py-2 lg:px-4 px-2 py-1 hover:bg-emerald-400 text-emerald-400 hover:text-white active:scale-90 rounded transition">Home</a>
             <a href="#for-categories"

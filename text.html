@@ -83,11 +83,6 @@ background-size: contain;
 grid-template-columns: 1fr 3fr;
 }
 
-
-
-
-
-
 .toastmaker {
 background: white;
 padding: 10px;
@@ -148,10 +143,31 @@ background-color: red;
 .toastmaker.invalid::after {
 background-color: orange;
 }
+
+#preloader {
+background: black url('https://i.pinimg.com/originals/67/44/8a/67448a616be5f3a983140458289bfa14.gif') no-repeat center
+center;
+background-size: 20%;
+height: 100vh;
+width: 100%;
+position: fixed;
+z-index: 10000;
+top: 0;
+}
+
+@media screen and (max-width: 576px) {
+#preloader {
+background-size: 70%;
+}
+}
 &lt;/style&gt;
 &lt;/head&gt;
 
 &lt;body class="relative"&gt;
+&lt;div id="preloader" class=""&gt;
+
+&lt;/div&gt;
+
 &lt;a href="./Pages/Team&Code/code.html"
 class="fixed bottom-6 right-6 bg-emerald-400 p-2 rounded-full hover:bg-amber-400 hover:-translate-y-2 active:scale-95
 transition-all z-10"&gt;
@@ -243,6 +259,10 @@ Sell &lt;/a&gt;
 class="lg:text-lg font-semibold lg:py-2 lg:px-4 px-2 py-1 hover:bg-emerald-400 text-emerald-400 hover:text-white
 active:scale-90 rounded transition"&gt;Contact
 Us&lt;/a&gt;
+&lt;a href="./Pages/Team&Code/code.html"
+class="lg:text-lg font-semibold lg:py-2 lg:px-4 px-2 py-1 text-emerald-400 hover:-translate-x-1 hover:-translate-y-1
+active:scale-90 rounded transition"&gt;Our
+Team&lt;/a&gt;
 &lt;label class="swap swap-rotate"&gt;
 &lt;!-- this hidden checkbox controls the state --&gt;
 &lt;input type="checkbox" class="theme-controller" value="synthwave" /&gt;
@@ -276,7 +296,7 @@ d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.4
 class="swiper-slide lg:p-20 hero-slide-1 p-10 rounded-3xl mt-8 flex flex-col items-start gap-8 "&gt;
 &lt;h1 class="lg:text-7xl text-5xl font-semibold text-black"&gt;Don't miss amazing &lt;br&gt; grocery deals
 &lt;/h1&gt;
-&lt;p class="text-2xl lg:text-3xl text-gray-500"&gt;Sign Up for Daily Newsletter&lt;/p&gt;
+&lt;p class="text-2xl lg:text-3xl text-gray-500"&gt;Sign Up for Daily Update of Our Special Deals&lt;/p&gt;
 &lt;div
 class="bg-white flex rounded-full justify-between items-center lg:gap-4 gap-1 mt-8 overflow-hidden"&gt;
 &lt;img class="pl-3 lg:pl-6" src="./src/assets/icon-plane.png" alt=""&gt;
@@ -1534,6 +1554,11 @@ hover:-translate-y-2 transition-all"&gt;
 &lt;p class="text-gray-4500 "&gt;Within 30 days&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
+
+
+
+
+
 &lt;/section&gt;
 &lt;/main&gt;
 
@@ -1732,6 +1757,7 @@ src="/src/assets/svgs/icon-youtube-white.svg" alt=""&gt;&lt;/a&gt;
 &lt;script src="tailwind.config.js"&gt;&lt;/script&gt;
 &lt;script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"&gt;&lt;/script&gt;
 &lt;script&gt;
+
 const menuCrose = document.getElementById('nav-swap-for-mobile')
 const navMenuForMobile = document.getElementById('nav-menu-for-moble')
 let toggle = true;
@@ -1790,6 +1816,13 @@ setTimeout(() =&gt; {
 div.remove();
 }, 2000);
 }
+let loader = document.getElementById('preloader');
+window.addEventListener('load', function () {
+setTimeout(() =&gt; {
+loader.remove()
+}, 500);
+
+})
 &lt;/script&gt;
 &lt;/body&gt;
 

@@ -69,7 +69,82 @@ body {
   grid-template-columns: 1fr 3fr;
 }
 
+.toastmaker {
+  background: white;
+  padding: 10px;
+  transform: translateX(100%);
+  animation: moveleft .5s linear forwards;
+  border: 1px solid gray;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: black;
+  animation: moveleft .3s linear forwards;
+}
 
+@keyframes moveleft {
+  100% {
+      transform: translateX(0%);
+  }
+}
+
+.toastmaker::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 5px;
+  background: green;
+  animation: anim 2s linear forwards;
+}
+
+@keyframes anim {
+  100% {
+      width: 0;
+  }
+}
+
+.toastmaker i {
+  margin: 0 5px;
+  font-size: 35px;
+  color: green;
+}
+
+.toastmaker.error i {
+  color: red;
+}
+
+.toastmaker.invalid i {
+  color: orange;
+}
+
+.toastmaker.error::after {
+  background-color: red;
+}
+
+.toastmaker.invalid::after {
+  background-color: orange;
+}
+
+#preloader {
+  background: black url('https://i.pinimg.com/originals/67/44/8a/67448a616be5f3a983140458289bfa14.gif') no-repeat center center;
+  background-size: 20%;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: 10000;
+  top: 0;
+}
+
+@media screen and (max-width: 576px) {
+  #preloader {
+      background-size: 70%;
+  }
+}
 
 
 

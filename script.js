@@ -55,29 +55,6 @@ function showToast(msg) {
         div.remove();
     }, 2000);
 }
-
-// function showToast(msg) {
-//     // toastBox.innerHTML  = ''
-//     let toast = document.createElement('div');
-//     toast.className = 'toast flex-row border ';
-//     toast.innerHTML = msg;
-//     toastBox.appendChild(toast)
-
-//     if (msg.includes('error')) {
-//         toast.classList.add('error')
-//     }
-//     if (msg.includes('shopping')) {
-//         toast.classList.add('invalid')
-//     }
-
-//     // setTimeout(() => {
-//     //     toast.remove()
-
-//     // }, 3000);
-// }
-// showToast(invalidMsg)
-
-
 let loader = document.getElementById('preloader');
 window.addEventListener('load', function () {
     setTimeout(() => {
