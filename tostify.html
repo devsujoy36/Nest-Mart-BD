@@ -8,37 +8,99 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
     <style>
-        #toast{
-            transform: translateX(100%);
-            animation: anim .5s infinite forwards;
+        #toastbox {
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
         }
-        @keyframes anim {
-            100%{
+
+        .toast {
+            width: 400px;
+            height: 60px;
+            background-color: white;
+            font-weight: 500;
+            margin: 15px 0;
+            border: 2px solid;
+            border: 1px solid;
+            display: flex;
+            align-items: center;
+            position: relative;
+            transform: translateX(100%);
+            animation: moveleft .5s linear forwards;
+        }
+
+        @keyframes moveleft {
+            100% {
                 transform: translateX(0);
             }
         }
-         #toast::after{
+
+        .toast::after {
             content: '';
             height: 5px;
-            background-color: green;
+            width: 100%;
+            background: green;
             position: absolute;
-         }
-         
+            left: 0;
+            bottom: 0;
+            animation: anim 3s linear forwards;
+        }
+
+        @keyframes anim {
+            100% {
+                width: 0%;
+            }
+        }
+
+        .toast.error::after {
+            background-color: red;
+        }
+
+        .toast.invalid::after {
+            background-color: orange;
+        }
     </style>
 </head>
 
 <body class="relative w-full h-dvh overflow-hidden">
     <div class=" flex justify-center items-center">
-        <button class="border bg-emerald-600 text-white px-4 py-2 rounded-md hover:bg-emerald-500 active:scale-95 transition-all">Success</button>
-        <button class="border bg-emerald-600 text-white px-4 py-2 rounded-md hover:bg-emerald-500 active:scale-95 transition-all">Error</button>
-        <button class="border bg-emerald-600 text-white px-4 py-2 rounded-md hover:bg-emerald-500 active:scale-95 transition-all">Invalid</button>
+        <button onclick="showToast(successMsg)"
+            class="border bg-emerald-600 text-white px-4 py-2 rounded-md hover:bg-emerald-500 active:scale-95 transition-all">Success</button>
+        <button onclick="showToast(errorMsg)"
+            class="border bg-emerald-600 text-white px-4 py-2 rounded-md hover:bg-emerald-500 active:scale-95 transition-all">Error</button>
+        <button onclick="showToast(invalidMsg)"
+            class="border bg-emerald-600 text-white px-4 py-2 rounded-md hover:bg-emerald-500 active:scale-95 transition-all">Invalid</button>
     </div>
     <div id="toast-box" class=" absolute bottom-5 right-5">
-        <div id="toast" class="px-4 py-2 bg-white border border-black relative font-semibold">
-            Successfully Added
-        </div>
+
 
     </div>
+    <script>
+        let toastBox = document.getElementById('toast-box');
+
+        let successMsg = `<h1>Sussessfully Submitted</h1>`
+        let errorMsg = `<h1>Please Fix The Error</h1>`
+        let invalidMsg = `<h1>Invalid Input, check again</h1>`
+
+        function showToast(msg) {
+            console.log('clicked');
+
+            let toast = document.createElement('div');
+            toast.className = 'toast';
+            toast.innerHTML = msg;
+            toastBox.appendChild(toast);
+            
+            if (msg.includes('Error')) {
+                toast.classList.add('error')
+            }
+            if (msg.includes('Invalid')) {
+                toast.classList.add('invalid')
+            }
+
+            setTimeout(() => { toast.remove() }, 3000);
+
+        }
+    </script>
 </body>
 
 </html>
