@@ -70,7 +70,7 @@ const teams = [
         name: 'SHAFIKUL ISLAM',
         team: 'Member',
         roll: '672732',
-        reg: '1502218232',
+        reg: '1502218239',
         dept: 'CST',
         sem: '6th',
         shift: '2nd',
