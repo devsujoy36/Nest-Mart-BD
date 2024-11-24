@@ -40,6 +40,107 @@ window.addEventListener('load', function () {
 
 
 
+const teams = [
+    {
+        img: '../../src/assets/profile-pic/sujoy.png',
+        name: 'SUJOY DAS',
+        team: 'Team Leader',
+        roll: '672736',
+        reg: '1502218235',
+        dept: 'CST',
+        sem: '6th',
+        shift: '2nd',
+        group: 'B'
+
+    },
+    {
+        img: '../../src/assets/profile-pic/rain.jpg',
+        name: 'NAIMUL HASAN',
+        team: 'Co-Team-Leader',
+        roll: '672737',
+        reg: '1502218234',
+        dept: 'CST',
+        sem: '6th',
+        shift: '2nd',
+        group: 'B'
+
+    },
+    {
+        img: '../../src/assets/profile-pic/shofiqul.jpg',
+        name: 'SHAFIKUL ISLAM',
+        team: 'Member',
+        roll: '672732',
+        reg: '1502218232',
+        dept: 'CST',
+        sem: '6th',
+        shift: '2nd',
+        group: 'B'
+
+    },
+    {
+        img: '../../src/assets/profile-pic/rifat.jpg',
+        name: 'MD. RIFAT ISLAM',
+        team: 'Member',
+        roll: '672730',
+        reg: '1502218241',
+        dept: 'CST',
+        sem: '6th',
+        shift: '2nd',
+        group: 'B'
+
+    },
+    {
+        img: '../../src/assets/profile-pic/mahfuza.jpg',
+        name: 'MAFUJA AKTER',
+        team: 'Member',
+        roll: '672734',
+        reg: '1502218237',
+        dept: 'CST',
+        sem: '6th',
+        shift: '2nd',
+        group: 'B'
+
+    },
+    {
+        img: '../../src/assets/profile-pic/chua.png',
+        name: 'CHUA AKTER',
+        team: 'Member',
+        roll: '672735',
+        reg: '1502218236',
+        dept: 'CST',
+        sem: '6th',
+        shift: '2nd',
+        group: 'B'
+
+    },
+]
+const teamContainer = document.getElementById('team-container')
+teams.forEach((team) => {
+    let div = document.createElement('div');
+    div.className = 'border p-8 flex flex-col gap-3 rounded-lg hover:shadow-xl hover:-translate-x-2 hover:-translate-y-2 transition-all'
+    div.innerHTML = `
+                <div class="flex justify-center items-center">
+                    <img class="rounded-full w-full hover:scale-105 transition"
+                        src=${team.img} alt="Sujoy Das">
+                </div>
+                <div class="">
+                    <h3 class="font-bold text-2xl">${team.name} </h3>
+                    <p class="font-semibold">${team.team}</p>
+                    <p class="font-semibold">Roll No : ${team.roll}</p>
+                    <p>Reg. No : ${team.reg}</p>
+                    <p>Dept. : ${team.dept}</p>
+                    <p>Semester : ${team.sem}</p>
+                    <p>Shift : ${team.shift}</p>
+                    <p>Group : ${team.group}</p>
+                </div>
+    `
+    teamContainer.appendChild(div);
+})
+
+
+
+
+
 
 const teachers = [
     {
@@ -50,7 +151,7 @@ const teachers = [
         email: "atiqduet@gmail.com",
         batch: "0",
         mobile: "০১৭১৬০৬৭৮৮৫",
-        img: "./src/teacher/Atikulislam.jpg",
+        img: "./src/teacher/Atikulislam.png",
     },
     {
         name: "মোহাম্মদ হযরত আলী",
@@ -143,11 +244,8 @@ const teachers = [
         img: "./src/teacher/obydulislam.jpg",
     },
 ]
-console.log(teachers);
 
 const teacherContainer = document.getElementById('teacher-container');
-
-
 
 teachers.forEach((teacher) => {
     let div = document.createElement('div');
@@ -167,7 +265,6 @@ teachers.forEach((teacher) => {
                 </div>         
             
     `
-    console.log(teacher);
     teacherContainer.appendChild(div);
 })
 
