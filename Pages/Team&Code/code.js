@@ -254,7 +254,7 @@ teachers.forEach((teacher) => {
                 <figure class="flex justify-center items-center">
                    <img class="rounded-full w-8/12 hover:scale-105 transition" src=${teacher.img} />
                </figure>
-                <div class="mt-6 flex flex-col  gap-2 text-xs">
+                <div class="mt-6 flex flex-col  gap-2 text-sm  ">
                     <h2 class="font-bold text-[18px]"> Name : ${teacher.name}</h2>
                     <h3 class="">${teacher.podobi}</h3>
                     <h3>Department : ${teacher.dprmt}</h3>
