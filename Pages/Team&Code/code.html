@@ -87,78 +87,47 @@
         class="fixed bottom-6 right-6 bg-emerald-400 p-2 rounded-full hover:bg-amber-400 hover:-translate-y-2 active:scale-95 transition-all z-10">
         <img class="rounded-full w-6 h-6" src="../../src/assets/svgs/edit.svg" alt="">
     </a>
-    
-        <header class="rounded shadow-lg py-2 blurNav bg-white sticky top-0 z-20 ">
-            <div class="">
-                <nav class=" lg:py-4 pr-6 flex justify-between lg:justify-around items-center gap-2 lg:flex-row ">
-                    <a id="nav-logo" href="../../index.html"
-                        class="lg:tooltip active:scale-95 transition flex justify-center items-center" data-tip="hello">
-                        <img class="w-8/12 " src="../../src/assets/svgs/logo.svg" alt=""> </a>
 
-                    <label class="btn btn-circle swap swap-rotate lg:hidden " id="">
-                        <!-- this hidden checkbox controls the state -->
-                        <input onclick="navMenuHandler()" type="checkbox" />
-                        <!-- hamburger icon -->
-                        <svg class="swap-off fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
-                            viewBox="0 0 512 512">
-                            <path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z" />
-                        </svg>
+    <header class="rounded shadow-lg py-2 blurNav bg-white fixed w-full top-0 z-20 ">
+        <div class="">
+            <nav class=" lg:py-4 pr-6 flex justify-between lg:justify-around items-center gap-2 lg:flex-row ">
+                <a id="nav-logo" href="../../index.html"
+                    class="lg:tooltip active:scale-95 transition flex justify-center items-center" data-tip="hello">
+                    <img class="w-8/12 " src="../../src/assets/svgs/logo.svg" alt=""> </a>
 
-                        <!-- close icon -->
-                        <svg class="swap-on fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
-                            viewBox="0 0 512 512">
-                            <polygon
-                                points="400 145.49 366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49" />
-                        </svg>
-                    </label>
+                <label class="btn btn-circle swap swap-rotate lg:hidden " id="">
+                    <!-- this hidden checkbox controls the state -->
+                    <input onclick="navMenuHandler()" type="checkbox" />
+                    <!-- hamburger icon -->
+                    <svg class="swap-off fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                        viewBox="0 0 512 512">
+                        <path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z" />
+                    </svg>
 
-                    <div id="nav-menu" class="lg:flex lg:flex-row flex-col hidden lg:gap-4 px-2">
-                        <a href=""
-                            class="lg:text-lg font-semibold lg:py-2 lg:px-4 px-2 py-1 text-emerald-400 hover:-translate-x-1 hover:-translate-y-1 active:scale-90 rounded transition ">Home</a>
-                        <a href="#submit-btn"
-                            class="lg:text-lg font-semibold lg:py-2 lg:px-4 px-2 py-1 text-emerald-400 hover:-translate-x-1 hover:-translate-y-1 active:scale-90 rounded transition">Our
-                            Team</a>
-                        <a href="#teacherbox"
-                            class="lg:text-lg font-semibold lg:py-2 lg:px-4 px-2 py-1 text-emerald-400 hover:-translate-x-1 hover:-translate-y-1 active:scale-90 rounded transition">Teachers</a>
-                        <a href="#"
-                            class="lg:text-lg font-semibold lg:py-2 lg:px-4 px-2 py-1 text-emerald-400 hover:-translate-x-1 hover:-translate-y-1 active:scale-90 rounded transition">Codes
-                        </a>
-                        <label class="swap swap-rotate">
-                            <!-- this hidden checkbox controls the state -->
-                            <input type="checkbox" class="theme-controller" value="synthwave" />
-                            <!-- sun icon -->
-                            <svg class="swap-off h-10 w-10 fill-emerald-500" xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 24 24">
-                                <path
-                                    d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z" />
-                            </svg>
-                            <!-- moon icon -->
-                            <svg class="swap-on h-10 w-10 fill-emerald-500" xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 24 24">
-                                <path
-                                    d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
-                            </svg>
-                        </label>
-                    </div>
-                </nav>
+                    <!-- close icon -->
+                    <svg class="swap-on fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                        viewBox="0 0 512 512">
+                        <polygon
+                            points="400 145.49 366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49" />
+                    </svg>
+                </label>
 
-                <div id="nav-menu-for-moble"
-                    class="flex-col hidden p-4 absolute top-24 -mt-7  right-8 border bg-white shadow-lg rounded-lg">
-                    <a href="#"
+                <div id="nav-menu" class="lg:flex lg:flex-row flex-col hidden lg:gap-4 px-2">
+                    <a href=""
                         class="lg:text-lg font-semibold lg:py-2 lg:px-4 px-2 py-1 text-emerald-400 hover:-translate-x-1 hover:-translate-y-1 active:scale-90 rounded transition ">Home</a>
-                    <a href="#submit-btn"
+                    <a href="#team"
                         class="lg:text-lg font-semibold lg:py-2 lg:px-4 px-2 py-1 text-emerald-400 hover:-translate-x-1 hover:-translate-y-1 active:scale-90 rounded transition">Our
                         Team</a>
                     <a href="#teacherbox"
                         class="lg:text-lg font-semibold lg:py-2 lg:px-4 px-2 py-1 text-emerald-400 hover:-translate-x-1 hover:-translate-y-1 active:scale-90 rounded transition">Teachers</a>
-                    <a href="#"
+                    <a href="#code-box"
                         class="lg:text-lg font-semibold lg:py-2 lg:px-4 px-2 py-1 text-emerald-400 hover:-translate-x-1 hover:-translate-y-1 active:scale-90 rounded transition">Codes
                     </a>
                     <label class="swap swap-rotate">
                         <!-- this hidden checkbox controls the state -->
                         <input type="checkbox" class="theme-controller" value="synthwave" />
                         <!-- sun icon -->
-                        <svg class="swap-off h-10 w-10 fill-current" xmlns="http://www.w3.org/2000/svg"
+                        <svg class="swap-off h-10 w-10 fill-emerald-500" xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 24 24">
                             <path
                                 d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z" />
@@ -171,10 +140,101 @@
                         </svg>
                     </label>
                 </div>
-            </div>
-        </header>
+            </nav>
 
-    <main class="max-w-screen-2xl mt-10 mx-auto">
+            <div id="nav-menu-for-moble"
+                class="flex-col hidden p-4 absolute top-24 -mt-7  right-8 border bg-white shadow-lg rounded-lg">
+                <a href="#"
+                    class="lg:text-lg font-semibold lg:py-2 lg:px-4 px-2 py-1 text-emerald-400 hover:-translate-x-1 hover:-translate-y-1 active:scale-90 rounded transition ">Home</a>
+                <a href="#team"
+                    class="lg:text-lg font-semibold lg:py-2 lg:px-4 px-2 py-1 text-emerald-400 hover:-translate-x-1 hover:-translate-y-1 active:scale-90 rounded transition">Our
+                    Team</a>
+                <a href="#teacherbox"
+                    class="lg:text-lg font-semibold lg:py-2 lg:px-4 px-2 py-1 text-emerald-400 hover:-translate-x-1 hover:-translate-y-1 active:scale-90 rounded transition">Teachers</a>
+                <a href="#code-box"
+                    class="lg:text-lg font-semibold lg:py-2 lg:px-4 px-2 py-1 text-emerald-400 hover:-translate-x-1 hover:-translate-y-1 active:scale-90 rounded transition">Codes
+                </a>
+                <label class="swap swap-rotate">
+                    <!-- this hidden checkbox controls the state -->
+                    <input type="checkbox" class="theme-controller" value="synthwave" />
+                    <!-- sun icon -->
+                    <svg class="swap-off h-10 w-10 fill-emerald-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path
+                            d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z" />
+                    </svg>
+                    <!-- moon icon -->
+                    <svg class="swap-on h-10 w-10 fill-emerald-500" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24">
+                        <path
+                            d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
+                    </svg>
+                </label>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-screen-2xl mx-auto mt-20">
+        <!-- Course Instructor Section -->
+        <section class="h-[80%] mx-10 lg:mx-40  pt-5 ">
+            <h1 class="text-4xl font-semibold text-center pb-10 lg:p-10">Our Course Instructor</h1>
+            <div
+                class="flex justify-between gap-5 items-center flex-col lg:flex-row-reverse rounded-2xl lg:rounded-full p-10 border shadow-xl   ">
+                <figure class="">
+                    <img class="rounded-full w-[500px] hover:-translate-x-2  hover:scale-105 transition"
+                        src="./src/teacher/obydulislam.jpg">
+                </figure>
+                <div
+                    class="flex flex-col gap-1 lg:p-20 text-lg lg:text-2xl font-semibold hover:-translate-x-1 hover:-translate-y-1 transition-all">
+                    <h2 class="font-bold text-3xl lg:text-6xl text-emerald-500">Obydul Islam</h2>
+                    <h3 class="text-2xl lg:text-3xl">Course Instructor</h3>
+                    <h3>Computer Science & Engineering</h3>
+                    <h3>Email : obydulmpi@gmail.com</h3>
+                    <h3>Phone : 01952805498</h3>
+                </div>
+            </div>
+        </section>
+
+        <div id="team" class="lg:p-14 pt-10 "></div>
+
+        <!-- team section  -->
+        <section id="our-team" class="p-10">
+            <h2 id="team-section-title" class="font-semibold text-center text-4xl ">Meet My Team</h2>
+            <div id="team-container"
+                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:mx-32 p-10 gap-4">
+
+            </div>
+        </section>
+        <div id="teacherbox" class="p-12"></div>
+        <!-- Teacher section  -->
+        <section class="pt-2">
+
+
+            <!-- Course Instructor Section -->
+            <section class="h-[80%] mx-10 lg:mx-40">
+                <h1 class="text-4xl font-semibold text-center pb-10 lg:p-10">Our Honorable Principal</h1>
+                <div
+                    class="flex justify-between gap-5 items-center flex-col lg:flex-row-reverse rounded-2xl lg:rounded-5xl p-10 border shadow-xl   ">
+                    <figure class="">
+                        <img class="rounded-3xl w-[400px] hover:-translate-x-2  hover:scale-105 transition"
+                            src="./src/teacher/Principal.jpg">
+                    </figure>
+                    <div
+                        class="flex flex-col gap-1 text-lg lg:text-2xl font-semibold hover:-translate-x-1 hover:-translate-y-1 transition-all">
+                        <h2 class="font-bold text-3xl lg:text-7xl  text-emerald-500">Md. Showkat Hossain</h2>
+                        <h3 class="text-2xl lg:text-3xl">Vice Principal</h3>
+                        <h3>Mymensingh Polytechnic Institute</h3>
+                    </div>
+                </div>
+            </section>
+
+
+            <h2 id="teacher-team-section-title" class="font-semibold text-center text-4xl pt-10"> Meet Our Teachers</h2>
+            <div id="teacher-container"
+                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:mx-32 mx-10 p-10 gap-4">
+                <!-- teacher  -->
+
+            </div>
+        </section>
 
         <!-- log in from  -->
         <div class="flex justify-center items-center flex-col gap-2">
@@ -192,7 +252,7 @@
 
                 <!-- log in from  -->
                 <div id="login-for-code" class="border p-10 rounded-lg">
-                    <div class="flex flex-col gap-3">
+                    <div class="flex flex-col gap-3" id="code-box">
                         <!-- Usename  -->
                         <label class="input input-bordered flex items-center gap-2">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
@@ -220,160 +280,11 @@
                 </div>
             </div>
         </div>
-
-        <!-- team section  -->
-        <section id="our-team" class="p-10">
-            <h2 id="team-section-title" class="font-semibold text-center text-4xl ">Meet My Team</h2>
-            <div id="team-container"
-                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:mx-32 p-10 gap-4">
-
-            </div>
-        </section>
-
-        <!-- Teacher section  -->
-        <section id="teacherbox" class="pt-2">
-            <h2 id="teacher-team-section-title" class="font-semibold text-center text-4xl "> Meet Our Teachers</h2>
-            <div id="teacher-container"
-                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:mx-32 mx-10 p-10 gap-4">
-                <!-- teacher  -->
-
-            </div>
-        </section>
-
-
-        <!-- team section with swiper  -->
-        <!-- <section id="our-team" class="p-10">
-            <h2 id="team-section-title" class="font-semibold text-center text-4xl ">Meet My Team</h2>
-            <div class=" xl:mx-32 p-10 gap-4">
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div
-                                class="border p-8 flex flex-col gap-3 rounded-lg hover:shadow-xl hover:-translate-x-2 hover:-translate-y-2 transition-all">
-                                <div class="flex justify-center items-center">
-                                    <img class="rounded-full w-full hover:scale-105 transition"
-                                        src="../../src/assets/profile-pic/sujoy.png" alt="Sujoy Das">
-                                </div>
-                                <div class=" text-left">
-                                    <h3 class="font-bold text-2xl">Sujoy Das </h3>
-                                    <p class="font-semibold">Team Leader</p>
-                                    <p class="font-semibold">Roll No : 672736</p>
-                                    <p>Reg. No : 1502218235</p>
-                                    <p>Dept. : CST</p>
-                                    <p>Semester : 6th</p>
-                                    <p>Shift : 2nd</p>
-                                    <p>Group : B</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div
-                                class="border p-8 flex flex-col gap-3 rounded-lg hover:shadow-xl hover:-translate-x-2 hover:-translate-y-2 transition-all">
-                                <div class="flex justify-center items-center">
-                                    <img class="rounded-full w-full hover:scale-105 transition"
-                                        src="../../src/assets/profile-pic/rain.jpg" alt="John Doe">
-                                </div>
-                                <div class=" text-left">
-                                    <h3 class="font-bold text-2xl ">NAIMUL HASAN </h3>
-                                    <p class="font-semibold">Co - Team Leader</p>
-                                    <p class="font-semibold">Roll No : 672737</p>
-                                    <p>Reg. No : 1502218234</p>
-                                    <p>Dept. : CST</p>
-                                    <p>Semester : 6th</p>
-                                    <p>Shift : 2nd</p>
-                                    <p>Group : B</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div
-                                class="border p-8 flex flex-col gap-3 rounded-lg hover:shadow-xl hover:-translate-x-2 hover:-translate-y-2 transition-all">
-                                <div class="flex justify-center items-center">
-                                    <img class="rounded-full w-full hover:scale-105 transition"
-                                        src="../../src/assets/profile-pic/rifat.jpg" alt="John Doe">
-                                </div>
-                                <div class=" text-left">
-                                    <h3 class="font-bold text-2xl ">MD. RIFAT ISLAM </h3>
-                                    <p class="font-semibold">Member</p>
-                                    <p class="font-semibold">Roll No : 672730</p>
-                                    <p>Reg. No : 1502218241</p>
-                                    <p>Dept. : CST</p>
-                                    <p>Semester : 6th</p>
-                                    <p>Shift : 2nd</p>
-                                    <p>Group : B</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div
-                                class="border p-8 flex flex-col gap-3 rounded-lg hover:shadow-xl hover:-translate-x-2 hover:-translate-y-2 transition-all">
-                                <div class="flex justify-center items-center">
-                                    <img class="rounded-full w-full hover:scale-105 transition"
-                                        src="../../src/assets/profile-pic/shofiqul.jpg" alt="John Doe">
-                                </div>
-                                <div class=" text-left">
-                                    <h3 class="font-bold text-2xl ">SHAFIKUL ISLAM </h3>
-                                    <p class="font-semibold">Member</p>
-                                    <p class="font-semibold">Roll No : 672732</p>
-                                    <p>Reg. No : 1502218239</p>
-                                    <p>Dept. : CST</p>
-                                    <p>Semester : 6th</p>
-                                    <p>Shift : 2nd</p>
-                                    <p>Group : B</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div
-                                class="border p-8 flex flex-col gap-3 rounded-lg hover:shadow-xl hover:-translate-x-2 hover:-translate-y-2 transition-all">
-                                <div class="flex justify-center items-center">
-                                    <img class="rounded-full w-full hover:scale-105 transition"
-                                        src="../../src/assets/profile-pic/mahfuza.jpg" alt="Mahfuza">
-                                </div>
-                                <div class=" text-left">
-                                    <h3 class="font-bold text-2xl ">MAFUJA AKTER </h3>
-                                    <p class="font-semibold">Member</p>
-                                    <p class="font-semibold">Roll No : 672734</p>
-                                    <p>Reg. No : 1502218237</p>
-                                    <p>Dept. : CST</p>
-                                    <p>Semester : 6th</p>
-                                    <p>Shift : 2nd</p>
-                                    <p>Group : B</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div
-                                class="border p-8 flex flex-col gap-3 rounded-lg hover:shadow-xl hover:-translate-x-2 hover:-translate-y-2 transition-all">
-                                <div class="flex justify-center items-center">
-                                    <img class="rounded-full w-full hover:scale-105 transition"
-                                        src="../../src/assets/profile-pic/chua.png" alt="John Doe">
-                                </div>
-                                <div class=" text-left">
-                                    <h3 class="font-bold text-2xl ">CHUA AKTER </h3>
-                                    <p class="font-semibold">Member</p>
-                                    <p>Roll No : 672735</p>
-                                    <p>Reg. No : 1502218236</p>
-                                    <p>Dept. : CST</p>
-                                    <p>Semester : 6th</p>
-                                    <p>Shift : 2nd</p>
-                                    <p>Group : B</p>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
-        </section> -->
-
         <!-- code blocks section  -->
-        <div id="code-container" class="hidden">
+        <section id="code-container" class="hidden">
             <div>
                 <h1 class="lg:text-5xl text-xl mx-12 lg:mx-40 font-semibold text-center"> Usename & Password Are Valid
-                    For
-                </h1>
+                    For</h1>
                 <div class="text-center">
                     <a class="lg:text-5xl text-xl font-semibold lg:py-2 lg:px-4 px-2 py-1 text-emerald-600 hover:-translate-x-1 hover:-translate-y-1 active:scale-90 rounded transition 5xl     "
                         href="../../index.html">NEST MART GROCERY</a>
@@ -2220,7 +2131,7 @@ loader.remove()
                 </pre>
                 <!-- code for large device  -->
                 <pre data-prefix="" class="lg:flex hidden">
-                <code class="text-[12px] leading-3 text-wrap">
+                    <code class="text-[12px] leading-3 text-wrap">
 &lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
 
@@ -3992,12 +3903,10 @@ loader.remove()
 &lt;/body&gt;
 
 &lt;/html&gt;
-                </code>
-                    
+                    </code>
                 </pre>
-
             </div>
-        </div>
+        </section>
     </main>
 
     <footer class="mt-8 ">
@@ -4059,6 +3968,5 @@ loader.remove()
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="./code.js"></script>
-    <!-- Swiper JS -->
 
 </body>

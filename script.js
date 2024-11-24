@@ -59,6 +59,6 @@ let loader = document.getElementById('preloader');
 window.addEventListener('load', function () {
     setTimeout(() => {
         loader.remove()
-    }, 500);
+    }, 200);
 
 })

@@ -34,7 +34,7 @@ let codeLoader = document.getElementById('preloader');
 window.addEventListener('load', function () {
     setTimeout(() => {
         codeLoader.remove()
-    }, 500);
+    }, 200);
 
 })
 
@@ -144,103 +144,103 @@ teams.forEach((team) => {
 
 const teachers = [
     {
-        name: "জনাব মুহাম্মদ আতিকুল ইসলাম",
-        podobi: "চিফ ইনস্ট্রাক্টর ও বিভাগীয় প্রধান (কম্পিউটার) ১ম শিফট",
-        dprmt: "কম্পিউটার সাইন্স এন্ড টেকনোলজি",
-        shift: "১ম শিফট",
+        name: "MD. Atikul Islam", 
+        podobi: "Cheif Instructor & Head of Department (Computer) 1st Shift",
+        dprmt: "Computer Science & Technology",
+        shift: "1st Shift",
         email: "atiqduet@gmail.com",
         batch: "0",
-        mobile: "০১৭১৬০৬৭৮৮৫",
+        mobile: "01716067885",
         img: "./src/teacher/Atikulislam.png",
     },
     {
-        name: "মোহাম্মদ হযরত আলী",
-        podobi: "চিফ ইনস্ট্রাক্টর ও বিভাগীয় প্রধান(কম্পিউটার) ২য় শিফট",
-        dprmt: "কম্পিউটার সাইন্স এন্ড টেকনোলজি",
-        shift: "২য়শিফট",
+        name: "Mohammad Hazrat Ali",
+        podobi: "Cheif Instructor & Head of Department (Computer) 2nd Shift",
+        dprmt: "Computer Science & Technology",
+        shift: "2nd Shift",
         email: "mniloy@yahoo.com",
         batch: "0",
-        mobile: "০১৭১২১১৮৩৭২",
+        mobile: "01712118372",
         img: "./src/teacher/hazratali.png",
     },
     {
-        name: "ফাতেমা জোহুরা",
-        podobi: "চিফ ইনস্ট্রাক্টর",
-        dprmt: "কম্পিউটার সাইন্স এন্ড টেকনোলজি",
-        shift: "১ম শিফট",
+        name: "Fatema Johura",
+        podobi: "Cheif Instructor",
+        dprmt: "Computer Science & Technology",
+        shift: "1st Shift",
         email: "sompa.ruet98@gmail.com",
         batch: "0",
-        mobile: "০১৭১২৬৬৭৯৫৭",
+        mobile: "01712667957",
         img: "./src/teacher/fatemajohora.png",
     },
     {
-        name: "ফাওজিয়া আনিকা",
-        podobi: "ইনস্ট্রাক্টর কম্পিউটার",
-        dprmt: "কম্পিউটার সাইন্স এন্ড টেকনোলজি",
-        shift: "১ম শিফট",
+        name: "Foujia Anika", 
+        podobi: "Instructor Computer",
+        dprmt: "Computer Science & Technology",
+        shift: "1st Shift",
         email: "anikcse10@gmail.com",
         batch: "0",
         mobile: "01921220637",
         img: "./src/teacher/foujiaanika.png",
     },
     {
-        name: "তোফায়েল আলম সিদ্দিকী",
-        podobi: "ইনস্ট্রাক্টর কম্পিউটার",
-        dprmt: "কম্পিউটার সাইন্স এন্ড টেকনোলজি",
-        shift: "১ম শিফট",
+        name: "Tofayel Alom Siddiki",
+        podobi: "Instructor Computer",
+        dprmt: "Computer Science & Technology",
+        shift: "1st Shift",
         email: "tofaelalam91@gmail.com",
         batch: "0",
         mobile: "01718195615",
         img: "./src/teacher/tofayelalom.png",
     },
     {
-        name: "এস যুথী আল সাকী",
-        podobi: "ইনস্ট্রাক্টর কম্পিউটার",
-        dprmt: "কম্পিউটার সাইন্স এন্ড টেকনোলজি",
-        shift: "১ম শিফট",
+        name: "S. Juthi Al Saki",
+        podobi: "Instructor Computer",
+        dprmt: "Computer Science & Technology",
+        shift: "1st Shift",
         email: "sjuthi12@gmail.com",
         batch: "0",
-        mobile: "০১৯৯২০০৮২১৮",
+        mobile: "01992008218",
         img: "./src/teacher/sjuthialsaki.png",
     },
     {
-        name: "তন্ময় দেবনাথ",
-        podobi: "ইনস্ট্রাক্টর কম্পিউটার",
-        dprmt: "কম্পিউটার সাইন্স এন্ড টেকনোলজি",
-        shift: "২য় শিফট",
+        name: "Tonmoy Debnath",
+        podobi: "Instructor Computer",
+        dprmt: "Computer Science & Technology",
+        shift: "2nd Shift",
         email: "tonmoy.mbd@gmail.com",
-        batch: "৪০",
-        mobile: "০১৭১৮৫৫১৮৭৫",
+        batch: "40",
+        mobile: "01718551875",
         img: "./src/teacher/tonmoydebnath.jpeg",
     },
     {
-        name: "মোঃ রিফাত আমিন",
-        podobi: "ইনস্ট্রাক্টর কম্পিউটার",
-        dprmt: "কম্পিউটার সাইন্স এন্ড টেকনোলজি",
-        shift: "২য় শিফট",
+        name: "MD. Refat Amin",
+        podobi: "Instructor Computer",
+        dprmt: "Computer Science & Technology",
+        shift: "2nd Shift",
         email: "refatamin1305@gmail.com",
-        batch: "৪১",
-        mobile: "০১৯৬৭৪০০১১৫",
+        batch: "41",
+        mobile: "01967400115",
         img: "./src/teacher/refatamin.jpg",
     },
     {
-        name: "ফৌজিয়া হক",
-        podobi: "ইনস্ট্রাক্টর কম্পিউটার",
-        dprmt: "কম্পিউটার সাইন্স এন্ড টেকনোলজি",
-        shift: "২য় শিফট",
+        name: "Foujia Hoque",
+        podobi: "Instructor Computer",
+        dprmt: "Computer Science & Technology",
+        shift: "2nd Shift",
         email: "huque.fouzia863@gmail.com",
         batch: "0",
-        mobile: "০১৯৯২০০৮২২১",
+        mobile: "01992008221",
         img: "./src/teacher/foujiahoque.png",
     },
     {
-        name: "উবায়দুল ইসলাম (Course Instructor)",
-        podobi: "খন্ডকালীন শিক্ষক",
-        dprmt: "কম্পিউটার সাইন্স এন্ড টেকনোলজি",
-        shift: "২য় শিফট",
+        name: "Obydul Islam (Course Instructor)",
+        podobi: "Part-time teacher",
+        dprmt: "Computer Science & Technology",
+        shift: "2nd Shift",
         email: "obydulmpi@gmail.com",
         batch: "0",
-        mobile: "০১৯৫২৮০৫৪৯৮",
+        mobile: "01952805498",
         img: "./src/teacher/obydulislam.jpg",
     },
 ]
@@ -255,13 +255,13 @@ teachers.forEach((teacher) => {
                    <img class="rounded-full w-8/12 hover:scale-105 transition" src=${teacher.img} />
                </figure>
                 <div class="mt-6 flex flex-col  gap-2 text-xs">
-                    <h2 class="font-bold text-[18px]"> নাম : ${teacher.name}</h2>
-                    <h3 class="">পদবি : ${teacher.podobi}</h3>
-                    <h3>অনুষদ : ${teacher.dprmt}</h3>
-                    <h3>বিভাগ : ${teacher.shift}</h3>
-                    <h3>ই-মেইল : ${teacher.email}</h3>
-                    <h3>ব্যাচ (বিসিএস) : ${teacher.batch}</h3>                 
-                    <h3>মোবাইল : ${teacher.mobile}</h3>
+                    <h2 class="font-bold text-[18px]"> Name : ${teacher.name}</h2>
+                    <h3 class="">${teacher.podobi}</h3>
+                    <h3>Department : ${teacher.dprmt}</h3>
+                    <h3>Shift : ${teacher.shift}</h3>
+                    <h3>Email : ${teacher.email}</h3>
+                    <h3>Batch (BCS) : ${teacher.batch}</h3>                 
+                    <h3>Phone : ${teacher.mobile}</h3>
                 </div>         
             
     `
