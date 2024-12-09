@@ -115,11 +115,11 @@ body {
 }
 
 .toastmaker.error i {
-  color: red;
+  color: rgb(253, 33, 33);
 }
 
 .toastmaker.invalid i {
-  color: orange;
+  color: rgb(255, 172, 19);
 }
 
 .toastmaker.error::after {
