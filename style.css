@@ -9,8 +9,6 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-
-
 }
 
 .hero-slide-2 {
@@ -18,7 +16,6 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-
 }
 
 ::selection {
@@ -31,7 +28,6 @@ body {
   font-optical-sizing: auto;
   font-style: normal;
   scroll-behavior: smooth;
-
 }
 
 .blurNav {
@@ -46,7 +42,6 @@ body {
 .bgStroberry {
   background-image: url('./src/assets/banner/banner-2.png');
   background-position: center center;
-
 }
 
 .bgVegetable {
