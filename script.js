@@ -55,10 +55,12 @@ function showToast(msg) {
         div.remove();
     }, 2000);
 }
+
+
 let loader = document.getElementById('preloader');
 window.addEventListener('load', function () {
     setTimeout(() => {
         loader.remove()
-    }, 200);
+    }, 100);
 
 })

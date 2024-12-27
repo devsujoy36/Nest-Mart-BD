@@ -12,6 +12,9 @@
 
 
 }
+html{
+  scroll-behavior: smooth;
+}
 
 .hero-slide-2 {
   background-image: url('./src/assets//slider/slider-2.png');
