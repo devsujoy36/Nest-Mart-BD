@@ -57,10 +57,9 @@ function showToast(msg) {
 }
 
 
-let loader = document.getElementById('preloader');
+let loader = document.getElementById('preloader-container');
 window.addEventListener('load', function () {
     setTimeout(() => {
         loader.remove()
     }, 100);
-
 })

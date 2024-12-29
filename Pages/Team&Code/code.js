@@ -20,21 +20,19 @@ const navMenuHandler = () => {
 submitBtnel.addEventListener('click', () => {
     let username = usernameField.value;
     let password = passwordField.value;
-    console.log(username);
-    console.log(password);
     if (username == 'devsujoy36' && password == 123) {
-        console.log('Clicked');
         codeContainer.style.display = "block";
         logInContainer.style.display = "none";
     } else {
         alert('Enter Valid User & Pass')
     }
 })
-let codeLoader = document.getElementById('preloader');
+
+let codeLoader = document.getElementById('preloader-container');
 window.addEventListener('load', function () {
     setTimeout(() => {
         codeLoader.remove()
-    }, 200);
+    }, 100);
 
 })
 

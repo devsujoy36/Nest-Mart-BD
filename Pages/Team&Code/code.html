@@ -34,15 +34,6 @@
             -webkit-user-select: none;
         }
 
-        #preloader {
-            background: black url('../../src/assets/loader.gif') no-repeat center center;
-            background-size: 20%;
-            height: 100vh;
-            width: 100%;
-            position: fixed;
-            z-index: 10000;
-            top: 0;
-        }
 
         @media screen and (max-width: 576px) {
             #preloader {
@@ -85,7 +76,13 @@
 </head>
 
 <body class="relative">
-    <div id="preloader" class=""> </div>
+    <div id="preloader-container" class="flex justify-center items-center w-full fixed z-40 bg-white top-0 left-0  h-dvh">
+        <div class="">
+            <img src="./src/loading.gif" alt="">
+        </div>
+    </div>
+
+
     <a href="../../index.html"
         class="fixed bottom-6 right-6 bg-emerald-400 p-2 rounded-full hover:bg-amber-400 hover:-translate-y-2 active:scale-95 transition-all z-10">
         <img class="rounded-full w-6 h-6" src="../../src/assets/svgs/edit.svg" alt="">
