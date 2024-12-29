@@ -3,10 +3,10 @@
 <html lang="en" data-theme="light">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nest Mart BD by Sujoy Das</title>
-    <link rel="shortcut icon" href="./src/assets/svgs/logo.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="./src/assets/svgs/logo.svg" type="image/x-icon" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
@@ -14,16 +14,17 @@
         @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Noto+Sans+Bengali:wght@100..900&display=swap');
 
-        html{
-  scroll-behavior: smooth;
-}
+        html {
+            scroll-behavior: smooth;
+        }
+
         ::selection {
             background-color: rgb(1, 179, 1);
             color: white;
         }
 
         body {
-            font-family: "Baloo 2", sans-serif;
+            font-family: 'Baloo 2', sans-serif;
             font-optical-sizing: auto;
             font-style: normal;
             scroll-behavior: smooth;
@@ -33,7 +34,6 @@
             user-select: none;
             -webkit-user-select: none;
         }
-
 
         @media screen and (max-width: 576px) {
             #preloader {
@@ -69,34 +69,34 @@
         }
 
         #teacher-container {
-            font-family: "Noto Sans Bengali", sans-serif;
+            font-family: 'Noto Sans Bengali', sans-serif;
             font-optical-sizing: auto;
         }
     </style>
 </head>
 
 <body class="relative">
-    <div id="preloader-container" class="flex justify-center items-center w-full fixed z-40 bg-white top-0 left-0  h-dvh">
+    <div id="preloader-container"
+        class="flex justify-center items-center w-full fixed z-40 bg-white top-0 left-0 h-dvh">
         <div class="">
-            <img src="./src/loading.gif" alt="">
+            <img src="./src/loading.gif" alt="" />
         </div>
     </div>
 
-
-    <a href="../../index.html"
+    <!-- <a href="../../index.html"
         class="fixed bottom-6 right-6 bg-emerald-400 p-2 rounded-full hover:bg-amber-400 hover:-translate-y-2 active:scale-95 transition-all z-10">
-        <img class="rounded-full w-6 h-6" src="../../src/assets/svgs/edit.svg" alt="">
-    </a>
+        <img class="rounded-full w-6 h-6" src="../../src/assets/svgs/edit.svg" alt="" />
+    </a> -->
 
-
-    <header class="rounded shadow-lg py-2 blurNav bg-white fixed w-full top-0 z-20 ">
+    <header class="rounded shadow-lg py-2 blurNav bg-white fixed w-full top-0 z-20">
         <div class="">
-            <nav class=" lg:py-4 pr-6 flex justify-between lg:justify-around items-center gap-2 lg:flex-row ">
+            <nav class="lg:py-4 pr-6 flex justify-between lg:justify-around items-center gap-2 lg:flex-row">
                 <a id="nav-logo" href="../../index.html"
                     class="lg:tooltip active:scale-95 transition flex justify-center items-center" data-tip="hello">
-                    <img class="w-8/12 " src="../../src/assets/svgs/logo.svg" alt=""> </a>
+                    <img class="w-8/12" src="../../src/assets/svgs/logo.svg" alt="" />
+                </a>
 
-                <label class="btn btn-circle swap swap-rotate lg:hidden " id="">
+                <label class="btn btn-circle swap swap-rotate lg:hidden" id="">
                     <!-- this hidden checkbox controls the state -->
                     <input onclick="navMenuHandler()" type="checkbox" />
                     <!-- hamburger icon -->
@@ -115,7 +115,7 @@
 
                 <div id="nav-menu" class="lg:flex lg:flex-row flex-col hidden lg:gap-4 px-2">
                     <a href="/index.html"
-                        class="lg:text-lg font-semibold lg:py-2 lg:px-4 px-2 py-1 text-emerald-400 hover:-translate-x-1 hover:-translate-y-1 active:scale-90 rounded transition ">Home</a>
+                        class="lg:text-lg font-semibold lg:py-2 lg:px-4 px-2 py-1 text-emerald-400 hover:-translate-x-1 hover:-translate-y-1 active:scale-90 rounded transition">Home</a>
                     <a href="#team"
                         class="lg:text-lg font-semibold lg:py-2 lg:px-4 px-2 py-1 text-emerald-400 hover:-translate-x-1 hover:-translate-y-1 active:scale-90 rounded transition">Our
                         Team</a>
@@ -144,9 +144,9 @@
             </nav>
 
             <div id="nav-menu-for-moble"
-                class="flex-col hidden p-4 absolute top-24 -mt-7  right-8 border bg-white shadow-lg rounded-lg">
+                class="flex-col hidden p-4 absolute top-24 -mt-7 right-8 border bg-white shadow-lg rounded-lg">
                 <a href="/index.html"
-                    class="lg:text-lg font-semibold lg:py-2 lg:px-4 px-2 py-1 text-emerald-400 hover:-translate-x-1 hover:-translate-y-1 active:scale-90 rounded transition ">Home</a>
+                    class="lg:text-lg font-semibold lg:py-2 lg:px-4 px-2 py-1 text-emerald-400 hover:-translate-x-1 hover:-translate-y-1 active:scale-90 rounded transition">Home</a>
                 <a href="#team"
                     class="lg:text-lg font-semibold lg:py-2 lg:px-4 px-2 py-1 text-emerald-400 hover:-translate-x-1 hover:-translate-y-1 active:scale-90 rounded transition">Our
                     Team</a>
@@ -159,7 +159,8 @@
                     <!-- this hidden checkbox controls the state -->
                     <input type="checkbox" class="theme-controller" value="synthwave" />
                     <!-- sun icon -->
-                    <svg class="swap-off h-10 w-10 fill-emerald-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <svg class="swap-off h-10 w-10 fill-emerald-500" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24">
                         <path
                             d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z" />
                     </svg>
@@ -173,7 +174,6 @@
             </div>
         </div>
     </header>
-
 
     <main id="home" class="max-w-screen-2xl mx-auto mt-0">
         <!-- Course Instructor Section -->
@@ -196,60 +196,61 @@
             </div>
         </section> -->
 
-        <div id="team" class="lg:p-14 pt-10 "></div>
+        <div id="team" class="lg:p-14 pt-10"></div>
 
         <!-- team section  -->
         <section id="our-team" class="p-10">
-            <h2 id="team-section-title" class="font-semibold text-center text-4xl ">Meet My Team</h2>
+            <h2 id="team-section-title" class="font-semibold text-center text-4xl">
+                Meet My Team
+            </h2>
             <div id="team-container"
-                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:mx-32 p-10 gap-4">
-
-            </div>
+                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:mx-32 p-10 gap-4"></div>
         </section>
         <div id="teacherbox" class="p-12"></div>
         <!-- Teacher section  -->
         <section class="pt-2">
-
-
             <!-- Course Instructor Section -->
-            <section class="h-[80%] mx-16  lg:mx-64 ">
-                <h1 class="text-4xl font-semibold text-center pb-10 lg:px-10">Our Honorable Principal</h1>
+            <section class="h-[80%] mx-16 lg:mx-64">
+                <h1 class="text-4xl font-semibold text-center pb-10 lg:px-10">
+                    Our Honorable Principal
+                </h1>
                 <div
-                    class="flex justify-between gap-5 items-center flex-col lg:flex-row rounded-2xl lg:rounded-full p-10 border shadow-xl   ">
+                    class="flex justify-between gap-5 items-center flex-col lg:flex-row rounded-2xl lg:rounded-full p-10 border shadow-xl">
                     <figure class="">
-                        <img class="rounded-full w-[400px] hover:translate-x-2  hover:scale-105 transition"
-                            src="./src/teacher/Principal.jpg">
+                        <img class="rounded-full w-[400px] hover:translate-x-2 hover:scale-105 transition"
+                            src="./src/teacher/Principal.jpg" />
                     </figure>
-                    <div
-                        class="flex flex-col items-start gap-1 text-lg lg:text-2xl lg:p-2 font-semiboldtransition-all">
-                        <h2 class="font-bold text-3xl lg:text-7xl  text-emerald-500">Md. Showkat Hossain</h2>
+                    <div class="flex flex-col items-start gap-1 text-lg lg:text-2xl lg:p-2 font-semiboldtransition-all">
+                        <h2 class="font-bold text-3xl lg:text-7xl text-emerald-500">
+                            Md. Showkat Hossain
+                        </h2>
                         <h3 class="text-2xl lg:text-3xl">Vice Principal</h3>
                         <h3>Mymensingh Polytechnic Institute</h3>
                     </div>
                 </div>
             </section>
 
-
-            <h2 id="teacher-team-section-title" class="font-semibold text-center text-4xl pt-10"> Meet Our Teachers</h2>
+            <h2 id="teacher-team-section-title" class="font-semibold text-center text-4xl pt-10">
+                Meet Our Teachers
+            </h2>
             <div id="teacher-container"
                 class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:mx-32 mx-10 p-10 gap-4">
                 <!-- teacher  -->
-
             </div>
         </section>
 
         <!-- log in from  -->
         <div class="flex justify-center items-center flex-col gap-2">
             <div id="log-in-container" class="flex justify-center items-center flex-col">
-                <h1 class="lg:text-5xl text-xl mx-12 lg:mx-40 font-semibold text-center">Enter Your Valid Usename &
-                    Password
-                    to See Full Code OF</h1>
+                <h1 class="lg:text-5xl text-xl mx-12 lg:mx-40 font-semibold text-center">
+                    Enter Your Valid Usename & Password to See Full Code OF
+                </h1>
                 <div class="mb-2">
-                    <a class="lg:text-5xl text-xl font-semibold lg:py-2 lg:px-4 px-2  text-emerald-600 hover:-translate-x-1 hover:-translate-y-1 active:scale-90 rounded transition 5xl     "
+                    <a class="lg:text-5xl text-xl font-semibold lg:py-2 lg:px-4 px-2 text-emerald-600 hover:-translate-x-1 hover:-translate-y-1 active:scale-90 rounded transition 5xl"
                         href="../../index.html">NEST MART GROCERY</a>
                     <span class="font-semibold text-xl lg:text-5xl">by</span>
                     <a class="lg:text-5xl text-xl font-semibold lg:py-2 lg:px-4 px-2 text-emerald-600 hover:-translate-x-1 hover:-translate-y-1"
-                        active:scale-90 rounded transition 5xl href='#ff'>SUJOY DAS</a>
+                        active:scale-90 rounded transition 5xl href="#ff">SUJOY DAS</a>
                 </div>
 
                 <!-- log in from  -->
@@ -277,7 +278,9 @@
                     </div>
                     <div class="flex justify-center mt-4">
                         <button id="submit-btn"
-                            class="bg-emerald-500 text-white px-4 py-2 rounded-lg hover:bg-amber-500 active:scale-95  hover:-translate-y-1 hover:-translate-x-1 transition-all">Submit</button>
+                            class="bg-emerald-500 text-white px-4 py-2 rounded-lg hover:bg-amber-500 active:scale-95 hover:-translate-y-1 hover:-translate-x-1 transition-all">
+                            Submit
+                        </button>
                     </div>
                 </div>
             </div>
@@ -285,18 +288,19 @@
         <!-- code blocks section  -->
         <section id="code-container" class="hidden">
             <div>
-                <h1 class="lg:text-5xl text-xl mx-12 lg:mx-40 font-semibold text-center"> Usename & Password Are Valid
-                    For</h1>
+                <h1 class="lg:text-5xl text-xl mx-12 lg:mx-40 font-semibold text-center">
+                    Usename & Password Are Valid For
+                </h1>
                 <div class="text-center">
-                    <a class="lg:text-5xl text-xl font-semibold lg:py-2 lg:px-4 px-2 py-1 text-emerald-600 hover:-translate-x-1 hover:-translate-y-1 active:scale-90 rounded transition 5xl     "
+                    <a class="lg:text-5xl text-xl font-semibold lg:py-2 lg:px-4 px-2 py-1 text-emerald-600 hover:-translate-x-1 hover:-translate-y-1 active:scale-90 rounded transition 5xl"
                         href="../../index.html">NEST MART GROCERY</a>
                     <span class="font-semibold lg:text-5xl text-xl">by</span>
                     <a class="lg:text-5xl text-xl font-semibold lg:py-2 lg:px-4 px-2 py-1 text-emerald-600 hover:-translate-x-1 hover:-translate-y-1"
-                        active:scale-90 rounded transition 5xl href='#ff'>SUJOY DAS</a>
+                        active:scale-90 rounded transition 5xl href="#ff">SUJOY DAS</a>
                 </div>
             </div>
 
-            <div id="all-code" class="mockup-code mx-10 my-5 ">
+            <div id="all-code" class="mockup-code mx-10 my-5">
                 <!-- code for small device  -->
                 <pre data-prefix="">
                     <code class="flex lg:hidden p-2 text-[12px] pl-5 -mt-12 text-wrap">
@@ -3911,31 +3915,37 @@ loader.remove()
         </section>
     </main>
 
-    <footer class="mt-8 ">
+    <footer class="mt-8">
         <!-- footer  -->
         <!-- copyright  -->
         <div class="mx-auto lg:px-20 px-8 lg:max-w-screen-2xl" id="contact-us">
             <div
-                class="flex lg:flex-row flex-col-reverse gap-4 justify-between items-center max-w-screen-2xl mx-auto border-emerald-600 border-t py-8 mt-10  ">
+                class="flex lg:flex-row flex-col-reverse gap-4 justify-between items-center max-w-screen-2xl mx-auto border-emerald-600 border-t py-8 mt-10">
                 <div class="flex flex-col text-center">
-                    <h1 class="text-sm">&copy; 2024, <span>Nest</span> - Ecommerce By <span
-                            class="text-emerald-500 font-semibold">Sujoy</span></h1>
+                    <h1 class="text-sm">
+                        &copy; 2024, <span>Nest</span> - Ecommerce By
+                        <span class="text-emerald-500 font-semibold">Sujoy</span>
+                    </h1>
                     <h1 class="text-sm">All rights reserved</h1>
                 </div>
                 <div class="flex lg:flex-row flex-col gap-4">
-                    <div class="flex gap-2 ">
-                        <img class="w-8" src="../../src/assets/svgs/phone-call.svg" alt="">
+                    <div class="flex gap-2">
+                        <img class="w-8" src="../../src/assets/svgs/phone-call.svg" alt="" />
                         <div class="flex flex-col lg:items-start items-center">
-                            <button class="text-2xl font-semibold text-emerald-500 active:scale-95 transition-all">+880
-                                9638 831422</button>
-                            <h1 class="text-sm text-gray-500 -mt-2">Working 8:00 - 22:00</h1>
+                            <button class="text-2xl font-semibold text-emerald-500 active:scale-95 transition-all">
+                                +880 9638 831422
+                            </button>
+                            <h1 class="text-sm text-gray-500 -mt-2">
+                                Working 8:00 - 22:00
+                            </h1>
                         </div>
                     </div>
-                    <div class="flex gap-2 ">
-                        <img class="w-8" src="../../src/assets/svgs/phone-call.svg" alt="">
+                    <div class="flex gap-2">
+                        <img class="w-8" src="../../src/assets/svgs/phone-call.svg" alt="" />
                         <div class="flex flex-col lg:items-start items-center">
-                            <button class="text-2xl font-semibold text-emerald-500 active:scale-95 transition-all">+880
-                                1303-436299</button>
+                            <button class="text-2xl font-semibold text-emerald-500 active:scale-95 transition-all">
+                                +880 1303-436299
+                            </button>
                             <h1 class="text-sm text-gray-500 -mt-2">24/7 Support Center</h1>
                         </div>
                     </div>
@@ -3945,30 +3955,35 @@ loader.remove()
                         <h1>Follow Us</h1>
                         <div class="flex gap-1">
                             <a href="https://web.facebook.com/sujoydas36"><img
-                                    class="bg-emerald-500 rounded-full p-1 w-6 hover:-translate-y-1 transition"
-                                    src="/src/assets/svgs/icon-facebook-white.svg" alt=""></a>
-                            <a href="https://github.com/devsujoy36"><img
-                                    class="bg-emerald-500 rounded-full p-1 w-6 hover:-translate-y-1 transition"
-                                    src="/src/assets/svgs/icon-twitter-white.svg" alt=""></a>
-                            <a href="https://github.com/devsujoy36"><img
-                                    class="bg-emerald-500 rounded-full p-1 w-6 hover:-translate-y-1 transition"
-                                    src="/src/assets/svgs/github-mark-white.png" alt=""></a>
-                            <a href="https://api.whatsapp.com/send/?phone=%2B8801303436299&text&type=phone_number&app_absent=0"><img
                                     class="rounded-full w-6 hover:-translate-y-1 transition"
-                                    src="/src/assets/svgs/whatsappicon.png" alt=""></a>
+                                    src="/src/assets/svgs/facebookimg.png" alt="" /></a>
+
+                            <a href="https://www.instagram.com/sdsujoy920243/"><img
+                                    class="rounded-full w-6 hover:-translate-y-1 transition"
+                                    src="/src/assets/svgs/instalogo.jpg" alt="" /></a>
+
+                            <a href="https://github.com/devsujoy36"><img
+                                    class="rounded-full w-6 hover:-translate-y-1 transition"
+                                    src="/src/assets/svgs/github-mark.png" alt="" /></a>
+
+                            <a
+                                href="https://api.whatsapp.com/send/?phone=%2B8801303436299&text&type=phone_number&app_absent=0"><img
+                                    class="rounded-full w-6 hover:-translate-y-1 transition"
+                                    src="/src/assets/svgs/whatsappicon.png" alt="" /></a>
+
                             <a href="https://www.youtube.com/@xenonlivexone"><img
                                     class="bg-emerald-500 rounded-full w-6 hover:-translate-y-1 transition"
-                                    src="/src/assets/svgs/youtube.png" alt=""></a>
+                                    src="/src/assets/svgs/youtube.png" alt="" /></a>
                         </div>
                     </div>
                     <h1 class="text-xs">Up to 15% discount on your first subscribe</h1>
                 </div>
             </div>
-
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="./code.js"></script>
-
 </body>
+
+</html>
