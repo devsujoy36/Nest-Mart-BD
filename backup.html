@@ -13,9 +13,13 @@
         @tailwind base;
         @tailwind components;
         @tailwind utilities;
-
         @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap');
-
+        body {
+            font-family: "Baloo 2", sans-serif;
+            font-optical-sizing: auto;
+            font-style: normal;
+            scroll-behavior: smooth;
+        }
         html {
             scroll-behavior: smooth;
         }
@@ -34,12 +38,6 @@
         ::selection {
             background-color: rgb(1, 179, 1);
             color: white;
-        }
-        body {
-            font-family: "Baloo 2", sans-serif;
-            font-optical-sizing: auto;
-            font-style: normal;
-            scroll-behavior: smooth;
         }
         .blurNav {
             z-index: 5;
@@ -100,9 +98,7 @@
             animation: anim 2s linear forwards;
         }
         @keyframes anim {
-            100% {
-                width: 0;
-            }
+            100% { width: 0; }
         }
         .toastmaker i {
             margin: 0 5px;
@@ -632,9 +628,9 @@
             <div class="flex flex-col gap-2 lg:flex-row justify-between items-center">
                 <h1 class="text-3xl lg:font-semibold font-bold">Daily Best Sells</h1>
                 <div class="flex justify-center items-center gap-4">
-                    <a href="#hello" class="text-black hover:-translate-y-1 hover:-translate-x-1 transition-all hover:text-emerald-400">Featured</a>
-                    <a href="#hello" class="text-black hover:-translate-y-1 hover:-translate-x-1 transition-all hover:text-emerald-400">Popular</a>
-                    <a href="#hello" class="text-black hover:-translate-y-1 hover:-translate-x-1 transition-all hover:text-emerald-400">New Added</a>
+                    <a href="#" class="text-black hover:-translate-y-1 hover:-translate-x-1 transition-all hover:text-emerald-400">Featured</a>
+                    <a href="#" class="text-black hover:-translate-y-1 hover:-translate-x-1 transition-all hover:text-emerald-400">Popular</a>
+                    <a href="#" class="text-black hover:-translate-y-1 hover:-translate-x-1 transition-all hover:text-emerald-400">New Added</a>
                 </div>
             </div>
 
@@ -649,6 +645,7 @@
                 <!-- Swiper -->
                 <div class="swiper mySwiper1 rounded-2xl lg:mx-0 mx-9 lg:pt-0 pt-10">
                     <div class="swiper-wrapper ">
+
                         <!-- product 1 -->
                         <div class="swiper-slide">
                             <div class="border relative overflow-hidden p-4 lg:p-6 rounded-2xl  ">
@@ -703,20 +700,20 @@
                                     </div>
                                 </div>
                                 <h1 class="mt-2 text-xs">By <a href="#" class="text-emerald-500 hover:-translate-x-1 hover:-translate-y-1 hover:text-orange-400">Starkist</span></a>
-                                    <div class=" mt-3">
-                                        <h1 class="text-emerald-500 font-semibold text-xl">$17.85</h1>
-                                        <progress class="progress progress-accent w-full" value="65" max="100"></progress>
-                                        <p class="text-sm">Sold: 65/100</p>
-                                        <button onclick="showToast(successMsg)" class="bg-emerald-500 active:bg-orange-500 active:scale-95 text-white hover:text-white font-semibold w-full py-4 rounded-md flex justify-center items-center gap-1 hover:-translate-y-1 transition mt-4">
-                                            <img class="w-4 text " src="./src/assets/svgs/icon-cart.svg" alt="">
-                                            <h1 class="">Add To Cart</h1>
-                                        </button>
-                                    </div>
+                                <div class=" mt-3">
+                                    <h1 class="text-emerald-500 font-semibold text-xl">$17.85</h1>
+                                    <progress class="progress progress-accent w-full" value="65" max="100"></progress>
+                                    <p class="text-sm">Sold: 65/100</p>
+                                    <button onclick="showToast(successMsg)" class="bg-emerald-500 active:bg-orange-500 active:scale-95 text-white hover:text-white font-semibold w-full py-4 rounded-md flex justify-center items-center gap-1 hover:-translate-y-1 transition mt-4">
+                                        <img class="w-4 text " src="./src/assets/svgs/icon-cart.svg" alt="">
+                                        <h1 class="">Add To Cart</h1>
+                                    </button>
+                                </div>
                             </div>
                         </div>
 
                         <!-- product 3 -->
-                        <div class="swiper-slider>
+                        <div class="swiper-slide">
                             <div class="border relative overflow-hidden p-4 lg:p-6 rounded-2xl  ">
                                 <span class="bg-blue-400 text-white text-sm px-4 py-1 rounded-ee-2xl absolute top-0 left-0">Sale</span>
                                 <div class="overflow-hidden flex justify-center items-center">
@@ -740,13 +737,13 @@
                                     <h1 class="text-emerald-500 font-semibold text-xl">$54.85</h1>
                                     <progress class="progress progress-accent w-full" value="48" max="100"></progress>
                                     <p class="text-sm">Sold: 48/100</p>
-                                    <button onclick="showToast(successMsg)" class="bg-emerald-500 active:bg-orange-500 text-white active:scale-95 font-semibold w-full py-4 rounded-md flex justify-center items-center gap-1  hover:-translate-y-1 transition mt-4">
+                                    <button onclick="showToast(successMsg)" class="bg-emerald-500 active:bg-orange-500 text-white active:scale-95 font-semibold w-full py-4 rounded-md flex justify-center items-center gap-1 hover:-translate-y-1 transition mt-4">
                                         <img class="w-4 text " src="./src/assets/svgs/icon-cart.svg" alt="">
                                         <h1 class="">Add To Cart</h1>
                                     </button>
                                 </div>
                             </div>
-                </div>
+                        </div>
 
                         <!-- product 4 -->
                         <div class="swiper-slide">
@@ -917,8 +914,7 @@
         </section>
 
         <!-- top selling section  -->
-        <section id="deals-of-the-day"
-            class=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-4 xl:grid-cols-4  xl:gap-4  lg:mx-4 mx-6">
+        <section id="deals-of-the-day" class=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-4 xl:grid-cols-4  xl:gap-4  lg:mx-4 mx-6">
             <div>
                 <h1 class="text-3xl font-semibold border-b-2 border-emerald-600 mb-6">Top Selling</h1>
                 <div class="grid grid-rows-3 gap-4">
@@ -978,7 +974,6 @@
                     </div>
                 </div>
             </div>
-
             <div>
                 <h1 class="text-3xl font-semibold border-b-2 border-emerald-600 mb-6">Trending Products</h1>
                 <div class="grid grid-rows-3  gap-4">
@@ -1018,7 +1013,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="flex items-center gap-4 rounded-lg hover:shadow-lg hover:-translate-x-1 hover:-translate-y-1 transition p-3">
                         <img class="w-24 rounded-lg" src="./src/assets/top selling/thumbnail-6.jpg" alt="">
                         <div>
@@ -1039,7 +1033,6 @@
                     </div>
                 </div>
             </div>
-
             <div>
                 <h1 class="text-3xl font-semibold border-b-2 border-emerald-600  mb-6">Recently added</h1>
                 <div class="grid grid-rows-3 gap-4">
@@ -1061,7 +1054,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="flex items-center gap-4 rounded-lg hover:shadow-lg hover:-translate-x-1 hover:-translate-y-1 transition p-3">
                         <img class="w-24 rounded-lg" src="./src/assets/top selling/thumbnail-8.jpg" alt="">
                         <div>
@@ -1080,7 +1072,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="flex items-center gap-4 rounded-lg hover:shadow-lg hover:-translate-x-1 hover:-translate-y-1 transition p-3">
                         <img class="w-24 rounded-lg" src="./src/assets/top selling/thumbnail-9.jpg" alt="">
                         <div>
@@ -1101,7 +1092,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="lg:hidden xl:block block">
                 <h1 class="text-3xl font-semibold border-b-2 border-emerald-600 mb-6">Top Rated</h1>
                 <div class="grid grid-rows-3  gap-4">
@@ -1123,7 +1113,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="flex items-center gap-4 rounded-lg hover:shadow-lg hover:-translate-x-1 hover:-translate-y-1 transition p-3">
                         <img class="w-24 rounded-lg" src="./src/assets/top selling/thumbnail-11.jpg" alt="">
                         <div>
@@ -1142,7 +1131,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="flex items-center gap-4 rounded-lg hover:shadow-lg hover:-translate-x-1 hover:-translate-y-1 transition p-3">
                         <img class="w-24 rounded-lg" src="./src/assets/top selling/thumbnail-12.jpg" alt="">
                         <div>
@@ -1240,7 +1228,6 @@
             <div class="grid gap-4 text-sm">
                 <img src="./src/assets/svgs/logo.svg" alt="">
                 <p class="text-center lg:text-left -mt-2 ">Awesome grocery store</p>
-
                 <div class="grid lg:gap-2 gap-3">
                     <div class="flex justify-center lg:text-left text-center lg:flex-row flex-col lg:items-start items-center lg:gap-2">
                         <img class="" src="./src/assets/svgs/icon-location.svg" alt="">
@@ -1367,8 +1354,7 @@
                             <a href="https://web.facebook.com/sujoydas36"><img class=" rounded-full w-6 hover:-translate-y-1 transition" src="/src/assets/svgs/facebookimg.png" alt=""> </a>
                             <a href="https://www.instagram.com/sdsujoy920243/"><img class=" rounded-full w-6 hover:-translate-y-1 transition" src="/src/assets/svgs/instalogo.jpg" alt=""></a>
                             <a href="https://github.com/devsujoy36"><img class=" rounded-full w-6 hover:-translate-y-1 bg-white transition" src="/src/assets/svgs/github-mark.png" alt=""></a>
-                            <a href="https://api.whatsapp.com/send/?phone=%2B8801303436299&text&type=phone_number&app_absent=0"><img class="rounded-full w-6 hover:-translate-y-1 transition" 
-                                src="/src/assets/svgs/whatsappicon.png" alt=""></a>
+                            <a href="https://api.whatsapp.com/send/?phone=%2B8801303436299&text&type=phone_number&app_absent=0"><img class="rounded-full w-6 hover:-translate-y-1 transition" src="/src/assets/svgs/whatsappicon.png" alt=""></a>
                             <a href="https://www.youtube.com/@xenonlivexone"><img class="bg-emerald-500 rounded-full w-6 hover:-translate-y-1 transition" src="/src/assets/svgs/youtube.png" alt=""></a>
                         </div>
                     </div>
@@ -1378,12 +1364,13 @@
 
         </div>
     </footer>
+
     <script src="tailwind.config.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
         const menuCrose = document.getElementById('nav-swap-for-mobile')
         const navMenuForMobile = document.getElementById('nav-menu-for-moble')
-        let toggle = true
+        let toggle = true;
         const navMenuHandler = () => {
             if (toggle) {
                 navMenuForMobile.style.display = 'flex'
@@ -1402,7 +1389,6 @@
                 disableOnInteraction: false
             }
         })
-
         var swiper1 = new Swiper('.mySwiper1', {
             slidesPerView: 1,
             spaceBetween: 10,
@@ -1444,7 +1430,6 @@
                 loader.remove()
             }, 100)
         })
-
     </script>
 </body>
 </html>
