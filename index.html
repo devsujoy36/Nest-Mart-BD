@@ -14,13 +14,11 @@
         @tailwind components;
         @tailwind utilities;
         @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap');
+        html { scroll-behavior: smooth; }
         body {
             font-family: "Baloo 2", sans-serif;
             font-optical-sizing: auto;
             font-style: normal;
-            scroll-behavior: smooth;
-        }
-        html {
             scroll-behavior: smooth;
         }
         .hero-slide-1 {
@@ -35,14 +33,8 @@
             background-repeat: no-repeat;
             background-position: center center;
         }
-        ::selection {
-            background-color: rgb(1, 179, 1);
-            color: white;
-        }
-        .blurNav {
-            z-index: 5;
-            backdrop-filter: black;
-        }
+        ::selection { background-color: rgb(1, 179, 1); color: white; }
+        .blurNav { z-index: 5; }
         .bgOnion {
             background-image: url('./src/assets/banner/banner-1.png');
             background-position: center center;
@@ -61,12 +53,10 @@
         }
         #stay-home {
             background-image: url('./src/assets/banner/banner-10.png');
-            background-position: center center;
+            background-position: center;
             background-size: contain;
         }
-        .daily-best-sells {
-            grid-template-columns: 1fr 3fr;
-        }
+        .daily-best-sells { grid-template-columns: 1fr 3fr; }
         .toastmaker {
             background: white;
             padding: 10px;
@@ -82,11 +72,7 @@
             color: rgb(0, 0, 0);
             animation: moveleft .3s linear forwards;
         }
-        @keyframes moveleft {
-            100% {
-                transform: translateX(0%);
-            }
-        }
+        @keyframes moveleft { 100% { transform: translateX(0%); } }
         .toastmaker::after {
             content: '';
             position: absolute;
@@ -97,37 +83,20 @@
             background: green;
             animation: anim 2s linear forwards;
         }
-        @keyframes anim {
-            100% { width: 0; }
-        }
-        .toastmaker i {
-            margin: 0 5px;
-            font-size: 35px;
-            color: rgb(0, 151, 0);
-        }
-        .toastmaker.error i {
-            color: rgb(253, 33, 33);
-        }
-        .toastmaker.invalid i {
-            color: rgb(255, 172, 19);
-        }
-        .toastmaker.error::after {
-            background-color: red;
-        }
-        .toastmaker.invalid::after {
-            background-color: orange;
-        }
-        @media screen and (max-width: 576px) {
-            #preloader {
-                background-size: 70%;
-            }
-        }
+        @keyframes anim { 100% { width: 0; } }
+        .toastmaker i { margin: 0 5px; font-size: 35px; color: rgb(0, 151, 0); }
+        .toastmaker.error i { background-color: rgb(253, 33, 33); }
+        .toastmaker.invalid i { background-color: rgb(255, 172, 19); }
+        .toastmaker.error::after { background-color: red; }
+        .toastmaker.invalid::after { background-color: orange; }
+        @media screen and (max-width: 576px) { #preloader { background-size: 70%; } }
     </style>
 </head>
 
 <body class="relative">
     <!-- preloader page  -->
-    <div id="preloader-container" class="flex justify-center items-center w-full fixed z-40 bg-white top-0 left-0  h-dvh">
+    <div id="preloader-container"
+        class="flex justify-center items-center w-full fixed z-40 bg-white top-0 left-0  h-dvh">
         <div class="">
             <img src="./src/assets/loading.gif" alt="">
         </div>
@@ -144,49 +113,72 @@
                     <path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z" />
                 </svg>
                 <svg class="swap-on fill-current" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512">
-                    <polygon points="400 145.49 366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49" />
+                    <polygon
+                        points="400 145.49 366.51 112 256 222.51 145.49 112 112 145.49 222.51 256 112 366.51 145.49 400 256 289.49 366.51 400 400 366.51 289.49 256 400 145.49" />
                 </svg>
             </label>
 
             <div id="nav-menu" class="lg:flex lg:flex-row flex-col hidden lg:gap-4 px-2" value="synthwave">
-                <a href="#" class="lg:text-lg font-semibold lg:py-2 lg:px-4 px-2 py-1 text-emerald-400 hover:-translate-x-1 hover:-translate-y-1 active:scale-90 rounded transition ">Home</a>
-                <a href="#for-categories" class="lg:text-lg font-semibold lg:py-2 lg:px-4 px-2 py-1 text-emerald-400 hover:-translate-x-1 hover:-translate-y-1 active:scale-90 rounded transition">Categories</a>
-                <a href="#nav-for-products" class="lg:text-lg font-semibold lg:py-2 lg:px-4 px-2 py-1 text-emerald-400 hover:-translate-x-1 hover:-translate-y-1 active:scale-90 rounded transition">Product</a>
-                <a href="#nav-for-daily-best-sell" class="lg:text-lg font-semibold lg:py-2 lg:px-4 px-2 py-1 text-emerald-400 hover:-translate-x-1 hover:-translate-y-1 active:scale-90 rounded transition">Best Sell </a>
-                <a href="#contact-us" class="lg:text-lg font-semibold lg:py-2 lg:px-4 px-2 py-1 text-emerald-400 hover:-translate-x-1 hover:-translate-y-1 active:scale-90 rounded transition">Contact Us</a>
-                <a href="./code.html" class="lg:text-lg font-semibold lg:py-2 lg:px-4 px-2 py-1 text-emerald-400 hover:-translate-x-1 hover:-translate-y-1 active:scale-90 rounded transition">Our Team</a>
+                <a href="#"
+                    class="lg:text-lg font-semibold lg:py-2 lg:px-4 px-2 py-1 text-emerald-400 hover:-translate-x-1 hover:-translate-y-1 active:scale-90 rounded transition ">Home</a>
+                <a href="#for-categories"
+                    class="lg:text-lg font-semibold lg:py-2 lg:px-4 px-2 py-1 text-emerald-400 hover:-translate-x-1 hover:-translate-y-1 active:scale-90 rounded transition">Categories</a>
+                <a href="#nav-for-products"
+                    class="lg:text-lg font-semibold lg:py-2 lg:px-4 px-2 py-1 text-emerald-400 hover:-translate-x-1 hover:-translate-y-1 active:scale-90 rounded transition">Product</a>
+                <a href="#nav-for-daily-best-sell"
+                    class="lg:text-lg font-semibold lg:py-2 lg:px-4 px-2 py-1 text-emerald-400 hover:-translate-x-1 hover:-translate-y-1 active:scale-90 rounded transition">Best
+                    Sell </a>
+                <a href="#contact-us"
+                    class="lg:text-lg font-semibold lg:py-2 lg:px-4 px-2 py-1 text-emerald-400 hover:-translate-x-1 hover:-translate-y-1 active:scale-90 rounded transition">Contact
+                    Us</a>
+                <a href="./code.html"
+                    class="lg:text-lg font-semibold lg:py-2 lg:px-4 px-2 py-1 text-emerald-400 hover:-translate-x-1 hover:-translate-y-1 active:scale-90 rounded transition">Our
+                    Team</a>
                 <label class="swap swap-rotate">
                     <!-- this hidden checkbox controls the state -->
                     <input type="checkbox" class="theme-controller" value="synthwave" />
                     <!-- sun icon -->
                     <svg class="swap-off h-8 w-8 fill-emerald-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z" />
+                        <path
+                            d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z" />
                     </svg>
                     <!-- moon icon -->
                     <svg class="swap-on h-8 w-8 fill-emerald-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
+                        <path
+                            d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
                     </svg>
                 </label>
             </div>
         </nav>
-
-        <div id="nav-menu-for-moble" class="flex-col hidden p-4 absolute top-24 -mt-7  right-8 border bg-white  shadow-lg rounded-lg">
-            <a href="#" class="lg:text-lg font-semibold lg:py-2 lg:px-4 px-2 py-1 hover:bg-emerald-400 text-emerald-400 hover:text-white active:scale-90 rounded transition">Home</a>
-            <a href="#for-categories" class="lg:text-lg font-semibold lg:py-2 lg:px-4 px-2 py-1 hover:bg-emerald-400 text-emerald-400 hover:text-white active:scale-90 rounded transition">Categories</a>
-            <a href="#nav-for-products" class="lg:text-lg font-semibold lg:py-2 lg:px-4 px-2 py-1 hover:bg-emerald-400 text-emerald-400 hover:text-white active:scale-90 rounded transition">Product</a>
-            <a href="#nav-for-daily-best-sell" class="lg:text-lg font-semibold lg:py-2 lg:px-4 px-2 py-1 hover:bg-emerald-400 text-emerald-400 hover:text-white active:scale-90 rounded transition">Best Sell </a>
-            <a href="#contact-us" class="lg:text-lg font-semibold lg:py-2 lg:px-4 px-2 py-1 hover:bg-emerald-400 text-emerald-400 hover:text-white active:scale-90 rounded transition">Contact Us</a>
-            <a href="./code.html" class="lg:text-lg font-semibold lg:py-2 lg:px-4 px-2 py-1 text-emerald-400 hover:-translate-x-1 hover:-translate-y-1 active:scale-90 rounded transition">Our Team</a>
+        <div id="nav-menu-for-moble"
+            class="flex-col hidden p-4 absolute top-24 -mt-7  right-8 border bg-white  shadow-lg rounded-lg">
+            <a href="#"
+                class="lg:text-lg font-semibold lg:py-2 lg:px-4 px-2 py-1 hover:bg-emerald-400 text-emerald-400 hover:text-white active:scale-90 rounded transition">Home</a>
+            <a href="#for-categories"
+                class="lg:text-lg font-semibold lg:py-2 lg:px-4 px-2 py-1 hover:bg-emerald-400 text-emerald-400 hover:text-white active:scale-90 rounded transition">Categories</a>
+            <a href="#nav-for-products"
+                class="lg:text-lg font-semibold lg:py-2 lg:px-4 px-2 py-1 hover:bg-emerald-400 text-emerald-400 hover:text-white active:scale-90 rounded transition">Product</a>
+            <a href="#nav-for-daily-best-sell"
+                class="lg:text-lg font-semibold lg:py-2 lg:px-4 px-2 py-1 hover:bg-emerald-400 text-emerald-400 hover:text-white active:scale-90 rounded transition">Best
+                Sell </a>
+            <a href="#contact-us"
+                class="lg:text-lg font-semibold lg:py-2 lg:px-4 px-2 py-1 hover:bg-emerald-400 text-emerald-400 hover:text-white active:scale-90 rounded transition">Contact
+                Us</a>
+            <a href="./code.html"
+                class="lg:text-lg font-semibold lg:py-2 lg:px-4 px-2 py-1 text-emerald-400 hover:-translate-x-1 hover:-translate-y-1 active:scale-90 rounded transition">Our
+                Team</a>
             <label class="swap swap-rotate">
                 <!-- this hidden checkbox controls the state -->
                 <input type="checkbox" class="theme-controller" value="synthwave" />
                 <!-- sun icon -->
                 <svg class="swap-off h-8 w-8  fill-emerald-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <path d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z" />
+                    <path
+                        d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z" />
                 </svg>
                 <!-- moon icon -->
                 <svg class="swap-on h-8 w-8 fill-emerald-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
+                    <path
+                        d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
                 </svg>
             </label>
         </div>
@@ -195,27 +187,31 @@
     <main class=" lg:max-w-screen-2xl lg:px-20 mt-20 px-8 mx-auto">
         <!-- hero section with slider  -->
         <section id="hero-slider" class="py-5 rounded-2xl overflow-hidden">
-            <!-- Swiper -->
             <div class="swiper mySwiper ">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide lg:p-20 hero-slide-1 p-10 rounded-3xl mt-8 flex flex-col items-start gap-8 ">
-                        <h1 class="lg:text-7xl text-5xl font-semibold text-black">Don't miss amazing <br> grocery deals </h1>
+                        <h1 class="lg:text-7xl text-5xl font-semibold text-black">Don't miss amazing <br> grocery deals
+                        </h1>
                         <p class="text-2xl lg:text-3xl text-gray-500">Sign Up for Daily Update of Our Special Deals</p>
-                        <div class="bg-white flex rounded-full justify-between items-center lg:gap-4 gap-1 mt-8 overflow-hidden">
+                        <div
+                            class="bg-white flex rounded-full justify-between items-center lg:gap-4 gap-1 mt-8 overflow-hidden">
                             <img class="pl-3 lg:pl-6" src="./src/assets/icon-plane.png" alt="">
-                            <input class="focus:outline-none text-sm lg:text-lg bg-white text-black  w-4/6" type="email" placeholder="Your email address">
+                            <input class="focus:outline-none text-sm lg:text-lg bg-white text-black  w-4/6" type="email"
+                                placeholder="Your email address">
                             <div>
-                                <button id="for-categories" onclick="showToast(errorMsg)" class="bg-emerald-500 text-white lg:px-8 px-4 py-2 lg:py-4 rounded-full font-semibold  hover:bg-emerald-400 active:scale-95 transition">Subscribe</button>
+                                <button id="for-categories" onclick="showToast(errorMsg)"
+                                    class="bg-emerald-500 text-white lg:px-8 px-4 py-2 lg:py-4 rounded-full font-semibold  hover:bg-emerald-400 active:scale-95 transition">Subscribe</button>
                             </div>
                         </div>
                     </div>
-
                     <div class="swiper-slide lg:p-20 hero-slide-2 p-10 rounded-3xl mt-8 flex flex-col items-start gap-8">
-                        <h1 class="lg:text-7xl text-5xl font-semibold text-black">Fresh Vegetables <br> Big Discounts </h1>
+                        <h1 class="lg:text-7xl text-5xl font-semibold text-black">Fresh Vegetables <br> Big Discounts
+                        </h1>
                         <p class="text-2xl lg:text-3xl text-gray-500">Save upto 50% off on your first order</p>
                         <div class="bg-white flex rounded-full justify-center items-center lg:gap-4 gap-1 mt-8 overflow-hidden">
                             <img class="pl-3 lg:pl-6" src="./src/assets/icon-plane.png" alt="">
-                            <input class="focus:outline-none text-sm lg:text-lg  bg-white text-black w-4/6" type="email" placeholder="Your email address">
+                            <input class="focus:outline-none text-sm lg:text-lg  bg-white text-black w-4/6" type="email"
+                                placeholder="Your email address">
                             <button id="for-categories" onclick="showToast(errorMsg)" class="bg-emerald-500 text-white lg:px-8 px-4 py-2 lg:py-4 rounded-full font-semibold 
                             hover:bg-emerald-400 active:scale-95 transition">Subscribe</button>
                         </div>
@@ -223,16 +219,22 @@
                 </div>
             </div>
         </section>
-
         <!-- Feature Categories  -->
         <section id="feature-categories" class="scroll-smooth">
             <div class=" my-10 flex ljustify-start litems-center  flex-wrap gap-3 lg:gap-8">
                 <h1 class="text-3xl font-semibold">Featured Categories</h1>
                 <div class="flex gap-3 justify-center lg:gap-8">
-                    <a href="#" class="text-black active:scale-95 hover:-translate-y-1 hover:-translate-x-1 transition-all hover:text-emerald-400">Cake & Milk</a>
-                    <a href="#" class="text-black active:scale-95 hover:-translate-y-1 hover:-translate-x-1 transition-all hover:text-emerald-400">Coffes & Teas</a>
-                    <a href="#" class="text-black  active:scale-95hover:-translate-y-1 hover:-translate-x-1 transition-all hover:text-emerald-400">Pet Foods</a>
-                    <a href="#" class="text-black active:scale-95 hover:-translate-y-1 hover:-translate-x-1 transition-all hover:text-emerald-400">Vegitables</a>
+                    <a href="#"
+                        class="text-black active:scale-95 hover:-translate-y-1 hover:-translate-x-1 transition-all hover:text-emerald-400">Cake
+                        & Milk</a>
+                    <a href="#"
+                        class="text-black active:scale-95 hover:-translate-y-1 hover:-translate-x-1 transition-all hover:text-emerald-400">Coffes
+                        & Teas</a>
+                    <a href="#"
+                        class="text-black  active:scale-95hover:-translate-y-1 hover:-translate-x-1 transition-all hover:text-emerald-400">Pet
+                        Foods</a>
+                    <a href="#"
+                        class="text-black active:scale-95 hover:-translate-y-1 hover:-translate-x-1 transition-all hover:text-emerald-400">Vegitables</a>
                 </div>
             </div>
 
@@ -243,56 +245,48 @@
                     <a href="#" class="font-semibold mt-4 hover:text-emerald-400">Oganic Kiwi</a>
                     <h1 class="text-gray-500">14 items</h1>
                 </div>
-
                 <div id="card" class="hover:-translate-x-2 hover:-translate-y-1 hover:shadow-xl hover:border transition-all text-black  bg-green-100 p-4 rounded-lg flex 
                     justify-center items-center flex-col">
                     <img class="w-8/12 hover:scale-110 transition" src="./src/assets/icons/cat-11.png" alt="">
                     <a href="#" class="font-semibold mt-4 hover:text-emerald-400">Peach</a>
                     <h1 class="text-gray-500">54 items</h1>
                 </div>
-
                 <div id="card" class="hover:-translate-x-2 hover:-translate-y-1 hover:shadow-xl hover:border transition-all text-black  bg-red-100 p-4 rounded-lg flex 
                     justify-center items-center flex-col">
                     <img class="w-8/12 hover:scale-110 transition" src="./src/assets/icons/cat-9.png" alt="">
                     <a href="#" class="font-semibold mt-4 hover:text-emerald-400">Red Apple</a>
                     <h1 class="text-gray-500">56 items</h1>
                 </div>
-
                 <div id="card" class="hover:-translate-x-2 hover:-translate-y-1 hover:shadow-xl hover:border transition-all text-black  bg-orange-100 p-4 rounded-lg flex 
                     justify-center items-center flex-col">
                     <img class="w-8/12 hover:scale-110 transition" src="./src/assets/icons/cat-3.png" alt="">
                     <a href="#" class="font-semibold mt-4 hover:text-emerald-400">Snack</a>
                     <h1 class="text-gray-500">72 items</h1>
                 </div>
-
                 <div id="card" class="hover:-translate-x-2 hover:-translate-y-1 hover:shadow-xl hover:border transition-all text-black  bg-violet-100 p-4 rounded-lg flex 
                     justify-center items-center flex-col">
                     <img class="w-8/12 hover:scale-110 transition" src="./src/assets/icons/cat-1.png" alt="">
                     <a href="#" class="font-semibold mt-4 hover:text-emerald-400">Vegetables</a>
                     <h1 class="text-gray-500">36 items</h1>
                 </div>
-
                 <div id="card" class="hover:-translate-x-2 hover:-translate-y-1 hover:shadow-xl hover:border transition-all text-black  bg-green-200 p-4 rounded-lg flex 
                     justify-center items-center flex-col">
                     <img class="w-8/12 hover:scale-110 transition" src="./src/assets/icons/cat-2.png" alt="">
                     <a href="#" class="font-semibold mt-4 hover:text-emerald-400">Strawberry</a>
                     <h1 class="text-gray-500">123 items</h1>
                 </div>
-
                 <div id="card" class="hover:-translate-x-2 hover:-translate-y-1 hover:shadow-xl hover:border transition-all text-black  bg-red-200 p-4 rounded-lg flex 
                     justify-center items-center flex-col">
                     <img class="w-8/12 hover:scale-110 transition" src="./src/assets/icons/cat-4.png" alt="">
                     <a href="#" class="font-semibold mt-4 hover:text-emerald-400">Black Plum</a>
                     <h1 class="text-gray-500">34 items</h1>
                 </div>
-
                 <div id="card" class="hover:-translate-x-2 hover:-translate-y-1 hover:shadow-xl hover:border transition-all text-black  bg-gray-200 p-4 rounded-lg flex 
                     justify-center items-center flex-col">
                     <img class="w-8/12 hover:scale-110 transition" src="./src/assets/icons/cat-3.png" alt="">
                     <a href="#" class="font-semibold mt-4 hover:text-emerald-400">Coffee & Tea</a>
                     <h1 class="text-gray-500">89 items</h1>
                 </div>
-
                 <div id="card" class="hover:-translate-x-2 hover:-translate-y-1 hover:shadow-xl hover:border transition-all text-black  bg-orange-100 p-4 rounded-lg flex 
                     justify-center items-center flex-col">
                     <img class="w-8/12 hover:scale-110 transition" src="./src/assets/icons/cat-15.png" alt="">
@@ -303,23 +297,34 @@
             </div>
 
             <div class="pt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4">
-                <div class="bg-cover bgOnion border rounded-xl p-10 hover:-translate-y-1 hover:-translate-x-1 hover:shadow-lg  transition-all">
-                    <h1 class="font-semibold text-2xl my-8 text-black hover:-translate-y-1 transition-all">Everyday Fresh & <br> Clean with Our <br> Products</h1>
-                    <button onclick="showToast(invalidMsg)" class="bg-emerald-500 hover:bg-orange-400 hover:px-5 active:scale-95 transition-all  px-4 py-1 rounded-lg text-white font-semibold ">Shop Now</button>
+                <div
+                    class="bg-cover bgOnion border rounded-xl p-10 hover:-translate-y-1 hover:-translate-x-1 hover:shadow-lg  transition-all">
+                    <h1 class="font-semibold text-2xl my-8 text-black hover:-translate-y-1 transition-all">Everyday
+                        Fresh & <br> Clean with Our <br> Products</h1>
+                    <button onclick="showToast(invalidMsg)"
+                        class="bg-emerald-500 hover:bg-orange-400 hover:px-5 active:scale-95 transition-all  px-4 py-1 rounded-lg text-white font-semibold ">Shop
+                        Now</button>
                 </div>
-                <div class="bg-cover bgStroberry border rounded-xl p-10 hover:-translate-y-1 hover:-translate-x-1 hover:shadow-lg transition-all">
-                    <h1 class="font-semibold text-2xl my-8 text-black hover:-translate-y-1 transition-all">Make your Breakfast
+                <div
+                    class="bg-cover bgStroberry border rounded-xl p-10 hover:-translate-y-1 hover:-translate-x-1 hover:shadow-lg transition-all">
+                    <h1 class="font-semibold text-2xl my-8 text-black hover:-translate-y-1 transition-all">Make your
+                        Breakfast
                         <br> Healthy and Easy
                     </h1>
-                    <button onclick="showToast(invalidMsg)" class=" bg-emerald-500 hover:bg-orange-400 hover:px-5 active:scale-95 transition-all px-4 py-1 rounded-lg text-white  font-semibold ">Shop Now</button>
+                    <button onclick="showToast(invalidMsg)"
+                        class=" bg-emerald-500 hover:bg-orange-400 hover:px-5 active:scale-95 transition-all px-4 py-1 rounded-lg text-white  font-semibold ">Shop
+                        Now</button>
                 </div>
-                <div class=" bg-cover bgVegetable border rounded-xl p-10 hover:-translate-y-1 hover:-translate-x-1 hover:shadow-lg transition-all">
-                    <h1 class="font-semibold text-2xl my-8 text-black hover:-translate-y-1 transition-all">The best Organic <br> Products Online</h1>
-                    <button id="nav-for-products" onclick="showToast(invalidMsg)" class=" bg-emerald-500 hover:bg-orange-400 hover:px-5 active:scale-95 transition-all px-4 py-1 rounded-lg text-white font-semibold ">Shop Now</button>
+                <div
+                    class=" bg-cover bgVegetable border rounded-xl p-10 hover:-translate-y-1 hover:-translate-x-1 hover:shadow-lg transition-all">
+                    <h1 class="font-semibold text-2xl my-8 text-black hover:-translate-y-1 transition-all">The best
+                        Organic <br> Products Online</h1>
+                    <button id="nav-for-products" onclick="showToast(invalidMsg)"
+                        class=" bg-emerald-500 hover:bg-orange-400 hover:px-5 active:scale-95 transition-all px-4 py-1 rounded-lg text-white font-semibold ">Shop
+                        Now</button>
                 </div>
             </div>
         </section>
-
         <!-- Popular product  -->
         <section id=" popular-product" class="py-12">
             <h1 class="text-3xl font-semibold pb-10">Popular Products</h1>
@@ -344,16 +349,15 @@
                             <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
                         </div>
                     </div>
-                    <h1 class="mt-2 text-xs y <a href="#" class="text-emerald-500 hover:-translate-x-1 hover:-translate-y-1 hover:text-orange-400">NestFood</span></a>
-                    <div class="flex justify-between items-center mt-3">
-                        <h1 class="text-emerald-500 font-semibold text-xl">$54.85</h1>
-                        <button onclick="showToast(successMsg)" class="bg-emerald-100 hover:bg-emerald-500 text-emerald-600 hover:text-white font-semibold px-3 lg:px-6 py-2 rounded-md flex justify-between items-center gap-1 hover:-translate-y-1 transition">
-                            <img class="w-4" src="./src/assets/svgs/icon-cart.svg" alt="">
-                            <h1 class="">Add</h1>
-                        </button>
-                    </div>
+                    <h1 class="mt-2 text-xs > <a href="#" class="text-emerald-500 hover:-translate-x-1 hover:-translate-y-1 hover:text-orange-400"> NestFood</span></a>
+                        <div class="flex justify-between items-center mt-3">
+                            <h1 class="text-emerald-500 font-semibold text-xl">$54.85</h1>
+                            <button onclick="showToast(successMsg)" class="bg-emerald-100 hover:bg-emerald-500 text-emerald-600 hover:text-white font-semibold px-3 lg:px-6 py-2 rounded-md flex justify-between items-center gap-1 hover:-translate-y-1 transition">
+                                <img class="w-4" src="./src/assets/svgs/icon-cart.svg" alt="">
+                                <h1 class="">Add</h1>
+                            </button>
+                        </div>
                 </div>
-
                 <!-- product 2 -->
                 <div class="border relative overflow-hidden shadow-xl p-4 lg:p-6 rounded-2xl hover:shadow-2xl hover:-translate-x-1 hover:-translate-y-1 transition ">
                     <span class="bg-blue-400 text-white text-sm px-4 py-1 rounded-ee-2xl absolute top-0 left-0">Sale</span>
@@ -374,49 +378,44 @@
                         </div>
                     </div>
                     <h1 class="mt-2 text-xs">By <a href="#" class="text-emerald-500 hover:-translate-x-1 hover:-translate-y-1 hover:text-orange-400">Stouffer</span></a>
-                    <div class="flex justify-between items-center mt-3">
-                        <h1 class="text-emerald-500 font-semibold text-xl">$42.78</h1>
-                        <button onclick="showToast(successMsg)" class="bg-emerald-100 hover:bg-emerald-500 text-emerald-600 hover:text-white font-semibold px-3 lg:px-6 py-2 rounded-md flex justify-between items-center gap-1 hover:-translate-y-1 transition">
-                            <img class="w-4" src="./src/assets/svgs/icon-cart.svg" alt="">
-                            <h1 class="">Add</h1>
-                        </button>
-                    </div>
+                        <div class="flex justify-between items-center mt-3">
+                            <h1 class="text-emerald-500 font-semibold text-xl">$42.78</h1>
+                            <button onclick="showToast(successMsg)" class="bg-emerald-100 hover:bg-emerald-500 text-emerald-600 hover:text-white font-semibold px-3 lg:px-6 py-2 rounded-md flex justify-between items-center gap-1 hover:-translate-y-1 transition">
+                                <img class="w-4" src="./src/assets/svgs/icon-cart.svg" alt="">
+                                <h1 class="">Add</h1>
+                            </button>
+                        </div>
                 </div>
-
                 <!-- product 3 -->
                 <div class="border relative overflow-hidden shadow-xl p-4 lg:p-6 rounded-2xl hover:shadow-2xl hover:-translate-x-1 hover:-translate-y-1 transition ">
-                    <span
-                        class="bg-emerald-500 text-white text-sm px-4 py-1 rounded-ee-2xl absolute top-0 left-0">New</span>
+                    <span class="bg-emerald-500 text-white text-sm px-4 py-1 rounded-ee-2xl absolute top-0 left-0">New</span>
                     <div class="overflow-hidden flex justify-center items-center">
-                        <img class="hover:scale-110 transition-all rounded-full lg:w-full w-56"
-                            src="./src/assets/popular product/product-3-1.jpg" alt="">
+                        <img class="hover:scale-110 transition-all rounded-full lg:w-full w-56" src="./src/assets/popular product/product-3-1.jpg" alt="">
                     </div>
                     <div class="flex flex-col mb-1">
                         <a href="#popular-product" class="text-gray-400 text-xs hover:text-emerald-400">Snacks</a>
-                        <a href="#popular-product"
-                            class="font-semibold my-1 leading-none hover:text-emerald-500 transition-colors">Veggile
-                            Pops Broccoli Chedda Supersnacks</a>
+                        <a href="#popular-product" class="font-semibold my-1 leading-none hover:text-emerald-500 transition-colors">Veggile Pops Broccoli Chedda Supersnacks</a>
                     </div>
                     <div class="flex ">
                         <div class="rating rating-xs ">
                             <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
-                            <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500"
-                                checked="checked" />
+                            <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" checked="checked" />
                             <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
                             <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
                             <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
                         </div>
                     </div>
-                    <h1 class="mt-2 text-xs">By <a href="#" class="text-emerald-500 hover:-translate-x-1 hover:-translate-y-1 hover:text-orange-400">Starkist</span></a>
-                    <div class="flex justify-between items-center mt-3">
-                        <h1 class="text-emerald-500 font-semibold text-xl">$48.88</h1>
-                        <button onclick="showToast(successMsg)" class="bg-emerald-100 hover:bg-emerald-500 text-emerald-600 hover:text-white font-semibold px-3 lg:px-6 py-2 rounded-md flex justify-between items-center gap-1 hover:-translate-y-1 transition">
-                            <img class="w-4" src="./src/assets/svgs/icon-cart.svg" alt="">
-                            <h1 class="">Add</h1>
-                        </button>
-                    </div>
+                    <h1 class="mt-2 text-xs">By <a href="#"
+                            class="text-emerald-500 hover:-translate-x-1 hover:-translate-y-1 hover:text-orange-400">Starkist</span></a>
+                        <div class="flex justify-between items-center mt-3">
+                            <h1 class="text-emerald-500 font-semibold text-xl">$48.88</h1>
+                            <button onclick="showToast(successMsg)"
+                                class="bg-emerald-100 hover:bg-emerald-500 text-emerald-600 hover:text-white font-semibold px-3 lg:px-6 py-2 rounded-md flex justify-between items-center gap-1 hover:-translate-y-1 transition">
+                                <img class="w-4" src="./src/assets/svgs/icon-cart.svg" alt="">
+                                <h1 class="">Add</h1>
+                            </button>
+                        </div>
                 </div>
-
                 <!-- product 4 -->
                 <div class="border relative overflow-hidden shadow-xl p-4 lg:p-6 rounded-2xl hover:shadow-2xl hover:-translate-x-1 hover:-translate-y-1 transition ">
                     <div class="overflow-hidden flex justify-center items-center">
@@ -424,30 +423,26 @@
                     </div>
                     <div class="flex flex-col mb-1">
                         <a href="#popular-product" class="text-gray-400 text-xs hover:text-emerald-400">Snacks</a>
-                        <a href="#popular-product"
-                            class="font-semibold my-1 leading-none hover:text-emerald-500 transition-colors">Sahale
-                            Snacks Assian Sesame Bean + Nut</a>
+                        <a href="#popular-product" class="font-semibold my-1 leading-none hover:text-emerald-500 transition-colors">Sahale Snacks Assian Sesame Bean + Nut</a>
                     </div>
                     <div class="flex ">
                         <div class="rating rating-xs ">
                             <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
-                            <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500"
-                                checked="checked" />
+                            <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" checked="checked" />
                             <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
                             <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
                             <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
                         </div>
                     </div>
                     <h1 class="mt-2 text-xs">By <a href="#" class="text-emerald-500 hover:-translate-x-1 hover:-translate-y-1 hover:text-orange-400">NestFood</span></a>
-                    <div class="flex justify-between items-center mt-3">
-                        <h1 class="text-emerald-500 font-semibold text-xl">$17.85</h1>
-                        <button onclick="showToast(successMsg)" class="bg-emerald-100 hover:bg-emerald-500 text-emerald-600 hover:text-white font-semibold px-3 lg:px-6 py-2 rounded-md flex justify-between items-center gap-1 hover:-translate-y-1 transition">
-                            <img class="w-4" src="./src/assets/svgs/icon-cart.svg" alt="">
-                            <h1 class="">Add</h1>
-                        </button>
-                    </div>
+                        <div class="flex justify-between items-center mt-3">
+                            <h1 class="text-emerald-500 font-semibold text-xl">$17.85</h1>
+                            <button onclick="showToast(successMsg)" class="bg-emerald-100 hover:bg-emerald-500 text-emerald-600 hover:text-white font-semibold px-3 lg:px-6 py-2 rounded-md flex justify-between items-center gap-1 hover:-translate-y-1 transition">
+                                <img class="w-4" src="./src/assets/svgs/icon-cart.svg" alt="">
+                                <h1 class="">Add</h1>
+                            </button>
+                        </div>
                 </div>
-
                 <!-- product 5 -->
                 <div class="border relative overflow-hidden shadow-xl p-4 lg:p-6 rounded-2xl hover:shadow-2xl hover:-translate-x-1 hover:-translate-y-1 transition ">
                     <span class="bg-orange-600 text-white text-sm px-4 py-1 rounded-ee-2xl absolute top-0 left-0">-14%</span>
@@ -468,15 +463,14 @@
                         </div>
                     </div>
                     <h1 class="mt-2 text-xs">By <a href="#" class="text-emerald-500 hover:-translate-x-1 hover:-translate-y-1 hover:text-orange-400">NestFood</span></a>
-                    <div class="flex justify-between items-center mt-3">
-                        <h1 class="text-emerald-500 font-semibold text-xl">$38.85</h1>
-                        <button onclick="showToast(successMsg)" class="bg-emerald-100 hover:bg-emerald-500 text-emerald-600 hover:text-white font-semibold px-3 lg:px-6 py-2 rounded-md flex justify-between items-center gap-1 hover:-translate-y-1 transition">
-                            <img class="w-4" src="./src/assets/svgs/icon-cart.svg" alt="">
-                            <h1 class="">Add</h1>
-                        </button>
-                    </div>
+                        <div class="flex justify-between items-center mt-3">
+                            <h1 class="text-emerald-500 font-semibold text-xl">$38.85</h1>
+                            <button onclick="showToast(successMsg)" class="bg-emerald-100 hover:bg-emerald-500 text-emerald-600 hover:text-white font-semibold px-3 lg:px-6 py-2 rounded-md flex justify-between items-center gap-1 hover:-translate-y-1 transition">
+                                <img class="w-4" src="./src/assets/svgs/icon-cart.svg" alt="">
+                                <h1 class="">Add</h1>
+                            </button>
+                        </div>
                 </div>
-
                 <!-- product 6 -->
                 <div class="border relative overflow-hidden shadow-xl p-4 lg:p-6 rounded-2xl hover:shadow-2xl hover:-translate-x-1 hover:-translate-y-1 transition ">
                     <div class="overflow-hidden flex justify-center items-center">
@@ -496,15 +490,14 @@
                         </div>
                     </div>
                     <h1 class="mt-2 text-xs">By <a href="#" class="text-emerald-500 hover:-translate-x-1 hover:-translate-y-1 hover:text-orange-400">NestFood</span></a>
-                    <div class="flex justify-between items-center mt-3">
-                        <h1 class="text-emerald-500 font-semibold text-xl">$54.85</h1>
-                        <button onclick="showToast(successMsg)" class="bg-emerald-100 hover:bg-emerald-500 text-emerald-600 hover:text-white font-semibold px-3 lg:px-6 py-2 rounded-md flex justify-between items-center gap-1 hover:-translate-y-1 transition">
-                            <img class="w-4" src="./src/assets/svgs/icon-cart.svg" alt="">
-                            <h1 class="">Add</h1>
-                        </button>
-                    </div>
+                        <div class="flex justify-between items-center mt-3">
+                            <h1 class="text-emerald-500 font-semibold text-xl">$54.85</h1>
+                            <button onclick="showToast(successMsg)" class="bg-emerald-100 hover:bg-emerald-500 text-emerald-600 hover:text-white font-semibold px-3 lg:px-6 py-2 rounded-md flex justify-between items-center gap-1 hover:-translate-y-1 transition">
+                                <img class="w-4" src="./src/assets/svgs/icon-cart.svg" alt="">
+                                <h1 class="">Add</h1>
+                            </button>
+                        </div>
                 </div>
-
                 <!-- product 7 -->
                 <div class="border relative overflow-hidden shadow-xl p-4 lg:p-6 rounded-2xl hover:shadow-2xl hover:-translate-x-1 hover:-translate-y-1 transition ">
                     <div class="overflow-hidden flex justify-center items-center">
@@ -524,19 +517,17 @@
                         </div>
                     </div>
                     <h1 class="mt-2 text-xs">By <a href="#" class="text-emerald-500 hover:-translate-x-1 hover:-translate-y-1 hover:text-orange-400">NestFood</span></a>
-                    <div class="flex justify-between items-center mt-3">
-                        <h1 class="text-emerald-500 font-semibold text-xl">$30.55</h1>
-                        <button onclick="showToast(successMsg)" class="bg-emerald-100 hover:bg-emerald-500 text-emerald-600 hover:text-white font-semibold px-3 lg:px-6 py-2 rounded-md flex justify-between items-center gap-1 hover:-translate-y-1 transition">
-                            <img class="w-4" src="./src/assets/svgs/icon-cart.svg" alt="">
-                            <h1 class="">Add</h1>
-                        </button>
-                    </div>
+                        <div class="flex justify-between items-center mt-3">
+                            <h1 class="text-emerald-500 font-semibold text-xl">$30.55</h1>
+                            <button onclick="showToast(successMsg)" class="bg-emerald-100 hover:bg-emerald-500 text-emerald-600 hover:text-white font-semibold px-3 lg:px-6 py-2 rounded-md flex justify-between items-center gap-1 hover:-translate-y-1 transition">
+                                <img class="w-4" src="./src/assets/svgs/icon-cart.svg" alt="">
+                                <h1 class="">Add</h1>
+                            </button>
+                        </div>
                 </div>
-
                 <!-- product 8 -->
                 <div class="border relative overflow-hidden shadow-xl p-4 lg:p-6 rounded-2xl hover:shadow-2xl hover:-translate-x-1 hover:-translate-y-1 transition ">
-                    <span
-                        class="bg-blue-400 text-white text-sm px-4 py-1 rounded-ee-2xl absolute top-0 left-0">Sale</span>
+                    <span class="bg-blue-400 text-white text-sm px-4 py-1 rounded-ee-2xl absolute top-0 left-0">Sale</span>
                     <div class="overflow-hidden flex justify-center items-center">
                         <img class="hover:scale-110 transition-all rounded-full lg:w-full w-56" src="./src/assets/popular product/product-8-1.jpg" alt="">
                     </div>
@@ -554,15 +545,14 @@
                         </div>
                     </div>
                     <h1 class="mt-2 text-xs">By <a href="#" class="text-emerald-500 hover:-translate-x-1 hover:-translate-y-1 hover:text-orange-400">NestFood</span></a>
-                    <div class="flex justify-between items-center mt-3">
-                        <h1 class="text-emerald-500 font-semibold text-xl">$54.85</h1>
-                        <button onclick="showToast(successMsg)" class="bg-emerald-100 hover:bg-emerald-500 text-emerald-600 hover:text-white font-semibold px-3 lg:px-6 py-2 rounded-md flex justify-between items-center gap-1 hover:-translate-y-1 transition">
-                            <img class="w-4" src="./src/assets/svgs/icon-cart.svg" alt="">
-                            <h1 class="">Add</h1>
-                        </button>
-                    </div>
+                        <div class="flex justify-between items-center mt-3">
+                            <h1 class="text-emerald-500 font-semibold text-xl">$54.85</h1>
+                            <button onclick="showToast(successMsg)" class="bg-emerald-100 hover:bg-emerald-500 text-emerald-600 hover:text-white font-semibold px-3 lg:px-6 py-2 rounded-md flex justify-between items-center gap-1 hover:-translate-y-1 transition">
+                                <img class="w-4" src="./src/assets/svgs/icon-cart.svg" alt="">
+                                <h1 class="">Add</h1>
+                            </button>
+                        </div>
                 </div>
-
                 <!-- product 9 -->
                 <div class="border relative overflow-hidden shadow-xl p-4 lg:p-6 rounded-2xl hover:shadow-2xl hover:-translate-x-1 hover:-translate-y-1 transition ">
                     <span class="bg-pink-600 text-white text-sm px-4 py-1 rounded-ee-2xl absolute top-0 left-0">Hot</span>
@@ -571,8 +561,7 @@
                     </div>
                     <div class="flex flex-col mb-1">
                         <a href="#popular-product" class="text-gray-400 text-xs hover:text-emerald-400">Coffee</a>
-                        <a href="#popular-product" class="font-semibold my-1 leading-none hover:text-emerald-500 transition-colors">Cafe Altura
-                            Rain Wasbed Organic Coffee - 340g</a>
+                        <a href="#popular-product" class="font-semibold my-1 leading-none hover:text-emerald-500 transition-colors">Cafe Altura Rain Wasbed Organic Coffee - 340g</a>
                     </div>
                     <div class="flex ">
                         <div class="rating rating-xs ">
@@ -584,15 +573,14 @@
                         </div>
                     </div>
                     <h1 class="mt-2 text-xs">By <a href="#" class="text-emerald-500 hover:-translate-x-1 hover:-translate-y-1 hover:text-orange-400">Cafe Altura</span></a>
-                    <div class="flex justify-between items-center mt-3">
-                        <h1 class="text-emerald-500 font-semibold text-xl">$23.85</h1>
-                        <button onclick="showToast(successMsg)" class="bg-emerald-100 hover:bg-emerald-500 text-emerald-600 hover:text-white font-semibold px-3 lg:px-6 py-2 rounded-md flex justify-between items-center gap-1 hover:-translate-y-1 transition">
-                            <img class="w-4" src="./src/assets/svgs/icon-cart.svg" alt="">
-                            <h1 class="">Add</h1>
-                        </button>
-                    </div>
+                        <div class="flex justify-between items-center mt-3">
+                            <h1 class="text-emerald-500 font-semibold text-xl">$23.85</h1>
+                            <button onclick="showToast(successMsg)" class="bg-emerald-100 hover:bg-emerald-500 text-emerald-600 hover:text-white font-semibold px-3 lg:px-6 py-2 rounded-md flex justify-between items-center gap-1 hover:-translate-y-1 transition">
+                                <img class="w-4" src="./src/assets/svgs/icon-cart.svg" alt="">
+                                <h1 class="">Add</h1>
+                            </button>
+                        </div>
                 </div>
-
                 <!-- product 10 -->
                 <div class="border relative overflow-hidden shadow-xl p-4 lg:p-6 rounded-2xl hover:shadow-2xl hover:-translate-x-1 hover:-translate-y-1 transition ">
                     <div class="overflow-hidden flex justify-center items-center">
@@ -612,19 +600,18 @@
                         </div>
                     </div>
                     <h1 class="mt-2 text-xs">By <a href="#" class="text-emerald-500 hover:-translate-x-1 hover:-translate-y-1 hover:text-orange-400">Pukka</span></a>
-                    <div class="flex justify-between items-center mt-3">
-                        <h1 class="text-emerald-500 font-semibold text-xl">$24.99</h1>
-                        <button id="nav-for-daily-best-sell" onclick="showToast(successMsg)" class="bg-emerald-100 hover:bg-emerald-500 text-emerald-600 hover:text-white font-semibold px-3 lg:px-6 py-2 rounded-md flex justify-between items-center gap-1 hover:-translate-y-1 transition">
-                            <img class="w-4" src="./src/assets/svgs/icon-cart.svg" alt="">
-                            <h1 class="">Add</h1>
-                        </button>
-                    </div>
+                        <div class="flex justify-between items-center mt-3">
+                            <h1 class="text-emerald-500 font-semibold text-xl">$24.99</h1>
+                            <button id="nav-for-daily-best-sell" onclick="showToast(successMsg)" class="bg-emerald-100 hover:bg-emerald-500 text-emerald-600 hover:text-white font-semibold px-3 lg:px-6 py-2 rounded-md flex justify-between items-center gap-1 hover:-translate-y-1 transition">
+                                <img class="w-4" src="./src/assets/svgs/icon-cart.svg" alt="">
+                                <h1 class="">Add</h1>
+                            </button>
+                        </div>
                 </div>
             </div>
         </section>
-
         <!-- daily best sells  -->
-        <section id="daily-best-sells" class=" ">
+        <section id="daily-best-sells" class="">
             <div class="flex flex-col gap-2 lg:flex-row justify-between items-center">
                 <h1 class="text-3xl lg:font-semibold font-bold">Daily Best Sells</h1>
                 <div class="flex justify-center items-center gap-4">
@@ -633,19 +620,15 @@
                     <a href="#" class="text-black hover:-translate-y-1 hover:-translate-x-1 transition-all hover:text-emerald-400">New Added</a>
                 </div>
             </div>
-
             <div class="daily-best-sells lg:flex flex-col xl:grid  py-10 lg:gap-4 ">
                 <!-- Bring Nature Into  -->
                 <div class="bg-cover bgLeaf border rounded-xl p-10  ">
-                    <h1 class="font-semibold text-5xl my-8 text-black hover:-translate-y-1 transition-all">Bring <br> nature into
-                    </h1>
+                    <h1 class="font-semibold text-5xl my-8 text-black hover:-translate-y-1 transition-all">Bring <br> nature into </h1>
                     <button onclick="showToast(invalidMsg)" class="bg-emerald-500 hover:bg-orange-400 hover:px-5 active:scale-95 transition-all  px-4 py-1 rounded-lg text-white font-semibold ">Shop Now</button>
                 </div>
-
                 <!-- Swiper -->
                 <div class="swiper mySwiper1 rounded-2xl lg:mx-0 mx-9 lg:pt-0 pt-10">
                     <div class="swiper-wrapper ">
-
                         <!-- product 1 -->
                         <div class="swiper-slide">
                             <div class="border relative overflow-hidden p-4 lg:p-6 rounded-2xl  ">
@@ -666,7 +649,7 @@
                                         <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
                                     </div>
                                 </div>
-                                <h1 class="mt-2 text-xs">By <a href="#" class="text-emerald-500 hover:-translate-x-1 hover:-translate-y-1 hover:text-orange-400">NestFood</span></a></h1>
+                                <h1 class="mt-2 text-xs">By <a href="#" class="text-emerald-500 hover:-translate-x-1 hover:-translate-y-1 hover:text-orange-400">NestFood</span></a> </h1>
                                 <div class=" mt-1">
                                     <h1 class="text-emerald-500 font-semibold text-xl">$24.49</h1>
                                     <progress class="progress progress-accent w-full" value="26" max="100"></progress>
@@ -678,7 +661,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <!-- product 2 -->
                         <div class="swiper-slide">
                             <div class="border relative overflow-hidden p-4 lg:p-6 rounded-2xl  ">
@@ -700,18 +682,17 @@
                                     </div>
                                 </div>
                                 <h1 class="mt-2 text-xs">By <a href="#" class="text-emerald-500 hover:-translate-x-1 hover:-translate-y-1 hover:text-orange-400">Starkist</span></a>
-                                <div class=" mt-3">
-                                    <h1 class="text-emerald-500 font-semibold text-xl">$17.85</h1>
-                                    <progress class="progress progress-accent w-full" value="65" max="100"></progress>
-                                    <p class="text-sm">Sold: 65/100</p>
-                                    <button onclick="showToast(successMsg)" class="bg-emerald-500 active:bg-orange-500 active:scale-95 text-white hover:text-white font-semibold w-full py-4 rounded-md flex justify-center items-center gap-1 hover:-translate-y-1 transition mt-4">
-                                        <img class="w-4 text " src="./src/assets/svgs/icon-cart.svg" alt="">
-                                        <h1 class="">Add To Cart</h1>
-                                    </button>
-                                </div>
+                                    <div class=" mt-3">
+                                        <h1 class="text-emerald-500 font-semibold text-xl">$17.85</h1>
+                                        <progress class="progress progress-accent w-full" value="65" max="100"></progress>
+                                        <p class="text-sm">Sold: 65/100</p>
+                                        <button onclick="showToast(successMsg)" class="bg-emerald-500 active:bg-orange-500 active:scale-95 text-white hover:text-white font-semibold w-full py-4 rounded-md flex justify-center items-center gap-1 hover:-translate-y-1 transition mt-4">
+                                            <img class="w-4 text " src="./src/assets/svgs/icon-cart.svg" alt="">
+                                            <h1 class="">Add To Cart</h1>
+                                        </button>
+                                    </div>
                             </div>
                         </div>
-
                         <!-- product 3 -->
                         <div class="swiper-slide">
                             <div class="border relative overflow-hidden p-4 lg:p-6 rounded-2xl  ">
@@ -733,18 +714,17 @@
                                     </div>
                                 </div>
                                 <h1 class="mt-2 text-xs">By <a href="#" class="text-emerald-500 hover:-translate-x-1 hover:-translate-y-1 hover:text-orange-400">NestFood</span></a>
-                                <div class=" mt-3">
-                                    <h1 class="text-emerald-500 font-semibold text-xl">$54.85</h1>
-                                    <progress class="progress progress-accent w-full" value="48" max="100"></progress>
-                                    <p class="text-sm">Sold: 48/100</p>
-                                    <button onclick="showToast(successMsg)" class="bg-emerald-500 active:bg-orange-500 text-white active:scale-95 font-semibold w-full py-4 rounded-md flex justify-center items-center gap-1 hover:-translate-y-1 transition mt-4">
-                                        <img class="w-4 text " src="./src/assets/svgs/icon-cart.svg" alt="">
-                                        <h1 class="">Add To Cart</h1>
-                                    </button>
-                                </div>
+                                    <div class=" mt-3">
+                                        <h1 class="text-emerald-500 font-semibold text-xl">$54.85</h1>
+                                        <progress class="progress progress-accent w-full" value="48" max="100"></progress>
+                                        <p class="text-sm">Sold: 48/100</p>
+                                        <button onclick="showToast(successMsg)" class="bg-emerald-500 active:bg-orange-500 text-white active:scale-95 font-semibold w-full py-4 rounded-md flex justify-center items-center gap-1 hover:-translate-y-1 transition mt-4">
+                                            <img class="w-4 text " src="./src/assets/svgs/icon-cart.svg" alt="">
+                                            <h1 class="">Add To Cart</h1>
+                                        </button>
+                                    </div>
                             </div>
                         </div>
-
                         <!-- product 4 -->
                         <div class="swiper-slide">
                             <div class="border relative overflow-hidden p-4 lg:p-6 rounded-2xl  ">
@@ -765,18 +745,17 @@
                                     </div>
                                 </div>
                                 <h1 class="mt-2 text-xs">By <a href="#" class="text-emerald-500 hover:-translate-x-1 hover:-translate-y-1 hover:text-orange-400">NestFood</span></a>
-                                <div class=" mt-3">
-                                    <h1 class="text-emerald-500 font-semibold text-xl">$30.55</h1>
-                                    <progress class="progress progress-accent w-full" value="56" max="100"></progress>
-                                    <p class="text-sm">Sold: 56/100</p>
-                                    <button onclick="showToast(successMsg)" class="bg-emerald-500 active:bg-orange-500 active:scale-95 text-white hover:text-white font-semibold w-full py-4 rounded-md flex justify-center items-center gap-1 hover:-translate-y-1 transition mt-4">
-                                        <img class="w-4 text " src="./src/assets/svgs/icon-cart.svg" alt="">
-                                        <h1 class="">Add To Cart</h1>
-                                    </button>
-                                </div>
+                                    <div class=" mt-3">
+                                        <h1 class="text-emerald-500 font-semibold text-xl">$30.55</h1>
+                                        <progress class="progress progress-accent w-full" value="56" max="100"></progress>
+                                        <p class="text-sm">Sold: 56/100</p>
+                                        <button onclick="showToast(successMsg)" class="bg-emerald-500 active:bg-orange-500 active:scale-95 text-white hover:text-white font-semibold w-full py-4 rounded-md flex justify-center items-center gap-1 hover:-translate-y-1 transition mt-4">
+                                            <img class="w-4 text " src="./src/assets/svgs/icon-cart.svg" alt="">
+                                            <h1 class="">Add To Cart</h1>
+                                        </button>
+                                    </div>
                             </div>
                         </div>
-
                         <!-- product 5 -->
                         <div class="swiper-slide">
                             <div class="border relative overflow-hidden p-4 lg:p-6 rounded-2xl  ">
@@ -798,19 +777,18 @@
                                     </div>
                                 </div>
                                 <h1 class="mt-2 text-xs">By <a href="#" class="text-emerald-500 hover:-translate-x-1 hover:-translate-y-1 hover:text-orange-400">NestFood</span></a>
-                                <div class=" mt-3">
-                                    <h1 class="text-emerald-500 font-semibold text-xl">$38.85</h1>
-                                    <progress class="progress progress-accent w-full" value="68" max="100"></progress>
-                                    <p class="text-sm">Sold: 68/100</p>
-                                    <button onclick="showToast(successMsg)" class="bg-emerald-500 active:bg-orange-500 active:scale-95 text-white hover:text-white font-semibold w-full py-4 
+                                    <div class=" mt-3">
+                                        <h1 class="text-emerald-500 font-semibold text-xl">$38.85</h1>
+                                        <progress class="progress progress-accent w-full" value="68" max="100"></progress>
+                                        <p class="text-sm">Sold: 68/100</p>
+                                        <button onclick="showToast(successMsg)" class="bg-emerald-500 active:bg-orange-500 active:scale-95 text-white hover:text-white font-semibold w-full py-4 
                                     rounded-md flex justify-center items-center gap-1 hover:-translate-y-1 transition mt-4">
-                                        <img class="w-4 text " src="./src/assets/svgs/icon-cart.svg" alt="">
-                                        <h1 class="">Add To Cart</h1>
-                                    </button>
-                                </div>
+                                            <img class="w-4 text " src="./src/assets/svgs/icon-cart.svg" alt="">
+                                            <h1 class="">Add To Cart</h1>
+                                        </button>
+                                    </div>
                             </div>
                         </div>
-
                         <!-- product 6 -->
                         <div class="swiper-slide">
                             <div class="border relative overflow-hidden p-4 lg:p-6 rounded-2xl  ">
@@ -831,27 +809,29 @@
                                     </div>
                                 </div>
                                 <h1 class="mt-2 text-xs">By <a href="#" class="text-emerald-500 hover:-translate-x-1 hover:-translate-y-1 hover:text-orange-400">NestFood</span></a>
-                                <div class=" mt-3">
-                                    <h1 class="text-emerald-500 font-semibold text-xl">$54.85</h1>
-                                    <progress class="progress progress-accent w-full" value="76" max="100"></progress>
-                                    <p class="text-sm">Sold: 76/100</p>
-                                    <button onclick="showToast(successMsg)" class="bg-emerald-500 active:bg-orange-500 active:scale-95 text-white hover:text-white font-semibold w-full py-4 rounded-md flex justify-center items-center gap-1 hover:-translate-y-1 transition mt-4">
-                                        <img class="w-4 text " src="/src/assets/svgs/icon-cart.svg" alt="">
-                                        <h1 class="">Add To Cart</h1>
-                                    </button>
-                                </div>
+                                    <div class=" mt-3">
+                                        <h1 class="text-emerald-500 font-semibold text-xl">$54.85</h1>
+                                        <progress class="progress progress-accent w-full" value="76" max="100"></progress>
+                                        <p class="text-sm">Sold: 76/100</p>
+                                        <button onclick="showToast(successMsg)" class="bg-emerald-500 active:bg-orange-500 active:scale-95 text-white hover:text-white font-semibold w-full py-4 rounded-md flex justify-center items-center gap-1 hover:-translate-y-1 transition mt-4">
+                                            <img class="w-4 text " src="/src/assets/svgs/icon-cart.svg" alt="">
+                                            <h1 class="">Add To Cart</h1>
+                                        </button>
+                                    </div>
                             </div>
                         </div>
-
                         <!-- product 7 -->
                         <div class="swiper-slide">
                             <div class="border relative overflow-hidden p-4 lg:p-6 rounded-2xl  ">
-                                <span class="bg-blue-400 text-white text-sm px-4 py-1 rounded-ee-2xl absolute top-0 left-0">Sale</span>
+                                <span
+                                    class="bg-blue-400 text-white text-sm px-4 py-1 rounded-ee-2xl absolute top-0 left-0">Sale</span>
                                 <div class="overflow-hidden flex justify-center items-center">
-                                    <img class="hover:scale-110 transition-all rounded-full lg:w-full w-56" src="./src/assets/popular product/product-12-1.jpg" alt="">
+                                    <img class="hover:scale-110 transition-all rounded-full lg:w-full w-56"
+                                        src="./src/assets/popular product/product-12-1.jpg" alt="">
                                 </div>
                                 <div class="flex flex-col mb-1">
-                                    <a href="#popular-product" class="text-gray-400 text-xs hover:text-emerald-400">Coffee</a>
+                                    <a href="#popular-product"
+                                        class="text-gray-400 text-xs hover:text-emerald-400">Coffee</a>
                                     <a href="#popular-product" class="font-semibold my-1 leading-none hover:text-emerald-500 transition-colors">Reishi Coffee Extract + Instant Suppliment</a>
                                 </div>
                                 <div class="flex ">
@@ -864,18 +844,17 @@
                                     </div>
                                 </div>
                                 <h1 class="mt-2 text-xs">By <a href="#" class="text-emerald-500 hover:-translate-x-1 hover:-translate-y-1 hover:text-orange-400">Stouffer</span></a>
-                                <div class=" mt-3">
-                                    <h1 class="text-emerald-500 font-semibold text-xl">$42.78</h1>
-                                    <progress class="progress progress-accent w-full" value="50" max="100"></progress>
-                                    <p class="text-sm">Sold: 50/100</p>
-                                    <button onclick="showToast(successMsg)" class="bg-emerald-500 active:bg-orange-500 active:scale-95 text-white hover:text-white font-semibold w-full py-4 rounded-md flex justify-center items-center gap-1 hover:-translate-y-1 transition mt-4">
-                                        <img class="w-4 text " src="./src/assets/svgs/icon-cart.svg" alt="">
-                                        <h1 class="">Add To Cart</h1>
-                                    </button>
-                                </div>
+                                    <div class=" mt-3">
+                                        <h1 class="text-emerald-500 font-semibold text-xl">$42.78</h1>
+                                        <progress class="progress progress-accent w-full" value="50" max="100"></progress>
+                                        <p class="text-sm">Sold: 50/100</p>
+                                        <button onclick="showToast(successMsg)" class="bg-emerald-500 active:bg-orange-500 active:scale-95 text-white hover:text-white font-semibold w-full py-4 rounded-md flex justify-center items-center gap-1 hover:-translate-y-1 transition mt-4">
+                                            <img class="w-4 text " src="./src/assets/svgs/icon-cart.svg" alt="">
+                                            <h1 class="">Add To Cart</h1>
+                                        </button>
+                                    </div>
                             </div>
                         </div>
-
                         <!-- product 8 -->
                         <div class="swiper-slide">
                             <div class="border relative overflow-hidden p-4 lg:p-6 rounded-2xl  ">
@@ -907,12 +886,10 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
         </section>
-
         <!-- top selling section  -->
         <section id="deals-of-the-day" class=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-4 xl:grid-cols-4  xl:gap-4  lg:mx-4 mx-6">
             <div>
@@ -1152,66 +1129,69 @@
                 </div>
             </div>
         </section>
-
         <!-- stay home section  -->
         <section id="stay-home" class="my-10 rounded-3xl flex lg:flex-row flex-col justify-between items-end">
             <div class="flex flex-col lg:items-start sm:justify-center gap-4 p-10 lg:p-20">
                 <h1 class="lg:text-5xl text-3xl font-semibold">Stay home & get your daily <br> needs from our shop</h1>
-                <p class="lg:text-2xl text-lg text-gray-500">Start You'r Daily Shopping with <span class="text-emerald-500">Nest Mart</span> </p>
-                <div class="bg-white flex rounded-full justify-between items-center lg:gap-4 gap-1 mt-8 overflow-hidden">
+                <p class="lg:text-2xl text-lg text-gray-500">Start You'r Daily Shopping with <span
+                        class="text-emerald-500">Nest Mart</span> </p>
+                <div
+                    class="bg-white flex rounded-full justify-between items-center lg:gap-4 gap-1 mt-8 overflow-hidden">
                     <img class="lg:pl-6 pl-3" src="./src/assets/icon-plane.png" alt="">
-                    <input class="focus:outline-none lg:text-lg text-sm w-full bg-white text-black" type="email" placeholder="Your email address">
-                    <button onclick="showToast(errorMsg)" class="bg-emerald-500 text-white lg:px-8 px-4 py-2 lg:py-4 rounded-full font-semibold hover:bg-emerald-400 active:scale-95 transition">Subscribe</button>
+                    <input class="focus:outline-none lg:text-lg text-sm w-full bg-white text-black" type="email"
+                        placeholder="Your email address">
+                    <button onclick="showToast(errorMsg)"
+                        class="bg-emerald-500 text-white lg:px-8 px-4 py-2 lg:py-4 rounded-full font-semibold hover:bg-emerald-400 active:scale-95 transition">Subscribe</button>
                 </div>
             </div>
             <div class="flex justify-center overflow-hidden pt-3">
                 <img class="w-10/12 hover:scale-105 transition" src="./src/assets/banner/banner-9.png" alt="">
             </div>
         </section>
-
         <!-- Services section  -->
         <section id="services" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-            <div class="hover:shadow-md flex gap-2 justify-center items-center border p-5 rounded-lg hover:-translate-x-2 hover:-translate-y-2 transition-all">
+            <div
+                class="hover:shadow-md flex gap-2 justify-center items-center border p-5 rounded-lg hover:-translate-x-2 hover:-translate-y-2 transition-all">
                 <img class="hover:-translate-y-2 transition w-12" src="./src/assets/svgs/icon-1.svg" alt="">
                 <div>
                     <p class="font-bold text-lg">Best prices & offers</p>
                     <p class="text-gray-4500 ">Orders $50 or More</p>
                 </div>
             </div>
-
-            <div class="hover:shadow-md flex gap-2 justify-center items-center border p-5 rounded-lg hover:-translate-x-2 hover:-translate-y-2 transition-all">
+            <div
+                class="hover:shadow-md flex gap-2 justify-center items-center border p-5 rounded-lg hover:-translate-x-2 hover:-translate-y-2 transition-all">
                 <img class="hover:-translate-y-2 transition w-12" src="./src/assets/svgs/icon-2.svg" alt="">
                 <div>
                     <p class="font-bold text-lg">Free delivery</p>
                     <p class="text-gray-4500 ">24/7 amazing services</p>
                 </div>
             </div>
-
-            <div class="hover:shadow-md lg:hidden flex gap-2 justify-center items-center border p-5 rounded-lg hover:-translate-x-2 hover:-translate-y-2 transition-all">
+            <div
+                class="hover:shadow-md lg:hidden flex gap-2 justify-center items-center border p-5 rounded-lg hover:-translate-x-2 hover:-translate-y-2 transition-all">
                 <img class="hover:-translate-y-2 transition w-12" src="./src/assets/svgs/icon-3.svg" alt="">
                 <div>
                     <p class="font-bold text-lg">Great daily deal</p>
                     <p class="text-gray-4500 ">When you sign up</p>
                 </div>
             </div>
-
-            <div class="hover:shadow-md flex gap-2 justify-center items-center border p-5 rounded-lg hover:-translate-x-2 hover:-translate-y-2 transition-all">
+            <div
+                class="hover:shadow-md flex gap-2 justify-center items-center border p-5 rounded-lg hover:-translate-x-2 hover:-translate-y-2 transition-all">
                 <img class="hover:-translate-y-2 transition w-12" src="./src/assets/svgs/icon-4.svg" alt="">
                 <div>
                     <p class="font-bold text-lg">Wide assortment</p>
                     <p class="text-gray-4500 ">Mega Discounts</p>
                 </div>
             </div>
-
-            <div class="hover:shadow-md flex gap-4 justify-center items-center border p-5 rounded-lg hover:-translate-x-2 hover:-translate-y-2 transition-all">
+            <div
+                class="hover:shadow-md flex gap-4 justify-center items-center border p-5 rounded-lg hover:-translate-x-2 hover:-translate-y-2 transition-all">
                 <img class="hover:-translate-y-2 transition w-12" src="./src/assets/svgs/icon-5.svg" alt="">
                 <div>
                     <p class="font-bold text-lg">Easy returns</p>
                     <p class="text-gray-4500 ">Within 30 days</p>
                 </div>
             </div>
-
-            <div id="footer" class=" scroll-smooth hover:shadow-md flex gap-2 justify-center items-center border p-5 rounded-lg hover:-translate-x-2 hover:-translate-y-2 transition-all">
+            <div id="footer"
+                class=" scroll-smooth hover:shadow-md flex gap-2 justify-center items-center border p-5 rounded-lg hover:-translate-x-2 hover:-translate-y-2 transition-all">
                 <img class="hover:-translate-y-2 transition w-12" src="./src/assets/svgs/icon-6.svg" alt="">
                 <div>
                     <p class="font-bold text-lg">Safe delivery</p>
@@ -1229,7 +1209,8 @@
                 <img src="./src/assets/svgs/logo.svg" alt="">
                 <p class="text-center lg:text-left -mt-2 ">Awesome grocery store</p>
                 <div class="grid lg:gap-2 gap-3">
-                    <div class="flex justify-center lg:text-left text-center lg:flex-row flex-col lg:items-start items-center lg:gap-2">
+                    <div
+                        class="flex justify-center lg:text-left text-center lg:flex-row flex-col lg:items-start items-center lg:gap-2">
                         <img class="" src="./src/assets/svgs/icon-location.svg" alt="">
                         <div class="flex flex-col lg:flex-row gap-1">
                             <p class="font-semibold">Address:</p><span>Chorpara, Maskanda, Mymensingh</span>
@@ -1249,122 +1230,158 @@
                     </div>
                 </div>
             </div>
-
             <!-- Company  -->
             <div class="flex flex-col gap-2">
                 <h1 class="text-2xl font-semibold">Company</h1>
-                <a href="#none" class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">About Us</a>
-                <a href="#none" class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">Delivery Info</a>
-                <a href="#none" class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">Privacy Policy</a>
-                <a href="#none" class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">Terms & Conditions</a>
-                <a href="#none" class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">Contact Us</a>
-                <a href="#none" class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">Support Center</a>
-                <a href="#none" class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">Careers</a>
+                <a href="#none" class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">About
+                    Us</a>
+                <a href="#none" class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">Delivery
+                    Info</a>
+                <a href="#none" class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">Privacy
+                    Policy</a>
+                <a href="#none" class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">Terms &
+                    Conditions</a>
+                <a href="#none" class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">Contact
+                    Us</a>
+                <a href="#none" class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">Support
+                    Center</a>
+                <a href="#none"
+                    class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">Careers</a>
             </div>
-
             <!-- Account  -->
             <div class="flex flex-col gap-2">
                 <h1 class="text-2xl font-semibold">Account</h1>
-                <a href="#code" class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">Sign In</a>
-                <a href="#code" class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">View Cart</a>
-                <a href="#code" class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">My Wishlist</a>
-                <a href="#code" class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">Track My Order</a>
-                <a href="#code" class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">Help Ticket</a>
-                <a href="#code" class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">Shipping Details</a>
+                <a href="#code" class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">Sign
+                    In</a>
+                <a href="#code" class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">View
+                    Cart</a>
+                <a href="#code" class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">My
+                    Wishlist</a>
+                <a href="#code" class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">Track My
+                    Order</a>
+                <a href="#code" class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">Help
+                    Ticket</a>
+                <a href="#code" class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">Shipping
+                    Details</a>
             </div>
-
             <!-- Corporate  -->
             <div class="flex flex-col gap-2">
                 <h1 class="text-2xl font-semibold">Corporate</h1>
-                <a href="#code" class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">Become a Vendor</a>
-                <a href="#code" class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">Affiliate Program</a>
-                <a href="#code" class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">Farm Business</a>
-                <a href="#code" class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">Farm Careers</a>
-                <a href="#code" class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">Our Suppliers</a>
-                <a href="#code" class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">Accessibility</a>
-                <a href="#code" class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">Promotions</a>
+                <a href="#code" class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">Become a
+                    Vendor</a>
+                <a href="#code" class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">Affiliate
+                    Program</a>
+                <a href="#code" class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">Farm
+                    Business</a>
+                <a href="#code" class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">Farm
+                    Careers</a>
+                <a href="#code" class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">Our
+                    Suppliers</a>
+                <a href="#code"
+                    class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">Accessibility</a>
+                <a href="#code"
+                    class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">Promotions</a>
             </div>
-
             <!-- popular  -->
             <div class="flex flex-col gap-2">
                 <h1 class="text-2xl font-semibold">Popular</h1>
-                <a href="#code" class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">Milk & Flavoured Milk</a>
-                <a href="#code" class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">Butter and Margarine</a>
-                <a href="#code" class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">Eggs Substitutes</a>
-                <a href="#code" class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">Marmalades</a>
-                <a href="#code" class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">Sour Cream and Dips</a>
-                <a href="#code" class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">Tea & Kombucha</a>
+                <a href="#code" class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">Milk &
+                    Flavoured Milk</a>
+                <a href="#code" class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">Butter and
+                    Margarine</a>
+                <a href="#code" class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">Eggs
+                    Substitutes</a>
+                <a href="#code"
+                    class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">Marmalades</a>
+                <a href="#code" class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">Sour Cream
+                    and Dips</a>
+                <a href="#code" class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">Tea &
+                    Kombucha</a>
                 <a href="#code" class="hover:text-emerald-500 hover:translate-x-2 transition active:scale-95">Cheese</a>
             </div>
-
             <!-- Install App -->
             <div class="flex flex-col gap-1 lg:gap-2">
                 <h1 class="text-2xl font-semibold">Install App</h1>
                 <div class="flex flex-col gap-4">
                     <div class="flex flex-col gap-3">
-                        <a href="#code" class="hover:text-emerald-500 hover:translate-x-1 transition active:scale-95">From App Store or Google Play</a>
+                        <a href="#code"
+                            class="hover:text-emerald-500 hover:translate-x-1 transition active:scale-95">From App Store
+                            or Google Play</a>
                         <div class="flex gap-2 lg:flex-row flex-col">
                             <a href="#ios-store">
-                                <img class="w-3/4 lg:w-full hover:shadow-md hover:-translate-y-1 transition" src="./src/assets/app-store.jpg" alt="">
+                                <img class="w-3/4 lg:w-full hover:shadow-md hover:-translate-y-1 transition"
+                                    src="./src/assets/app-store.jpg" alt="">
                             </a>
                             <a href="#play-store">
-                                <img class="w-3/4 lg:w-full hover:shadow-md hover:-translate-y-1 transition" src="./src/assets/google-play.jpg" alt="">
+                                <img class="w-3/4 lg:w-full hover:shadow-md hover:-translate-y-1 transition"
+                                    src="./src/assets/google-play.jpg" alt="">
                             </a>
                         </div>
                     </div>
                     <div class="flex flex-col gap-4">
-                        <a href="#code" class="hover:text-emerald-500 hover:translate-x-1 transition">Secured Payment Gateways</a>
+                        <a href="#code" class="hover:text-emerald-500 hover:translate-x-1 transition">Secured Payment
+                            Gateways</a>
                         <div class="flex gap-2">
-                            <img class="w-full hover:shadow-md hover:-translate-y-1 transition" src="./src/assets/payment-method.png" alt="">
+                            <img class="w-full hover:shadow-md hover:-translate-y-1 transition"
+                                src="./src/assets/payment-method.png" alt="">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
         <!-- copyright  -->
         <div class="mx-auto lg:px-20 px-8 lg:max-w-screen-2xl" id="contact-us">
             <div class="flex lg:flex-row flex-col-reverse gap-4 justify-between items-center max-w-screen-2xl mx-auto border-emerald-600 border-t py-8 mt-10  ">
                 <div class="flex flex-col text-center">
-                    <h1 class="text-sm">&copy; 2024, <span>Nest</span> - Ecommerce By <span class="text-emerald-500 font-semibold">Sujoy</span></h1>
+                    <h1 class="text-sm">&copy; 2024, <span>Nest</span> - Ecommerce By <span
+                            class="text-emerald-500 font-semibold">Sujoy</span></h1>
                     <h1 class="text-sm">All rights reserved</h1>
                 </div>
-
                 <div class="flex lg:flex-row flex-col gap-4">
                     <div class="flex gap-2 ">
                         <img class="w-8 " src="./src/assets/svgs/phone-call.svg" alt="">
                         <div class="flex flex-col lg:items-start items-center ">
-                            <button class="text-2xl font-semibold text-emerald-500 active:scale-95 transition-all">+880 9638 831422</button>
+                            <button class="text-2xl font-semibold text-emerald-500 active:scale-95 transition-all">+880
+                                9638 831422</button>
                             <h1 class="text-sm text-gray-500 -mt-2">Working 8:00 - 22:00</h1>
                         </div>
                     </div>
                     <div class="flex gap-2 ">
                         <img class="w-8 " src="./src/assets/svgs/phone-call.svg" alt="">
                         <div class="flex flex-col lg:items-start items-center ">
-                            <button class="text-2xl font-semibold text-emerald-500 active:scale-95 transition-all">+880 1303-436299</button>
+                            <button class="text-2xl font-semibold text-emerald-500 active:scale-95 transition-all">+880
+                                1303-436299</button>
                             <h1 class="text-sm text-gray-500 -mt-2">24/7 Support Center</h1>
                         </div>
                     </div>
                 </div>
-
                 <div class="">
                     <div class="flex gap-2">
                         <h1>Follow Us</h1>
                         <div class="flex gap-1">
-                            <a href="https://web.facebook.com/sujoydas36"><img class=" rounded-full w-6 hover:-translate-y-1 transition" src="/src/assets/svgs/facebookimg.png" alt=""> </a>
-                            <a href="https://www.instagram.com/sdsujoy920243/"><img class=" rounded-full w-6 hover:-translate-y-1 transition" src="/src/assets/svgs/instalogo.jpg" alt=""></a>
-                            <a href="https://github.com/devsujoy36"><img class=" rounded-full w-6 hover:-translate-y-1 bg-white transition" src="/src/assets/svgs/github-mark.png" alt=""></a>
-                            <a href="https://api.whatsapp.com/send/?phone=%2B8801303436299&text&type=phone_number&app_absent=0"><img class="rounded-full w-6 hover:-translate-y-1 transition" src="/src/assets/svgs/whatsappicon.png" alt=""></a>
-                            <a href="https://www.youtube.com/@xenonlivexone"><img class="bg-emerald-500 rounded-full w-6 hover:-translate-y-1 transition" src="/src/assets/svgs/youtube.png" alt=""></a>
+                            <a href="https://web.facebook.com/sujoydas36"><img
+                                    class=" rounded-full w-6 hover:-translate-y-1 transition"
+                                    src="/src/assets/svgs/facebookimg.png" alt=""> </a>
+                            <a href="https://www.instagram.com/sdsujoy920243/"><img
+                                    class=" rounded-full w-6 hover:-translate-y-1 transition"
+                                    src="/src/assets/svgs/instalogo.jpg" alt=""></a>
+                            <a href="https://github.com/devsujoy36"><img
+                                    class=" rounded-full w-6 hover:-translate-y-1 bg-white transition"
+                                    src="/src/assets/svgs/github-mark.png" alt=""></a>
+                            <a
+                                href="https://api.whatsapp.com/send/?phone=%2B8801303436299&text&type=phone_number&app_absent=0"><img
+                                    class="rounded-full w-6 hover:-translate-y-1 transition"
+                                    src="/src/assets/svgs/whatsappicon.png" alt=""></a>
+                            <a href="https://www.youtube.com/@xenonlivexone"><img
+                                    class="bg-emerald-500 rounded-full w-6 hover:-translate-y-1 transition"
+                                    src="/src/assets/svgs/youtube.png" alt=""></a>
                         </div>
                     </div>
                     <h1 class="text-xs">Up to 15% discount on your first subscribe</h1>
                 </div>
             </div>
-
         </div>
     </footer>
-
     <script src="tailwind.config.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
