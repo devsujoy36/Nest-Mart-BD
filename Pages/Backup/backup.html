@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nest Mart BD by Sujoy Das</title>
     <link rel="shortcut icon" href="./src/assets/svgs/logo.svg" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://kit.fontawesome.com/52a5252143.js" crossorigin="anonymous"></script>
     <style>
         @tailwind base;
         @tailwind components;
@@ -18,14 +18,18 @@
         @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap');
 
         .hero-slide-1 {
-            background-image: url('../../src/assets/slider/slider-1.png');
+            background-image: url('./src/assets//slider/slider-1.png');
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center center;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         .hero-slide-2 {
-            background-image: url('../../src/assets/slider/slider-2.png');
+            background-image: url('./src/assets//slider/slider-2.png');
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center center;
@@ -40,34 +44,36 @@
             font-family: "Baloo 2", sans-serif;
             font-optical-sizing: auto;
             font-style: normal;
+            scroll-behavior: smooth;
         }
 
         .blurNav {
             z-index: 5;
+            backdrop-filter: black;
         }
 
         .bgOnion {
-            background-image: url('../../src/assets/banner/banner-1.png');
+            background-image: url('./src/assets/banner/banner-1.png');
             background-position: center center;
         }
 
         .bgStroberry {
-            background-image: url('../../src/assets/banner/banner-2.png');
+            background-image: url('./src/assets/banner/banner-2.png');
             background-position: center center;
         }
 
         .bgVegetable {
-            background-image: url('./../src/assets/banner/banner-3.png');
+            background-image: url('./src/assets/banner/banner-3.png');
             background-position: center center;
         }
 
         .bgLeaf {
-            background-image: url('../../src/assets/banner/banner-4.png');
+            background-image: url('./src/assets/banner/banner-4.png');
             background-position: center;
         }
 
         #stay-home {
-            background-image: url('../../src/assets/banner/banner-10.png');
+            background-image: url('./src/assets/banner/banner-10.png');
             background-position: center center;
             background-size: contain;
         }
@@ -75,19 +81,95 @@
         .daily-best-sells {
             grid-template-columns: 1fr 3fr;
         }
+
+        .toastmaker {
+            background: white;
+            padding: 10px;
+            transform: translateX(100%);
+            animation: moveleft .5s linear forwards;
+            border: 1px solid gray;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: rgb(0, 0, 0);
+            animation: moveleft .3s linear forwards;
+        }
+
+        @keyframes moveleft {
+            100% {
+                transform: translateX(0%);
+            }
+        }
+
+        .toastmaker::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 5px;
+            background: green;
+            animation: anim 2s linear forwards;
+        }
+
+        @keyframes anim {
+            100% {
+                width: 0;
+            }
+        }
+
+        .toastmaker i {
+            margin: 0 5px;
+            font-size: 35px;
+            color: rgb(0, 151, 0);
+        }
+
+        .toastmaker.error i {
+            color: rgb(253, 33, 33);
+        }
+
+        .toastmaker.invalid i {
+            color: rgb(255, 172, 19);
+        }
+
+        .toastmaker.error::after {
+            background-color: red;
+        }
+
+        .toastmaker.invalid::after {
+            background-color: orange;
+        }
+
+
+        @media screen and (max-width: 576px) {
+            #preloader {
+                background-size: 70%;
+            }
+        }
     </style>
 </head>
 
 <body class="relative">
-    <a href="../../Pages/Team&Code/code.html"
-        class="theme-controller fixed bottom-6 right-6 bg-emerald-400 p-2 rounded-full hover:bg-amber-400 hover:-translate-y-2 active:scale-95 transition-all z-10">
-        <img class="rounded-full w-6 h-6" src="../../src/assets/svgs/edit.svg" alt="">
-    </a>
+    <!-- preloader page  -->
+    <div id="preloader-container"
+        class="flex justify-center items-center w-full fixed z-40 bg-white top-0 left-0  h-dvh">
+        <div class="">
+            <img src="./src/assets/loading.gif" alt="">
+        </div>
+    </div>
 
-    <header class=" rounded shadow-lg py-2 sticky blurNav top-0 ">
-        <nav class=" lg:py-4 pr-6 flex justify-between lg:justify-around items-center gap-2 lg:flex-row relative">
-            <a id="nav-logo" href="#" class=" active:scale-95 transition flex justify-center items-center"> <img
-                    class="w-8/12 " src="../../src/assets/svgs/logo.svg" alt=""> </a>
+    <!-- toastify section -->
+    <div id="toast-container" class="z-50 fixed right-10  lg:top-[120px] "> </div>
+
+    <header class=" rounded shadow-lg py-2 bg-white fixed blurNav top-0 w-full ">
+        <nav
+            class="bg-white lg:py-4 pr-6 flex justify-between lg:justify-around items-center gap-2 lg:flex-row relative">
+            <a id="nav-logo" href="" class=" active:scale-95 transition flex justify-center items-center"> <img
+                    class="w-8/12 " src="./src/assets/svgs/logo.svg" alt=""> </a>
+            <!-- <input type="checkbox" class="theme-controller" value="synthwave"> -->
             <label class="btn btn-circle swap swap-rotate lg:hidden " id="">
                 <!-- this hidden checkbox controls the state -->
                 <input onclick="navMenuHandler()" type="checkbox" />
@@ -105,7 +187,7 @@
                 </svg>
             </label>
 
-            <div id="nav-menu" class="lg:flex lg:flex-row flex-col hidden lg:gap-4 px-2">
+            <div id="nav-menu" class="lg:flex lg:flex-row flex-col hidden lg:gap-4 px-2" value="synthwave">
                 <a href="#"
                     class="lg:text-lg font-semibold lg:py-2 lg:px-4 px-2 py-1 text-emerald-400 hover:-translate-x-1 hover:-translate-y-1 active:scale-90 rounded transition ">Home</a>
                 <a href="#for-categories"
@@ -118,16 +200,21 @@
                 <a href="#contact-us"
                     class="lg:text-lg font-semibold lg:py-2 lg:px-4 px-2 py-1 text-emerald-400 hover:-translate-x-1 hover:-translate-y-1 active:scale-90 rounded transition">Contact
                     Us</a>
+                <a href="./Pages/Team&Code/code.html"
+                    class="lg:text-lg font-semibold lg:py-2 lg:px-4 px-2 py-1 text-emerald-400 hover:-translate-x-1 hover:-translate-y-1 active:scale-90 rounded transition">Our
+                    Team</a>
                 <label class="swap swap-rotate">
                     <!-- this hidden checkbox controls the state -->
                     <input type="checkbox" class="theme-controller" value="synthwave" />
                     <!-- sun icon -->
-                    <svg class="swap-off h-10 w-10 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <svg class="swap-off h-8 w-8 fill-emerald-500" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24">
                         <path
                             d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z" />
                     </svg>
                     <!-- moon icon -->
-                    <svg class="swap-on h-10 w-10 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <svg class="swap-on h-8 w-8 fill-emerald-500" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24">
                         <path
                             d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
                     </svg>
@@ -136,7 +223,7 @@
         </nav>
 
         <div id="nav-menu-for-moble"
-            class="flex-col hidden p-4 absolute top-24 -mt-7  right-8 bg-white shadow-lg rounded-lg">
+            class="flex-col hidden p-4 absolute top-24 -mt-7  right-8 border bg-white  shadow-lg rounded-lg">
             <a href="#"
                 class="lg:text-lg font-semibold lg:py-2 lg:px-4 px-2 py-1 hover:bg-emerald-400 text-emerald-400 hover:text-white active:scale-90 rounded transition">Home</a>
             <a href="#for-categories"
@@ -149,16 +236,19 @@
             <a href="#contact-us"
                 class="lg:text-lg font-semibold lg:py-2 lg:px-4 px-2 py-1 hover:bg-emerald-400 text-emerald-400 hover:text-white active:scale-90 rounded transition">Contact
                 Us</a>
+            <a href="./Pages/Team&Code/code.html"
+                class="lg:text-lg font-semibold lg:py-2 lg:px-4 px-2 py-1 text-emerald-400 hover:-translate-x-1 hover:-translate-y-1 active:scale-90 rounded transition">Our
+                Team</a>
             <label class="swap swap-rotate">
                 <!-- this hidden checkbox controls the state -->
                 <input type="checkbox" class="theme-controller" value="synthwave" />
                 <!-- sun icon -->
-                <svg class="swap-off h-10 w-10 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <svg class="swap-off h-8 w-8  fill-emerald-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <path
                         d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z" />
                 </svg>
                 <!-- moon icon -->
-                <svg class="swap-on h-10 w-10 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <svg class="swap-on h-8 w-8 fill-emerald-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <path
                         d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
                 </svg>
@@ -166,37 +256,42 @@
         </div>
     </header>
 
-    <main class=" lg:max-w-screen-2xl lg:px-20 px-8 mx-auto">
+    <main class=" lg:max-w-screen-2xl lg:px-20 mt-20 px-8 mx-auto">
+
         <!-- hero section with slider  -->
         <section id="hero-slider" class="py-5 rounded-2xl overflow-hidden">
+
             <!-- Swiper -->
             <div class="swiper mySwiper ">
                 <div class="swiper-wrapper">
                     <div
                         class="swiper-slide lg:p-20 hero-slide-1 p-10 rounded-3xl mt-8 flex flex-col items-start gap-8 ">
-                        <h1 class="lg:text-7xl text-5xl font-semibold">Don't miss amazing <br> grocery deals</h1>
-                        <p class="text-2xl lg:text-3xl text-gray-500">Sign Up for Daily Newsletter</p>
+                        <h1 class="lg:text-7xl text-5xl font-semibold text-black">Don't miss amazing <br> grocery deals
+                        </h1>
+                        <p class="text-2xl lg:text-3xl text-gray-500">Sign Up for Daily Update of Our Special Deals</p>
                         <div
                             class="bg-white flex rounded-full justify-between items-center lg:gap-4 gap-1 mt-8 overflow-hidden">
-                            <img class="pl-3 lg:pl-6" src="../../src/assets/icon-plane.png" alt="">
-                            <input class="focus:outline-none text-sm lg:text-lg  w-4/6" type="email"
+                            <img class="pl-3 lg:pl-6" src="./src/assets/icon-plane.png" alt="">
+                            <input class="focus:outline-none text-sm lg:text-lg bg-white text-black  w-4/6" type="email"
                                 placeholder="Your email address">
                             <div>
-                                <button id="for-categories"
+                                <button id="for-categories" onclick="showToast(errorMsg)"
                                     class="bg-emerald-500 text-white lg:px-8 px-4 py-2 lg:py-4 rounded-full font-semibold hover:bg-emerald-400 active:scale-95 transition">Subscribe</button>
                             </div>
                         </div>
                     </div>
+
                     <div
                         class="swiper-slide lg:p-20 hero-slide-2 p-10 rounded-3xl mt-8 flex flex-col items-start gap-8">
-                        <h1 class="lg:text-7xl text-5xl font-semibold">Fresh Vegetables <br> Big Discounts</h1>
-                        <p class="text-2xl lg:text-3xl text-gray-500">Save up to 50% off on your first order</p>
+                        <h1 class="lg:text-7xl text-5xl font-semibold text-black">Fresh Vegetables <br> Big Discounts
+                        </h1>
+                        <p class="text-2xl lg:text-3xl text-gray-500">Save upto 50% off on your first order</p>
                         <div
                             class="bg-white flex rounded-full justify-center items-center lg:gap-4 gap-1 mt-8 overflow-hidden">
-                            <img class="pl-3 lg:pl-6" src="../../src/assets/icon-plane.png" alt="">
-                            <input class="focus:outline-none text-sm lg:text-lg  w-4/6" type="email"
+                            <img class="pl-3 lg:pl-6" src="./src/assets/icon-plane.png" alt="">
+                            <input class="focus:outline-none text-sm lg:text-lg  bg-white text-black w-4/6" type="email"
                                 placeholder="Your email address">
-                            <button id="for-categories"
+                            <button id="for-categories" onclick="showToast(errorMsg)"
                                 class="bg-emerald-500 text-white lg:px-8 px-4 py-2 lg:py-4 rounded-full font-semibold hover:bg-emerald-400 active:scale-95 transition">Subscribe</button>
                         </div>
                     </div>
@@ -210,79 +305,79 @@
                 <h1 class="text-3xl font-semibold">Featured Categories</h1>
                 <div class="flex gap-3 justify-center lg:gap-8">
                     <a href="#"
-                        class="text-black hover:-translate-y-1 hover:-translate-x-1 transition-all hover:text-emerald-400">Cake
+                        class="text-black active:scale-95 hover:-translate-y-1 hover:-translate-x-1 transition-all hover:text-emerald-400">Cake
                         & Milk</a>
                     <a href="#"
-                        class="text-black hover:-translate-y-1 hover:-translate-x-1 transition-all hover:text-emerald-400">Coffes
+                        class="text-black active:scale-95 hover:-translate-y-1 hover:-translate-x-1 transition-all hover:text-emerald-400">Coffes
                         & Teas</a>
                     <a href="#"
-                        class="text-black hover:-translate-y-1 hover:-translate-x-1 transition-all hover:text-emerald-400">Pet
+                        class="text-black  active:scale-95hover:-translate-y-1 hover:-translate-x-1 transition-all hover:text-emerald-400">Pet
                         Foods</a>
                     <a href="#"
-                        class="text-black hover:-translate-y-1 hover:-translate-x-1 transition-all hover:text-emerald-400">Vegitables</a>
+                        class="text-black active:scale-95 hover:-translate-y-1 hover:-translate-x-1 transition-all hover:text-emerald-400">Vegitables</a>
                 </div>
             </div>
 
             <div class=" grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-6 xl:grid-cols-9 gap-6">
                 <div id="card"
-                    class="hover:-translate-x-2 hover:-translate-y-1 hover:shadow-xl hover:border transition-all bg-orange-100 p-4 rounded-lg flex justify-center items-center flex-col">
-                    <img class="w-8/12 hover:scale-110 transition" src="../../src/assets/icons/cat-12.png" alt="">
+                    class="hover:-translate-x-2 hover:-translate-y-1 hover:shadow-xl hover:border transition-all text-black  bg-orange-100 p-4 rounded-lg flex justify-center items-center flex-col">
+                    <img class="w-8/12 hover:scale-110 transition" src="./src/assets/icons/cat-12.png" alt="">
                     <a href="#" class="font-semibold mt-4 hover:text-emerald-400">Oganic Kiwi</a>
                     <h1 class="text-gray-500">14 items</h1>
                 </div>
 
                 <div id="card"
-                    class="hover:-translate-x-2 hover:-translate-y-1 hover:shadow-xl hover:border transition-all bg-green-100 p-4 rounded-lg flex justify-center items-center flex-col">
-                    <img class="w-8/12 hover:scale-110 transition" src="../../src/assets/icons/cat-11.png" alt="">
+                    class="hover:-translate-x-2 hover:-translate-y-1 hover:shadow-xl hover:border transition-all text-black  bg-green-100 p-4 rounded-lg flex justify-center items-center flex-col">
+                    <img class="w-8/12 hover:scale-110 transition" src="./src/assets/icons/cat-11.png" alt="">
                     <a href="#" class="font-semibold mt-4 hover:text-emerald-400">Peach</a>
                     <h1 class="text-gray-500">54 items</h1>
                 </div>
 
                 <div id="card"
-                    class="hover:-translate-x-2 hover:-translate-y-1 hover:shadow-xl hover:border transition-all bg-red-100 p-4 rounded-lg flex justify-center items-center flex-col">
-                    <img class="w-8/12 hover:scale-110 transition" src="../../src/assets/icons/cat-9.png" alt="">
+                    class="hover:-translate-x-2 hover:-translate-y-1 hover:shadow-xl hover:border transition-all text-black  bg-red-100 p-4 rounded-lg flex justify-center items-center flex-col">
+                    <img class="w-8/12 hover:scale-110 transition" src="./src/assets/icons/cat-9.png" alt="">
                     <a href="#" class="font-semibold mt-4 hover:text-emerald-400">Red Apple</a>
                     <h1 class="text-gray-500">56 items</h1>
                 </div>
 
                 <div id="card"
-                    class="hover:-translate-x-2 hover:-translate-y-1 hover:shadow-xl hover:border transition-all bg-orange-100 p-4 rounded-lg flex justify-center items-center flex-col">
-                    <img class="w-8/12 hover:scale-110 transition" src="../../src/assets/icons/cat-3.png" alt="">
+                    class="hover:-translate-x-2 hover:-translate-y-1 hover:shadow-xl hover:border transition-all text-black  bg-orange-100 p-4 rounded-lg flex justify-center items-center flex-col">
+                    <img class="w-8/12 hover:scale-110 transition" src="./src/assets/icons/cat-3.png" alt="">
                     <a href="#" class="font-semibold mt-4 hover:text-emerald-400">Snack</a>
                     <h1 class="text-gray-500">72 items</h1>
                 </div>
 
                 <div id="card"
-                    class="hover:-translate-x-2 hover:-translate-y-1 hover:shadow-xl hover:border transition-all bg-violet-100 p-4 rounded-lg flex justify-center items-center flex-col">
-                    <img class="w-8/12 hover:scale-110 transition" src="../../src/assets/icons/cat-1.png" alt="">
+                    class="hover:-translate-x-2 hover:-translate-y-1 hover:shadow-xl hover:border transition-all text-black  bg-violet-100 p-4 rounded-lg flex justify-center items-center flex-col">
+                    <img class="w-8/12 hover:scale-110 transition" src="./src/assets/icons/cat-1.png" alt="">
                     <a href="#" class="font-semibold mt-4 hover:text-emerald-400">Vegetables</a>
                     <h1 class="text-gray-500">36 items</h1>
                 </div>
 
                 <div id="card"
-                    class="hover:-translate-x-2 hover:-translate-y-1 hover:shadow-xl hover:border transition-all bg-green-200 p-4 rounded-lg flex justify-center items-center flex-col">
-                    <img class="w-8/12 hover:scale-110 transition" src="../../src/assets/icons/cat-2.png" alt="">
+                    class="hover:-translate-x-2 hover:-translate-y-1 hover:shadow-xl hover:border transition-all text-black  bg-green-200 p-4 rounded-lg flex justify-center items-center flex-col">
+                    <img class="w-8/12 hover:scale-110 transition" src="./src/assets/icons/cat-2.png" alt="">
                     <a href="#" class="font-semibold mt-4 hover:text-emerald-400">Strawberry</a>
                     <h1 class="text-gray-500">123 items</h1>
                 </div>
 
                 <div id="card"
-                    class="hover:-translate-x-2 hover:-translate-y-1 hover:shadow-xl hover:border transition-all bg-red-200 p-4 rounded-lg flex justify-center items-center flex-col">
-                    <img class="w-8/12 hover:scale-110 transition" src="../../src/assets/icons/cat-4.png" alt="">
+                    class="hover:-translate-x-2 hover:-translate-y-1 hover:shadow-xl hover:border transition-all text-black  bg-red-200 p-4 rounded-lg flex justify-center items-center flex-col">
+                    <img class="w-8/12 hover:scale-110 transition" src="./src/assets/icons/cat-4.png" alt="">
                     <a href="#" class="font-semibold mt-4 hover:text-emerald-400">Black Plum</a>
                     <h1 class="text-gray-500">34 items</h1>
                 </div>
 
                 <div id="card"
-                    class="hover:-translate-x-2 hover:-translate-y-1 hover:shadow-xl hover:border transition-all bg-gray-200 p-4 rounded-lg flex justify-center items-center flex-col">
-                    <img class="w-8/12 hover:scale-110 transition" src="../../src/assets/icons/cat-3.png" alt="">
+                    class="hover:-translate-x-2 hover:-translate-y-1 hover:shadow-xl hover:border transition-all text-black  bg-gray-200 p-4 rounded-lg flex justify-center items-center flex-col">
+                    <img class="w-8/12 hover:scale-110 transition" src="./src/assets/icons/cat-3.png" alt="">
                     <a href="#" class="font-semibold mt-4 hover:text-emerald-400">Coffee & Tea</a>
                     <h1 class="text-gray-500">89 items</h1>
                 </div>
 
                 <div id="card"
-                    class="hover:-translate-x-2 hover:-translate-y-1 hover:shadow-xl hover:border transition-all bg-orange-100 p-4 rounded-lg flex justify-center items-center flex-col">
-                    <img class="w-8/12 hover:scale-110 transition" src="../../src/assets/icons/cat-15.png" alt="">
+                    class="hover:-translate-x-2 hover:-translate-y-1 hover:shadow-xl hover:border transition-all text-black  bg-orange-100 p-4 rounded-lg flex justify-center items-center flex-col">
+                    <img class="w-8/12 hover:scale-110 transition" src="./src/assets/icons/cat-15.png" alt="">
                     <a href="#" class="font-semibold mt-4 hover:text-emerald-400">Headphone</a>
                     <h1 class="text-gray-500">84 items</h1>
                 </div>
@@ -292,34 +387,37 @@
             <div class="pt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4">
                 <div
                     class="bg-cover bgOnion border rounded-xl p-10 hover:-translate-y-1 hover:-translate-x-1 hover:shadow-lg  transition-all">
-                    <h1 class="font-semibold text-2xl my-8  hover:-translate-y-1 transition-all">Everyday Fresh & <br>
+                    <h1 class="font-semibold text-2xl my-8 text-black hover:-translate-y-1 transition-all">Everyday
+                        Fresh & <br>
                         Clean with Our <br> Products</h1>
-                    <button
+                    <button onclick="showToast(invalidMsg)"
                         class="bg-emerald-500 hover:bg-orange-400 hover:px-5 active:scale-95 transition-all  px-4 py-1 rounded-lg text-white font-semibold ">Shop
                         Now</button>
                 </div>
                 <div
                     class="bg-cover bgStroberry border rounded-xl p-10 hover:-translate-y-1 hover:-translate-x-1 hover:shadow-lg transition-all">
-                    <h1 class="font-semibold text-2xl my-8  hover:-translate-y-1 transition-all">Make your Breakfast
+                    <h1 class="font-semibold text-2xl my-8 text-black hover:-translate-y-1 transition-all">Make your
+                        Breakfast
                         <br> Healthy and Easy
                     </h1>
-                    <button
-                        class="bg-emerald-500 hover:bg-orange-400 hover:px-5 active:scale-95 transition-all  px-4 py-1 rounded-lg text-white font-semibold ">Shop
+                    <button onclick="showToast(invalidMsg)" class=" bg-emerald-500 hover:bg-orange-400 hover:px-5 active:scale-95 transition-all px-4 py-1
+                        rounded-lg text-white font-semibold ">Shop
                         Now</button>
                 </div>
-                <div
-                    class="bg-cover bgVegetable border rounded-xl p-10 hover:-translate-y-1 hover:-translate-x-1 hover:shadow-lg transition-all">
-                    <h1 class="font-semibold text-2xl my-8  hover:-translate-y-1 transition-all">The best Organic <br>
+                <div class=" bg-cover bgVegetable border rounded-xl p-10 hover:-translate-y-1 hover:-translate-x-1
+                        hover:shadow-lg transition-all">
+                    <h1 class="font-semibold text-2xl my-8 text-black hover:-translate-y-1 transition-all">The best
+                        Organic <br>
                         Products Online</h1>
-                    <button id="nav-for-products"
-                        class="bg-emerald-500 hover:bg-orange-400 hover:px-5 active:scale-95 transition-all  px-4 py-1 rounded-lg text-white font-semibold ">Shop
+                    <button id="nav-for-products" onclick="showToast(invalidMsg)" class=" bg-emerald-500 hover:bg-orange-400 hover:px-5 active:scale-95 transition-all px-4 py-1
+                            rounded-lg text-white font-semibold ">Shop
                         Now</button>
                 </div>
             </div>
         </section>
 
         <!-- Popular product  -->
-        <section id="popular-product" class="py-12">
+        <section id=" popular-product" class="py-12">
             <h1 class="text-3xl font-semibold pb-10">Popular Products</h1>
 
             <!-- 10 products here  -->
@@ -332,30 +430,32 @@
                         class="bg-pink-600 text-white text-sm px-4 py-1 rounded-ee-2xl absolute top-0 left-0">Hot</span>
                     <div class="overflow-hidden flex justify-center items-center">
                         <img class="hover:scale-110 transition-all rounded-full lg:w-full w-56"
-                            src="../../src/assets/popular product/product-1-1.jpg" alt="">
+                            src="./src/assets/popular product/product-1-1.jpg" alt="">
                     </div>
                     <div class="flex flex-col mb-1">
                         <a href="#popular-product" class="text-gray-400 text-xs hover:text-emerald-400">Coffee</a>
                         <a href="#popular-product"
-                            class="font-semibold my-1 leading-none hover:text-emerald-500 transition-colors">Dandy Blend
+                            class="font-semibold my-1 leading-none hover:text-emerald-500 transition-colors">Dandy
+                            Blend
                             Coffee Instand Herbal Dadlelion</a>
                     </div>
-                    <div class="flex">
-                        <div class="flex ">
-                            <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                            <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                            <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                            <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                            <img class="" src="../../src/assets/popular product/black-rating-stars.png" alt="">
+                    <div class="flex ">
+                        <div class="rating rating-xs ">
+                            <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                            <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500"
+                                checked="checked" />
+                            <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                            <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                            <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
                         </div>
                     </div>
                     <h1 class="mt-2 text-xs">By <a href="#"
                             class="text-emerald-500 hover:-translate-x-1 hover:-translate-y-1 hover:text-orange-400">NestFood</span></a>
                         <div class="flex justify-between items-center mt-3">
                             <h1 class="text-emerald-500 font-semibold text-xl">$54.85</h1>
-                            <button
+                            <button onclick="showToast(successMsg)"
                                 class="bg-emerald-100 hover:bg-emerald-500 text-emerald-600 hover:text-white font-semibold px-3 lg:px-6 py-2 rounded-md flex justify-between items-center gap-1 hover:-translate-y-1 transition">
-                                <img class="w-4" src="../../src/assets/svgs/icon-cart.svg" alt="">
+                                <img class="w-4" src="./src/assets/svgs/icon-cart.svg" alt="">
                                 <h1 class="">Add</h1>
                             </button>
                         </div>
@@ -368,7 +468,7 @@
                         class="bg-blue-400 text-white text-sm px-4 py-1 rounded-ee-2xl absolute top-0 left-0">Sale</span>
                     <div class="overflow-hidden flex justify-center items-center">
                         <img class="hover:scale-110 transition-all rounded-full lg:w-full w-56"
-                            src="../../src/assets/popular product/product-2-1.jpg" alt="">
+                            src="./src/assets/popular product/product-2-1.jpg" alt="">
                     </div>
                     <div class="flex flex-col mb-1">
                         <a href="#popular-product" class="text-gray-400 text-xs hover:text-emerald-400">Snacks</a>
@@ -376,22 +476,23 @@
                             class="font-semibold my-1 leading-none hover:text-emerald-500 transition-colors">Sahale
                             Snacks Raspberry Crumble Cashew Mix</a>
                     </div>
-                    <div class="flex">
-                        <div class="flex ">
-                            <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                            <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                            <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                            <img class="" src="../../src/assets/popular product/black-rating-stars.png" alt="">
-                            <img class="" src="../../src/assets/popular product/black-rating-stars.png" alt="">
+                    <div class="flex ">
+                        <div class="rating rating-xs ">
+                            <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                            <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500"
+                                checked="checked" />
+                            <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                            <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                            <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
                         </div>
                     </div>
                     <h1 class="mt-2 text-xs">By <a href="#"
                             class="text-emerald-500 hover:-translate-x-1 hover:-translate-y-1 hover:text-orange-400">Stouffer</span></a>
                         <div class="flex justify-between items-center mt-3">
                             <h1 class="text-emerald-500 font-semibold text-xl">$42.78</h1>
-                            <button
+                            <button onclick="showToast(successMsg)"
                                 class="bg-emerald-100 hover:bg-emerald-500 text-emerald-600 hover:text-white font-semibold px-3 lg:px-6 py-2 rounded-md flex justify-between items-center gap-1 hover:-translate-y-1 transition">
-                                <img class="w-4" src="../../src/assets/svgs/icon-cart.svg" alt="">
+                                <img class="w-4" src="./src/assets/svgs/icon-cart.svg" alt="">
                                 <h1 class="">Add</h1>
                             </button>
                         </div>
@@ -404,7 +505,7 @@
                         class="bg-emerald-500 text-white text-sm px-4 py-1 rounded-ee-2xl absolute top-0 left-0">New</span>
                     <div class="overflow-hidden flex justify-center items-center">
                         <img class="hover:scale-110 transition-all rounded-full lg:w-full w-56"
-                            src="../../src/assets/popular product/product-3-1.jpg" alt="">
+                            src="./src/assets/popular product/product-3-1.jpg" alt="">
                     </div>
                     <div class="flex flex-col mb-1">
                         <a href="#popular-product" class="text-gray-400 text-xs hover:text-emerald-400">Snacks</a>
@@ -412,22 +513,23 @@
                             class="font-semibold my-1 leading-none hover:text-emerald-500 transition-colors">Veggile
                             Pops Broccoli Chedda Supersnacks</a>
                     </div>
-                    <div class="flex">
-                        <div class="flex ">
-                            <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                            <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                            <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                            <img class="" src="../../src/assets/popular product/black-rating-stars.png" alt="">
-                            <img class="" src="../../src/assets/popular product/black-rating-stars.png" alt="">
+                    <div class="flex ">
+                        <div class="rating rating-xs ">
+                            <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                            <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500"
+                                checked="checked" />
+                            <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                            <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                            <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
                         </div>
                     </div>
                     <h1 class="mt-2 text-xs">By <a href="#"
                             class="text-emerald-500 hover:-translate-x-1 hover:-translate-y-1 hover:text-orange-400">Starkist</span></a>
                         <div class="flex justify-between items-center mt-3">
                             <h1 class="text-emerald-500 font-semibold text-xl">$48.88</h1>
-                            <button
+                            <button onclick="showToast(successMsg)"
                                 class="bg-emerald-100 hover:bg-emerald-500 text-emerald-600 hover:text-white font-semibold px-3 lg:px-6 py-2 rounded-md flex justify-between items-center gap-1 hover:-translate-y-1 transition">
-                                <img class="w-4" src="../../src/assets/svgs/icon-cart.svg" alt="">
+                                <img class="w-4" src="./src/assets/svgs/icon-cart.svg" alt="">
                                 <h1 class="">Add</h1>
                             </button>
                         </div>
@@ -438,7 +540,7 @@
                     class="border relative overflow-hidden shadow-xl p-4 lg:p-6 rounded-2xl hover:shadow-2xl hover:-translate-x-1 hover:-translate-y-1 transition ">
                     <div class="overflow-hidden flex justify-center items-center">
                         <img class="hover:scale-110 transition-all rounded-full lg:w-full w-56"
-                            src="../../src/assets/popular product/product-4-1.jpg" alt="">
+                            src="./src/assets/popular product/product-4-1.jpg" alt="">
                     </div>
                     <div class="flex flex-col mb-1">
                         <a href="#popular-product" class="text-gray-400 text-xs hover:text-emerald-400">Snacks</a>
@@ -446,22 +548,23 @@
                             class="font-semibold my-1 leading-none hover:text-emerald-500 transition-colors">Sahale
                             Snacks Assian Sesame Bean + Nut</a>
                     </div>
-                    <div class="flex">
-                        <div class="flex ">
-                            <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                            <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                            <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                            <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                            <img class="" src="../../src/assets/popular product/black-rating-stars.png" alt="">
+                    <div class="flex ">
+                        <div class="rating rating-xs ">
+                            <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                            <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500"
+                                checked="checked" />
+                            <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                            <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                            <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
                         </div>
                     </div>
                     <h1 class="mt-2 text-xs">By <a href="#"
                             class="text-emerald-500 hover:-translate-x-1 hover:-translate-y-1 hover:text-orange-400">NestFood</span></a>
                         <div class="flex justify-between items-center mt-3">
                             <h1 class="text-emerald-500 font-semibold text-xl">$17.85</h1>
-                            <button
+                            <button onclick="showToast(successMsg)"
                                 class="bg-emerald-100 hover:bg-emerald-500 text-emerald-600 hover:text-white font-semibold px-3 lg:px-6 py-2 rounded-md flex justify-between items-center gap-1 hover:-translate-y-1 transition">
-                                <img class="w-4" src="../../src/assets/svgs/icon-cart.svg" alt="">
+                                <img class="w-4" src="./src/assets/svgs/icon-cart.svg" alt="">
                                 <h1 class="">Add</h1>
                             </button>
                         </div>
@@ -474,7 +577,7 @@
                         class="bg-orange-600 text-white text-sm px-4 py-1 rounded-ee-2xl absolute top-0 left-0">-14%</span>
                     <div class="overflow-hidden flex justify-center items-center">
                         <img class="hover:scale-110 transition-all rounded-full lg:w-full w-56"
-                            src="../../src/assets/popular product/product-5-1.jpg" alt="">
+                            src="./src/assets/popular product/product-5-1.jpg" alt="">
                     </div>
                     <div class="flex flex-col mb-1">
                         <a href="#popular-product" class="text-gray-400 text-xs hover:text-emerald-400">Flacks</a>
@@ -482,22 +585,23 @@
                             class="font-semibold my-1 leading-none hover:text-emerald-500 transition-colors">Unsweetend
                             Coconut Flacks No Added Sulfites </a>
                     </div>
-                    <div class="flex">
-                        <div class="flex ">
-                            <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                            <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                            <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                            <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                            <img class="" src="../../src/assets/popular product/black-rating-stars.png" alt="">
+                    <div class="flex ">
+                        <div class="rating rating-xs ">
+                            <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                            <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500"
+                                checked="checked" />
+                            <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                            <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                            <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
                         </div>
                     </div>
                     <h1 class="mt-2 text-xs">By <a href="#"
                             class="text-emerald-500 hover:-translate-x-1 hover:-translate-y-1 hover:text-orange-400">NestFood</span></a>
                         <div class="flex justify-between items-center mt-3">
                             <h1 class="text-emerald-500 font-semibold text-xl">$38.85</h1>
-                            <button
+                            <button onclick="showToast(successMsg)"
                                 class="bg-emerald-100 hover:bg-emerald-500 text-emerald-600 hover:text-white font-semibold px-3 lg:px-6 py-2 rounded-md flex justify-between items-center gap-1 hover:-translate-y-1 transition">
-                                <img class="w-4" src="../../src/assets/svgs/icon-cart.svg" alt="">
+                                <img class="w-4" src="./src/assets/svgs/icon-cart.svg" alt="">
                                 <h1 class="">Add</h1>
                             </button>
                         </div>
@@ -508,7 +612,7 @@
                     class="border relative overflow-hidden shadow-xl p-4 lg:p-6 rounded-2xl hover:shadow-2xl hover:-translate-x-1 hover:-translate-y-1 transition ">
                     <div class="overflow-hidden flex justify-center items-center">
                         <img class="hover:scale-110 transition-all rounded-full lg:w-full w-56"
-                            src="../../src/assets/popular product/product-6-1.jpg" alt="">
+                            src="./src/assets/popular product/product-6-1.jpg" alt="">
                     </div>
                     <div class="flex flex-col mb-1">
                         <a href="#popular-product" class="text-gray-400 text-xs hover:text-emerald-400">Chocolate</a>
@@ -516,22 +620,23 @@
                             class="font-semibold my-1 leading-none hover:text-emerald-500 transition-colors">Mighty
                             Muffin With Probiotic Peanut Butter</a>
                     </div>
-                    <div class="flex">
-                        <div class="flex ">
-                            <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                            <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                            <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                            <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                            <img class="" src="../../src/assets/popular product/black-rating-stars.png" alt="">
+                    <div class="flex ">
+                        <div class="rating rating-xs ">
+                            <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                            <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500"
+                                checked="checked" />
+                            <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                            <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                            <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
                         </div>
                     </div>
                     <h1 class="mt-2 text-xs">By <a href="#"
                             class="text-emerald-500 hover:-translate-x-1 hover:-translate-y-1 hover:text-orange-400">NestFood</span></a>
                         <div class="flex justify-between items-center mt-3">
                             <h1 class="text-emerald-500 font-semibold text-xl">$54.85</h1>
-                            <button
+                            <button onclick="showToast(successMsg)"
                                 class="bg-emerald-100 hover:bg-emerald-500 text-emerald-600 hover:text-white font-semibold px-3 lg:px-6 py-2 rounded-md flex justify-between items-center gap-1 hover:-translate-y-1 transition">
-                                <img class="w-4" src="../../src/assets/svgs/icon-cart.svg" alt="">
+                                <img class="w-4" src="./src/assets/svgs/icon-cart.svg" alt="">
                                 <h1 class="">Add</h1>
                             </button>
                         </div>
@@ -542,7 +647,7 @@
                     class="border relative overflow-hidden shadow-xl p-4 lg:p-6 rounded-2xl hover:shadow-2xl hover:-translate-x-1 hover:-translate-y-1 transition ">
                     <div class="overflow-hidden flex justify-center items-center">
                         <img class="hover:scale-110 transition-all rounded-full lg:w-full w-56"
-                            src="../../src/assets/popular product/product-7-1.jpg" alt="">
+                            src="./src/assets/popular product/product-7-1.jpg" alt="">
                     </div>
                     <div class="flex flex-col mb-1">
                         <a href="#popular-product" class="text-gray-400 text-xs hover:text-emerald-400">Butter</a>
@@ -550,22 +655,23 @@
                             class="font-semibold my-1 leading-none hover:text-emerald-500 transition-colors">Wilderness
                             Poet Raw Pistachio Butter 227gm</a>
                     </div>
-                    <div class="flex">
-                        <div class="flex ">
-                            <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                            <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                            <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                            <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                            <img class="" src="../../src/assets/popular product/black-rating-stars.png" alt="">
+                    <div class="flex ">
+                        <div class="rating rating-xs ">
+                            <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                            <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500"
+                                checked="checked" />
+                            <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                            <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                            <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
                         </div>
                     </div>
                     <h1 class="mt-2 text-xs">By <a href="#"
                             class="text-emerald-500 hover:-translate-x-1 hover:-translate-y-1 hover:text-orange-400">NestFood</span></a>
                         <div class="flex justify-between items-center mt-3">
                             <h1 class="text-emerald-500 font-semibold text-xl">$30.55</h1>
-                            <button
+                            <button onclick="showToast(successMsg)"
                                 class="bg-emerald-100 hover:bg-emerald-500 text-emerald-600 hover:text-white font-semibold px-3 lg:px-6 py-2 rounded-md flex justify-between items-center gap-1 hover:-translate-y-1 transition">
-                                <img class="w-4" src="../../src/assets/svgs/icon-cart.svg" alt="">
+                                <img class="w-4" src="./src/assets/svgs/icon-cart.svg" alt="">
                                 <h1 class="">Add</h1>
                             </button>
                         </div>
@@ -578,30 +684,32 @@
                         class="bg-blue-400 text-white text-sm px-4 py-1 rounded-ee-2xl absolute top-0 left-0">Sale</span>
                     <div class="overflow-hidden flex justify-center items-center">
                         <img class="hover:scale-110 transition-all rounded-full lg:w-full w-56"
-                            src="../../src/assets/popular product/product-8-1.jpg" alt="">
+                            src="./src/assets/popular product/product-8-1.jpg" alt="">
                     </div>
                     <div class="flex flex-col mb-1">
                         <a href="#popular-product" class="text-gray-400 text-xs hover:text-emerald-400">Gel Cream</a>
                         <a href="#popular-product"
-                            class="font-semibold my-1 leading-none hover:text-emerald-500 transition-colors">Yuja Niacin
+                            class="font-semibold my-1 leading-none hover:text-emerald-500 transition-colors">Yuja
+                            Niacin
                             Brightening Gel Moisture Cream </a>
                     </div>
-                    <div class="flex">
-                        <div class="flex ">
-                            <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                            <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                            <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                            <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                            <img class="" src="../../src/assets/popular product/black-rating-stars.png" alt="">
+                    <div class="flex ">
+                        <div class="rating rating-xs ">
+                            <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                            <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500"
+                                checked="checked" />
+                            <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                            <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                            <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
                         </div>
                     </div>
                     <h1 class="mt-2 text-xs">By <a href="#"
                             class="text-emerald-500 hover:-translate-x-1 hover:-translate-y-1 hover:text-orange-400">NestFood</span></a>
                         <div class="flex justify-between items-center mt-3">
                             <h1 class="text-emerald-500 font-semibold text-xl">$54.85</h1>
-                            <button
+                            <button onclick="showToast(successMsg)"
                                 class="bg-emerald-100 hover:bg-emerald-500 text-emerald-600 hover:text-white font-semibold px-3 lg:px-6 py-2 rounded-md flex justify-between items-center gap-1 hover:-translate-y-1 transition">
-                                <img class="w-4" src="../../src/assets/svgs/icon-cart.svg" alt="">
+                                <img class="w-4" src="./src/assets/svgs/icon-cart.svg" alt="">
                                 <h1 class="">Add</h1>
                             </button>
                         </div>
@@ -614,21 +722,23 @@
                         class="bg-pink-600 text-white text-sm px-4 py-1 rounded-ee-2xl absolute top-0 left-0">Hot</span>
                     <div class="overflow-hidden flex justify-center items-center">
                         <img class="hover:scale-110 transition-all rounded-full lg:w-full w-56"
-                            src="../../src/assets/popular product/product-9-1.jpg" alt="">
+                            src="./src/assets/popular product/product-9-1.jpg" alt="">
                     </div>
                     <div class="flex flex-col mb-1">
                         <a href="#popular-product" class="text-gray-400 text-xs hover:text-emerald-400">Coffee</a>
                         <a href="#popular-product"
-                            class="font-semibold my-1 leading-none hover:text-emerald-500 transition-colors">Cafe Altura
+                            class="font-semibold my-1 leading-none hover:text-emerald-500 transition-colors">Cafe
+                            Altura
                             Rain Wasbed Organic Coffee - 340g</a>
                     </div>
-                    <div class="flex">
-                        <div class="flex ">
-                            <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                            <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                            <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                            <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                            <img class="" src="../../src/assets/popular product/black-rating-stars.png" alt="">
+                    <div class="flex ">
+                        <div class="rating rating-xs ">
+                            <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                            <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500"
+                                checked="checked" />
+                            <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                            <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                            <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
                         </div>
                     </div>
                     <h1 class="mt-2 text-xs">By <a href="#"
@@ -636,9 +746,9 @@
                             Altura</span></a>
                         <div class="flex justify-between items-center mt-3">
                             <h1 class="text-emerald-500 font-semibold text-xl">$23.85</h1>
-                            <button
+                            <button onclick="showToast(successMsg)"
                                 class="bg-emerald-100 hover:bg-emerald-500 text-emerald-600 hover:text-white font-semibold px-3 lg:px-6 py-2 rounded-md flex justify-between items-center gap-1 hover:-translate-y-1 transition">
-                                <img class="w-4" src="../../src/assets/svgs/icon-cart.svg" alt="">
+                                <img class="w-4" src="./src/assets/svgs/icon-cart.svg" alt="">
                                 <h1 class="">Add</h1>
                             </button>
                         </div>
@@ -649,7 +759,7 @@
                     class="border relative overflow-hidden shadow-xl p-4 lg:p-6 rounded-2xl hover:shadow-2xl hover:-translate-x-1 hover:-translate-y-1 transition ">
                     <div class="overflow-hidden flex justify-center items-center">
                         <img class="hover:scale-110 transition-all rounded-full lg:w-full w-56"
-                            src="../../src/assets/popular product/product-10-1.jpg" alt="">
+                            src="./src/assets/popular product/product-10-1.jpg" alt="">
                     </div>
                     <div class="flex flex-col mb-1">
                         <a href="#popular-product" class="text-gray-400 text-xs hover:text-emerald-400">Drinks</a>
@@ -657,22 +767,23 @@
                             class="font-semibold my-1 leading-none hover:text-emerald-500 transition-colors">Pukka
                             Organic Lattle Turmeric Glow </a>
                     </div>
-                    <div class="flex">
-                        <div class="flex ">
-                            <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                            <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                            <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                            <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                            <img class="" src="../../src/assets/popular product/black-rating-stars.png" alt="">
+                    <div class="flex ">
+                        <div class="rating rating-xs ">
+                            <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                            <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500"
+                                checked="checked" />
+                            <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                            <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                            <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
                         </div>
                     </div>
                     <h1 class="mt-2 text-xs">By <a href="#"
                             class="text-emerald-500 hover:-translate-x-1 hover:-translate-y-1 hover:text-orange-400">Pukka</span></a>
                         <div class="flex justify-between items-center mt-3">
                             <h1 class="text-emerald-500 font-semibold text-xl">$24.99</h1>
-                            <button id="nav-for-daily-best-sell"
+                            <button id="nav-for-daily-best-sell" onclick="showToast(successMsg)"
                                 class="bg-emerald-100 hover:bg-emerald-500 text-emerald-600 hover:text-white font-semibold px-3 lg:px-6 py-2 rounded-md flex justify-between items-center gap-1 hover:-translate-y-1 transition">
-                                <img class="w-4" src="../../src/assets/svgs/icon-cart.svg" alt="">
+                                <img class="w-4" src="./src/assets/svgs/icon-cart.svg" alt="">
                                 <h1 class="">Add</h1>
                             </button>
                         </div>
@@ -698,9 +809,10 @@
             <div class="daily-best-sells lg:flex flex-col xl:grid  py-10 lg:gap-4 ">
                 <!-- Bring Nature Into  -->
                 <div class="bg-cover bgLeaf border rounded-xl p-10  ">
-                    <h1 class="font-semibold text-5xl my-8  hover:-translate-y-1 transition-all">Bring <br> nature into
+                    <h1 class="font-semibold text-5xl my-8 text-black hover:-translate-y-1 transition-all">Bring <br>
+                        nature into
                     </h1>
-                    <button
+                    <button onclick="showToast(invalidMsg)"
                         class="bg-emerald-500 hover:bg-orange-400 hover:px-5 active:scale-95 transition-all  px-4 py-1 rounded-lg text-white font-semibold ">Shop
                         Now</button>
                 </div>
@@ -716,7 +828,7 @@
                                     class="bg-pink-600 text-white text-sm px-4 py-1 rounded-ee-2xl absolute top-0 left-0">Hot</span>
                                 <div class="overflow-hidden flex justify-center items-center">
                                     <img class="hover:scale-110 transition-all rounded-full lg:w-full w-56"
-                                        src="../../src/assets/popular product/product-11-1.jpg" alt="">
+                                        src="./src/assets/popular product/product-11-1.jpg" alt="">
                                 </div>
                                 <div class="flex flex-col mb-1">
                                     <a href="#popular-product"
@@ -725,18 +837,14 @@
                                         class="font-semibold my-1 leading-none hover:text-emerald-500 transition-colors">Talenti
                                         Gelato Salted Caramel Truffle </a>
                                 </div>
-                                <div class="flex">
-                                    <div class="flex ">
-                                        <img class="" src="../../src/assets/popular product/gold-rating-stars.png"
-                                            alt="">
-                                        <img class="" src="../../src/assets/popular product/gold-rating-stars.png"
-                                            alt="">
-                                        <img class="" src="../../src/assets/popular product/gold-rating-stars.png"
-                                            alt="">
-                                        <img class="" src="../../src/assets/popular product/gold-rating-stars.png"
-                                            alt="">
-                                        <img class="" src="../../src/assets/popular product/black-rating-stars.png"
-                                            alt="">
+                                <div class="flex ">
+                                    <div class="rating rating-xs ">
+                                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500"
+                                            checked="checked" />
+                                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
                                     </div>
                                 </div>
                                 <h1 class="mt-2 text-xs">By <a href="#"
@@ -746,9 +854,9 @@
                                     <h1 class="text-emerald-500 font-semibold text-xl">$24.49</h1>
                                     <progress class="progress progress-accent w-full" value="26" max="100"></progress>
                                     <p class="text-sm">Sold: 26/100</p>
-                                    <button
+                                    <button onclick="showToast(successMsg)"
                                         class="bg-emerald-500 active:bg-orange-500 active:scale-95 text-white hover:text-white font-semibold w-full py-4 rounded-md flex justify-center items-center gap-1 hover:-translate-y-1 transition mt-4">
-                                        <img class="w-4 text " src="../../src/assets/svgs/icon-cart.svg" alt="">
+                                        <img class="w-4 text " src="./src/assets/svgs/icon-cart.svg" alt="">
                                         <h1 class="text-xs">Add To Cart</h1>
                                     </button>
                                 </div>
@@ -762,7 +870,7 @@
                                     class="bg-emerald-500 text-white text-sm px-4 py-1 rounded-ee-2xl absolute top-0 left-0">New</span>
                                 <div class="overflow-hidden flex justify-center items-center">
                                     <img class="hover:scale-110 transition-all rounded-full lg:w-full w-56"
-                                        src="../../src/assets/popular product/product-13-1.jpg" alt="">
+                                        src="./src/assets/popular product/product-13-1.jpg" alt="">
                                 </div>
                                 <div class="flex flex-col mb-1">
                                     <a href="#popular-product"
@@ -771,18 +879,14 @@
                                         class="font-semibold my-1 leading-none hover:text-emerald-500 transition-colors">Porganic
                                         Tangerine with Lemonade </a>
                                 </div>
-                                <div class="flex">
-                                    <div class="flex ">
-                                        <img class="" src="../../src/assets/popular product/gold-rating-stars.png"
-                                            alt="">
-                                        <img class="" src="../../src/assets/popular product/gold-rating-stars.png"
-                                            alt="">
-                                        <img class="" src="../../src/assets/popular product/gold-rating-stars.png"
-                                            alt="">
-                                        <img class="" src="../../src/assets/popular product/black-rating-stars.png"
-                                            alt="">
-                                        <img class="" src="../../src/assets/popular product/black-rating-stars.png"
-                                            alt="">
+                                <div class="flex ">
+                                    <div class="rating rating-xs ">
+                                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500"
+                                            checked="checked" />
+                                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
                                     </div>
                                 </div>
                                 <h1 class="mt-2 text-xs">By <a href="#"
@@ -792,9 +896,9 @@
                                         <progress class="progress progress-accent w-full" value="65"
                                             max="100"></progress>
                                         <p class="text-sm">Sold: 65/100</p>
-                                        <button
+                                        <button onclick="showToast(successMsg)"
                                             class="bg-emerald-500 active:bg-orange-500 active:scale-95 text-white hover:text-white font-semibold w-full py-4 rounded-md flex justify-center items-center gap-1 hover:-translate-y-1 transition mt-4">
-                                            <img class="w-4 text " src="../../src/assets/svgs/icon-cart.svg" alt="">
+                                            <img class="w-4 text " src="./src/assets/svgs/icon-cart.svg" alt="">
                                             <h1 class="">Add To Cart</h1>
                                         </button>
                                     </div>
@@ -808,7 +912,7 @@
                                     class="bg-blue-400 text-white text-sm px-4 py-1 rounded-ee-2xl absolute top-0 left-0">Sale</span>
                                 <div class="overflow-hidden flex justify-center items-center">
                                     <img class="hover:scale-110 transition-all rounded-full lg:w-full w-56"
-                                        src="../../src/assets/popular product/product-16-4.jpg" alt="">
+                                        src="./src/assets/popular product/product-16-4.jpg" alt="">
                                 </div>
                                 <div class="flex flex-col mb-1">
                                     <a href="#popular-product"
@@ -817,18 +921,14 @@
                                         class="font-semibold my-1 leading-none hover:text-emerald-500 transition-colors">Organic
                                         Cacao Powder Truth In Food</a>
                                 </div>
-                                <div class="flex">
-                                    <div class="flex ">
-                                        <img class="" src="../../src/assets/popular product/gold-rating-stars.png"
-                                            alt="">
-                                        <img class="" src="../../src/assets/popular product/gold-rating-stars.png"
-                                            alt="">
-                                        <img class="" src="../../src/assets/popular product/gold-rating-stars.png"
-                                            alt="">
-                                        <img class="" src="../../src/assets/popular product/gold-rating-stars.png"
-                                            alt="">
-                                        <img class="" src="../../src/assets/popular product/black-rating-stars.png"
-                                            alt="">
+                                <div class="flex ">
+                                    <div class="rating rating-xs ">
+                                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500"
+                                            checked="checked" />
+                                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
                                     </div>
                                 </div>
                                 <h1 class="mt-2 text-xs">By <a href="#"
@@ -838,9 +938,9 @@
                                         <progress class="progress progress-accent w-full" value="48"
                                             max="100"></progress>
                                         <p class="text-sm">Sold: 48/100</p>
-                                        <button
+                                        <button onclick="showToast(successMsg)"
                                             class="bg-emerald-500 active:bg-orange-500 text-white active:scale-95 font-semibold w-full py-4 rounded-md flex justify-center items-center gap-1 hover:-translate-y-1 transition mt-4">
-                                            <img class="w-4 text " src="../../src/assets/svgs/icon-cart.svg" alt="">
+                                            <img class="w-4 text " src="./src/assets/svgs/icon-cart.svg" alt="">
                                             <h1 class="">Add To Cart</h1>
                                         </button>
                                     </div>
@@ -852,7 +952,7 @@
                             <div class="border relative overflow-hidden p-4 lg:p-6 rounded-2xl  ">
                                 <div class="overflow-hidden flex justify-center items-center">
                                     <img class="hover:scale-110 transition-all rounded-full lg:w-full w-56"
-                                        src="../../src/assets/popular product/product-16-3.jpg" alt="">
+                                        src="./src/assets/popular product/product-16-3.jpg" alt="">
                                 </div>
                                 <div class="flex flex-col mb-1">
                                     <a href="#popular-product"
@@ -861,18 +961,14 @@
                                         class="font-semibold my-1 leading-none hover:text-emerald-500 transition-colors">Super
                                         Matcha Pore Clean Cleansing Gel</a>
                                 </div>
-                                <div class="flex">
-                                    <div class="flex ">
-                                        <img class="" src="../../src/assets/popular product/gold-rating-stars.png"
-                                            alt="">
-                                        <img class="" src="../../src/assets/popular product/gold-rating-stars.png"
-                                            alt="">
-                                        <img class="" src="../../src/assets/popular product/gold-rating-stars.png"
-                                            alt="">
-                                        <img class="" src="../../src/assets/popular product/gold-rating-stars.png"
-                                            alt="">
-                                        <img class="" src="../../src/assets/popular product/black-rating-stars.png"
-                                            alt="">
+                                <div class="flex ">
+                                    <div class="rating rating-xs ">
+                                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500"
+                                            checked="checked" />
+                                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
                                     </div>
                                 </div>
                                 <h1 class="mt-2 text-xs">By <a href="#"
@@ -882,9 +978,9 @@
                                         <progress class="progress progress-accent w-full" value="56"
                                             max="100"></progress>
                                         <p class="text-sm">Sold: 56/100</p>
-                                        <button
+                                        <button onclick="showToast(successMsg)"
                                             class="bg-emerald-500 active:bg-orange-500 active:scale-95 text-white hover:text-white font-semibold w-full py-4 rounded-md flex justify-center items-center gap-1 hover:-translate-y-1 transition mt-4">
-                                            <img class="w-4 text " src="../../src/assets/svgs/icon-cart.svg" alt="">
+                                            <img class="w-4 text " src="./src/assets/svgs/icon-cart.svg" alt="">
                                             <h1 class="">Add To Cart</h1>
                                         </button>
                                     </div>
@@ -898,7 +994,7 @@
                                     class="bg-orange-600 text-white text-sm px-4 py-1 rounded-ee-2xl absolute top-0 left-0">-14%</span>
                                 <div class="overflow-hidden flex justify-center items-center">
                                     <img class="hover:scale-110 transition-all rounded-full lg:w-full w-56"
-                                        src="../../src/assets/popular product/product-15-1.jpg" alt="">
+                                        src="./src/assets/popular product/product-15-1.jpg" alt="">
                                 </div>
                                 <div class="flex flex-col mb-1">
                                     <a href="#popular-product"
@@ -907,18 +1003,14 @@
                                         class="font-semibold my-1 leading-none hover:text-emerald-500 transition-colors">SweetLeaf
                                         Tasting Stevia Sweetener</a>
                                 </div>
-                                <div class="flex">
-                                    <div class="flex ">
-                                        <img class="" src="../../src/assets/popular product/gold-rating-stars.png"
-                                            alt="">
-                                        <img class="" src="../../src/assets/popular product/gold-rating-stars.png"
-                                            alt="">
-                                        <img class="" src="../../src/assets/popular product/gold-rating-stars.png"
-                                            alt="">
-                                        <img class="" src="../../src/assets/popular product/gold-rating-stars.png"
-                                            alt="">
-                                        <img class="" src="../../src/assets/popular product/black-rating-stars.png"
-                                            alt="">
+                                <div class="flex ">
+                                    <div class="rating rating-xs ">
+                                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500"
+                                            checked="checked" />
+                                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
                                     </div>
                                 </div>
                                 <h1 class="mt-2 text-xs">By <a href="#"
@@ -928,9 +1020,9 @@
                                         <progress class="progress progress-accent w-full" value="68"
                                             max="100"></progress>
                                         <p class="text-sm">Sold: 68/100</p>
-                                        <button
+                                        <button onclick="showToast(successMsg)"
                                             class="bg-emerald-500 active:bg-orange-500 active:scale-95 text-white hover:text-white font-semibold w-full py-4 rounded-md flex justify-center items-center gap-1 hover:-translate-y-1 transition mt-4">
-                                            <img class="w-4 text " src="../../src/assets/svgs/icon-cart.svg" alt="">
+                                            <img class="w-4 text " src="./src/assets/svgs/icon-cart.svg" alt="">
                                             <h1 class="">Add To Cart</h1>
                                         </button>
                                     </div>
@@ -942,7 +1034,7 @@
                             <div class="border relative overflow-hidden p-4 lg:p-6 rounded-2xl  ">
                                 <div class="overflow-hidden flex justify-center items-center">
                                     <img class="hover:scale-110 transition-all rounded-full lg:w-full w-56"
-                                        src="../../src/assets/popular product/product-16-1.jpg" alt="">
+                                        src="./src/assets/popular product/product-16-1.jpg" alt="">
                                 </div>
                                 <div class="flex flex-col mb-1">
                                     <a href="#popular-product"
@@ -951,18 +1043,14 @@
                                         class="font-semibold my-1 leading-none hover:text-emerald-500 transition-colors">Super
                                         Foods Organic Moringa Powder</a>
                                 </div>
-                                <div class="flex">
-                                    <div class="flex ">
-                                        <img class="" src="../../src/assets/popular product/gold-rating-stars.png"
-                                            alt="">
-                                        <img class="" src="../../src/assets/popular product/gold-rating-stars.png"
-                                            alt="">
-                                        <img class="" src="../../src/assets/popular product/gold-rating-stars.png"
-                                            alt="">
-                                        <img class="" src="../../src/assets/popular product/gold-rating-stars.png"
-                                            alt="">
-                                        <img class="" src="../../src/assets/popular product/black-rating-stars.png"
-                                            alt="">
+                                <div class="flex ">
+                                    <div class="rating rating-xs ">
+                                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500"
+                                            checked="checked" />
+                                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
                                     </div>
                                 </div>
                                 <h1 class="mt-2 text-xs">By <a href="#"
@@ -972,14 +1060,13 @@
                                         <progress class="progress progress-accent w-full" value="76"
                                             max="100"></progress>
                                         <p class="text-sm">Sold: 76/100</p>
-                                        <button
+                                        <button onclick="showToast(successMsg)"
                                             class="bg-emerald-500 active:bg-orange-500 active:scale-95 text-white hover:text-white font-semibold w-full py-4 rounded-md flex justify-center items-center gap-1 hover:-translate-y-1 transition mt-4">
-                                            <img class="w-4 text " src="../../src/assets/svgs/icon-cart.svg" alt="">
+                                            <img class="w-4 text " src="/src/assets/svgs/icon-cart.svg" alt="">
                                             <h1 class="">Add To Cart</h1>
                                         </button>
                                     </div>
                             </div>
-
                         </div>
 
                         <!-- product 7 -->
@@ -989,7 +1076,7 @@
                                     class="bg-blue-400 text-white text-sm px-4 py-1 rounded-ee-2xl absolute top-0 left-0">Sale</span>
                                 <div class="overflow-hidden flex justify-center items-center">
                                     <img class="hover:scale-110 transition-all rounded-full lg:w-full w-56"
-                                        src="../../src/assets/popular product/product-12-1.jpg" alt="">
+                                        src="./src/assets/popular product/product-12-1.jpg" alt="">
                                 </div>
                                 <div class="flex flex-col mb-1">
                                     <a href="#popular-product"
@@ -998,18 +1085,14 @@
                                         class="font-semibold my-1 leading-none hover:text-emerald-500 transition-colors">Reishi
                                         Coffee Extract + Instant Suppliment</a>
                                 </div>
-                                <div class="flex">
-                                    <div class="flex ">
-                                        <img class="" src="../../src/assets/popular product/gold-rating-stars.png"
-                                            alt="">
-                                        <img class="" src="../../src/assets/popular product/gold-rating-stars.png"
-                                            alt="">
-                                        <img class="" src="../../src/assets/popular product/gold-rating-stars.png"
-                                            alt="">
-                                        <img class="" src="../../src/assets/popular product/black-rating-stars.png"
-                                            alt="">
-                                        <img class="" src="../../src/assets/popular product/black-rating-stars.png"
-                                            alt="">
+                                <div class="flex ">
+                                    <div class="rating rating-xs ">
+                                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500"
+                                            checked="checked" />
+                                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
                                     </div>
                                 </div>
                                 <h1 class="mt-2 text-xs">By <a href="#"
@@ -1019,9 +1102,9 @@
                                         <progress class="progress progress-accent w-full" value="50"
                                             max="100"></progress>
                                         <p class="text-sm">Sold: 50/100</p>
-                                        <button
+                                        <button onclick="showToast(successMsg)"
                                             class="bg-emerald-500 active:bg-orange-500 active:scale-95 text-white hover:text-white font-semibold w-full py-4 rounded-md flex justify-center items-center gap-1 hover:-translate-y-1 transition mt-4">
-                                            <img class="w-4 text " src="../../src/assets/svgs/icon-cart.svg" alt="">
+                                            <img class="w-4 text " src="./src/assets/svgs/icon-cart.svg" alt="">
                                             <h1 class="">Add To Cart</h1>
                                         </button>
                                     </div>
@@ -1033,7 +1116,7 @@
                             <div class="border relative overflow-hidden p-4 lg:p-6 rounded-2xl  ">
                                 <div class="overflow-hidden flex justify-center items-center">
                                     <img class="hover:scale-110 transition-all rounded-full lg:w-full w-56"
-                                        src="../../src/assets/popular product/product-14-1.jpg" alt="">
+                                        src="./src/assets/popular product/product-14-1.jpg" alt="">
                                 </div>
                                 <div class="flex flex-col mb-1">
                                     <a href="#popular-product"
@@ -1042,18 +1125,14 @@
                                         class="font-semibold my-1 leading-none hover:text-emerald-500 transition-colors">Mango
                                         Premium Quality Fat Free Chips</a>
                                 </div>
-                                <div class="flex">
-                                    <div class="flex ">
-                                        <img class="" src="../../src/assets/popular product/gold-rating-stars.png"
-                                            alt="">
-                                        <img class="" src="../../src/assets/popular product/gold-rating-stars.png"
-                                            alt="">
-                                        <img class="" src="../../src/assets/popular product/gold-rating-stars.png"
-                                            alt="">
-                                        <img class="" src="../../src/assets/popular product/gold-rating-stars.png"
-                                            alt="">
-                                        <img class="" src="../../src/assets/popular product/black-rating-stars.png"
-                                            alt="">
+                                <div class="flex ">
+                                    <div class="rating rating-xs ">
+                                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500"
+                                            checked="checked" />
+                                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                                        <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
                                     </div>
                                 </div>
                                 <h1 class="mt-2 text-xs">By <a href="#"
@@ -1063,9 +1142,9 @@
                                         <progress class="progress progress-accent w-full" value="30"
                                             max="100"></progress>
                                         <p class="text-sm">Sold: 30/100</p>
-                                        <button
+                                        <button onclick="showToast(successMsg)"
                                             class="bg-emerald-500 active:bg-orange-500 active:scale-95 text-white hover:text-white font-semibold w-full py-4 rounded-md flex justify-center items-center gap-1 hover:-translate-y-1 transition mt-4">
-                                            <img class="w-4 text " src="../../src/assets/svgs/icon-cart.svg" alt="">
+                                            <img class="w-4 text " src="./src/assets/svgs/icon-cart.svg" alt="">
                                             <h1 class="">Add To Cart</h1>
                                         </button>
                                     </div>
@@ -1083,17 +1162,21 @@
             <div>
                 <h1 class="text-3xl font-semibold border-b-2 border-emerald-600 mb-6">Top Selling</h1>
                 <div class="grid grid-rows-3 gap-4">
+
                     <div
                         class="flex items-center gap-4 rounded-lg hover:shadow-lg hover:-translate-x-1 hover:-translate-y-1 transition p-3">
-                        <img class="w-24 rounded-lg" src="../../src/assets/top selling/thumbnail-1.jpg" alt="">
+                        <img class="w-24 rounded-lg" src="./src/assets/top selling/thumbnail-1.jpg" alt="">
                         <div>
                             <h1>Carrot Nurtition and Health Benifit</h1>
                             <div class="flex ">
-                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="../../src/assets/popular product/black-rating-stars.png" alt="">
+                                <div class="rating rating-xs ">
+                                    <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                                    <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500"
+                                        checked="checked" />
+                                    <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                                    <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                                    <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                                </div>
                             </div>
                             <div class="flex justify-between items-center mt-2">
                                 <h1 class="text-emerald-500 font-semibold text-xl">$8.58</h1>
@@ -1103,15 +1186,18 @@
 
                     <div
                         class="flex items-center gap-4 rounded-lg hover:shadow-lg hover:-translate-x-1 hover:-translate-y-1 transition p-3">
-                        <img class="w-24 rounded-lg" src="../../src/assets/top selling/thumbnail-2.jpg" alt="">
+                        <img class="w-24 rounded-lg" src="./src/assets/top selling/thumbnail-2.jpg" alt="">
                         <div>
                             <h1>Capsicum Red Green Yellow</h1>
                             <div class="flex ">
-                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="../../src/assets/popular product/black-rating-stars.png" alt="">
+                                <div class="rating rating-xs ">
+                                    <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                                    <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500"
+                                        checked="checked" />
+                                    <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                                    <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                                    <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                                </div>
                             </div>
                             <div class="flex justify-between items-center mt-2">
                                 <h1 class="text-emerald-500 font-semibold text-xl">$6.85</h1>
@@ -1121,15 +1207,18 @@
 
                     <div
                         class="flex items-center gap-4 rounded-lg hover:shadow-lg hover:-translate-x-1 hover:-translate-y-1 transition p-3">
-                        <img class="w-24 rounded-lg" src="../../src/assets/top selling/thumbnail-3.jpg" alt="">
+                        <img class="w-24 rounded-lg" src="./src/assets/top selling/thumbnail-3.jpg" alt="">
                         <div>
                             <h1>Mango Juice & Mango Slices</h1>
                             <div class="flex ">
-                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="../../src/assets/popular product/black-rating-stars.png" alt="">
+                                <div class="rating rating-xs ">
+                                    <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                                    <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500"
+                                        checked="checked" />
+                                    <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                                    <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                                    <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                                </div>
                             </div>
                             <div class="flex justify-between items-center mt-2">
                                 <h1 class="text-emerald-500 font-semibold text-xl">$4.99</h1>
@@ -1144,15 +1233,18 @@
                 <div class="grid grid-rows-3  gap-4">
                     <div
                         class="flex items-center gap-4 rounded-lg hover:shadow-lg hover:-translate-x-1 hover:-translate-y-1 transition p-3">
-                        <img class="w-24 rounded-lg" src="../../src/assets/top selling/thumbnail-4.jpg" alt="">
+                        <img class="w-24 rounded-lg" src="./src/assets/top selling/thumbnail-4.jpg" alt="">
                         <div>
                             <h1>Cavendish Banana with Banana Slices</h1>
                             <div class="flex ">
-                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="../../src/assets/popular product/black-rating-stars.png" alt="">
+                                <div class="rating rating-xs ">
+                                    <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                                    <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500"
+                                        checked="checked" />
+                                    <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                                    <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                                    <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                                </div>
                             </div>
                             <div class="flex justify-between items-center mt-2">
                                 <h1 class="text-emerald-500 font-semibold text-xl">$3.55</h1>
@@ -1162,15 +1254,18 @@
 
                     <div
                         class="flex items-center gap-4 rounded-lg hover:shadow-lg hover:-translate-x-1 hover:-translate-y-1 transition p-3">
-                        <img class="w-24 rounded-lg" src="../../src/assets/top selling/thumbnail-5.jpg" alt="">
+                        <img class="w-24 rounded-lg" src="./src/assets/top selling/thumbnail-5.jpg" alt="">
                         <div>
                             <h1>Watermelon Crimson Sweet Slices</h1>
                             <div class="flex ">
-                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="../../src/assets/popular product/black-rating-stars.png" alt="">
+                                <div class="rating rating-xs ">
+                                    <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                                    <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500"
+                                        checked="checked" />
+                                    <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                                    <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                                    <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                                </div>
                             </div>
                             <div class="flex justify-between items-center mt-2">
                                 <h1 class="text-emerald-500 font-semibold text-xl">$8.00</h1>
@@ -1180,15 +1275,18 @@
 
                     <div
                         class="flex items-center gap-4 rounded-lg hover:shadow-lg hover:-translate-x-1 hover:-translate-y-1 transition p-3">
-                        <img class="w-24 rounded-lg" src="../../src/assets/top selling/thumbnail-6.jpg" alt="">
+                        <img class="w-24 rounded-lg" src="./src/assets/top selling/thumbnail-6.jpg" alt="">
                         <div>
                             <h1>Green Lychee Monotopic Taxon </h1>
                             <div class="flex ">
-                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="../../src/assets/popular product/black-rating-stars.png" alt="">
+                                <div class="rating rating-xs ">
+                                    <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                                    <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500"
+                                        checked="checked" />
+                                    <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                                    <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                                    <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                                </div>
                             </div>
                             <div class="flex justify-between items-center mt-2">
                                 <h1 class="text-emerald-500 font-semibold text-xl">$6.80</h1>
@@ -1203,15 +1301,18 @@
                 <div class="grid grid-rows-3 gap-4">
                     <div
                         class="flex items-center gap-4 rounded-lg hover:shadow-lg hover:-translate-x-1 hover:-translate-y-1 transition p-3">
-                        <img class="w-24 rounded-lg" src="../../src/assets/top selling/thumbnail-7.jpg" alt="">
+                        <img class="w-24 rounded-lg" src="./src/assets/top selling/thumbnail-7.jpg" alt="">
                         <div>
                             <h1>Alphoso Mango Warm Sweet Taste </h1>
                             <div class="flex ">
-                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="../../src/assets/popular product/black-rating-stars.png" alt="">
+                                <div class="rating rating-xs ">
+                                    <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                                    <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500"
+                                        checked="checked" />
+                                    <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                                    <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                                    <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                                </div>
                             </div>
                             <div class="flex justify-between items-center mt-2">
                                 <h1 class="text-emerald-500 font-semibold text-xl">$6.45</h1>
@@ -1221,15 +1322,18 @@
 
                     <div
                         class="flex items-center gap-4 rounded-lg hover:shadow-lg hover:-translate-x-1 hover:-translate-y-1 transition p-3">
-                        <img class="w-24 rounded-lg" src="../../src/assets/top selling/thumbnail-8.jpg" alt="">
+                        <img class="w-24 rounded-lg" src="./src/assets/top selling/thumbnail-8.jpg" alt="">
                         <div>
                             <h1>Mango Chips Packet Premium Quality </h1>
                             <div class="flex ">
-                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="../../src/assets/popular product/black-rating-stars.png" alt="">
+                                <div class="rating rating-xs ">
+                                    <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                                    <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500"
+                                        checked="checked" />
+                                    <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                                    <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                                    <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                                </div>
                             </div>
                             <div class="flex justify-between items-center mt-2">
                                 <h1 class="text-emerald-500 font-semibold text-xl">$5.85</h1>
@@ -1239,15 +1343,18 @@
 
                     <div
                         class="flex items-center gap-4 rounded-lg hover:shadow-lg hover:-translate-x-1 hover:-translate-y-1 transition p-3">
-                        <img class="w-24 rounded-lg" src="../../src/assets/top selling/thumbnail-9.jpg" alt="">
+                        <img class="w-24 rounded-lg" src="./src/assets/top selling/thumbnail-9.jpg" alt="">
                         <div>
                             <h1>Corn Uplift Eye Health along Cattort</h1>
                             <div class="flex ">
-                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="../../src/assets/popular product/black-rating-stars.png" alt="">
+                                <div class="rating rating-xs ">
+                                    <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                                    <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500"
+                                        checked="checked" />
+                                    <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                                    <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                                    <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                                </div>
                             </div>
                             <div class="flex justify-between items-center mt-2">
                                 <h1 class="text-emerald-500 font-semibold text-xl">$4.85</h1>
@@ -1262,15 +1369,18 @@
                 <div class="grid grid-rows-3  gap-4">
                     <div
                         class="flex items-center gap-4 rounded-lg hover:shadow-lg hover:-translate-x-1 hover:-translate-y-1 transition p-3">
-                        <img class="w-24 rounded-lg" src="../../src/assets/top selling/thumbnail-10.jpg" alt="">
+                        <img class="w-24 rounded-lg" src="./src/assets/top selling/thumbnail-10.jpg" alt="">
                         <div>
                             <h1>Pomegranate Sweet and Tart Thick Skin</h1>
                             <div class="flex ">
-                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="../../src/assets/popular product/black-rating-stars.png" alt="">
+                                <div class="rating rating-xs ">
+                                    <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                                    <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500"
+                                        checked="checked" />
+                                    <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                                    <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                                    <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                                </div>
                             </div>
                             <div class="flex justify-between items-center mt-2">
                                 <h1 class="text-emerald-500 font-semibold text-xl">$6.85</h1>
@@ -1280,15 +1390,18 @@
 
                     <div
                         class="flex items-center gap-4 rounded-lg hover:shadow-lg hover:-translate-x-1 hover:-translate-y-1 transition p-3">
-                        <img class="w-24 rounded-lg" src="../../src/assets/top selling/thumbnail-11.jpg" alt="">
+                        <img class="w-24 rounded-lg" src="./src/assets/top selling/thumbnail-11.jpg" alt="">
                         <div>
                             <h1>Papaya Sweet Taste and Buttery</h1>
                             <div class="flex ">
-                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="../../src/assets/popular product/black-rating-stars.png" alt="">
+                                <div class="rating rating-xs ">
+                                    <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                                    <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500"
+                                        checked="checked" />
+                                    <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                                    <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                                    <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                                </div>
                             </div>
                             <div class="flex justify-between items-center mt-2">
                                 <h1 class="text-emerald-500 font-semibold text-xl">$8.85</h1>
@@ -1298,15 +1411,18 @@
 
                     <div
                         class="flex items-center gap-4 rounded-lg hover:shadow-lg hover:-translate-x-1 hover:-translate-y-1 transition p-3">
-                        <img class="w-24 rounded-lg" src="../../src/assets/top selling/thumbnail-12.jpg" alt="">
+                        <img class="w-24 rounded-lg" src="./src/assets/top selling/thumbnail-12.jpg" alt="">
                         <div>
                             <h1>Orange Tangy Juicy Sweet also Tart</h1>
                             <div class="flex ">
-                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="../../src/assets/popular product/gold-rating-stars.png" alt="">
-                                <img class="" src="../../src/assets/popular product/black-rating-stars.png" alt="">
+                                <div class="rating rating-xs ">
+                                    <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                                    <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500"
+                                        checked="checked" />
+                                    <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                                    <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                                    <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-500" />
+                                </div>
                             </div>
                             <div class="flex justify-between items-center mt-2">
                                 <h1 class="text-emerald-500 font-semibold text-xl">$12.85</h1>
@@ -1325,54 +1441,59 @@
                         class="text-emerald-500">Nest Mart</span> </p>
                 <div
                     class="bg-white flex rounded-full justify-between items-center lg:gap-4 gap-1 mt-8 overflow-hidden">
-                    <img class="lg:pl-6 pl-3" src="../../src/assets/icon-plane.png" alt="">
-                    <input class="focus:outline-none lg:text-lg text-sm w-full" type="email"
+                    <img class="lg:pl-6 pl-3" src="./src/assets/icon-plane.png" alt="">
+                    <input class="focus:outline-none lg:text-lg text-sm w-full bg-white text-black" type="email"
                         placeholder="Your email address">
-                    <button
+                    <button onclick="showToast(errorMsg)"
                         class="bg-emerald-500 text-white lg:px-8 px-4 py-2 lg:py-4 rounded-full font-semibold hover:bg-emerald-400 active:scale-95 transition">Subscribe</button>
                 </div>
             </div>
             <div class="flex justify-center overflow-hidden pt-3">
-                <img class="w-10/12 hover:scale-105 transition" src="../../src/assets/banner/banner-9.png" alt="">
+                <img class="w-10/12 hover:scale-105 transition" src="./src/assets/banner/banner-9.png" alt="">
             </div>
         </section>
 
         <!-- Services section  -->
         <section id="services" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-            <div class="hover:shadow-md flex gap-2 justify-center items-center border p-5 rounded-lg">
-                <img class="hover:-translate-y-2 transition w-12" src="../../src/assets/svgs/icon-1.svg" alt="">
+            <div
+                class="hover:shadow-md flex gap-2 justify-center items-center border p-5 rounded-lg hover:-translate-x-2 hover:-translate-y-2 transition-all">
+                <img class="hover:-translate-y-2 transition w-12" src="./src/assets/svgs/icon-1.svg" alt="">
                 <div>
                     <p class="font-bold text-lg">Best prices & offers</p>
                     <p class="text-gray-4500 ">Orders $50 or More</p>
                 </div>
             </div>
 
-            <div class="hover:shadow-md flex gap-2 justify-center items-center border p-5 rounded-lg">
-                <img class="hover:-translate-y-2 transition w-12" src="../../src/assets/svgs/icon-2.svg" alt="">
+            <div
+                class="hover:shadow-md flex gap-2 justify-center items-center border p-5 rounded-lg hover:-translate-x-2 hover:-translate-y-2 transition-all">
+                <img class="hover:-translate-y-2 transition w-12" src="./src/assets/svgs/icon-2.svg" alt="">
                 <div>
                     <p class="font-bold text-lg">Free delivery</p>
                     <p class="text-gray-4500 ">24/7 amazing services</p>
                 </div>
             </div>
 
-            <div class="hover:shadow-md lg:hidden flex gap-2 justify-center items-center border p-5 rounded-lg">
-                <img class="hover:-translate-y-2 transition w-12" src="../../src/assets/svgs/icon-3.svg" alt="">
+            <div
+                class="hover:shadow-md lg:hidden flex gap-2 justify-center items-center border p-5 rounded-lg hover:-translate-x-2 hover:-translate-y-2 transition-all">
+                <img class="hover:-translate-y-2 transition w-12" src="./src/assets/svgs/icon-3.svg" alt="">
                 <div>
                     <p class="font-bold text-lg">Great daily deal</p>
                     <p class="text-gray-4500 ">When you sign up</p>
                 </div>
             </div>
 
-            <div class="hover:shadow-md flex gap-2 justify-center items-center border p-5 rounded-lg">
-                <img class="hover:-translate-y-2 transition w-12" src="../../src/assets/svgs/icon-4.svg" alt="">
+            <div
+                class="hover:shadow-md flex gap-2 justify-center items-center border p-5 rounded-lg hover:-translate-x-2 hover:-translate-y-2 transition-all">
+                <img class="hover:-translate-y-2 transition w-12" src="./src/assets/svgs/icon-4.svg" alt="">
                 <div>
                     <p class="font-bold text-lg">Wide assortment</p>
                     <p class="text-gray-4500 ">Mega Discounts</p>
                 </div>
             </div>
 
-            <div class="hover:shadow-md flex gap-4 justify-center items-center border p-5 rounded-lg">
-                <img class="hover:-translate-y-2 transition w-12" src="../../src/assets/svgs/icon-5.svg" alt="">
+            <div
+                class="hover:shadow-md flex gap-4 justify-center items-center border p-5 rounded-lg hover:-translate-x-2 hover:-translate-y-2 transition-all">
+                <img class="hover:-translate-y-2 transition w-12" src="./src/assets/svgs/icon-5.svg" alt="">
                 <div>
                     <p class="font-bold text-lg">Easy returns</p>
                     <p class="text-gray-4500 ">Within 30 days</p>
@@ -1380,13 +1501,14 @@
             </div>
 
             <div id="footer"
-                class=" scroll-smooth hover:shadow-md flex gap-2 justify-center items-center border p-5 rounded-lg">
-                <img class="hover:-translate-y-2 transition w-12" src="../../src/assets/svgs/icon-6.svg" alt="">
+                class=" scroll-smooth hover:shadow-md flex gap-2 justify-center items-center border p-5 rounded-lg hover:-translate-x-2 hover:-translate-y-2 transition-all">
+                <img class="hover:-translate-y-2 transition w-12" src="./src/assets/svgs/icon-6.svg" alt="">
                 <div>
                     <p class="font-bold text-lg">Safe delivery</p>
                     <p class="text-gray-4500 ">Within 30 days</p>
                 </div>
             </div>
+
         </section>
     </main>
 
@@ -1396,27 +1518,28 @@
 
             <!-- NestStore  -->
             <div class="grid gap-4 text-sm">
-                <img src="../../src/assets/svgs/logo.svg" alt="">
-                <p class="text-center lg:text-left -mt-4">Awesome grocery store</p>
+                <img src="./src/assets/svgs/logo.svg" alt="">
+                <p class="text-center lg:text-left -mt-2 ">Awesome grocery store</p>
+
                 <div class="grid lg:gap-2 gap-3">
                     <div
                         class="flex justify-center lg:text-left text-center lg:flex-row flex-col lg:items-start items-center lg:gap-2">
-                        <img class="" src="../../src/assets/svgs/icon-location.svg" alt="">
+                        <img class="" src="./src/assets/svgs/icon-location.svg" alt="">
                         <div class="flex flex-col lg:flex-row gap-1">
                             <p class="font-semibold">Address:</p><span>Chorpara, Maskanda, Mymensingh</span>
                         </div>
                     </div>
                     <div class="flex items-center lg:flex-row flex-col lg:gap-2">
-                        <img src="../../src/assets/svgs/icon-contact.svg" alt="">
+                        <img src="./src/assets/svgs/icon-contact.svg" alt="">
                         <p class="font-semibold">Call Us:</p><span>+880 1303436299</span>
                     </div>
                     <div class="flex items-center lg:flex-row flex-col lg:gap-2 flex-wrap">
-                        <img src="../../src/assets/svgs/icon-email-2.svg" alt="">
+                        <img src="./src/assets/svgs/icon-email-2.svg" alt="">
                         <p class="font-semibold">Email:</p><span>nestsujoy@gmail.com</span>
                     </div>
                     <div class="flex items-center  lg:flex-row flex-col lg:gap-2">
-                        <img src="../../src/assets/svgs/icon-clock.svg" alt="">
-                        <p class="font-semibold">Hours:</p><span> 10:00 - 18:00, Mon-Sat</span>
+                        <img src="./src/assets/svgs/icon-clock.svg" alt="">
+                        <p class="font-semibold">Hours:</p><span> 10:00 - 18:00, Sun-Thu</span>
                     </div>
                 </div>
             </div>
@@ -1505,11 +1628,11 @@
                         <div class="flex gap-2 lg:flex-row flex-col">
                             <a href="#ios-store">
                                 <img class="w-3/4 lg:w-full hover:shadow-md hover:-translate-y-1 transition"
-                                    src="../../src/assets/app-store.jpg" alt="">
+                                    src="./src/assets/app-store.jpg" alt="">
                             </a>
                             <a href="#play-store">
                                 <img class="w-3/4 lg:w-full hover:shadow-md hover:-translate-y-1 transition"
-                                    src="../../src/assets/google-play.jpg" alt="">
+                                    src="./src/assets/google-play.jpg" alt="">
                             </a>
                         </div>
                     </div>
@@ -1518,7 +1641,7 @@
                             Gateways</a>
                         <div class="flex gap-2">
                             <img class="w-full hover:shadow-md hover:-translate-y-1 transition"
-                                src="../../src/assets/payment-method.png" alt="">
+                                src="./src/assets/payment-method.png" alt="">
                         </div>
                     </div>
                 </div>
@@ -1534,18 +1657,21 @@
                             class="text-emerald-500 font-semibold">Sujoy</span></h1>
                     <h1 class="text-sm">All rights reserved</h1>
                 </div>
+
                 <div class="flex lg:flex-row flex-col gap-4">
                     <div class="flex gap-2 ">
-                        <img class="w-8" src="../../src/assets/svgs/phone-call.svg" alt="">
-                        <div class="flex flex-col lg:items-start items-center">
-                            <h1 class="text-2xl font-semibold text-emerald-500 ">+880 9638 831422</h1>
+                        <img class="w-8 " src="./src/assets/svgs/phone-call.svg" alt="">
+                        <div class="flex flex-col lg:items-start items-center ">
+                            <button class="text-2xl font-semibold text-emerald-500 active:scale-95 transition-all">+880
+                                9638 831422</button>
                             <h1 class="text-sm text-gray-500 -mt-2">Working 8:00 - 22:00</h1>
                         </div>
                     </div>
                     <div class="flex gap-2 ">
-                        <img class="w-8" src="../../src/assets/svgs/phone-call.svg" alt="">
-                        <div class="flex flex-col lg:items-start items-center">
-                            <h1 class="text-2xl font-semibold text-emerald-500">+880 1303-436299</h1>
+                        <img class="w-8 " src="./src/assets/svgs/phone-call.svg" alt="">
+                        <div class="flex flex-col lg:items-start items-center ">
+                            <button class="text-2xl font-semibold text-emerald-500 active:scale-95 transition-all">+880
+                                1303-436299</button>
                             <h1 class="text-sm text-gray-500 -mt-2">24/7 Support Center</h1>
                         </div>
                     </div>
@@ -1556,20 +1682,21 @@
                         <h1>Follow Us</h1>
                         <div class="flex gap-1">
                             <a href="https://web.facebook.com/sujoydas36"><img
-                                    class="bg-emerald-500 rounded-full p-1 w-6 hover:-translate-y-1 transition"
-                                    src="/src/assets/svgs/icon-facebook-white.svg" alt=""></a>
-                            <a href="#twitter"><img
-                                    class="bg-emerald-500 rounded-full p-1 w-6 hover:-translate-y-1 transition"
-                                    src="/src/assets/svgs/icon-twitter-white.svg" alt=""></a>
-                            <a href="#insta"><img
-                                    class="bg-emerald-500 rounded-full p-1 w-6 hover:-translate-y-1 transition"
-                                    src="/src/assets/svgs/icon-instagram-white.svg" alt=""></a>
-                            <a href="#https://github.com/devsujoy36"><img
-                                    class="bg-emerald-500 rounded-full p-1 w-6 hover:-translate-y-1 transition"
-                                    src="/src/assets/svgs/icon-pinterest-white.svg" alt=""></a>
+                                    class=" rounded-full w-6 hover:-translate-y-1 transition"
+                                    src="/src/assets/svgs/facebookimg.png" alt=""> </a>
+                            <a href="https://www.instagram.com/sdsujoy920243/"><img
+                                    class=" rounded-full w-6 hover:-translate-y-1 transition"
+                                    src="/src/assets/svgs/instalogo.jpg" alt=""></a>
+                            <a href="https://github.com/devsujoy36"><img
+                                    class=" rounded-full w-6 hover:-translate-y-1 bg-white transition"
+                                    src="/src/assets/svgs/github-mark.png" alt=""></a>
+                            <a
+                                href="https://api.whatsapp.com/send/?phone=%2B8801303436299&text&type=phone_number&app_absent=0"><img
+                                    class="rounded-full w-6 hover:-translate-y-1 transition"
+                                    src="/src/assets/svgs/whatsappicon.png" alt=""></a>
                             <a href="https://www.youtube.com/@xenonlivexone"><img
-                                    class="bg-emerald-500 rounded-full p-1 w-6 hover:-translate-y-1 transition"
-                                    src="/src/assets/svgs/icon-youtube-white.svg" alt=""></a>
+                                    class="bg-emerald-500 rounded-full w-6 hover:-translate-y-1 transition"
+                                    src="/src/assets/svgs/youtube.png" alt=""></a>
                         </div>
                     </div>
                     <h1 class="text-xs">Up to 15% discount on your first subscribe</h1>
@@ -1581,41 +1708,71 @@
 
     <script src="tailwind.config.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script>
+    <script src="">
         const menuCrose = document.getElementById('nav-swap-for-mobile')
         const navMenuForMobile = document.getElementById('nav-menu-for-moble')
-        let toggle = true;
+        let toggle = true
         const navMenuHandler = () => {
             if (toggle) {
                 navMenuForMobile.style.display = 'flex'
-                toggle = false;
+                toggle = false
             } else {
-                navMenuForMobile.style.display = 'none';
-                toggle = true;
+                navMenuForMobile.style.display = 'none'
+                toggle = true
             }
         }
-        var swiper = new Swiper(".mySwiper", {
+        var swiper = new Swiper('.mySwiper', {
             spaceBetween: 30,
-            effect: "fade",
+            effect: 'fade',
             centeredSlides: true,
             autoplay: {
                 delay: 1500,
-                disableOnInteraction: false,
-            },
-        });
-        var swiper1 = new Swiper(".mySwiper1", {
+                disableOnInteraction: false
+            }
+        })
+
+        var swiper1 = new Swiper('.mySwiper1', {
             slidesPerView: 1,
             spaceBetween: 10,
             autoplay: {
                 delay: 1000,
-                disableOnInteraction: false,
+                disableOnInteraction: false
             },
             breakpoints: {
-                640: { slidesPerView: 2, spaceBetween: 20, },
-                768: { slidesPerView: 3, spaceBetween: 10, },
-                1024: { slidesPerView: 4, spaceBetween: 15, },
-            },
-        });
+                640: { slidesPerView: 2, spaceBetween: 20 },
+                768: { slidesPerView: 3, spaceBetween: 10 },
+                1024: { slidesPerView: 4, spaceBetween: 15 }
+            }
+        })
+
+        let toastContainer = document.getElementById('toast-container')
+        let successMsg = `<i class="fa-solid fa-circle-check"></i> <span>Added to Cart Successfully</span>`
+        let errorMsg = `<i class="fa-solid fa-circle-xmark"></i><span> Please Enter a valid Email</h1>`
+        let invalidMsg = `<i class="fa-solid fa-circle-exclamation"></i><span>Add to Cart Any Item First</span>`
+
+        function showToast(msg) {
+            let div = document.createElement('div')
+            div.classList.add('toastmaker')
+            div.innerHTML = msg
+            toastContainer.appendChild(div)
+            if (msg.includes('error')) {
+                toast.classList.add('error')
+            }
+            if (msg.includes('shopping')) {
+                toast.classList.add('invalid')
+            }
+            setTimeout(() => {
+                div.remove()
+            }, 2000)
+        }
+
+        let loader = document.getElementById('preloader-container')
+        window.addEventListener('load', function () {
+            setTimeout(() => {
+                loader.remove()
+            }, 100)
+        })
+
     </script>
 </body>
 
