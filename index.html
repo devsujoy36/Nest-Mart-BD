@@ -33,7 +33,7 @@
             background-repeat: no-repeat;
             background-position: center center;
         }
-        ::selection { background-color: rgb(1, 179, 1); color: white; }
+        ::selection { background-color: rgb(59, 129, 59); color: white; }
         .blurNav { z-index: 5; }
         .bgOnion {
             background-image: url('./src/assets/banner/banner-1.png');
@@ -90,6 +90,28 @@
         .toastmaker.error::after { background-color: red; }
         .toastmaker.invalid::after { background-color: orange; }
         @media screen and (max-width: 576px) { #preloader { background-size: 70%; } }
+
+    
+        .cursor-dot {
+            width: 10px;
+            height: 10px;
+            background-color: rgb(6, 190, 0);
+        }
+        .cursor-outline {
+            width: 40px;
+            height: 40px;
+            border: 3px solid hsla(115, 100%, 32%, 0.921);
+        }
+        .cursor-dot,
+        .cursor-outline {
+            position: fixed;
+            top: 0;
+            left: 0;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            z-index: 100;
+            pointer-events: none;
+        }
     </style>
 </head>
 
@@ -103,6 +125,11 @@
     </div>
     <!-- toastify section -->
     <div id="toast-container" class="z-50 fixed right-10  lg:top-[120px] "> </div>
+
+    <div class="cursor-dot" data-cursor-dot></div>
+    <div class="cursor-outline" data-cursor-outline></div>
+
+    
 
     <header class=" rounded shadow-lg py-2 bg-white fixed blurNav top-0 w-full ">
         <nav class="bg-white lg:py-4 pr-6 flex justify-between lg:justify-around items-center gap-2 lg:flex-row relative">
@@ -1447,6 +1474,23 @@
                 loader.remove()
             }, 100)
         })
+
+        const cursorDot = document.querySelector('[data-cursor-dot]') 
+        const cursorOutline = document.querySelector('[data-cursor-outline]') 
+        window.addEventListener('mousemove', function (e) {
+            const posX = e.clientX 
+            const posY = e.clientY 
+            
+            cursorDot.style.left = `${posX}px` 
+            cursorDot.style.top = `${posY}px` 
+            cursorOutline.animate( { 
+                left: `${posX}px`, 
+                top: `${posY}px` }, 
+                { 
+                    duration: 500, 
+                    fill: 'forwards' 
+                } ) 
+            })
     </script>
 </body>
 </html>
